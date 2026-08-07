@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { PointerEvent as ReactPointerEvent } from "react";
+import type { PointerEvent as ReactPointerEvent, ReactNode } from "react";
 
 import { TESTIMONIALS } from "@/data/testimonials";
 import type { Testimonial, TestimonialTheme } from "@/types/content";
 
-/** Avatar circle uses the inverted colour pair of the card it sits on. */
+/**
+ * Measured per-theme colours, not derivable by swapping: the `bg-white` card's
+ * avatar is orange, not grey.
+ */
 const AVATAR_THEME: Record<TestimonialTheme, string> = {
   "bg-gray-400 text-white": "bg-white text-gray-400",
   "bg-golden text-gray-400": "bg-gray-400 text-golden",
@@ -31,6 +34,24 @@ const COLUMNS: Testimonial[][] = Array.from(
     TESTIMONIALS.slice(index * CARDS_PER_COLUMN, index * CARDS_PER_COLUMN + CARDS_PER_COLUMN),
 );
 
+const PHOTOS = [
+  "/images/img-1.png",
+  "/images/img-2.png",
+  "/images/img-3.png",
+  "/images/img-4.png",
+  "/images/img-5.png",
+  "/images/img-6.png",
+  "/images/img-7.png",
+  "/images/img-8.png",
+  "/images/img-9.png",
+];
+
+// Which slot the photo card occupies within its column (0 = above both quote
+// cards, 1 = between them, 2 = below both). Transcribed from the live markup,
+// where the position varies per column — that is what staggers the photos into
+// a mosaic instead of a flat bottom row. Set every entry to 2 to un-stagger.
+const PHOTO_SLOT = [2, 0, 1, 0, 2, 0, 2, 0, 1];
+
 const RAIL_BASE =
   "flex py-8 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden scroll-smooth gap-6 lg:gap-8 min-[1920px]:px-4";
 
@@ -51,6 +72,42 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       </div>
       <div className={`h-px my-4 lg:my-8 ${DIVIDER_THEME[testimonial.theme]}`} />
       <p className="text-[16px] lg:text-[24px] font-medium leading-[1.3]">{testimonial.quote}</p>
+    </div>
+  );
+}
+
+function TestimonialColumn({ columnIndex }: { columnIndex: number }) {
+  const children: ReactNode[] = COLUMNS[columnIndex].map((testimonial) => (
+    <TestimonialCard key={testimonial.name} testimonial={testimonial} />
+  ));
+
+  children.splice(
+    PHOTO_SLOT[columnIndex],
+    0,
+    <div
+      key="photo"
+      className="w-full flex-1 select-none overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]"
+    >
+      {/* Plain <img>, not next/image: the target relies on the raw element
+          stretching to the flex-1 box, and these are decorative. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={PHOTOS[columnIndex]}
+        alt=""
+        draggable={false}
+        loading="lazy"
+        width={552}
+        height={584}
+        className="w-full h-full object-cover"
+      />
+    </div>,
+  );
+
+  return (
+    <div className="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+      <div className="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+        {children}
+      </div>
     </div>
   );
 }
@@ -152,17 +209,8 @@ export function Testimonials() {
             onPointerCancel={handlePointerEnd}
           >
             {COPIES.map((copy) =>
-              COLUMNS.map((column, columnIndex) => (
-                <div
-                  key={`${copy}-${columnIndex}`}
-                  className="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4"
-                >
-                  <div className="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
-                    {column.map((testimonial) => (
-                      <TestimonialCard key={testimonial.name} testimonial={testimonial} />
-                    ))}
-                  </div>
-                </div>
+              COLUMNS.map((_column, columnIndex) => (
+                <TestimonialColumn key={`${copy}-${columnIndex}`} columnIndex={columnIndex} />
               )),
             )}
           </div>

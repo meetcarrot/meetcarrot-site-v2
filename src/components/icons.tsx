@@ -90,3 +90,10 @@ export function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg aria-hidden="true" focusable="false" {...props} fill="none" height="12" viewBox="0 0 7 12" width="12"><path d="M1 11L6 6L1 1" stroke="var(--color-white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" /></svg>
   );
 }
+
+// The mobile menu's close control — a true ✕, not the hamburger rotated.
+export function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg aria-hidden="true" focusable="false" {...props} fill="none" height="14" viewBox="0 0 14 14" width="14"><path d="M13 1L1.0001 12.989M1 1.01104L12.9999 13" stroke="black" strokeLinecap="round" strokeWidth="2" /></svg>
+  );
+}

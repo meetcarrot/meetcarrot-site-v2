@@ -15,8 +15,12 @@ function isHeaderTheme(value: string | undefined): value is HeaderTheme {
 
 /**
  * Resolves which `[data-header-theme]` section currently sits behind the header
- * band. The root margin collapses the viewport to a line along its top edge, so
- * a section intersects exactly while it is the one under the header.
+ * band — the section spanning the viewport's top edge.
+ *
+ * Deliberately a scroll listener rather than an IntersectionObserver: the
+ * natural observer formulation (`rootMargin: "0px 0px -100% 0px"`) collapses the
+ * root to a zero-height line, and a zero-area rect never reports an
+ * intersection, so the header would sit on its default theme forever.
  */
 function useHeaderTheme(): HeaderTheme {
   const [theme, setTheme] = useState<HeaderTheme>("light");
@@ -27,23 +31,31 @@ function useHeaderTheme(): HeaderTheme {
     );
     if (sections.length === 0) return;
 
-    const intersecting = new Set<Element>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) intersecting.add(entry.target);
-          else intersecting.delete(entry.target);
-        }
-        // Document order, so the lower section wins where two meet at the band.
-        const active = sections.filter((section) => intersecting.has(section)).pop();
-        const next = active?.dataset.headerTheme;
-        setTheme(isHeaderTheme(next) ? next : "light");
-      },
-      { rootMargin: "0px 0px -100% 0px", threshold: 0 },
-    );
+    let frame = 0;
+    const resolve = () => {
+      frame = 0;
+      // Last in document order wins where two sections meet at the top edge.
+      const active = sections
+        .filter((section) => {
+          const { top, bottom } = section.getBoundingClientRect();
+          return top <= 0 && bottom > 0;
+        })
+        .pop();
+      const next = active?.dataset.headerTheme;
+      setTheme(isHeaderTheme(next) ? next : "light");
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(resolve);
+    };
 
-    for (const section of sections) observer.observe(section);
-    return () => observer.disconnect();
+    resolve();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
   }, []);
 
   return theme;

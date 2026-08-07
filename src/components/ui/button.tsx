@@ -28,6 +28,12 @@ const buttonVariants = cva(
         dark: "text-white bg-black hover:bg-black active:bg-gray-400",
         /** Dark pill as it appears over the golden hero — label picks up the golden. */
         darkOnGolden: "text-golden bg-black hover:bg-black active:bg-gray-400",
+        /** White pill used by the mobile menu's own header row; softer shadow. */
+        light:
+          [
+            "text-black bg-white hover:bg-white active:bg-gray-200",
+            "shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.04)]",
+          ].join(" "),
       },
       size: {
         default: "px-4 md:px-8 h-12",

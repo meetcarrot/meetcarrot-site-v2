@@ -1,9 +1,30 @@
+import { FaqSection } from "@/components/FaqSection";
+import { FinalCta } from "@/components/FinalCta";
+import { HeroSection } from "@/components/HeroSection";
+import { HowItWorks } from "@/components/HowItWorks";
+import { ProductCards } from "@/components/ProductCards";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Testimonials } from "@/components/Testimonials";
+
+/**
+ * Section order and the absence of any wrapper on <main> both mirror the target:
+ * sections stack directly, and the hero's own `pt-18 md:pt-28` is what clears the
+ * fixed header rather than page-level padding.
+ */
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <ProductCards />
+        <HowItWorks />
+        <Testimonials />
+        <FaqSection />
+        <FinalCta />
+      </main>
+      <SiteFooter />
+    </>
   );
 }

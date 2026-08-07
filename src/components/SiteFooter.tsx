@@ -7,7 +7,7 @@ import {
   MortgageIcon,
   OtherBillsIcon,
   RentIcon,
-  SplitPayLogo,
+  SplitPayLogoWhite,
 } from "@/components/icons";
 
 const APP_STORE_URL =
@@ -56,7 +56,7 @@ function BrandBlock() {
   return (
     <div>
       <div>
-        <SplitPayLogo className="text-white" width={152} height={34} />
+        <SplitPayLogoWhite width={152} height={34} />
         <p className="text-[16px] font-normal leading-[1.33] text-white mt-6">
           Split your bills into two.
           <br className="md:hidden" />

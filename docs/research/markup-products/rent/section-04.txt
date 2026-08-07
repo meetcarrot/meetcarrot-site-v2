@@ -1,0 +1,144 @@
+<section class="overflow-x-clip bg-[linear-gradient(180deg,#000_0%,#0F0F0F_100%)] py-14 lg:py-24" data-header-theme="black">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center text-white">
+        Easy for you.
+        <br class="hidden min-[480px]:block"/>
+        Easy for your landlord.
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px] text-[#D0CFCE]">
+        Split Pay works alongside your existing rent setup, not on top of it.
+        <!-- -->
+          <br class="hidden md:block"/>
+          Your landlord receives your full payment on time, the way they already accept it.
+        </p>
+        <div class="mt-6 lg:mt-12">
+          <div class="flex flex-col items-stretch md:flex-row md:items-start md:max-w-260 mx-auto">
+            <div class="flex flex-col items-center text-center md:flex-1">
+              <div class="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
+                <svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd" d="M8.575 1.714a1.286 1.286 0 1 0-2.572 0V3.09C3.242 3.417 1.048 5.588.731 8.312c-.403 3.46-.403 6.416 0 9.876.333 2.866 2.745 5.12 5.71 5.258 1.777.083 3.591.125 5.559.125 1.967 0 3.782-.042 5.559-.125 2.964-.137 5.376-2.392 5.71-5.258.403-3.46.403-6.416 0-9.876-.317-2.723-2.511-4.895-5.272-5.222V1.714a1.286 1.286 0 1 0-2.572 0v1.26C14.322 2.945 13.19 2.93 12 2.93c-1.19 0-2.322.015-3.425.046v-1.26Zm4.497 7.22a1.071 1.071 0 0 0-2.143 0v.34a3.513 3.513 0 0 0-1.324.538c-.727.504-1.11 1.273-1.11 2.16 0 .887.383 1.656 1.11 2.16.673.467 1.543.641 2.456.641.686 0 1.011.139 1.143.237.077.058.157.146.157.422 0 .22-.067.315-.188.4-.175.12-.551.258-1.234.258-1.118 0-1.347-.34-1.384-.43a1.071 1.071 0 0 0-1.975.833c.419.992 1.33 1.478 2.349 1.657v.278a1.071 1.071 0 0 0 2.143 0v-.3c.486-.097.937-.268 1.323-.536.726-.504 1.109-1.273 1.109-2.16 0-.831-.308-1.609-1.017-2.139-.656-.49-1.516-.663-2.426-.663-.683 0-1.06-.137-1.235-.258-.12-.084-.187-.18-.187-.4 0-.22.066-.316.187-.4.176-.121.552-.258 1.235-.258 1.117 0 1.347.34 1.384.43a1.071 1.071 0 0 0 1.975-.833c-.419-.992-1.33-1.478-2.348-1.657v-.32Z" fill="var(--color-white)" fill-rule="evenodd">
+                  </path>
+                </svg>
+              </div>
+              <p class="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+                Rent is due
+              </p>
+              <p class="font-normal text-gray-300 text-[16px] leading-[1.3]">
+                Your normal payment date arrives.
+              </p>
+            </div>
+            <div class="self-center w-px h-10 my-2 bg-white/15 md:self-start md:flex-1 md:h-px md:w-auto md:my-0 md:mt-8 md:mx-4 lg:mt-10">
+            </div>
+            <div class="flex flex-col items-center text-center md:flex-1">
+              <div class="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
+                <svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd" d="M12 0C15.7192 0 18.7502 1.04894 20.8506 3.14941C22.9511 5.24988 24 8.28084 24 12C24 15.7192 22.9511 18.7502 20.8506 20.8506C18.7502 22.9511 15.7192 24 12 24C8.28084 24 5.24988 22.9511 3.14941 20.8506C1.04894 18.7502 0 15.7192 0 12C0 8.28082 1.04894 5.24988 3.14941 3.14941C5.24988 1.04894 8.28082 0 12 0ZM17.6582 7.24707C17.2426 6.88371 16.6107 6.92628 16.2471 7.3418L9.95117 14.5371L7.70703 12.293C7.31651 11.9024 6.68349 11.9025 6.29297 12.293C5.90246 12.6835 5.90245 13.3165 6.29297 13.707L9.29297 16.707C9.48866 16.9027 9.75661 17.0082 10.0332 16.999C10.3098 16.9898 10.5707 16.8665 10.7529 16.6582L17.7529 8.6582C18.1163 8.24256 18.0737 7.61065 17.6582 7.24707Z" fill="var(--color-white)" fill-rule="evenodd">
+                  </path>
+                </svg>
+              </div>
+              <p class="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+                Split Pay pays in full
+              </p>
+              <p class="font-normal text-gray-300 text-[16px] leading-[1.3]">
+                We cover the full amount to your landlord on time.
+              </p>
+            </div>
+            <div class="self-center w-px h-10 my-2 bg-white/15 md:self-start md:flex-1 md:h-px md:w-auto md:my-0 md:mt-8 md:mx-4 lg:mt-10">
+            </div>
+            <div class="flex flex-col items-center text-center md:flex-1">
+              <div class="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
+                <svg fill="none" height="32" viewBox="0 0 36 36" width="32" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.93551 29.2349C-1.72478 22.1675 -1.28037 11.8233 5.27101 5.27196C11.8224 -1.27945 22.1672 -1.72458 29.2346 3.93578L3.93551 29.2349ZM32.063 6.76421C37.7234 13.8316 37.2783 24.1764 30.7269 30.7278C24.1755 37.2792 13.8313 37.7236 6.76394 32.0633L32.063 6.76421Z" fill="var(--color-white)">
+                  </path>
+                </svg>
+              </div>
+              <p class="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+                You pay 2 installments
+              </p>
+              <p class="font-normal text-gray-300 text-[16px] leading-[1.3]">
+                Half now. Half two weeks later.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-14 lg:mt-20 relative">
+        <div class="relative rounded-4xl overflow-hidden h-100 md:h-110.5 lg:h-200">
+          <img alt="family reading" loading="lazy" class="object-cover" data-fill sizes="(min-width: 1296px) 1248px, 100vw" src="/_next/static/media/bg_image.png"/>
+        </div>
+        <div class="relative z-10 -mt-10 lg:-mt-20 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8  mx-4 md:mx-10">
+          <div class="rounded-4xl p-7 lg:p-10 bg-black/50 border border-white/5 shadow-[0_12px_24px_0_rgba(0,0,0,0.50)] backdrop-blur-[5px] text-white">
+            <div class="flex justify-center mb-4 lg:mb-6">
+              <div class="flex items-center justify-center rounded-full w-16 h-16 bg-white/[0.06] ring-1 ring-inset ring-white/10 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <mask height="24" id="mask-_R_5kmgm_" maskUnits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+                    <circle cx="12" cy="12" fill="black" r="12">
+                    </circle>
+                  </mask>
+                  <g mask="url(#mask-_R_5kmgm_)">
+                    <path d="M3.51471 20.4853C5.76515 22.7357 8.81739 24 12 24C15.1826 24 18.2348 22.7357 20.4853 20.4853C22.7357 18.2349 24 15.1826 24 12C24 8.81742 22.7357 5.76517 20.4853 3.51473L3.51471 20.4853Z" fill="url(#paint0-_R_5kmgm_)">
+                    </path>
+                    <path d="M20.4853 3.51472C18.2348 1.26428 15.1826 0 12 0C8.8174 0 5.76515 1.26428 3.51472 3.51472C1.26428 5.76515 0 8.8174 0 12C0 15.1826 1.26428 18.2348 3.51471 20.4853L20.4853 3.51472Z" fill="url(#paint1-_R_5kmgm_)">
+                    </path>
+                  </g>
+                  <defs>
+                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0-_R_5kmgm_" x1="3.504" x2="20.496" y1="20.496" y2="3.504">
+                      <stop offset="0.2" stop-color="var(--color-white)">
+                      </stop>
+                      <stop offset="1" stop-color="var(--color-white)" stop-opacity="0">
+                      </stop>
+                    </linearGradient>
+                    <linearGradient gradientUnits="userSpaceOnUse" id="paint1-_R_5kmgm_" x1="-0.0107116" x2="16.9813" y1="16.9813" y2="-0.0107378">
+                      <stop stop-color="var(--color-white)" stop-opacity="0">
+                      </stop>
+                      <stop offset="0.8" stop-color="var(--color-white)">
+                      </stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+              How Split Pay works
+            </p>
+            <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+              We pay your landlord or property manager in full on your rent due date. You pay us back in two installments — half now, half later. Your landlord sees one on-time rent payment. You get breathing room.
+            </p>
+          </div>
+          <div class="rounded-4xl p-7 lg:p-10 bg-black/50 border border-white/5 shadow-[0_12px_24px_0_rgba(0,0,0,0.50)] backdrop-blur-[5px] text-white">
+            <div class="flex justify-center mb-4 lg:mb-6">
+              <div class="flex items-center justify-center rounded-full w-16 h-16 bg-white/[0.06] ring-1 ring-inset ring-white/10 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd" d="M5.71929 0.516495C7.43152 0.255708 9.8251 0 12.0011 0C14.1771 0 16.5707 0.255708 18.2829 0.516495C19.9086 0.764098 21.1408 2.01739 21.4062 3.62167C22.299 9.01843 22.5333 16.7537 22.0215 21.7714C21.8883 23.0775 20.7735 24 19.5136 24H14.5725V20.0337C14.5725 18.6135 13.4213 17.4622 12.0011 17.4622C10.581 17.4622 9.42969 18.6135 9.42969 20.0337V24H4.48853C3.22876 24 2.11385 23.0775 1.98065 21.7714C1.46892 16.7537 1.70315 9.01843 2.59601 3.62167C2.86144 2.01739 4.09361 0.764098 5.71929 0.516495ZM14.5725 11.7857C13.9808 11.7857 13.5011 12.2654 13.5011 12.8571C13.5011 13.4489 13.9808 13.9286 14.5725 13.9286H16.2868C16.8786 13.9286 17.3583 13.4489 17.3583 12.8571C17.3583 12.2654 16.8786 11.7857 16.2868 11.7857H14.5725ZM7.7154 6.64286C7.12367 6.64286 6.64397 7.12255 6.64397 7.71429C6.64397 8.30602 7.12367 8.78571 7.7154 8.78571H9.42969C10.0214 8.78571 10.5011 8.30602 10.5011 7.71429C10.5011 7.12255 10.0214 6.64286 9.42969 6.64286H7.7154ZM13.5011 7.71429C13.5011 7.12255 13.9808 6.64286 14.5725 6.64286H16.2868C16.8786 6.64286 17.3583 7.12255 17.3583 7.71429C17.3583 8.30602 16.8786 8.78571 16.2868 8.78571H14.5725C13.9808 8.78571 13.5011 8.30602 13.5011 7.71429ZM7.7154 11.7857C7.12367 11.7857 6.64397 12.2654 6.64397 12.8571C6.64397 13.4489 7.12367 13.9286 7.7154 13.9286H9.42969C10.0214 13.9286 10.5011 13.4489 10.5011 12.8571C10.5011 12.2654 10.0214 11.7857 9.42969 11.7857H7.7154Z" fill="var(--color-white)" fill-rule="evenodd">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+              Works with any landlord
+            </p>
+            <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+              Big property management companies, small independent owners, co-ops, condo boards, if you pay rent, we can split it. We send your payment the way your landlord already accepts it: ACH, Zelle, tenant portal, or a mailed check.
+            </p>
+          </div>
+          <div class="rounded-4xl p-7 lg:p-10 bg-black/50 border border-white/5 shadow-[0_12px_24px_0_rgba(0,0,0,0.50)] backdrop-blur-[5px] text-white">
+            <div class="flex justify-center mb-4 lg:mb-6">
+              <div class="flex items-center justify-center rounded-full w-16 h-16 bg-white/[0.06] ring-1 ring-inset ring-white/10 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+                <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd" d="M3.1482 3.1482C5.2465 1.04988 8.27652 0 12 0C15.7235 0 18.7534 1.04988 20.8519 3.1482C22.9502 5.2465 24 8.27652 24 12C24 15.7235 22.9502 18.7534 20.8519 20.8519C18.7534 22.9502 15.7235 24 12 24C8.27652 24 5.2465 22.9502 3.1482 20.8519C1.04988 18.7534 0 15.7235 0 12C0 8.27652 1.04988 5.2465 3.1482 3.1482ZM12.2603 8.02743C11.4642 7.86909 10.6741 8.51748 10.6741 9.32914C10.6741 10.0392 10.0985 10.6149 9.38839 10.6149C8.67831 10.6149 8.10267 10.0392 8.10267 9.32914C8.10267 6.89587 10.3754 5.03071 12.7619 5.50541C14.2857 5.80851 15.522 7.04482 15.8251 8.5686C15.9775 9.33465 15.8893 10.0708 15.5526 10.7332C15.2273 11.3733 14.7163 11.8545 14.1673 12.2213C13.9377 12.3748 13.7555 12.4995 13.6054 12.6118C13.4545 12.7246 13.3629 12.8053 13.3067 12.8637C13.2982 12.8726 13.2909 12.8804 13.2849 12.8872C13.2466 13.5628 12.6866 14.0989 12.0013 14.0989C11.2912 14.0989 10.7156 13.5232 10.7156 12.8132C10.7156 12.0702 11.0446 11.5065 11.4527 11.0818C11.8131 10.7068 12.297 10.3784 12.7387 10.0833C13.0491 9.87583 13.1945 9.69754 13.2603 9.5681C13.3147 9.46113 13.3523 9.31795 13.3031 9.07025C13.2029 8.56656 12.764 8.12764 12.2603 8.02743ZM12.0002 15.5504C12.7103 15.5504 13.2859 16.126 13.2859 16.8361V17.2833C13.2859 17.9933 12.7103 18.569 12.0002 18.569C11.2901 18.569 10.7145 17.9933 10.7145 17.2833V16.8361C10.7145 16.126 11.2901 15.5504 12.0002 15.5504Z" fill="var(--color-white)" fill-rule="evenodd">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+              What does my landlord see?
+            </p>
+            <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+              Your landlord still gets paid in full, on time. There are no changes to how they receive payments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

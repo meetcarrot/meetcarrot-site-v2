@@ -1,0 +1,76 @@
+<section class="overflow-x-clip py-14 lg:py-24" data-header-theme="gray">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        Keep you car. Keep your cash.
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
+      </p>
+    </div>
+    <div class="mt-14 lg:mt-20 relative">
+      <div class="relative rounded-4xl overflow-hidden h-100 md:h-110.5 lg:h-200">
+        <img alt="man loading car for a camping trip" loading="lazy" class="object-cover" data-fill sizes="(min-width: 1296px) 1248px, 100vw" src="/_next/static/media/bg_image.png"/>
+      </div>
+      <div class="relative z-10 -mt-10 lg:-mt-20 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8  mx-4 md:mx-10">
+        <div class="rounded-4xl p-7 lg:p-10 bg-white shadow-[0_8px_16px_0_rgba(0,0,0,0.05)]">
+          <div class="flex justify-center mb-4 lg:mb-6">
+            <div class="flex items-center justify-center rounded-full w-16 h-16 bg-gray-400">
+              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#icon-cash-clip)">
+                  <path clip-rule="evenodd" d="M0.977966 2.5428C1.26365 1.37138 2.30011 0.428467 3.59181 0.428467H20.4085C21.7011 0.428467 22.7329 1.37185 23.0275 2.53378L23.0425 2.59296C23.3074 3.63732 23.5716 4.67859 23.5716 7.65176C23.5716 10.625 23.3074 11.6662 23.0425 12.7106L23.0275 12.7698C22.7329 13.9317 21.7011 14.8751 20.4085 14.8751H3.59181C2.30011 14.8751 1.26365 13.9322 0.977966 12.7607L0.95531 12.668C0.69328 11.5959 0.428711 10.5135 0.428711 7.65176C0.428711 4.79009 0.69328 3.70764 0.95531 2.63556L0.977966 2.5428ZM4.05566 16.7217C3.34559 16.7217 2.76995 17.2974 2.76995 18.0074C2.76995 18.7175 3.34559 19.2932 4.05566 19.2932H19.9445C20.6545 19.2932 21.2302 18.7175 21.2302 18.0074C21.2302 17.2974 20.6545 16.7217 19.9445 16.7217H4.05566ZM5.03292 22.2856C5.03292 21.5756 5.60856 20.9999 6.31864 20.9999H17.6818C18.3919 20.9999 18.9675 21.5756 18.9675 22.2856C18.9675 22.9957 18.3919 23.5713 17.6818 23.5713H6.31864C5.60856 23.5713 5.03292 22.9957 5.03292 22.2856ZM13.2545 3.52682C13.2545 2.9351 12.7748 2.45539 12.183 2.45539C11.5913 2.45539 11.1116 2.9351 11.1116 3.52682V3.75626C9.87904 4.14423 9.10445 5.13108 9.10445 6.30943C9.10445 6.74547 9.2052 7.16062 9.4331 7.52635C9.6582 7.8876 9.96353 8.13031 10.2622 8.29579C10.7664 8.5751 11.3867 8.69654 11.8114 8.7797L11.9051 8.79814C12.4328 8.90287 12.7177 8.97661 12.889 9.08086C12.9206 9.10009 12.9374 9.11453 12.9453 9.12226C12.9524 9.12922 12.9545 9.13274 12.9554 9.13436C12.9563 9.13592 12.9615 9.14506 12.9671 9.16788C12.9709 9.18356 12.9753 9.20765 12.9779 9.2419C12.9588 9.2628 12.9231 9.29525 12.86 9.33694C12.6734 9.4601 12.3633 9.57098 11.9922 9.588C11.5111 9.61004 11.033 9.47175 10.6712 9.1416C10.2341 8.74274 9.55641 8.7737 9.15753 9.21079C8.75865 9.64788 8.78963 10.3256 9.22672 10.7244C9.79476 11.2428 10.4562 11.5344 11.1116 11.6593V11.7767C11.1116 12.3685 11.5913 12.8481 12.183 12.8481C12.7748 12.8481 13.2545 12.3685 13.2545 11.7767V11.5083C13.5366 11.4108 13.8023 11.2826 14.0406 11.1252C14.571 10.7751 15.123 10.1606 15.123 9.30401C15.123 8.86143 15.0284 8.44205 14.8146 8.06897C14.6013 7.69664 14.3061 7.43482 14.003 7.25035C13.464 6.92235 12.8039 6.79166 12.3621 6.70418L12.3223 6.69629C11.7764 6.58793 11.4847 6.52328 11.3007 6.42134C11.2769 6.4082 11.2623 6.39806 11.2539 6.39151C11.2509 6.37736 11.2473 6.35141 11.2473 6.30943C11.2473 6.20954 11.284 6.10068 11.3848 6.00161C11.485 5.90306 11.7005 5.76663 12.1213 5.7305C12.4735 5.70024 12.7609 5.80382 12.9741 5.92682C13.0808 5.98839 13.1622 6.05136 13.2132 6.09521C13.2384 6.11681 13.2549 6.13268 13.2621 6.13987L13.2647 6.14242C13.6613 6.57176 14.3305 6.60435 14.767 6.21276C15.2075 5.81762 15.2442 5.14023 14.8491 4.69975L14.0685 5.39998C14.8491 4.69975 14.8494 4.70009 14.8491 4.69975L14.8478 4.69836L14.8465 4.69688L14.8436 4.69368L14.8368 4.68631L14.8195 4.66783C14.8063 4.65392 14.7897 4.63685 14.7698 4.6171C14.73 4.57769 14.6765 4.52726 14.6098 4.46993C14.4771 4.35596 14.2876 4.21073 14.0451 4.07083C13.8276 3.94529 13.5621 3.82126 13.2545 3.72956V3.52682ZM5.00954 6.56417C4.41785 6.57178 3.94435 7.05759 3.95196 7.64928C3.95956 8.24096 4.44539 8.71445 5.03707 8.70686L6.08035 8.69345C6.67204 8.68584 7.14554 8.20003 7.13793 7.60834C7.13033 7.01666 6.64451 6.54317 6.05282 6.55076L5.00954 6.56417ZM17.9203 6.56417C17.3285 6.57178 16.8551 7.05759 16.8627 7.64928C16.8703 8.24096 17.3561 8.71445 17.9479 8.70686L18.991 8.69345C19.5828 8.68584 20.0563 8.20003 20.0487 7.60834C20.041 7.01666 19.5552 6.54317 18.9636 6.55076L17.9203 6.56417Z" fill="var(--color-white)" fill-rule="evenodd">
+                  </path>
+                </g>
+                <defs>
+                  <clipPath id="icon-cash-clip">
+                    <rect fill="white" height="24" width="24">
+                    </rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+            More cash, all month
+          </p>
+          <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+            Half now. Half in two weeks. Your 1st of the month stops feeling brutal.
+          </p>
+        </div>
+        <div class="rounded-4xl p-7 lg:p-10 bg-white shadow-[0_8px_16px_0_rgba(0,0,0,0.05)]">
+          <div class="flex justify-center mb-4 lg:mb-6">
+            <div class="flex items-center justify-center rounded-full w-16 h-16 bg-gray-400">
+              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M8.575 1.714a1.286 1.286 0 1 0-2.572 0v1.19C3.236 3.234 1.047 5.43.731 8.172l-.048.423h22.634l-.048-.423c-.316-2.742-2.505-4.938-5.272-5.268v-1.19a1.286 1.286 0 1 0-2.572 0v1.074a122.07 122.07 0 0 0-6.85 0V1.714Zm14.922 9.024H.502c-.148 2.467-.072 4.793.229 7.403.332 2.885 2.739 5.165 5.71 5.304 1.777.083 3.591.126 5.559.126s3.782-.043 5.56-.126c2.97-.14 5.377-2.42 5.71-5.304.3-2.61.376-4.936.227-7.403Z" fill="var(--color-white)" fill-rule="evenodd">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+            Never late, never dinged
+          </p>
+          <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+            We pay your lender in full on day one. You pay us back in two halves. No late fees, no credit hits.
+          </p>
+        </div>
+        <div class="rounded-4xl p-7 lg:p-10 bg-white shadow-[0_8px_16px_0_rgba(0,0,0,0.05)]">
+          <div class="flex justify-center mb-4 lg:mb-6">
+            <div class="flex items-center justify-center rounded-full w-16 h-16 bg-gray-400">
+              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.4853 3.51481C18.2349 1.26432 15.1826 9.43497e-07 12 0C8.81743 -9.43496e-07 5.76517 1.26431 3.51473 3.51481C1.26429 5.7653 6.1018e-07 8.81763 0 12.0003C-6.10179e-07 15.183 1.26428 18.2353 3.51473 20.4858L20.4853 3.51481Z" fill="var(--color-white)">
+                </path>
+                <path d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25Z" stroke="var(--color-white)" stroke-width="2.5">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+            Your biggest cost, halved
+          </p>
+          <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+            Insurance, gas, parking — your car already costs in pieces. We just shrink the biggest one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

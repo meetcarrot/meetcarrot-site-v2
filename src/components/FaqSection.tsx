@@ -4,12 +4,18 @@ import { useRef, useState } from "react";
 import { FaqModal } from "@/components/FaqModal";
 import { ChevronRightIcon } from "@/components/icons";
 import { FAQS } from "@/data/faqs";
+import type { Faq } from "@/types/content";
 
 /** Verbatim from `docs/research/markup/section-04.txt`. */
 const QUESTION_BUTTON_CLASS =
   "flex items-center justify-between gap-8 py-4 px-5 lg:px-8 cursor-pointer bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl md:min-h-18 lg:min-h-22 transition duration-200 ease-in-out shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] active:shadow-[0_4px_8px_0_rgba(0,0,0,0.04)] active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white focus-visible:ring-offset-2";
 
-export function FaqSection() {
+export interface FaqSectionProps {
+  /** Defaults to the homepage set; product pages pass their own. */
+  faqs?: Faq[];
+}
+
+export function FaqSection({ faqs = FAQS }: FaqSectionProps = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
 
@@ -28,7 +34,7 @@ export function FaqSection() {
         </div>
         <div className="mt-14 lg:mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-            {FAQS.map((faq, index) => (
+            {faqs.map((faq, index) => (
               <button
                 key={faq.id}
                 type="button"
@@ -56,7 +62,7 @@ export function FaqSection() {
 
       {openIndex !== null && (
         <FaqModal
-          faqs={FAQS}
+          faqs={faqs}
           index={openIndex}
           onIndexChange={setOpenIndex}
           onClose={() => setOpenIndex(null)}

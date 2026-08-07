@@ -1,0 +1,35 @@
+<section class="pt-14  pb-90 sm:pb-25 lg:pb-30">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        One car payment, two halves.
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
+        Set up your first split in under 3 minutes. No credit check, no contracts.
+      </p>
+      <div class="w-70 max-w-full mx-auto">
+        <button class="px-4 md:px-8 h-12 rounded-3xl w-full relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-gray-100 bg-orange-100 hover:bg-orange-100 active:bg-orange-300 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)]" type="button">
+          <div class="relative z-10">
+            <div class="">
+              Get Started
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="mt-14 lg:mt-20">
+      <div class="relative h-100 md:h-110 lg:h-200">
+        <img alt="" loading="lazy" class="object-cover rounded-4xl" data-fill sizes="
+      (max-width: 767px) 92vw,
+      (max-width: 1023px) 92vw,                              
+      1200px                   
+  " src="/_next/static/media/car_loan_bg.png"/>
+        <img alt="Split Pay app on a phone" loading="lazy" width="1314" height="2517" class="absolute h-auto w-50 md:w-60 lg:w-92 right-[50%] left-[50%] transform-[translateX(-50%)]  sm:left-auto sm:transform-none sm:right-4 bottom-[-80%] sm:-bottom-15  lg:-bottom-25  " sizes="
+    (max-width: 767px) 200px,
+    (max-width: 1023px) 240px,
+    368px
+" src="/_next/static/media/phone.png"/>
+      </div>
+    </div>
+  </div>
+</section>

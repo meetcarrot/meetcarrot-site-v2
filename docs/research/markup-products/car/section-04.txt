@@ -1,0 +1,177 @@
+<section class="overflow-x-clip bg-[linear-gradient(180deg,#000_0%,#0F0F0F_100%)] py-14 lg:py-24" data-header-theme="black">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center text-white">
+        Nothing changes for your lender.
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px] text-[#D0CFCE]">
+        We pay your lender in full on the due date. You pay us back in two halves. Nothing else changes.
+      </p>
+      <div class="mt-6 lg:mt-12">
+        <div class="flex flex-col items-stretch md:flex-row md:items-start md:max-w-260 mx-auto">
+          <div class="flex flex-col items-center text-center md:flex-1">
+            <div class="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
+              <svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.86481 9.33527C1.55901 9.9934 0.519675 11.1505 0.243125 12.7264C0.0537308 13.8057 -0.00390934 15.303 0.000202866 16.3507C0.00820305 18.3889 1.45609 20.0319 3.3277 20.4973V21.8571C3.3277 22.5672 3.90334 23.1428 4.61342 23.1428C5.32351 23.1428 5.89913 22.5672 5.89913 21.8571V20.7022C10.0242 20.8683 13.9751 20.868 18.0999 20.7008V21.8571C18.0999 22.5672 18.6756 23.1428 19.3857 23.1428C20.0959 23.1428 20.6714 22.5672 20.6714 21.8571V20.4956C22.5435 20.0305 23.9918 18.3874 23.9998 16.3489C24.0039 15.3012 23.9463 13.804 23.7571 12.7248C23.4806 11.1487 22.441 9.99145 21.1351 9.33333C21.084 8.98482 21.0305 8.63226 20.9745 8.28155C20.6923 6.51515 20.3294 4.66484 19.8634 3.55713C19.2591 2.12032 17.8937 1.18141 16.3676 1.04434C13.588 0.794708 10.4123 0.794708 7.63275 1.04434C6.10659 1.18141 4.74129 2.12032 4.13697 3.55713C3.6709 4.66523 3.30783 6.51596 3.02556 8.28282C2.9695 8.63377 2.9159 8.98655 2.86481 9.33527ZM18.4317 8.66512C14.039 8.21583 9.96086 8.21636 5.56827 8.66673C5.85619 6.86848 6.18099 5.32979 6.50727 4.55408C6.72165 4.04438 7.22947 3.66234 7.86276 3.60546C10.4893 3.36957 13.511 3.36957 16.1376 3.60546C16.7709 3.66234 17.2788 4.04438 17.4931 4.55408C17.8191 5.32934 18.1438 6.8674 18.4317 8.66512ZM8.24691 14.5775C8.24691 15.1692 7.76722 15.6489 7.17549 15.6489H5.24582C4.65408 15.6489 4.17439 15.1692 4.17439 14.5775C4.17439 13.9857 4.65408 13.506 5.24582 13.506H7.17549C7.76722 13.506 8.24691 13.9857 8.24691 14.5775ZM19.825 14.5775C19.825 15.1692 19.3454 15.6489 18.7536 15.6489H16.8239C16.2322 15.6489 15.7525 15.1692 15.7525 14.5775C15.7525 13.9857 16.2322 13.506 16.8239 13.506H18.7536C19.3454 13.506 19.825 13.9857 19.825 14.5775Z" fill="var(--color-white)">
+                </path>
+              </svg>
+            </div>
+            <p class="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+              Your car payment is due
+            </p>
+            <p class="font-normal text-gray-300 text-[16px] leading-[1.3]">
+              Your normal payment date arrives.
+            </p>
+          </div>
+          <div class="self-center w-px h-10 my-2 bg-white/15 md:self-start md:flex-1 md:h-px md:w-auto md:my-0 md:mt-8 md:mx-4 lg:mt-10">
+          </div>
+          <div class="flex flex-col items-center text-center md:flex-1">
+            <div class="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
+              <svg fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M12 0C15.7192 0 18.7502 1.04894 20.8506 3.14941C22.9511 5.24988 24 8.28084 24 12C24 15.7192 22.9511 18.7502 20.8506 20.8506C18.7502 22.9511 15.7192 24 12 24C8.28084 24 5.24988 22.9511 3.14941 20.8506C1.04894 18.7502 0 15.7192 0 12C0 8.28082 1.04894 5.24988 3.14941 3.14941C5.24988 1.04894 8.28082 0 12 0ZM17.6582 7.24707C17.2426 6.88371 16.6107 6.92628 16.2471 7.3418L9.95117 14.5371L7.70703 12.293C7.31651 11.9024 6.68349 11.9025 6.29297 12.293C5.90246 12.6835 5.90245 13.3165 6.29297 13.707L9.29297 16.707C9.48866 16.9027 9.75661 17.0082 10.0332 16.999C10.3098 16.9898 10.5707 16.8665 10.7529 16.6582L17.7529 8.6582C18.1163 8.24256 18.0737 7.61065 17.6582 7.24707Z" fill="var(--color-white)" fill-rule="evenodd">
+                </path>
+              </svg>
+            </div>
+            <p class="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+              Split Pay pays in full
+            </p>
+            <p class="font-normal text-gray-300 text-[16px] leading-[1.3]">
+              We cover the full amount to your lender on time.
+            </p>
+          </div>
+          <div class="self-center w-px h-10 my-2 bg-white/15 md:self-start md:flex-1 md:h-px md:w-auto md:my-0 md:mt-8 md:mx-4 lg:mt-10">
+          </div>
+          <div class="flex flex-col items-center text-center md:flex-1">
+            <div class="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
+              <svg fill="none" height="32" viewBox="0 0 36 36" width="32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.93551 29.2349C-1.72478 22.1675 -1.28037 11.8233 5.27101 5.27196C11.8224 -1.27945 22.1672 -1.72458 29.2346 3.93578L3.93551 29.2349ZM32.063 6.76421C37.7234 13.8316 37.2783 24.1764 30.7269 30.7278C24.1755 37.2792 13.8313 37.7236 6.76394 32.0633L32.063 6.76421Z" fill="var(--color-white)">
+                </path>
+              </svg>
+            </div>
+            <p class="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+              You pay in 2 installments
+            </p>
+            <p class="font-normal text-gray-300 text-[16px] leading-[1.3]">
+              Half now. Half two weeks later.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 lg:mt-20 relative">
+      <div class="relative rounded-4xl overflow-hidden h-100 md:h-110.5 lg:h-200">
+        <img alt="family reading" loading="lazy" class="object-cover" data-fill sizes="(min-width: 1296px) 1248px, 100vw" src="/_next/static/media/bg_image.png"/>
+      </div>
+      <div class="relative z-10 -mt-10 lg:-mt-20 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8  mx-4 md:mx-10">
+        <div class="rounded-4xl p-7 lg:p-10 bg-black/50 border border-white/5 shadow-[0_12px_24px_0_rgba(0,0,0,0.50)] backdrop-blur-[5px] text-white">
+          <div class="flex justify-center mb-4 lg:mb-6">
+            <div class="flex items-center justify-center rounded-full w-16 h-16 bg-white/[0.06] ring-1 ring-inset ring-white/10 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M18.6645 1.28571C18.6645 0.575633 18.0888 0 17.3787 0C16.6686 0 16.0929 0.575633 16.0929 1.28571V2.08598C14.5451 2.55682 13.5769 3.78367 13.5769 5.24441C13.5769 5.78697 13.696 6.30177 13.9683 6.75662C14.2395 7.20958 14.6123 7.51891 14.9876 7.73174C15.6314 8.09685 16.4226 8.24211 16.9624 8.34122L17.0576 8.35877C17.7257 8.48265 18.0888 8.56757 18.3115 8.69823C18.3526 8.72237 18.3749 8.74087 18.3857 8.75122C18.3957 8.76058 18.3991 8.76595 18.401 8.76931C18.4029 8.77265 18.4104 8.78606 18.4181 8.81751C18.4243 8.84256 18.4313 8.88211 18.4342 8.93971C18.4205 8.95659 18.3969 8.98173 18.3579 9.01455C18.2158 9.13469 17.9553 9.27336 17.5937 9.3529C16.8628 9.51363 16.0321 9.37339 15.4448 8.83747C14.9203 8.35882 14.1071 8.39599 13.6284 8.92049C13.1498 9.44499 13.1869 10.2582 13.7114 10.7369C14.4282 11.391 15.2629 11.7541 16.0929 11.9036V12.5687C16.0929 13.2788 16.6686 13.8544 17.3787 13.8544C18.0888 13.8544 18.6645 13.2788 18.6645 12.5687V11.7209C19.1606 11.5541 19.6287 11.3072 20.0175 10.9787C20.5366 10.5401 21.007 9.86549 21.007 8.99859C21.007 8.45251 20.8905 7.93551 20.6242 7.47732C20.3582 7.0195 19.9899 6.70167 19.6128 6.48039C18.9538 6.09367 18.1449 5.94451 17.5977 5.84359L17.5263 5.83042C16.8503 5.70507 16.4842 5.62431 16.256 5.49492C16.2143 5.47126 16.1927 5.45362 16.1831 5.44481C16.1784 5.44046 16.1762 5.43782 16.1754 5.43691C16.1754 5.43681 16.1735 5.43396 16.1718 5.42997C16.1702 5.42592 16.1672 5.41793 16.1639 5.40487C16.1573 5.37886 16.1483 5.32817 16.1483 5.24441C16.1483 5.10387 16.2005 4.95259 16.3379 4.81752C16.4747 4.68307 16.7581 4.50759 17.2966 4.46134C17.7528 4.42215 18.1248 4.55654 18.3994 4.71494C18.5367 4.79424 18.6417 4.87539 18.7078 4.93226C18.7406 4.96029 18.7622 4.98111 18.7721 4.99099L18.7769 4.9957C19.2528 5.51122 20.0559 5.55043 20.58 5.08042C21.1085 4.60627 21.1526 3.79339 20.6784 3.26482L19.7469 4.10047C20.6784 3.26482 20.6787 3.26523 20.6784 3.26482L20.6769 3.26314L20.6753 3.26136L20.6719 3.2575L20.6637 3.24855L20.6426 3.22599C20.6263 3.20897 20.6059 3.18799 20.5814 3.16366C20.5323 3.11513 20.4663 3.05282 20.3837 2.98191C20.2197 2.84091 19.985 2.66105 19.6846 2.48777C19.4055 2.32668 19.0629 2.16766 18.6645 2.05315V1.28571ZM18.7769 4.9957L18.7721 4.99099L18.7695 4.98768L18.7671 4.98499L18.7658 4.9835C18.7694 4.98763 18.7731 4.99166 18.7769 4.9957ZM18.7644 4.98192C18.7646 4.98219 18.7654 4.98322 18.7658 4.9835C18.7654 4.9831 18.7644 4.98192 19.7213 4.12337L18.7644 4.98192ZM20.0762 16.202L15.4557 17.2985L12.7275 17.9769C12.0542 18.1443 11.3519 18.1591 10.6721 18.0204L5.95241 17.0572C5.44966 16.9545 5.12451 16.4647 5.22516 15.9616C5.32581 15.4584 5.81434 15.1314 6.31788 15.2301L8.40778 15.6396L8.48002 15.6524C9.58306 15.8478 10.6345 15.1084 10.8237 14.0043C11.0016 12.9664 10.3524 11.9659 9.33206 11.7055L5.38761 10.6988C4.50166 10.4726 3.58526 10.3897 2.6731 10.453L0.797781 10.5832C0.348513 10.6144 0 10.9879 0 11.4383V20.4372C0 20.8005 0.228792 21.1241 0.57108 21.2453L6.25565 23.2579C9.24207 24.3151 12.5126 24.2405 15.4476 23.0479L21.4814 20.5965C22.5605 20.1579 23.1454 18.9855 22.8466 17.8598C22.525 16.6476 21.2964 15.9124 20.0762 16.202Z" fill="var(--color-white)" fill-rule="evenodd">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+            Paid in full
+          </p>
+          <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+            We send your lender the full payment on your due date. Every time.
+          </p>
+        </div>
+        <div class="rounded-4xl p-7 lg:p-10 bg-black/50 border border-white/5 shadow-[0_12px_24px_0_rgba(0,0,0,0.50)] backdrop-blur-[5px] text-white">
+          <div class="flex justify-center mb-4 lg:mb-6">
+            <div class="flex items-center justify-center rounded-full w-16 h-16 bg-white/[0.06] ring-1 ring-inset ring-white/10 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M3.14759 3.1476C5.24552 1.04968 8.27497 0 11.9977 0C15.7205 0 18.7499 1.04968 20.8479 3.1476C22.9458 5.24552 23.9955 8.27496 23.9955 11.9977C23.9955 15.7205 22.9458 18.75 20.8479 20.8479C18.7499 22.9459 15.7205 23.9955 11.9977 23.9955C8.27497 23.9955 5.24552 22.9459 3.14759 20.8479C1.04968 18.75 0 15.7205 0 11.9977C0 8.27496 1.04968 5.24552 3.14759 3.1476ZM6.07031 9.08412C6.07031 8.49238 6.55001 8.01269 7.14174 8.01269H16.8123C17.404 8.01269 17.8837 8.49238 17.8837 9.08412C17.8837 9.67586 17.404 10.1555 16.8123 10.1555H7.14174C6.55001 10.1555 6.07031 9.67586 6.07031 9.08412ZM6.07031 14.9021C6.07031 14.3103 6.55001 13.8306 7.14174 13.8306H16.8123C17.404 13.8306 17.8837 14.3103 17.8837 14.9021C17.8837 15.4938 17.404 15.9735 16.8123 15.9735H7.14174C6.55001 15.9735 6.07031 15.4938 6.07031 14.9021Z" fill="var(--color-white)" fill-rule="evenodd">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+            Terms don’t move
+          </p>
+          <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+            Same APR. Same length. Same payoff date. We just shift the timing.
+          </p>
+        </div>
+        <div class="rounded-4xl p-7 lg:p-10 bg-black/50 border border-white/5 shadow-[0_12px_24px_0_rgba(0,0,0,0.50)] backdrop-blur-[5px] text-white">
+          <div class="flex justify-center mb-4 lg:mb-6">
+            <div class="flex items-center justify-center rounded-full w-16 h-16 bg-white/[0.06] ring-1 ring-inset ring-white/10 [filter:drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+              <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M8.575 1.714a1.286 1.286 0 1 0-2.572 0V3.09C3.242 3.417 1.048 5.588.731 8.312c-.403 3.46-.403 6.416 0 9.876.333 2.866 2.745 5.12 5.71 5.258 1.777.083 3.591.125 5.559.125 1.967 0 3.782-.042 5.559-.125 2.964-.137 5.376-2.392 5.71-5.258.403-3.46.403-6.416 0-9.876-.317-2.723-2.511-4.895-5.272-5.222V1.714a1.286 1.286 0 1 0-2.572 0v1.26C14.322 2.945 13.19 2.93 12 2.93c-1.19 0-2.322.015-3.425.046v-1.26Zm4.497 7.22a1.071 1.071 0 0 0-2.143 0v.34a3.513 3.513 0 0 0-1.324.538c-.727.504-1.11 1.273-1.11 2.16 0 .887.383 1.656 1.11 2.16.673.467 1.543.641 2.456.641.686 0 1.011.139 1.143.237.077.058.157.146.157.422 0 .22-.067.315-.188.4-.175.12-.551.258-1.234.258-1.118 0-1.347-.34-1.384-.43a1.071 1.071 0 0 0-1.975.833c.419.992 1.33 1.478 2.349 1.657v.278a1.071 1.071 0 0 0 2.143 0v-.3c.486-.097.937-.268 1.323-.536.726-.504 1.109-1.273 1.109-2.16 0-.831-.308-1.609-1.017-2.139-.656-.49-1.516-.663-2.426-.663-.683 0-1.06-.137-1.235-.258-.12-.084-.187-.18-.187-.4 0-.22.066-.316.187-.4.176-.121.552-.258 1.235-.258 1.117 0 1.347.34 1.384.43a1.071 1.071 0 0 0 1.975-.833c-.419-.992-1.33-1.478-2.348-1.657v-.32Z" fill="var(--color-white)" fill-rule="evenodd">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <p class="font-medium text-center text-[18px] md:text-[24px] mb-4 leading-[130%]">
+            One on-time payment
+          </p>
+          <p class="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
+            Your lender sees a single on-time payment. No flag. No asterisk.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 lg:mt-24">
+      <div class="relative">
+        <div class="grid grid-cols-2 gap-x-10 gap-y-12 lg:hidden">
+          <div aria-label="Chase" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/chase.0ah-hd76qchjw.svg"/>
+          </div>
+          <div aria-label="Toyota" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/toyota.0xfi8jb0j8j4x.svg"/>
+          </div>
+          <div aria-label="GM" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/GM.2x7w6_c8krzqm.svg"/>
+          </div>
+          <div aria-label="Ford" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/ford.1oifx4cfpw9_-.svg"/>
+          </div>
+          <div aria-label="Honda" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/honda.1yc08fk84onnq.svg"/>
+          </div>
+          <div aria-label="Kia" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/kia.1eb_0wsh60wag.svg"/>
+          </div>
+          <div aria-label="Hyundai" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/hundai.2-n1vyb-l23xx.svg"/>
+          </div>
+          <div aria-label="Ally" class="flex items-center justify-center h-14" role="img">
+            <img alt="logo" src="/_next/static/media/ally.27sadtq1sqliq.svg"/>
+          </div>
+        </div>
+        <div class="hidden lg:block mx-[calc(50%-50vw)]">
+          <div class="max-w-480 mx-auto mask-[linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]">
+            <div class="flex items-center justify-between gap-x-6 px-10">
+              <div aria-label="Chase" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/chase.0ah-hd76qchjw.svg"/>
+              </div>
+              <div aria-label="Toyota" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/toyota.0xfi8jb0j8j4x.svg"/>
+              </div>
+              <div aria-label="GM" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/GM.2x7w6_c8krzqm.svg"/>
+              </div>
+              <div aria-label="Ford" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/ford.1oifx4cfpw9_-.svg"/>
+              </div>
+              <div aria-label="Honda" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/honda.1yc08fk84onnq.svg"/>
+              </div>
+              <div aria-label="Kia" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/kia.1eb_0wsh60wag.svg"/>
+              </div>
+              <div aria-label="Hyundai" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/hundai.2-n1vyb-l23xx.svg"/>
+              </div>
+              <div aria-label="Ally" class="flex items-center justify-center h-14 w-39 " role="img">
+                <img alt="logo" src="/_next/static/media/ally.27sadtq1sqliq.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="py-14 lg:py-24">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        Three steps.
+        <br/>
+        About three
+        <br class="md:hidden"/>
+        minutes.
+      </h2>
+    </div>
+    <div class="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-0 lg:-ml-6 lg:-mr-6">
+      <div>
+        <img alt="app view: how much is your car payment" loading="lazy" width="1296" height="1833" class="mx-auto mb-6 lg:mb-8 max-w-full w-74 lg:w-108 h-auto" sizes="(min-width: 1024px) 432px, 296px" src="/_next/static/media/left_phone.png"/>
+        <p class="font-medium text-[18px] text-center mb-2">
+          Add your monthly car payment
+        </p>
+      </div>
+      <div>
+        <img alt="app view: connect your accounts" loading="lazy" width="1296" height="1833" class="mx-auto mb-6 lg:mb-8 max-w-full w-74 lg:w-108 h-auto" sizes="(min-width: 1024px) 432px, 296px" src="/_next/static/media/central_phone.png"/>
+        <p class="font-medium text-[18px] text-center mb-2">
+          Connect your accounts
+        </p>
+      </div>
+      <div>
+        <img alt="app view: you are approved" loading="lazy" width="1296" height="1833" class="mx-auto mb-6 lg:mb-8 max-w-full w-74 lg:w-108 h-auto" sizes="(min-width: 1024px) 432px, 296px" src="/_next/static/media/right_phone.png"/>
+        <p class="font-medium text-[18px] text-center mb-2">
+          Get approved
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

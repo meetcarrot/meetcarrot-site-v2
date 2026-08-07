@@ -28,13 +28,7 @@ const DIVIDER_THEME: Record<TestimonialTheme, string> = {
 const CARDS_PER_COLUMN = 2;
 const COPIES = [0, 1, 2];
 
-const COLUMNS: Testimonial[][] = Array.from(
-  { length: Math.ceil(TESTIMONIALS.length / CARDS_PER_COLUMN) },
-  (_, index) =>
-    TESTIMONIALS.slice(index * CARDS_PER_COLUMN, index * CARDS_PER_COLUMN + CARDS_PER_COLUMN),
-);
-
-const PHOTOS = [
+const DEFAULT_PHOTOS = [
   "/images/img-1.png",
   "/images/img-2.png",
   "/images/img-3.png",
@@ -50,7 +44,24 @@ const PHOTOS = [
 // cards, 1 = between them, 2 = below both). Transcribed from the live markup,
 // where the position varies per column — that is what staggers the photos into
 // a mosaic instead of a flat bottom row. Set every entry to 2 to un-stagger.
-const PHOTO_SLOT = [2, 0, 1, 0, 2, 0, 2, 0, 1];
+const DEFAULT_PHOTO_SLOT = [2, 0, 1, 0, 2, 0, 2, 0, 1];
+
+function toColumns(testimonials: Testimonial[]): Testimonial[][] {
+  return Array.from(
+    { length: Math.ceil(testimonials.length / CARDS_PER_COLUMN) },
+    (_, index) =>
+      testimonials.slice(index * CARDS_PER_COLUMN, index * CARDS_PER_COLUMN + CARDS_PER_COLUMN),
+  );
+}
+
+export interface TestimonialsProps {
+  /** Defaults to the homepage set; product pages pass their own. */
+  testimonials?: Testimonial[];
+  /** One photo per column; wraps if shorter than the column count. */
+  photos?: string[];
+  /** Per-column photo slot (0/1/2); wraps if shorter. */
+  photoSlots?: number[];
+}
 
 const RAIL_BASE =
   "flex py-8 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden scroll-smooth gap-6 lg:gap-8 min-[1920px]:px-4";
@@ -76,13 +87,21 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   );
 }
 
-function TestimonialColumn({ columnIndex }: { columnIndex: number }) {
-  const children: ReactNode[] = COLUMNS[columnIndex].map((testimonial) => (
+function TestimonialColumn({
+  column,
+  photo,
+  photoSlot,
+}: {
+  column: Testimonial[];
+  photo: string;
+  photoSlot: number;
+}) {
+  const children: ReactNode[] = column.map((testimonial) => (
     <TestimonialCard key={testimonial.name} testimonial={testimonial} />
   ));
 
   children.splice(
-    PHOTO_SLOT[columnIndex],
+    photoSlot,
     0,
     <div
       key="photo"
@@ -92,7 +111,7 @@ function TestimonialColumn({ columnIndex }: { columnIndex: number }) {
           stretching to the flex-1 box, and these are decorative. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={PHOTOS[columnIndex]}
+        src={photo}
         alt=""
         draggable={false}
         loading="lazy"
@@ -112,7 +131,12 @@ function TestimonialColumn({ columnIndex }: { columnIndex: number }) {
   );
 }
 
-export function Testimonials() {
+export function Testimonials({
+  testimonials = TESTIMONIALS,
+  photos = DEFAULT_PHOTOS,
+  photoSlots = DEFAULT_PHOTO_SLOT,
+}: TestimonialsProps = {}) {
+  const columns = toColumns(testimonials);
   const railRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const drag = useRef({ active: false, startX: 0, startScroll: 0 });
@@ -209,8 +233,13 @@ export function Testimonials() {
             onPointerCancel={handlePointerEnd}
           >
             {COPIES.map((copy) =>
-              COLUMNS.map((_column, columnIndex) => (
-                <TestimonialColumn key={`${copy}-${columnIndex}`} columnIndex={columnIndex} />
+              columns.map((column, columnIndex) => (
+                <TestimonialColumn
+                  key={`${copy}-${columnIndex}`}
+                  column={column}
+                  photo={photos[columnIndex % photos.length]}
+                  photoSlot={photoSlots[columnIndex % photoSlots.length]}
+                />
               )),
             )}
           </div>

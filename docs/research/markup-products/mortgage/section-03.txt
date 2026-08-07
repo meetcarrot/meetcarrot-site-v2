@@ -1,0 +1,67 @@
+<section class="py-14 lg:py-24">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        See what your mortgage payment looks like, split.
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 leading-none lg:grid-cols-2 gap-8 mt-14 lg:mt-20">
+      <div class="bg-white rounded-4xl py-8 px-6 md:py-10 md:px-10 lg:py-10 lg:px-14 flex flex-col items-center">
+        <p class="font-medium text-[18px] md:text-[24px] mb-6 md:mb-12 lg:mb-14 text-center">
+          Your monthly mortgage (before)
+        </p>
+        <p class="font-poly-sans-wide font-semibold leading-none! text-[48px] md:text-[72px] lg:text-[80px] mb-8 md:mb-12 lg:mb-14">
+          $2,000
+        </p>
+        <input aria-label="Your monthly mortgage (before)" class="w-full h-3 lg:h-4 rounded-full appearance-none cursor-pointer mt-auto [&amp;::-webkit-slider-runnable-track]:h-3 lg:[&amp;::-webkit-slider-runnable-track]:h-4 [&amp;::-webkit-slider-runnable-track]:rounded-full [&amp;::-webkit-slider-thumb]:appearance-none [&amp;::-webkit-slider-thumb]:w-6 [&amp;::-webkit-slider-thumb]:h-6 lg:[&amp;::-webkit-slider-thumb]:w-8 lg:[&amp;::-webkit-slider-thumb]:h-8 [&amp;::-webkit-slider-thumb]:rounded-full [&amp;::-webkit-slider-thumb]:bg-orange-100 [&amp;::-webkit-slider-thumb]:border-4 lg:[&amp;::-webkit-slider-thumb]:border-5 [&amp;::-webkit-slider-thumb]:border-white [&amp;::-webkit-slider-thumb]:-mt-1.5 lg:[&amp;::-webkit-slider-thumb]:-mt-2 [&amp;::-moz-range-track]:h-3 lg:[&amp;::-moz-range-track]:h-4 [&amp;::-moz-range-track]:rounded-full [&amp;::-moz-range-track]:bg-gray-200 [&amp;::-moz-range-progress]:h-3 lg:[&amp;::-moz-range-progress]:h-4 [&amp;::-moz-range-progress]:rounded-full [&amp;::-moz-range-progress]:bg-orange-100 [&amp;::-moz-range-thumb]:appearance-none [&amp;::-moz-range-thumb]:border-0 [&amp;::-moz-range-thumb]:w-6 [&amp;::-moz-range-thumb]:h-6 lg:[&amp;::-moz-range-thumb]:w-8 lg:[&amp;::-moz-range-thumb]:h-8 [&amp;::-moz-range-thumb]:rounded-full [&amp;::-moz-range-thumb]:bg-orange-100 [&amp;::-moz-range-thumb]:ring-4 lg:[&amp;::-moz-range-thumb]:ring-5 [&amp;::-moz-range-thumb]:ring-white" max="5000" min="100" step="50" style="background:linear-gradient(to right, var(--color-orange-100) 0%, var(--color-orange-100) 38.775510204081634%, var(--color-gray-200) 38.775510204081634%, var(--color-gray-200) 100%)" type="range" value="2000"/>
+      </div>
+      <div class="bg-white rounded-4xl p-7 lg:p-10 flex flex-col">
+        <p class="font-medium text-[18px] md:text-[24px] mb-6 md:mb-8 text-center">
+          Your monthly mortgage (after)
+        </p>
+        <div class="grid grid-cols-1 min-[500px]:grid-cols-2 gap-3 lg:gap-4 mb-8">
+          <div class="bg-gray-100 rounded-2xl p-6 text-center">
+            <p class="font-normal text-[16px] text-gray-600 mb-5">
+              Monthly due date
+            </p>
+            <p class="font-semibold text-[32px]">
+              $1,000.00
+              <sup>
+                *
+              </sup>
+            </p>
+          </div>
+          <div class="bg-gray-100 rounded-2xl p-6 text-center">
+            <p class="font-normal text-[16px] text-gray-600 mb-5">
+              14 days later
+            </p>
+            <p class="font-semibold text-[32px]">
+              $1,000.00
+            </p>
+          </div>
+        </div>
+        <p class="font-normal text-[14px] text-gray-400 text-center mt-auto">
+          * Split Pay costs
+          <!-- -->
+            $0
+            <!-- -->
+              +
+              <!-- -->
+                <!-- -->
+                  $0.00
+                  <!-- -->
+                    (
+                    <!-- -->
+                      0%
+                      <!-- -->
+                        of
+                        <!-- -->
+                          <!-- -->
+                            your monthly mortgage
+                            <!-- -->
+                              )
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>

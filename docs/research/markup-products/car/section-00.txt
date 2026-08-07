@@ -1,0 +1,110 @@
+<section class="bg-golden pt-18 mb-18 md:pt-28 md:mb-8" data-header-theme="golden">
+  <div class="mx-auto px-6 container lg:max-w-324 pt-12">
+    <div class="block justify-between gap-6 lg:flex">
+      <div class="w-full lg:w-120 shrink-0 lg:pt-6 mx-auto">
+        <div class="illustration-component flex items-center justify-center lg:w-50 h-26 lg:h-30">
+        </div>
+        <h1 class="leading-[115%]! font-poly-sans-wide text-center spacing lg:text-left text-[40px] md:text-[56px] lg:text-[64px] mt-6 md:mt-8 lg:mt-10">
+          One car payment,
+          <br class="hidden lg:block"/>
+          two halves.
+        </h1>
+        <p class="font-normal mt-1 md:mt-1.25 mb-6 text-center lg:text-left text-[16px] lg:text-[18px] leading-[1.6] text-gray-400">
+          Your lender gets paid in full on day one. You pay us back in
+          <!-- -->
+            <br class="hidden lg:block"/>
+            two halves, two weeks apart. No new debt, no interest.
+          </p>
+          <div class="w-70 max-w-full mx-auto lg:mx-0 shadow-[0_12px_24px_0_rgba(0, 0, 0, 0.10)]">
+            <button class="px-4 md:px-8 h-12 rounded-3xl w-full relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-gray-100 bg-orange-100 hover:bg-orange-100 active:bg-orange-300 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)]" type="button">
+              <div class="relative z-10">
+                <div class="">
+                  Get started
+                </div>
+              </div>
+            </button>
+          </div>
+          <ul class="flex flex-wrap gap-2 md:gap-6 justify-center my-8 md:my-10 lg:justify-start lg:mt-16 lg:mb-14">
+            <li class="flex shrink-0 items-center gap-1 md:gap-2">
+              <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M12 0C15.7192 0 18.7502 1.04894 20.8506 3.14941C22.9511 5.24988 24 8.28084 24 12C24 15.7192 22.9511 18.7502 20.8506 20.8506C18.7502 22.9511 15.7192 24 12 24C8.28084 24 5.24988 22.9511 3.14941 20.8506C1.04894 18.7502 0 15.7192 0 12C0 8.28082 1.04894 5.24988 3.14941 3.14941C5.24988 1.04894 8.28082 0 12 0ZM17.6582 7.24707C17.2426 6.88371 16.6107 6.92628 16.2471 7.3418L9.95117 14.5371L7.70703 12.293C7.31651 11.9024 6.68349 11.9025 6.29297 12.293C5.90246 12.6835 5.90245 13.3165 6.29297 13.707L9.29297 16.707C9.48866 16.9027 9.75661 17.0082 10.0332 16.999C10.3098 16.9898 10.5707 16.8665 10.7529 16.6582L17.7529 8.6582C18.1163 8.24256 18.0737 7.61065 17.6582 7.24707Z" fill="var(--color-black)" fill-rule="evenodd">
+                </path>
+              </svg>
+              <p class="font-normal text-[12px] md:text-[14px] leading-[130%]">
+                Zero late fees
+              </p>
+            </li>
+            <li class="flex shrink-0 items-center gap-1 md:gap-2">
+              <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M12 0C15.7192 0 18.7502 1.04894 20.8506 3.14941C22.9511 5.24988 24 8.28084 24 12C24 15.7192 22.9511 18.7502 20.8506 20.8506C18.7502 22.9511 15.7192 24 12 24C8.28084 24 5.24988 22.9511 3.14941 20.8506C1.04894 18.7502 0 15.7192 0 12C0 8.28082 1.04894 5.24988 3.14941 3.14941C5.24988 1.04894 8.28082 0 12 0ZM17.6582 7.24707C17.2426 6.88371 16.6107 6.92628 16.2471 7.3418L9.95117 14.5371L7.70703 12.293C7.31651 11.9024 6.68349 11.9025 6.29297 12.293C5.90246 12.6835 5.90245 13.3165 6.29297 13.707L9.29297 16.707C9.48866 16.9027 9.75661 17.0082 10.0332 16.999C10.3098 16.9898 10.5707 16.8665 10.7529 16.6582L17.7529 8.6582C18.1163 8.24256 18.0737 7.61065 17.6582 7.24707Z" fill="var(--color-black)" fill-rule="evenodd">
+                </path>
+              </svg>
+              <p class="font-normal text-[12px] md:text-[14px] leading-[130%]">
+                No credit check
+              </p>
+            </li>
+            <li class="flex shrink-0 items-center gap-1 md:gap-2">
+              <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M12 0C15.7192 0 18.7502 1.04894 20.8506 3.14941C22.9511 5.24988 24 8.28084 24 12C24 15.7192 22.9511 18.7502 20.8506 20.8506C18.7502 22.9511 15.7192 24 12 24C8.28084 24 5.24988 22.9511 3.14941 20.8506C1.04894 18.7502 0 15.7192 0 12C0 8.28082 1.04894 5.24988 3.14941 3.14941C5.24988 1.04894 8.28082 0 12 0ZM17.6582 7.24707C17.2426 6.88371 16.6107 6.92628 16.2471 7.3418L9.95117 14.5371L7.70703 12.293C7.31651 11.9024 6.68349 11.9025 6.29297 12.293C5.90246 12.6835 5.90245 13.3165 6.29297 13.707L9.29297 16.707C9.48866 16.9027 9.75661 17.0082 10.0332 16.999C10.3098 16.9898 10.5707 16.8665 10.7529 16.6582L17.7529 8.6582C18.1163 8.24256 18.0737 7.61065 17.6582 7.24707Z" fill="var(--color-black)" fill-rule="evenodd">
+                </path>
+              </svg>
+              <p class="font-normal text-[12px] md:text-[14px] leading-[130%]">
+                Cancel anytime
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:w-[97%] mx-auto h-90 md:h-100 lg:w-156 lg:h-180 lg:mr-4 xl:mr-auto relative">
+          <div class="flex shrink-0 items-center gap-2 bg-white/85 w-66 h-17 md:w-74 md:h-19.5 px-4.5 md:px-5 rounded-[14px] md:rounded-2xl shadow-[0_10.378px_20.757px_0_rgba(0,0,0,0.10)] md:shadow-[0_12px_24px_0_rgba(0,0,0,0.10)] absolute top-6 md:top-12 -left-4 md:-left-6 z-10">
+            <div class="flex items-center justify-center bg-black rounded-full w-10 h-10 shrink-0">
+              <svg fill="none" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.4853 3.51481C18.2349 1.26432 15.1826 9.43497e-07 12 0C8.81743 -9.43496e-07 5.76517 1.26431 3.51473 3.51481C1.26429 5.7653 6.1018e-07 8.81763 0 12.0003C-6.10179e-07 15.183 1.26428 18.2353 3.51473 20.4858L20.4853 3.51481Z" fill="var(--color-white)">
+                </path>
+                <path d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25Z" stroke="var(--color-white)" stroke-width="2.5">
+                </path>
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-baseline justify-between gap-2">
+                <p class="font-semibold text-no-wrap shrink-0 text-[14px] md:text-[16px] leading-[140%]">
+                  1st split payment
+                </p>
+                <p class="font-semibold text-[14px] md:text-[16px] leading-[140%]">
+                  $500
+                </p>
+              </div>
+              <p class="font-normal text-[12px] md:text-[14px] leading-[130%] opacity-75 text-gray-400">
+                Monthly due date
+              </p>
+            </div>
+          </div>
+          <div class="flex shrink-0 items-center gap-2 bg-white/85 w-66 h-17 md:w-74 md:h-19.5 px-4.5 md:px-5 rounded-[14px] md:rounded-2xl shadow-[0_10.378px_20.757px_0_rgba(0,0,0,0.10)] md:shadow-[0_12px_24px_0_rgba(0,0,0,0.10)] absolute -bottom-4 md:bottom-2 md:-right-6 -right-4 z-10">
+            <div class="flex items-center justify-center bg-black rounded-full w-10 h-10 shrink-0">
+              <svg fill="none" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.51466 20.4866C5.76511 22.7371 8.81736 24.0014 12 24.0014C15.1826 24.0014 18.2348 22.7371 20.4853 20.4866C22.7357 18.2361 24 15.1838 24 12.0011C24 8.81845 22.7357 5.76612 20.4853 3.51563L3.51466 20.4866Z" fill="var(--color-white)">
+                </path>
+                <path d="M21.5 12.0014C21.5 6.75473 17.2467 2.50143 12 2.50143C6.75329 2.50143 2.5 6.75473 2.5 12.0014C2.5 17.2481 6.75329 21.5014 12 21.5014L12 24.0014C5.37255 24.0014 5.79387e-07 18.6289 0 12.0014C-6.39811e-08 5.37402 5.37258 0.00143491 12 0.00143433L12.3096 0.00534058C18.7939 0.16954 24 5.47721 24 12.0011L23.9961 12.311C23.8319 18.7953 18.5239 24.0014 12 24.0014L12 21.5014C17.2467 21.5014 21.5 17.2481 21.5 12.0014Z" fill="var(--color-white)">
+                </path>
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-baseline justify-between gap-2">
+                <p class="font-semibold text-no-wrap shrink-0 text-[14px] md:text-[16px] leading-[140%]">
+                  2nd split payment
+                </p>
+                <p class="font-semibold text-[14px] md:text-[16px] leading-[140%]">
+                  $500
+                </p>
+              </div>
+              <p class="font-normal text-[12px] md:text-[14px] leading-[130%] opacity-75 text-gray-400">
+                14 days later
+              </p>
+            </div>
+          </div>
+          <div class="absolute inset-0 -bottom-10 lg:-bottom-14 rounded-3xl overflow-hidden shadow-[0_12px_24px_0_rgba(0,0,0,0.10)]">
+            <img alt="family" class="object-cover " data-fill sizes="(min-width: 1024px) 900px, 100vw" src="/_next/static/media/bg_image.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

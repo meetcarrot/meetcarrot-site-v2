@@ -46,10 +46,12 @@ from-golden/10 to-golden mask-[linear-gradient(to_bottom,black,transparent)]
 ### Scroll-driven theme (measured)
 - **Trigger:** sections carry `data-header-theme`. On this page: the hero
   (`golden`) and the footer (`black`). Resolve which themed section currently
-  sits behind the header band and apply its theme. Implement with an
-  `IntersectionObserver` over `[data-header-theme]` using
-  `rootMargin: "0px 0px -100% 0px"` (i.e. intersect only the top strip), or an
-  equivalent scroll handler. Default theme when none matches: `light`.
+  sits behind the header band and apply its theme. Use a scroll listener that
+  picks the themed section whose rect spans the viewport's top edge. Do **not**
+  reach for an `IntersectionObserver` with `rootMargin: "0px 0px -100% 0px"` —
+  that collapses the root to a zero-height line, and a zero-area rect never
+  reports an intersection, so the header never leaves its default theme.
+  Default theme when none matches: `light`.
 - **State A — `golden` (scrollY 0):** blur layer `opacity-0`; "Get started" and
   "Sign In" labels `text-golden`; hamburger label `text-gray-100`.
 - **State B — default (measured at scrollY 1000):** blur layer `opacity-100`;
@@ -76,8 +78,20 @@ Use `Button` from `src/components/ui/button.tsx`:
 Full-screen overlay, `z-30`, `bg-black`, id `public-header-menu`, rendered when
 open. Locks `document.body` overflow. Contains, in order:
 
-1. A header row mirroring the site header (logo + "Sign In" + close button, the
-   hamburger rotated to a close state).
+1. **Its own header row** — not the page header's. Measured from the live site
+   with the menu open, the pills switch to a white treatment:
+   - Shared: `text-black bg-white hover:bg-white active:bg-gray-200
+     shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.04)]`
+     (the `light` variant of `ui/button.tsx`).
+   - "Get started" — `max-w-45 hidden lg:flex items-center justify-center`, h-12.
+   - "Sign In" — `h-10 md:h-12 max-w-20 md:max-w-30 whitespace-nowrap items-center justify-center`.
+   - Close — `h-10 w-10 md:h-12 md:w-12 rounded-full`, `text-gray-400`,
+     `aria-label="Close menu"`, wrapping a **true ✕** (`CloseIcon`, 14×14,
+     `viewBox="0 0 14 14"`, `stroke="black" stroke-width="2"`) inside the same
+     `rotate-90` span — not the hamburger rotated.
+   - Logo — `transition-colors duration-200 w-full text-white`.
+   At 1456px the row measures: Get started 1052..1232, Sign In 1248..1368,
+   close 1384..1432.
 2. `nav[aria-label="Menu"]` with classes
    `mx-auto px-6 container lg:max-w-324 min-h-0 flex-1 overflow-y-auto`.
 3. Inside: `p` "Which bill would you like to split?" —
@@ -103,9 +117,20 @@ Cards: Rent → `/rent` + `/lottie/product_rent_dark.json`; Mortgage →
 `/mortgage` + `product_mortgage_dark.json`; Car payment → `/car` +
 `product_carloan_dark.json`; "Other Bills" + a "Coming soon" label, not a link.
 
-Then a "Learn More" list of links: How it works `/how-it-works`, Safety &
-security `/safety-and-security`, About us `/about-us`, Help & FAQs `/help`,
-Terms of service `/terms`, Privacy policy `/privacy`.
+Then a "Learn More" list of **four** pill links — How it works `/how-it-works`,
+Safety & security `/safety-and-security`, About us `/about-us`, Help & FAQs
+`/help`. (The six-item list including Terms and Privacy belongs to the *footer*
+nav, `nav-02.txt`, not this menu.) Each pill:
+
+```
+relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center
+justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)]
+shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)]
+before:pointer-events-none before:absolute before:inset-0 before:rounded-full
+before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10
+transition-[filter] duration-200 ease-out hover:brightness-90 …
+```
+with a trailing `<ChevronRightIcon />` stroked `var(--color-gray-600)`.
 
 Read `docs/research/markup/nav-00.txt` for the exact remaining markup.
 

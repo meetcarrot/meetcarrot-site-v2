@@ -1,0 +1,62 @@
+<section class="pt-6 pb-14 lg:pb-24 bg-gray-100">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <div class="bg-white rounded-3xl lg:rounded-4xl shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] p-8 md:p-10 lg:p-12 flex flex-col">
+        <div class="flex flex-col items-center text-center">
+          <img alt="Vinod Khosla" class="w-18 h-18 rounded-full object-cover" src="/_next/static/media/VinodKhosla.29-sdx1-_2mhg.png"/>
+          <p class="mt-2 font-medium text-[18px] lg:text-[24px]">
+            Vinod Khosla
+          </p>
+          <p class="font-normal text-[16px] lg:text-[18px] text-gray-600">
+            Khosla Ventures
+          </p>
+        </div>
+        <p class="tracking-[-0.56px] mt-6 lg:mt-8 text-center text-[24px] md:text-[32px] lg:text-[40px] leading-[130%] font-medium">
+          Split Pay is turning a large, unavoidable monthly expense into a financial health tool.
+        </p>
+      </div>
+      <div class="bg-white rounded-3xl lg:rounded-4xl shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] p-8 md:p-10 lg:p-12 flex flex-col">
+        <div class="flex flex-col items-center text-center">
+          <img alt="Packy McCormick" class="w-18 h-18 rounded-full object-cover" src="/_next/static/media/PackyMcCormick.3osuocefxbyhj.png"/>
+          <p class="mt-2 font-medium text-[18px] lg:text-[24px]">
+            Packy McCormick
+          </p>
+          <p class="font-normal text-[16px] lg:text-[18px] text-gray-600">
+            Not Boring
+          </p>
+        </div>
+        <p class="tracking-[-0.56px] mt-6 lg:mt-8 text-center text-[24px] md:text-[32px] lg:text-[40px] leading-[130%] font-medium">
+          This is the right product at the right time. The team is thinking big about the housing problem in America.
+        </p>
+      </div>
+      <div class="bg-white rounded-3xl lg:rounded-4xl shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] p-8 md:p-10 lg:p-12 flex flex-col">
+        <div class="flex flex-col items-center text-center">
+          <img alt="Sam Lessin" class="w-18 h-18 rounded-full object-cover" src="/_next/static/media/SamLessin.3dqrgb6ogmvqo.png"/>
+          <p class="mt-2 font-medium text-[18px] lg:text-[24px]">
+            Sam Lessin
+          </p>
+          <p class="font-normal text-[16px] lg:text-[18px] text-gray-600">
+            Slow Ventures
+          </p>
+        </div>
+        <p class="tracking-[-0.56px] mt-6 lg:mt-8 text-center text-[24px] md:text-[32px] lg:text-[40px] leading-[130%] font-medium">
+          The dual-sided approach caught my attention: less friction for landlords, a path to homeownership for renters.
+        </p>
+      </div>
+      <div class="bg-white rounded-3xl lg:rounded-4xl shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] p-8 md:p-10 lg:p-12 flex flex-col">
+        <div class="flex flex-col items-center text-center">
+          <img alt="Vince Hankes" class="w-18 h-18 rounded-full object-cover" src="/_next/static/media/VinceHankes.3cgm9v2q7fc95.png"/>
+          <p class="mt-2 font-medium text-[18px] lg:text-[24px]">
+            Vince Hankes
+          </p>
+          <p class="font-normal text-[16px] lg:text-[18px] text-gray-600">
+            Thrive Capital
+          </p>
+        </div>
+        <p class="tracking-[-0.56px] mt-6 lg:mt-8 text-center text-[24px] md:text-[32px] lg:text-[40px] leading-[130%] font-medium">
+          The team has an incredible track record building exceptional consumer finance products.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

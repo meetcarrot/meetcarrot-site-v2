@@ -1,0 +1,32 @@
+<section class="py-14 lg:py-24 bg-gray-100">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        Backed by
+      </h2>
+    </div>
+    <div class="mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12 items-center justify-items-center">
+      <div aria-label="Thrive Capital" class="flex items-center justify-center h-8 lg:h-10 lg:col-span-3" role="img">
+        <img alt="Thrive Capital" class="max-h-full max-w-full" src="/_next/static/media/thriveCapital.0rh5x8ti1urv1.svg"/>
+      </div>
+      <div aria-label="Slow Ventures" class="flex items-center justify-center h-8 lg:h-10 lg:col-span-3" role="img">
+        <img alt="Slow Ventures" class="max-h-full max-w-full" src="/_next/static/media/slowVentures.2esee-0ufjz-v.svg"/>
+      </div>
+      <div aria-label="SciFi VC" class="flex items-center justify-center h-8 lg:h-10 lg:col-span-3" role="img">
+        <img alt="SciFi VC" class="max-h-full max-w-full" src="/_next/static/media/scifiVC.0bb5-xtp3xzb7.svg"/>
+      </div>
+      <div aria-label="khosla ventures" class="flex items-center justify-center h-8 lg:h-10 lg:col-span-3" role="img">
+        <img alt="khosla ventures" class="max-h-full max-w-full" src="/_next/static/media/khoslaVentures.0ao301iucmto3.svg"/>
+      </div>
+      <div aria-label="alpaca" class="flex items-center justify-center h-8 lg:h-10 lg:col-span-4" role="img">
+        <img alt="alpaca" class="max-h-full max-w-full" src="/_next/static/media/alpacaVC.0exlakdr3ny6i.svg"/>
+      </div>
+      <div aria-label="metaprop" class="flex items-center justify-center h-8 lg:h-10 lg:col-span-4" role="img">
+        <img alt="metaprop" class="max-h-full max-w-full" src="/_next/static/media/metaprop.3n5dhzw10dcpi.svg"/>
+      </div>
+      <div aria-label="not boring" class="flex items-center justify-center h-8 lg:h-10 col-span-2 lg:col-span-4" role="img">
+        <img alt="not boring" class="max-h-full max-w-full" src="/_next/static/media/notBoring.27lw1pucz9nvf.svg"/>
+      </div>
+    </div>
+  </div>
+</section>

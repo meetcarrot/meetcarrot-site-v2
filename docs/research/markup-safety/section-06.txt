@@ -1,0 +1,69 @@
+<section class="py-14 lg:py-24 ">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <div class="flex justify-center">
+        <div class="px-4 h-8 md:h-9 lg:h-11 rounded-2xl md:rounded-[18px] lg:rounded-[22px] border border-orange-100 inline-flex items-center mx-auto">
+          <p class="text-[12px] md:text-[14px] lg:text-[16px] font-medium text-orange-100">
+            Report an issue
+          </p>
+        </div>
+      </div>
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        See something? Say something.
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
+        We follow SOC 2 standards for security, availability, and confidentiality. We comply with CCPA and GDPR for member data rights. And we pay outside auditors, not just our own team, to find what we missed.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-14 lg:mt-20">
+      <div class="flex flex-col items-center text-center rounded-4xl p-10 bg-white text-gray-400">
+        <div class="flex items-center justify-center rounded-full w-16 h-16 mb-6 bg-gray-400">
+          <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12 24C19.68 24 24 19.68 24 12C24 4.32 19.68 0 12 0C4.32 0 0 4.32 0 12C0 19.68 4.32 24 12 24ZM18.2342 19.7637C17.7977 18.9504 17.203 18.2246 16.478 17.6321C15.2143 16.5991 13.6323 16.0349 12.0001 16.0349C10.368 16.0349 8.78599 16.5991 7.52225 17.6321C6.79728 18.2246 6.20263 18.9504 5.76603 19.7637C7.19301 20.7893 9.22229 21.4286 12.0002 21.4286C14.778 21.4286 16.8073 20.7893 18.2342 19.7637ZM16.0373 9.03221C16.0373 11.6168 14.5835 13.0707 11.9988 13.0707C9.41422 13.0707 7.96037 11.6168 7.96037 9.03221C7.96037 6.4476 9.41422 4.99375 11.9988 4.99375C14.5835 4.99375 16.0373 6.4476 16.0373 9.03221Z" fill="var(--color-white)" fill-rule="evenodd">
+            </path>
+          </svg>
+        </div>
+        <p class="font-normal text-[14px] md:text-[16px] mb-6 text-gray-600">
+          For Members
+        </p>
+        <h3 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[40px] lg:text-[48px] leading-[110%] mb-6">
+          See something off
+          <br/>
+          in your account?
+        </h3>
+        <p class="font-normal text-[16px] md:text-[18px] leading-[150%] mb-10 max-w-md text-gray-600">
+          Contact us through our app, or email us. We treat every report as urgent and respond within one business day.
+        </p>
+        <a class="inline-flex items-center justify-center px-4 md:px-8 h-12 rounded-3xl relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-gray-100 bg-orange-100 hover:bg-orange-100 active:bg-orange-300 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)]" href="/help">
+          <div class="relative z-20">
+            Contact support
+          </div>
+        </a>
+      </div>
+      <div class="flex flex-col items-center text-center rounded-4xl p-10 bg-gray-400 text-white">
+        <div class="flex items-center justify-center rounded-full w-16 h-16 mb-6 bg-white">
+          <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M3.95194 0.264746C4.11365 0.095646 4.33745 0 4.57143 0H19.4285C19.6625 0 19.8864 0.095646 20.0481 0.264746C20.5341 0.772983 21.5362 1.82172 22.4073 3.64323C23.2774 5.46315 24 8.01775 24 11.5384C24 15.5518 22.1781 18.3682 19.8754 20.2989C19.7683 20.3887 19.6601 20.4766 19.5511 20.5627C17.124 22.4767 14.236 23.4735 12.3289 23.9721C12.24 23.9954 12.1484 24.0041 12.0574 23.9983C12.0438 23.9974 12.0302 23.9962 12.0166 23.9947C11.9758 23.9901 11.9352 23.9825 11.8953 23.9721C9.99209 23.4746 7.05058 22.4793 4.56886 20.5689C2.06163 18.6386 0 15.749 0 11.5384C0 8.01775 0.722604 5.46315 1.59278 3.64323C2.46372 1.82172 3.46593 0.772983 3.95194 0.264746ZM5.37614 17.8917C5.62003 18.1159 5.87455 18.3288 6.13749 18.5313C8.05716 20.0091 10.378 20.8778 12.1115 21.3663C13.83 20.8798 16.0939 20.0143 17.9587 18.5436C18.2117 18.3441 18.4569 18.1341 18.6921 17.9126C18.2746 17.3319 17.7806 16.8044 17.2193 16.3456C15.7515 15.1459 13.914 14.4904 12.0182 14.4904C10.1224 14.4904 8.28485 15.1459 6.81699 16.3456C6.27559 16.7881 5.79111 17.3131 5.37614 17.8917ZM9.00041 5.33139C9.7217 4.61009 10.7546 4.25871 11.9992 4.25871C13.2438 4.25871 14.2766 4.61009 14.9979 5.33139C15.7192 6.05268 16.0706 7.08555 16.0706 8.33014C16.0706 9.57475 15.7192 10.6076 14.9979 11.3289C14.2766 12.0502 13.2438 12.4016 11.9992 12.4016C10.7546 12.4016 9.7217 12.0502 9.00041 11.3289C8.27911 10.6076 7.92773 9.57475 7.92773 8.33014C7.92773 7.08555 8.27911 6.05268 9.00041 5.33139Z" fill="var(--color-gray-400)" fill-rule="evenodd">
+            </path>
+          </svg>
+        </div>
+        <p class="font-normal text-[14px] md:text-[16px] mb-6 text-white">
+          For Security Researchers
+        </p>
+        <h3 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[40px] lg:text-[48px] leading-[110%] mb-6">
+          Found a
+          <br/>
+          vulnerability?
+        </h3>
+        <p class="font-normal text-[16px] md:text-[18px] leading-[150%] mb-10 max-w-md text-gray-300">
+          We welcome responsible disclosure. We&#x27;ll respond, fix, and credit your work.
+        </p>
+        <a class="inline-flex items-center justify-center px-4 md:px-8 h-12 rounded-3xl relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-gray-100 bg-orange-100 hover:bg-orange-100 active:bg-orange-300 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)]" href="/help">
+          <div class="relative z-20">
+            Report a vulnerability
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

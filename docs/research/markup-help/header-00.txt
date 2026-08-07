@@ -1,0 +1,86 @@
+<header aria-hidden="false" class="fixed inset-x-0 top-0 z-20 transition-[opacity,visibility] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 backdrop-blur-md transition-opacity duration-300 ease-out mask-[linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] opacity-0">
+  </div>
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-linear-to-t transition-[opacity,--tw-gradient-from,--tw-gradient-to] duration-300 ease-out from-golden/10 to-golden mask-[linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] opacity-0">
+  </div>
+  <div class="relative">
+    <div class="w-full">
+      <div class="mx-auto px-6 flex justify-between items-center h-16.5 md:h-28">
+        <a aria-label="Split Pay home" class="block rounded mr-2 w-38 md:w-50 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2" href="/">
+          <svg aria-hidden="true" class="transition-colors duration-200 w-full text-gray-400" fill="none" focusable="false" viewBox="0 0 152 34" xmlns="http://www.w3.org/2000/svg">
+            <path d="M137.497 12.2363H141.12L144.264 21.3208C144.451 21.8802 144.477 22.3864 144.477 22.9192C144.477 23.1057 144.504 23.3721 144.797 23.3721C145.09 23.3721 145.117 23.1323 145.117 22.9192C145.117 22.413 145.17 21.8802 145.356 21.3208L148.367 12.2363H151.99L146.022 27.9276C145.063 30.4318 143.731 31.4175 141.28 31.4175H138.723V28.4338H139.895C141.92 28.4338 142.319 28.4338 142.692 27.3415L142.985 26.489L137.497 12.2363Z" fill="currentColor">
+            </path>
+            <path d="M123.683 22.4397C123.683 19.3227 125.974 18.1772 128.798 18.0173C131.302 17.8841 133.513 18.1239 133.487 16.8185C133.46 15.8594 133.087 14.7938 130.663 14.7938C128.265 14.7938 127.652 15.7795 127.466 16.9251H124.109C124.589 13.3819 127.626 12.0232 130.769 12.0232C133.993 12.0232 136.897 13.0888 136.897 18.5235V26.3025H133.487V25.3168C133.487 24.6775 133.647 24.2246 133.886 23.7717C133.993 23.5319 134.099 23.2655 133.86 23.159C133.593 23.0524 133.487 23.3188 133.433 23.452C132.634 25.3968 131.089 26.5157 128.585 26.5157C125.947 26.5157 123.683 24.8107 123.683 22.4397ZM133.487 19.0563C132.688 19.9354 131.409 20.0686 129.384 20.2818C127.919 20.4416 127.093 21.0011 127.093 22.2532C127.093 23.4254 128.212 24.1713 129.784 23.9582C131.595 23.7184 133.46 22.5462 133.487 19.0563Z" fill="currentColor">
+            </path>
+            <path d="M116.063 7.54761C121.338 7.54761 123.363 10.3182 123.363 13.5151C123.363 16.712 120.912 19.4826 116.489 19.4826H112.067V26.3026H108.444V7.54761H116.063ZM116.463 16.4988C118.514 16.4988 119.74 15.2467 119.74 13.6217C119.74 11.8101 118.514 10.7445 116.463 10.7445H112.067V16.4988H116.463Z" fill="currentColor">
+            </path>
+            <path d="M98.0947 15.2201H94.2585V21.6405C94.2585 23.1857 94.2851 23.3189 95.7237 23.3189H98.0947V26.3026H95.0044C92.1805 26.3026 90.8485 25.3702 90.8485 21.9868V15.2201H88.291V12.2364H90.8485V8.40015H94.2585V12.2364H98.0947V15.2201Z" fill="currentColor">
+            </path>
+            <path d="M83.5861 10.5313V7.12134H86.9961V10.5313H83.5861ZM83.5861 26.3025V12.2363H86.9961V26.3025H83.5861Z" fill="currentColor">
+            </path>
+            <path d="M77.3942 7.12134H80.8042V26.3025H77.3942V7.12134Z" fill="currentColor">
+            </path>
+            <path d="M64.8043 12.2363V12.7691C64.8043 13.3286 64.671 13.7548 64.4313 14.2344C64.3247 14.5008 64.1382 14.8205 64.4046 14.9537C64.671 15.0869 64.8309 14.7405 64.8842 14.634C65.7367 13.1421 67.1486 12.0232 69.3331 12.0232C72.9829 12.0232 75.4605 15.2201 75.4605 19.2694C75.4605 23.3188 72.9829 26.5157 69.3331 26.5157C67.2019 26.5157 65.7367 25.4234 64.8842 23.8782C64.8309 23.7983 64.7243 23.5319 64.4846 23.6118C64.1915 23.7184 64.2981 23.9848 64.4313 24.2512C64.671 24.7307 64.8043 25.157 64.8043 25.6898V31.4175H61.3943V12.2363H64.8043ZM68.5339 23.4254C70.9316 23.4254 72.0505 21.5072 72.0505 19.2694C72.0505 17.0316 70.9316 15.1135 68.5339 15.1135C66.2961 15.1135 64.8043 17.0316 64.8043 19.2694C64.8043 21.5072 66.2961 23.4254 68.5339 23.4254Z" fill="currentColor">
+            </path>
+            <path d="M52.0694 14.8205C56.4651 15.3266 59.5288 16.4455 59.5288 20.708C59.5288 23.7983 56.8647 26.5157 51.8563 26.5157C46.6348 26.5157 44.1838 23.159 44.1838 19.6957H47.7004C47.7537 21.1343 48.4197 23.5319 51.8563 23.5319C54.9733 23.5319 55.9057 21.9601 55.9057 20.9212C55.9057 19.6424 55.0798 18.71 51.8563 18.2837C46.5282 17.5911 44.8232 15.8595 44.8232 12.6626C44.8232 9.73212 47.4606 7.33447 51.9096 7.33447C56.7848 7.33447 58.7829 10.2649 58.8362 13.302H55.3995C55.3995 12.0765 54.5737 10.3182 51.8563 10.3182C49.1123 10.3182 48.4197 11.7035 48.4197 12.5027C48.4197 13.222 48.766 14.4475 52.0694 14.8205Z" fill="currentColor">
+            </path>
+            <mask height="34" id="_R_7hgm_" maskUnits="userSpaceOnUse" style="mask-type:alpha" width="34" x="0" y="0">
+              <circle cx="16.9039" cy="16.9039" fill="black" r="16.9039">
+              </circle>
+            </mask>
+            <g mask="url(#_R_7hgm_)">
+              <path d="M4.95105 28.8569C8.12115 32.027 12.4207 33.808 16.9039 33.808C21.3871 33.808 25.6867 32.027 28.8568 28.8569C32.0269 25.6868 33.8078 21.3872 33.8078 16.904C33.8078 12.4208 32.0269 8.12127 28.8568 4.95117L4.95105 28.8569Z" fill="url(#_R_7hgmH1_)">
+              </path>
+              <path d="M28.8568 4.95105C25.6867 1.78095 21.3871 1.32903e-06 16.9039 0C12.4207 -1.32903e-06 8.12114 1.78094 4.95104 4.95104C1.78094 8.12114 8.59533e-07 12.4207 0 16.9039C-8.59532e-07 21.3871 1.78094 25.6867 4.95104 28.8568L28.8568 4.95105Z" fill="url(#_R_7hgmH2_)">
+              </path>
+            </g>
+            <defs>
+              <linearGradient gradientUnits="userSpaceOnUse" id="_R_7hgmH1_" x1="4.93596" x2="28.8719" y1="28.872" y2="4.93605">
+                <stop offset="0.2" stop-color="var(--color-orange-100)">
+                </stop>
+                <stop offset="0.95" stop-color="var(--color-orange-100)" stop-opacity="0">
+                </stop>
+              </linearGradient>
+              <linearGradient gradientUnits="userSpaceOnUse" id="_R_7hgmH2_" x1="5.02046" x2="28.8719" y1="28.8719" y2="4.91904">
+                <stop offset="0.05" stop-color="var(--color-orange-100)" stop-opacity="0">
+                </stop>
+                <stop offset="0.8" stop-color="var(--color-orange-100)">
+                </stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+        <div class="flex items-center justify-end gap-4 flex-1">
+          <button class="px-4 md:px-8 h-12 rounded-3xl w-full relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-golden bg-black hover:bg-black active:bg-gray-400 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)] max-w-45 hidden lg:flex items-center justify-center" type="button">
+            <div class="relative z-10">
+              <div class="">
+                Get started
+              </div>
+            </div>
+          </button>
+          <button class="px-4 md:px-8 rounded-3xl w-full relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-golden bg-black hover:bg-black active:bg-gray-400 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)] h-10 md:h-12 max-w-20 md:max-w-30 whitespace-nowrap items-center justify-center" type="button">
+            <div class="relative z-10">
+              <div class="">
+                Sign In
+              </div>
+            </div>
+          </button>
+          <button aria-controls="public-header-menu" aria-expanded="false" aria-label="Open menu" class="flex items-center justify-center relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-gray-100 bg-black hover:bg-black active:bg-gray-400 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)] h-10 w-10 md:h-12 md:w-12 rounded-full" type="button">
+            <div class="relative z-10 flex justify-center items-center">
+              <span class="flex items-center justify-center transition-transform duration-200 ease-out rotate-0">
+                <svg aria-hidden="true" fill="none" focusable="false" height="14" viewBox="0 0 18 14" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect fill="var(--color-golden)" height="2" rx="1" width="18">
+                  </rect>
+                  <rect fill="var(--color-golden)" height="2" rx="1" width="18" y="6">
+                  </rect>
+                  <rect fill="var(--color-golden)" height="2" rx="1" width="18" y="12">
+                  </rect>
+                </svg>
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

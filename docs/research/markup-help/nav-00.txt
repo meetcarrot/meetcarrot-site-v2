@@ -1,0 +1,109 @@
+<nav aria-label="Menu" class="mx-auto px-6 container lg:max-w-324 min-h-0 flex-1 overflow-y-auto">
+  <div class="py-6 md:py-14 lg:flex lg:gap-14">
+    <div class="lg:flex-1 lg:flex lg:flex-col">
+      <p class="text-[16px] leading-[1.33] font-medium text-white md:text-[24px] mb-6 md:mb-8">
+        Which bill would you like to split?
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:flex-1">
+        <a class="relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black cursor-pointer flex flex-col justify-center transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/rent">
+          <div class="h-25 flex justify-center items-end">
+          </div>
+          <div class="mt-4 h-12">
+            <p class="font-medium tracking-[-0.56px] text-white text-[18px] text-center">
+              Rent
+            </p>
+          </div>
+        </a>
+        <a class="relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black cursor-pointer flex flex-col justify-center transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/mortgage">
+          <div class="h-25 flex justify-center items-end">
+            <div class="h-19">
+            </div>
+          </div>
+          <div class="mt-4 h-12">
+            <p class="font-medium tracking-[-0.56px] text-white text-[18px] text-center">
+              Mortgage
+            </p>
+          </div>
+        </a>
+        <a class="relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black cursor-pointer flex flex-col justify-center transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/car">
+          <div class="h-25 mt-1 flex justify-center items-end">
+            <div class="h-19">
+            </div>
+          </div>
+          <div class="mt-4 h-12">
+            <p class="font-medium tracking-[-0.56px] text-white text-[18px] text-center">
+              Car payment
+            </p>
+          </div>
+        </a>
+        <button class="relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black flex flex-col justify-center hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out cursor-auto">
+          <div class="illustration-component flex items-center justify-center h-25">
+            <img alt="dollar" src="/_next/static/media/bill.09-7csupmwgpr.svg"/>
+          </div>
+          <div class="mt-4 h-12">
+            <p class="font-medium tracking-[-0.56px] text-white text-[18px] text-center">
+              Other Bills
+            </p>
+            <p class="font-normal text-gray-600 text-[12px] text-center mt-1.5">
+              Coming soon
+            </p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="mt-10 md:mt-14 lg:mt-0 lg:w-79.5">
+      <p class="text-[16px] leading-[1.33] font-medium text-white md:text-[24px] mb-6 md:mb-8 lg:hidden">
+        Learn More
+      </p>
+      <p class="font-medium text-white hidden lg:block lg:bg-block text-[24px] mb-8">
+        Learn More
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8">
+        <a class="relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/how-it-works">
+          <div class="flex items-center gap-2.5">
+            <p class="text-[16px] font-normal leading-[1.33] text-white">
+              How it works
+            </p>
+          </div>
+          <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 11L6 6L1 1" stroke="var(--color-gray-600)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            </path>
+          </svg>
+        </a>
+        <a class="relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/safety-and-security">
+          <div class="flex items-center gap-2.5">
+            <p class="text-[16px] font-normal leading-[1.33] text-white">
+              Safety &amp; security
+            </p>
+          </div>
+          <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 11L6 6L1 1" stroke="var(--color-gray-600)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            </path>
+          </svg>
+        </a>
+        <a class="relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/about-us">
+          <div class="flex items-center gap-2.5">
+            <p class="text-[16px] font-normal leading-[1.33] text-white">
+              About us
+            </p>
+          </div>
+          <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 11L6 6L1 1" stroke="var(--color-gray-600)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            </path>
+          </svg>
+        </a>
+        <a class="relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/help">
+          <div class="flex items-center gap-2.5">
+            <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:underline group-hover:underline-offset-2">
+              Help &amp; FAQs
+            </p>
+          </div>
+          <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 11L6 6L1 1" stroke="var(--color-gray-600)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

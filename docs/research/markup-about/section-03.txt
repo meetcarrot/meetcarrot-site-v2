@@ -1,0 +1,181 @@
+<section class="py-14 lg:py-24 bg-gray-100">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        Who we are
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
+        Passionate technologists with decades of experience across finance, real estate,
+        <br/>
+        consumer, security, and beyond.
+      </p>
+    </div>
+    <div class="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-6 lg:gap-y-4">
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/andrewborovsky" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Andrew Borovsky" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/AndrewBorovsky.3vlu8zg2t5sku.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Andrew Borovsky
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            CEO
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/jerryknight1" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Gerard Knight" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/GerardKnight.1ot6hlt_d9ced.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Gerard Knight
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Operations
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/alexander-labowitz-b0513512" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Alexander Labowitz" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/AlexanderLabowitz.18tk5ntjwqahm.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Alexander Labowitz
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Legal &amp; Compliance
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/loremipsum" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Andrew Lin" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/AndrewLin.2lgdd7wo-znps.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Andrew Lin
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Product &amp; Design
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/lmovsesyan" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Leonid Movsesyan" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/LeonidMovsesyan.0n4pr43rqvnmd.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Leonid Movsesyan
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Engineering
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/catiecase" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Catie Case" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/CatieCase.3jj5u64touroo.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Catie Case
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Special Projects
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/tschmeisser/" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Travis Schmeisser" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/TravisSchmeisser.1qvvvdz85pm0p.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Travis Schmeisser
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Product &amp; Design
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/leonbignoggin/" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Leon Li" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/LeonLi.0vkhd-08dfikr.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Leon Li
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Product &amp; Design
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/nilsdecker" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Nils Decker" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/NilsDecker.1ok3nhnm2we9a.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Nils Decker
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Business Development
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/adam-c-1242aa53/" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Adam Covalt" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/AdamCovalt.1057r4iqb9jnq.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Adam Covalt
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Support
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+      <a class="group flex items-center gap-4 lg:gap-5 bg-white rounded-3xl p-3 lg:p-4 shadow-[0_4px_12px_0_rgba(0,0,0,0.04)] transition-colors duration-200 ease-out" href="https://www.linkedin.com/in/moustafa-m-elkholy-233a5658/" rel="nofollow noopener noreferrer" target="_blank">
+        <img alt="Moustafa Elkholy" class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl object-cover" src="/_next/static/media/Mousafa.06mrics5l1nie.png"/>
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-[18px] lg:text-[20px] leading-[1.2]">
+            Moustafa Elkholy
+          </p>
+          <p class="font-normal mt-1 text-[14px] lg:text-[16px] text-gray-600">
+            Accounting
+          </p>
+        </div>
+        <svg fill="none" height="12" viewBox="0 0 7 12" width="12" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 11L6 6L1 1" stroke="var(--color-black)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

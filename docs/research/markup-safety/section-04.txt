@@ -1,0 +1,71 @@
+<section class="py-14 lg:py-24 bg-[linear-gradient(180deg,#000_0%,#0F0F0F_100%)]" data-header-theme="black">
+  <div class="mx-auto px-6 container lg:max-w-324">
+    <div class="flex flex-col gap-6 md:gap-6">
+      <div class="flex justify-center">
+        <div class="px-4 h-8 md:h-9 lg:h-11 rounded-2xl md:rounded-[18px] lg:rounded-[22px] border border-orange-100 inline-flex items-center mx-auto">
+          <p class="text-[12px] md:text-[14px] lg:text-[16px] font-medium text-orange-100">
+            Our partners
+          </p>
+        </div>
+      </div>
+      <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center text-white">
+        The best in the business.
+        <br class="hidden md:block"/>
+        Behind the scenes.
+      </h2>
+      <p class="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px] text-[#D0CFCE]">
+        We don&#x27;t build security from scratch. We partner with the companies trusted by the largest banks, fintech, and most regulated industries in the country.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-14 lg:mt-20">
+      <div class="flex flex-col items-center text-center rounded-4xl p-8 lg:p-10 border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_100%)] filter-[drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+        <div class="flex items-center justify-center w-full mb-4">
+          <img alt="Plaid" class="h-full w-full" src="/_next/static/media/plaid.3izbrnkl0y-6t.svg"/>
+        </div>
+        <p class="font-normal text-gray-300 text-[16px] md:text-[18px] leading-[140%]">
+          Securely connects your bank account without storing your credentials.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center rounded-4xl p-8 lg:p-10 border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_100%)] filter-[drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+        <div class="flex items-center justify-center w-full mb-4">
+          <img alt="Footprint" class="h-full w-full" src="/_next/static/media/footprint.167qkjyugyqtr.svg"/>
+        </div>
+        <p class="font-normal text-gray-300 text-[16px] md:text-[18px] leading-[140%]">
+          Verifies it`s really you when you sign up — not a bot or a stolen identity.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center rounded-4xl p-8 lg:p-10 border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_100%)] filter-[drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+        <div class="flex items-center justify-center w-full mb-4">
+          <img alt="SentiLink" class="h-full w-full" src="/_next/static/media/sentilink.3laac0cl92u0e.svg"/>
+        </div>
+        <p class="font-normal text-gray-300 text-[16px] md:text-[18px] leading-[140%]">
+          Catches synthetic identities and fraud rings before they reach your account.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center rounded-4xl p-8 lg:p-10 border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_100%)] filter-[drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+        <div class="flex items-center justify-center w-full mb-4">
+          <img alt="LexisNexis" class="h-full w-full" src="/_next/static/media/lexisnexis.2r2my62scb6fa.svg"/>
+        </div>
+        <p class="font-normal text-gray-300 text-[16px] md:text-[18px] leading-[140%]">
+          Verifies identities and screens for risk using decades of trusted reference data.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center rounded-4xl p-8 lg:p-10 border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_100%)] filter-[drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+        <div class="flex items-center justify-center w-full mb-4">
+          <img alt="Drata" class="h-full w-full" src="/_next/static/media/drata.328ghn_vumqow.svg"/>
+        </div>
+        <p class="font-normal text-gray-300 text-[16px] md:text-[18px] leading-[140%]">
+          Continuously monitors our security controls, so we stay audit-ready every day.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center rounded-4xl p-8 lg:p-10 border border-white/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_100%)] filter-[drop-shadow(0_12px_24px_rgba(0,0,0,0.10))]">
+        <div class="flex items-center justify-center w-full mb-4">
+          <img alt="Auth0 by Okta" class="h-full w-full" src="/_next/static/media/okta.1vn-inrgp_xze.svg"/>
+        </div>
+        <p class="font-normal text-gray-300 text-[16px] md:text-[18px] leading-[140%]">
+          Powers secure sign-in with multi-factor authentication and modern auth standards.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+<section class="bg-golden pt-18 md:pt-28" data-header-theme="golden">
+  <div class="mx-auto px-6 container lg:max-w-324 pt-12">
+    <div class="flex justify-between gap-6">
+      <div class="h-fill flex-1 relative hidden lg:block">
+        <div class="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
+          <img alt="dad with son" class="object-cover" data-fill sizes="(min-width: 1024px) 33vw, 0vw" src="/_next/static/media/deco-left.png"/>
+        </div>
+      </div>
+      <div class="w-120 md:w-full lg:w-98.5 max-w-full mx-auto">
+        <h1 class="leading-[115%]! font-poly-sans-wide text-center text-[40px] md:text-[56px] lg:text-[64px] lg:pt-12 leading-[1.15]">
+          Big bills.
+          <br/>
+          Better timing.
+        </h1>
+        <p class="text-[16px] font-normal mb-6 mt-1 md:mt-1.25 text-center leading-[1.6]">
+          Your biggest bills hit all at once.
+          <br class="hidden lg:block"/>
+          Split Pay breaks them into two smaller payments.
+          <br class="hidden md:block"/>
+          Less pressure, more room to breathe.
+        </p>
+        <div class="w-70 max-w-full flex justify-center mx-auto">
+          <button class="px-4 md:px-8 h-12 rounded-3xl w-full relative overflow-hidden cursor-pointer font-medium text-[16px] border border-black/15 disabled:cursor-not-allowed disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none after:z-0 after:content-[&quot;&quot;] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:to-black after:opacity-[0.05] after:pointer-events-none after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09] active:scale-[0.98] active:translate-y-[1px] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 text-gray-100 bg-orange-100 hover:bg-orange-100 active:bg-orange-300 shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)]" type="button">
+            <div class="relative z-10">
+              <div class="">
+                Get started
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="py-8 md:py-10 lg:pb-12 opacity-65 flex flex-col md:flex-row md:justify-center lg:flex-col gap-2 md:gap-0 lg:gap-2">
+          <p class="font-normal flex items-center justify-center gap-2 text-[14px]">
+            <svg class="opacity-65" fill="none" height="10" viewBox="0 0 12 10" width="12" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M11.6589 0.246777C11.2432 -0.11659 10.6103 -0.073539 10.2467 0.341995L3.9506 7.53753L1.70639 5.29332C1.31584 4.90302 0.683233 4.90287 0.292774 5.29332C-0.0976631 5.68378 -0.0975197 6.31639 0.292774 6.70694L3.29287 9.70703C3.48845 9.90261 3.75621 10.0091 4.03264 10C4.30926 9.9908 4.5711 9.86699 4.75336 9.65869L11.7526 1.65893C12.116 1.24329 12.0743 0.610376 11.6589 0.246777Z" fill="var(--color-black)" fill-rule="evenodd">
+              </path>
+            </svg>
+            No credit check
+          </p>
+          <p class="font-normal opacity-25 text-[14px] mx-4 hidden md:block lg:hidden">
+            |
+          </p>
+          <p class="font-normal flex items-center justify-center gap-2 text-[14px]">
+            <svg class="opacity-65" fill="none" height="10" viewBox="0 0 12 10" width="12" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M11.6589 0.246777C11.2432 -0.11659 10.6103 -0.073539 10.2467 0.341995L3.9506 7.53753L1.70639 5.29332C1.31584 4.90302 0.683233 4.90287 0.292774 5.29332C-0.0976631 5.68378 -0.0975197 6.31639 0.292774 6.70694L3.29287 9.70703C3.48845 9.90261 3.75621 10.0091 4.03264 10C4.30926 9.9908 4.5711 9.86699 4.75336 9.65869L11.7526 1.65893C12.116 1.24329 12.0743 0.610376 11.6589 0.246777Z" fill="var(--color-black)" fill-rule="evenodd">
+              </path>
+            </svg>
+            Works with any landlord or lender
+          </p>
+          <p class="font-normal opacity-25 text-[14px] mx-4 hidden md:block lg:hidden">
+            |
+          </p>
+          <p class="font-normal flex items-center justify-center gap-2 text-[14px]">
+            <svg class="opacity-65" fill="none" height="10" viewBox="0 0 12 10" width="12" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M11.6589 0.246777C11.2432 -0.11659 10.6103 -0.073539 10.2467 0.341995L3.9506 7.53753L1.70639 5.29332C1.31584 4.90302 0.683233 4.90287 0.292774 5.29332C-0.0976631 5.68378 -0.0975197 6.31639 0.292774 6.70694L3.29287 9.70703C3.48845 9.90261 3.75621 10.0091 4.03264 10C4.30926 9.9908 4.5711 9.86699 4.75336 9.65869L11.7526 1.65893C12.116 1.24329 12.0743 0.610376 11.6589 0.246777Z" fill="var(--color-black)" fill-rule="evenodd">
+              </path>
+            </svg>
+            Set up in minutes
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-6 h-60 md:h-134 lg:hidden">
+          <div class="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
+            <img alt="dad with son" class="object-cover" data-fill sizes="(max-width: 1023px) 50vw, 0vw" src="/_next/static/media/deco-left.png"/>
+          </div>
+          <div class="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
+            <img alt="girl with dog" loading="lazy" class="object-cover" data-fill sizes="(max-width: 1023px) 50vw, 0vw" src="/_next/static/media/deco-right.png"/>
+          </div>
+        </div>
+      </div>
+      <div class="h-fill flex-1 relative hidden lg:block">
+        <div class="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
+          <img alt="girl with dog" loading="lazy" class="object-cover" data-fill sizes="(min-width: 1024px) 33vw, 0vw" src="/_next/static/media/deco-right.png"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,1013 @@
+<section class="py-14 lg:py-24">
+  <div class="flex flex-col gap-6 md:gap-6 px-4">
+    <img alt="rating" width="239" height="104" class="w-40 mx-auto h-auto md:w-57.5" src="/_next/static/media/average-rating.1efj6ggmjfcij.svg"/>
+    <h2 class="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+      What people are saying
+    </h2>
+  </div>
+  <div class="mt-8 lg:mt-14">
+    <div class="w-full max-w-480 mx-auto">
+      <div class="flex py-8 overflow-x-auto scrollbar-none [&amp;::-webkit-scrollbar]:hidden cursor-grab snap-x snap-mandatory scroll-smooth gap-6 lg:gap-8 min-[1920px]:px-4">
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  CP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Clever_pooh
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Split Pay has been such a relief! I’ve been able to manage my finances much better since using this app. It makes paying big bills a breeze and less stressful!
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  DP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Denise Pike
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Not sure what I’d do without this app — I haven’t had a late fee since I started using it.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_1.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_2.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  JS
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Jenica Sophia
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Easy to use, clean interface, and quick payments. I can see my full payment history in one place and the reminders keep me on track. Convenient and reliable.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  VW
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Vishon Warfield
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This app comes in clutch every time. So easy to manage.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  RK
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Ritzy Kelly
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                When I tell you this app literally gave life to my budget, it LITERALLY gave LIFE to my budget. This is the best thing since sliced bread. Thank you to the inventor of this app.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_3.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  K
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Klosmith
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This really helps manage my bills. It’s really convenient to split my largest bill in two when budgeting.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_4.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  CC
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Cece16
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Great app and has come in handy in so many ways. I’m finally able to breathe again and have a little extra income.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  BB
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  BreBar93
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                I really don’t write reviews, but this app is a lifesaver and it comes in clutch when you need it.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  W
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  W.H20555
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                It changed our life tremendously. It really gives us a stress-free feeling, knowing that our bill is paid on time and in full. Customer Service is very nice and helpful.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  NN
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Nerlande Noel
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                I wish I knew about this a long time ago. It really helps you have a better balance with your bills. I’m already excited for the journey.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_5.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_6.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  MM
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Ms. Monea
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Easy to use. Great customer service. Helps those months where I struggle so I don’t have to get a late!
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  TL
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  TerrorificLady
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Best payment app out - Customer support is top-notch — they responded quickly and resolved my issue efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  B
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  B70410
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                As a single mom with one income, Split Pay has drastically taken the pressure off and helped me catch up on all my bills.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  WP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Walkins Pierre
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                High payment limit and great flexibility. They’re the best option when you need them.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_7.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_8.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  AG
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Alicia Gray
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Such a blessing in a time of need — it gives me the opportunity to stay caught up on other bills. Wish I’d known about it sooner.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  MM
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Marlo Martin
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Makes staying on top of finances and credit fun and easy.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  SA
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Sharkattack4457
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This app is awesome. It is reliable and you have your own account and routing number. You can use it every month.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_9.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  M
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Moneyy1997
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Split pay has assisted me in getting all my bills in a row and making my paychecks more flexible.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  CP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Clever_pooh
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Split Pay has been such a relief! I’ve been able to manage my finances much better since using this app. It makes paying big bills a breeze and less stressful!
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  DP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Denise Pike
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Not sure what I’d do without this app — I haven’t had a late fee since I started using it.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_1.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_2.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  JS
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Jenica Sophia
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Easy to use, clean interface, and quick payments. I can see my full payment history in one place and the reminders keep me on track. Convenient and reliable.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  VW
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Vishon Warfield
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This app comes in clutch every time. So easy to manage.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  RK
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Ritzy Kelly
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                When I tell you this app literally gave life to my budget, it LITERALLY gave LIFE to my budget. This is the best thing since sliced bread. Thank you to the inventor of this app.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_3.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  K
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Klosmith
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This really helps manage my bills. It’s really convenient to split my largest bill in two when budgeting.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_4.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  CC
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Cece16
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Great app and has come in handy in so many ways. I’m finally able to breathe again and have a little extra income.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  BB
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  BreBar93
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                I really don’t write reviews, but this app is a lifesaver and it comes in clutch when you need it.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  W
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  W.H20555
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                It changed our life tremendously. It really gives us a stress-free feeling, knowing that our bill is paid on time and in full. Customer Service is very nice and helpful.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  NN
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Nerlande Noel
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                I wish I knew about this a long time ago. It really helps you have a better balance with your bills. I’m already excited for the journey.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_5.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_6.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  MM
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Ms. Monea
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Easy to use. Great customer service. Helps those months where I struggle so I don’t have to get a late!
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  TL
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  TerrorificLady
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Best payment app out - Customer support is top-notch — they responded quickly and resolved my issue efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  B
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  B70410
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                As a single mom with one income, Split Pay has drastically taken the pressure off and helped me catch up on all my bills.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  WP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Walkins Pierre
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                High payment limit and great flexibility. They’re the best option when you need them.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_7.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_8.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  AG
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Alicia Gray
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Such a blessing in a time of need — it gives me the opportunity to stay caught up on other bills. Wish I’d known about it sooner.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  MM
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Marlo Martin
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Makes staying on top of finances and credit fun and easy.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  SA
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Sharkattack4457
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This app is awesome. It is reliable and you have your own account and routing number. You can use it every month.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_9.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  M
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Moneyy1997
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Split pay has assisted me in getting all my bills in a row and making my paychecks more flexible.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  CP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Clever_pooh
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Split Pay has been such a relief! I’ve been able to manage my finances much better since using this app. It makes paying big bills a breeze and less stressful!
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  DP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Denise Pike
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Not sure what I’d do without this app — I haven’t had a late fee since I started using it.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_1.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_2.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  JS
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Jenica Sophia
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Easy to use, clean interface, and quick payments. I can see my full payment history in one place and the reminders keep me on track. Convenient and reliable.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  VW
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Vishon Warfield
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This app comes in clutch every time. So easy to manage.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  RK
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Ritzy Kelly
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                When I tell you this app literally gave life to my budget, it LITERALLY gave LIFE to my budget. This is the best thing since sliced bread. Thank you to the inventor of this app.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_3.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  K
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Klosmith
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This really helps manage my bills. It’s really convenient to split my largest bill in two when budgeting.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_4.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  CC
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Cece16
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Great app and has come in handy in so many ways. I’m finally able to breathe again and have a little extra income.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  BB
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  BreBar93
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                I really don’t write reviews, but this app is a lifesaver and it comes in clutch when you need it.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  W
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  W.H20555
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                It changed our life tremendously. It really gives us a stress-free feeling, knowing that our bill is paid on time and in full. Customer Service is very nice and helpful.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  NN
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Nerlande Noel
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                I wish I knew about this a long time ago. It really helps you have a better balance with your bills. I’m already excited for the journey.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_5.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_6.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  MM
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Ms. Monea
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Easy to use. Great customer service. Helps those months where I struggle so I don’t have to get a late!
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  TL
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  TerrorificLady
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Best payment app out - Customer support is top-notch — they responded quickly and resolved my issue efficiently.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  B
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  B70410
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                As a single mom with one income, Split Pay has drastically taken the pressure off and helped me catch up on all my bills.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-golden text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-golden">
+                  WP
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Walkins Pierre
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                High payment limit and great flexibility. They’re the best option when you need them.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_7.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_8.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-orange-100 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-orange-100">
+                  AG
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Alicia Gray
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Such a blessing in a time of need — it gives me the opportunity to stay caught up on other bills. Wish I’d known about it sooner.
+              </p>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  MM
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Marlo Martin
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Makes staying on top of finances and credit fun and easy.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="shrink-0 snap-always snap-center w-1/2 min-w-60 sm:w-1/3 lg:w-1/4">
+          <div class="h-full flex flex-col items-center justify-center gap-6 lg:gap-8">
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-orange-100 text-white">
+                  SA
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Sharkattack4457
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-black/10">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                This app is awesome. It is reliable and you have your own account and routing number. You can use it every month.
+              </p>
+            </div>
+            <div class="w-full flex-1 select-none  overflow-hidden rounded-[20px] lg:rounded-4xl shadow-[0_12px_24px_0_rgba(0,0,0,0.05)]">
+              <img alt="testimonial" draggable="false" loading="lazy" width="552" height="584" class="w-full h-full object-cover" sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw" src="/_next/static/media/img_9.png"/>
+            </div>
+            <div class="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-gray-400 text-white">
+              <div class="flex items-center gap-3 lg:gap-4">
+                <div class="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-white text-gray-400">
+                  M
+                </div>
+                <span class="text-[14px] lg:text-[18px] font-medium leading-none">
+                  Moneyy1997
+                </span>
+              </div>
+              <div class="h-px my-4 lg:my-8 bg-white/15">
+              </div>
+              <p class="text-[16px] lg:text-[24px] font-medium leading-[1.3]">
+                Split pay has assisted me in getting all my bills in a row and making my paychecks more flexible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

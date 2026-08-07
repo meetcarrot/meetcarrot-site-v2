@@ -1,0 +1,49 @@
+<nav aria-label="Learn more">
+  <p class="font-medium tracking-[-0.56px] text-orange-100 text-[12px] mb-6">
+    LEARN MORE
+  </p>
+  <ul class="grid grid-cols-1 gap-4">
+    <li>
+      <a class="group inline-flex items-center gap-3 hover:[&amp;_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/how-it-works">
+        <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600">
+          How it works
+        </p>
+      </a>
+    </li>
+    <li>
+      <a class="group inline-flex items-center gap-3 hover:[&amp;_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/safety-and-security">
+        <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600">
+          Safety &amp; security
+        </p>
+      </a>
+    </li>
+    <li>
+      <a class="group inline-flex items-center gap-3 hover:[&amp;_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/about-us">
+        <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600">
+          About us
+        </p>
+      </a>
+    </li>
+    <li>
+      <a class="group inline-flex items-center gap-3 hover:[&amp;_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/help">
+        <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600">
+          Help &amp; FAQs
+        </p>
+      </a>
+    </li>
+    <li>
+      <a class="group inline-flex items-center gap-3 hover:[&amp;_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/terms">
+        <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600">
+          Terms of service
+        </p>
+      </a>
+    </li>
+    <li>
+      <a class="group inline-flex items-center gap-3 hover:[&amp;_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out" href="/privacy">
+        <p class="text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600">
+          Privacy policy
+        </p>
+      </a>
+    </li>
+  </ul>
+</nav>

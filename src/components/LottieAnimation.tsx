@@ -8,21 +8,18 @@ interface LottieAnimationProps {
   src: string;
   className?: string;
   loop?: boolean;
-  /** Delay the fetch until the container scrolls near the viewport. */
-  lazy?: boolean;
 }
 
 /**
- * Thin wrapper around lottie-web's SVG renderer. The target site renders these
- * illustrations client-side only, so we mirror that: nothing ships in the HTML,
- * and the JSON is fetched once the container approaches the viewport.
+ * Thin wrapper around lottie-web's SVG renderer, matching how the target mounts
+ * its product illustrations: client-side only, nothing in the server HTML.
+ *
+ * These mount eagerly rather than on scroll. That mirrors the target — it
+ * requests all six product_*.json files during page load — and it sidesteps a
+ * deadlock: the container has no intrinsic width until the animation is inside
+ * it, and IntersectionObserver never reports a zero-area element as visible.
  */
-export function LottieAnimation({
-  src,
-  className,
-  loop = true,
-  lazy = true,
-}: LottieAnimationProps) {
+export function LottieAnimation({ src, className, loop = true }: LottieAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,9 +29,8 @@ export function LottieAnimation({
     let animation: AnimationItem | undefined;
     let cancelled = false;
 
-    async function mount() {
-      const lottie = (await import("lottie-web")).default;
-      if (cancelled || !container) return;
+    void import("lottie-web").then(({ default: lottie }) => {
+      if (cancelled) return;
       animation = lottie.loadAnimation({
         container,
         renderer: "svg",
@@ -42,33 +38,13 @@ export function LottieAnimation({
         autoplay: true,
         path: src,
       });
-    }
-
-    if (!lazy) {
-      void mount();
-    } else {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            observer.disconnect();
-            void mount();
-          }
-        },
-        { rootMargin: "200px" },
-      );
-      observer.observe(container);
-      return () => {
-        cancelled = true;
-        observer.disconnect();
-        animation?.destroy();
-      };
-    }
+    });
 
     return () => {
       cancelled = true;
       animation?.destroy();
     };
-  }, [src, loop, lazy]);
+  }, [src, loop]);
 
   return <div ref={containerRef} className={className} aria-hidden="true" />;
 }

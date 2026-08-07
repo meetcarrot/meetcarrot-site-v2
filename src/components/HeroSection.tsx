@@ -36,9 +36,11 @@ export function HeroSection() {
               Better timing.
             </h1>
             <p className="text-[16px] font-normal mb-6 mt-1 md:mt-1.25 text-center leading-[1.6]">
-              Your biggest bills hit all at once.
+              {/* Explicit spaces: JSX drops the newline, so a hidden <br> would
+                  otherwise glue the sentences together at that breakpoint. */}
+              Your biggest bills hit all at once.{" "}
               <br className="hidden lg:block" />
-              Split Pay breaks them into two smaller payments.
+              Split Pay breaks them into two smaller payments.{" "}
               <br className="hidden md:block" />
               Less pressure, more room to breathe.
             </p>

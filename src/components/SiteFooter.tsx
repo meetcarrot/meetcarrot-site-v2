@@ -58,7 +58,7 @@ function BrandBlock() {
       <div>
         <SplitPayLogoWhite width={152} height={34} />
         <p className="text-[16px] font-normal leading-[1.33] text-white mt-6">
-          Split your bills into two.
+          Split your bills into two.{" "}
           <br className="md:hidden" />
           Less stress, better timing.
         </p>

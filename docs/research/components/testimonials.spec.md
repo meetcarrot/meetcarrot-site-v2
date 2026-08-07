@@ -12,7 +12,7 @@
 ## Structure
 `section.py-14.lg:py-24`
 - `div.flex.flex-col.gap-6.md:gap-6.px-4`
-  - `next/image` `/images/average-rating.svg`, `/images/img-1.png` … `/images/img-9.png`. alt "rating", `width={239} height={104}`,
+  - `next/image` `/images/average-rating.svg`, alt "rating", `width={239} height={104}`,
     `class="w-40 mx-auto h-auto md:w-57.5"`
   - `h2.leading-[115%]!.font-poly-sans-wide.text-[32px].md:text-[48px].lg:text-[56px].text-center`
     — "What people are saying"

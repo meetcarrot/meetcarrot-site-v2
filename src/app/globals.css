@@ -39,6 +39,16 @@
   }
 }
 
+@layer components {
+  /* Verbatim from the target: constrains illustration art (inline SVG or <img>)
+     to its slot so it never overflows the card frame. */
+  .illustration-component img,
+  .illustration-component svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
 @layer utilities {
   /* The target ships these as bespoke utilities rather than theme font families. */
   .font-default {

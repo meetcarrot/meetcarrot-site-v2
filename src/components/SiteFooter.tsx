@@ -52,11 +52,16 @@ const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/privacy", label: "Privacy policy" },
 ];
 
-function BrandBlock() {
+/**
+ * `variant` namespaces the logo's gradient ids. The footer renders this block
+ * three times (one per breakpoint layout); without distinct ids the browser
+ * resolves them all to the first copy, which is `display:none` and paints nothing.
+ */
+function BrandBlock({ variant }: { variant: string }) {
   return (
     <div>
       <div>
-        <SplitPayLogoWhite width={152} height={34} />
+        <SplitPayLogoWhite idPrefix={`footer-${variant}`} width={152} height={34} />
         <p className="text-[16px] font-normal leading-[1.33] text-white mt-6">
           Split your bills into two.{" "}
           <br className="md:hidden" />
@@ -154,13 +159,13 @@ export function SiteFooter() {
           the breakpoint behaviour matches.
         */}
         <div className="grid grid-cols-1 gap-14 md:hidden">
-          <BrandBlock />
+          <BrandBlock variant="mobile" />
           <ProductsNav />
           <LearnMoreNav />
           <LegalBlock />
         </div>
         <div className="hidden md:grid grid-cols-1 gap-14 lg:hidden">
-          <BrandBlock />
+          <BrandBlock variant="md" />
           <div className="grid grid-cols-2 gap-14">
             <ProductsNav />
             <LearnMoreNav />
@@ -169,7 +174,7 @@ export function SiteFooter() {
         </div>
         <div className="hidden lg:flex items-start justify-between">
           <div>
-            <BrandBlock />
+            <BrandBlock variant="lg" />
             <div className="mt-16">
               <LegalBlock />
             </div>

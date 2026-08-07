@@ -88,7 +88,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             onClick={onClose}
             className="block rounded mr-2 w-38 md:w-50 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
           >
-            <SplitPayLogo className="transition-colors duration-200 w-full text-gray-100" />
+            <SplitPayLogo idPrefix="menu-logo" className="transition-colors duration-200 w-full text-gray-100" />
           </Link>
           <div className="flex items-center justify-end gap-4 flex-1">
             <Button

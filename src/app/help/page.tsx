@@ -44,8 +44,8 @@ export default function HelpPage() {
 
         {/*
           The help-article category grid is hidden for now — there are no
-          articles behind it yet. `HELP_CATEGORIES` still lives in @/data/help
-          for when it comes back.
+          articles behind it yet. Its data source was Split Pay's and has been
+          removed; rebuild the list from Carrot's own articles when they exist.
         */}
 
         {/* TODO: swap for Carrot's own 12 FAQs once that copy lands. */}

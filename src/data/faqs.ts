@@ -1,88 +1,95 @@
 import type { Faq } from "@/types/content";
 
+/**
+ * DRAFT copy. The 12 final FAQs are still coming; these are written from the
+ * product described in the changes doc so nothing on the page reads as another
+ * company's product. Replace wholesale when the real set lands — the shape
+ * (`id`, `question`, `slug`, `answer` HTML) is what FaqSection and FaqModal
+ * consume, so keep it.
+ */
 export const FAQS: Faq[] = [
   {
-    id: "1334902879",
-    question: "What is Split Pay?",
-    slug: "what-is-split-pay",
+    id: "what-is-carrot",
+    question: "What is Carrot?",
+    slug: "what-is-carrot",
     answer:
-      "<p>Split Pay lets you split your biggest monthly bills into two parts — one on your due date, one two weeks later — without ever being late.</p><p>We work with <strong>rent, mortgage, and car payments</strong> today. Your landlord, lender, or servicer gets the full payment on the day it's due. You just have a little breathing room between paychecks.</p><p>No interest, no loans. Just a payment service that solves a timing problem.</p><p>Prefer to watch? Here's a quick video on how it works: <a class=\"external-link\" href=\"https://www.youtube.com/shorts/CiZKl3pR9J4\" rel=\"noopener noreferrer\" target=\"_blank\">Watch how Split Pay works</a>.</p><p><strong>Apply free in a couple of minutes</strong> — you'll see your exact split amounts right after approval.</p>",
+      "<p>Carrot is a cashback marketing platform for local businesses. You set a cashback offer, we promote it to the right customers, and you get paid when they actually buy.</p><p>There is no upfront cost and no monthly fee. You pay a share of the revenue we bring you — not for clicks or impressions.</p>",
   },
   {
-    id: "1334673561",
-    question: "Can I split multiple bills at the same time?",
-    slug: "can-i-split-multiple-bills-at-the-same-time",
+    id: "what-does-it-cost",
+    question: "What does it cost?",
+    slug: "what-does-it-cost",
     answer:
-      "<p>Right now, <strong>one Split Pay at a time</strong> per person.</p><p>That means you can choose to use Split Pay on your rent <strong>or</strong> your mortgage <strong>or</strong> your car payment — but not multiple at the same time.</p><p>You can switch, though. Once your current Split Pay is fully paid off, you can apply for a different bill type anytime. Paying on time builds your eligibility, and you can always switch back later when life changes.</p><p><strong>Apply free in a couple of minutes</strong> — start with the bill that needs the most flexibility.</p>",
+      "<p>Nothing to start. No setup fee, no monthly subscription, no contract.</p><p>You choose a cashback rate and a monthly cap. The cashback comes out of the sales Carrot drives, so your cost scales with your results and never exceeds the cap you set.</p>",
   },
   {
-    id: "1334673601",
-    question: "Is this a loan?",
-    slug: "is-this-a-loan",
+    id: "how-do-i-set-my-offer",
+    question: "How do I set my offer?",
+    slug: "how-do-i-set-my-offer",
     answer:
-      "<p>No. Split Pay is a payment service, not a lender.</p><p>There's no interest, no credit check that affects your score, and no debt building up. You authorize us to pay your bill on your due date — and you pay us back in two parts.</p><p><strong>Apply free in a couple of minutes.</strong></p>",
+      "<p>You are in full control. Pick your cashback rate, any spend minimums, and a monthly cap on what you are willing to spend.</p><p>You can change any of it whenever you want from your merchant dashboard, and changes take effect immediately.</p>",
   },
   {
-    id: "1334673621",
-    question: "How do I sign up for Split Pay?",
-    slug: "how-do-i-sign-up-for-split-pay",
+    id: "who-sees-my-offer",
+    question: "Who sees my offer?",
+    slug: "who-sees-my-offer",
     answer:
-      "<p>Two minutes. Open the Split Pay app or head to <a class=\"external-link\" href=\"https://splitpay.com\" rel=\"noopener noreferrer\" target=\"_blank\">splitpay.com</a>, tap <strong>Apply</strong>, and we'll walk you through it.</p><p>We'll review your financial profile and give you an instant decision. If approved, you'll see your exact Split Pay amount and can start using it right away.</p><p><strong>Applying is free and doesn't affect your credit score.</strong></p><p><strong>Apply free in a couple of minutes.</strong></p>",
+      "<p>Carrot targets customers near you who are actively deciding where to spend. Offers are sent dynamically based on location, timing, and what someone is likely to buy.</p><p>You are reaching people who are ready to purchase, not a broad audience that happens to scroll past an ad.</p>",
   },
   {
-    id: "1334837324",
-    question: "How does Split Pay connect to my bills?",
-    slug: "how-does-split-pay-connect-to-my-bills",
+    id: "do-i-need-new-hardware",
+    question: "Do I need new hardware or a new POS?",
+    slug: "do-i-need-new-hardware",
     answer:
-      "<p>Once you're approved, you'll get unique <strong>Split Pay account and routing numbers</strong> that work with the bill you're splitting.</p><p>For mortgage, car payment, or rent paid through a portal: add the numbers to your servicer or portal as a payment method.</p><p>For rent paid directly to your landlord: Split Pay sends rent to them — they get a one-click notification to accept.</p><p>You only need to connect once.</p><p>Here's a video that walks through adding your account and routing numbers. Quick heads up: it's filmed for renters, but the steps are identical if you're paying a mortgage or car payment. Just ignore the rent-specific bits and follow along. (Mortgage and auto versions are on the way.)</p><p><a class=\"external-link\" href=\"https://youtube.com/shorts/CiZKl3pR9J4\" rel=\"noopener noreferrer\" target=\"_blank\">https://youtube.com/shorts/CiZKl3pR9J4</a></p><p><strong>Apply free in a couple of minutes</strong> to get your account numbers.</p>",
+      "<p>No. Carrot works alongside your existing setup. There is no new terminal, no new software at the counter, and no change to how you take payment.</p><p>Customers pay you the way they always have. The cashback is handled on our side.</p>",
   },
   {
-    id: "1334935680",
-    question: "When is the second part of my payment due?",
-    slug: "when-is-the-second-part-of-my-payment-due",
+    id: "how-do-customers-get-cashback",
+    question: "How do customers get their cash back?",
+    slug: "how-do-customers-get-cashback",
     answer:
-      "<p>Your second Split Pay payment is due <strong>14 days after your first payment</strong>.</p><p>You'll see the exact date in the Split Pay app and confirmation email. It pulls automatically from the debit card on file, and you can pay early anytime.</p><p>We'll send text and email reminders before and around your due date. Each one has a quick link to pay or change the date if you need to.</p><p><strong>Apply free in a couple of minutes</strong> to see exactly when your payments would land.</p>",
+      "<p>Customers link a payment method in the Carrot app. When they pay you with that card, we detect the purchase and credit their cash back automatically.</p><p>Nothing is required from you or your staff at checkout — no codes, no coupons, no vouchers to keep track of.</p>",
   },
   {
-    id: "1334771815",
-    question: "Do landlords or lenders need to sign up?",
-    slug: "do-landlords-or-lenders-need-to-sign-up",
+    id: "when-do-i-pay",
+    question: "When do I pay Carrot?",
+    slug: "when-do-i-pay",
     answer:
-      "<p>In most cases, no.</p><p><strong>For mortgage and car payments:</strong> your servicer doesn't need to do anything. You just add Split Pay's account and routing numbers to their payment system.</p><p><strong>For rent paid through a property portal:</strong> your landlord doesn't need to know. The full rent arrives on time through your portal like always.</p><p><strong>For rent paid directly to your landlord:</strong> they need to accept the payment, create an account, and add their bank to receive it. Takes them about two minutes — but that's all they have to do.</p><p><strong>Apply free in a couple of minutes</strong> to see what your setup looks like.</p>",
+      "<p>You are billed for the cashback earned on completed purchases, after those purchases happen. Payments are processed securely through Stripe.</p><p>If no one redeems an offer in a given period, there is nothing to pay.</p>",
   },
   {
-    id: "1334706238",
-    question: "Are there fees to use Split Pay?",
-    slug: "are-there-fees-to-use-split-pay",
+    id: "can-i-pause-or-cancel",
+    question: "Can I pause or cancel?",
+    slug: "can-i-pause-or-cancel",
     answer:
-      "<p>Split Pay charges two simple fees per bill you split:</p><ul><li><p><strong>$9.99 flat</strong> Split Pay fee</p></li><li><p><strong>1.5%</strong> of your total payment</p></li></ul><p><strong>Examples:</strong> $1,500 rent → <strong>$32.49</strong> · $2,400 mortgage → <strong>$45.99</strong> · $450 car payment → <strong>$16.74</strong></p><p>You'll see the exact fee on the approval screen before you commit.</p><p><strong>No late fees on your second payment. No setup fees. No interest.</strong> Applying is free and doesn't affect your credit.</p><p><strong>Apply free in a couple of minutes</strong> to see your exact fees.</p>",
+      "<p>Yes, at any time. Pause your offer from the dashboard and it stops going out. There is no contract and no cancellation fee.</p><p>You can turn it back on whenever it suits your calendar.</p>",
   },
   {
-    id: "1334935700",
-    question: "Does Split Pay build credit?",
-    slug: "does-split-pay-build-credit",
+    id: "what-kind-of-businesses",
+    question: "What kinds of businesses can use Carrot?",
+    slug: "what-kind-of-businesses",
     answer:
-      "<p>Yes — and the rules are designed so it can only help.</p><p>Split Pay reports your <strong>successful rent payments</strong> to two of the major credit bureaus. Reporting is <strong>opt-in and free</strong>, and <strong>only on-time payments count</strong> — late or missed payments are never reported.</p><p>Especially useful for renters: rent is usually one of your biggest monthly expenses, but most landlords don't report it. With Split Pay, every on-time rent payment can build your credit. (Car payments and mortgages are already on your credit report through your lender.)</p><p>Applying for Split Pay doesn't affect your credit score.</p><p><strong>Apply free in a couple of minutes</strong> to build credit with rent you're already paying.</p>",
+      "<p>Carrot works for hospitality, retail, services, and digital businesses.</p><p>That covers restaurants, cafés, and bars; boutiques and specialty shops; auto care, wellness, fitness, beauty, and professional services; and e-commerce, online events, and digital products.</p>",
   },
   {
-    id: "1334673643",
-    question: "Is my bank info safe?",
-    slug: "is-my-bank-info-safe",
+    id: "how-do-i-know-its-working",
+    question: "How do I know it is working?",
+    slug: "how-do-i-know-its-working",
     answer:
-      "<p>Yes. Split Pay uses bank-grade encryption, we never store your bank login credentials, and our banking partner is FDIC-insured.</p><p>Your Split Pay account and routing numbers are unique to you — you can use them across bills without exposing your personal bank account.</p><p><strong>Apply free in a couple of minutes</strong> with confidence.</p>",
+      "<p>Your merchant dashboard shows the revenue Carrot drove, how many customers came through, and what you spent on cashback for that period.</p><p>Because cashback is only paid on completed purchases, every dollar of cost maps to a real sale.</p>",
   },
   {
-    id: "1334837344",
-    question: "How do you decide who's approved?",
-    slug: "how-do-you-decide-whos-approved",
+    id: "are-these-new-or-existing-customers",
+    question: "Are these new customers or my existing ones?",
+    slug: "are-these-new-or-existing-customers",
     answer:
-      "<p>Eligibility is based on your individual financial profile — things like deposit patterns, account balances, and payment history. <strong>No credit score requirement. No income threshold.</strong></p><p>The fastest way to find out if you qualify and for how much: apply. It's free, takes about two minutes, and doesn't affect your credit score.</p><p><strong>Apply free in a couple of minutes.</strong></p>",
+      "<p>Both. Carrot brings in customers who have not visited you before, and gives your regulars a reason to come back rather than shop around.</p><p>Steady revenue usually comes from a mix of the two.</p>",
   },
   {
-    id: "1484521476",
-    question: "Does using Split Pay require a credit check?",
-    slug: "does-using-split-pay-require-a-credit-check",
+    id: "how-do-i-get-started",
+    question: "How do I get started?",
+    slug: "how-do-i-get-started",
     answer:
-      "<p><strong>No. Split Pay never runs a credit check.</strong> Not when you apply, and not while you use it.</p><p>There's no credit pull of any kind and no credit score requirement. Approval is based on your financial profile: things like deposit patterns, account balances, and payment history. Applying is free, takes about two minutes, and has zero effect on your credit score.</p><p>The only time Split Pay touches your credit is if you ask it to. You can opt in to free credit reporting, and only your on-time payments are ever reported.</p><p><strong>Apply free in a couple of minutes.</strong></p>",
+      "<p>Tell us about your business and we will get your offer set up. Most merchants are live shortly after enrolling.</p><p>Questions before you commit? Reach us any time at <a class=\"external-link\" href=\"mailto:support@meetcarrot.xyz\" rel=\"nofollow\">support@meetcarrot.xyz</a>.</p>",
   },
 ];

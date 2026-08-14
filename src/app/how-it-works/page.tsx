@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "How Split Pay Works - Split Pay",
+  title: "How Carrot Works - Carrot",
   description:
-    "Choose a bill to split, check your eligibility, verify your identity, and add your Split Pay account numbers to your payment portal.",
+    "Choose a bill to split, check your eligibility, verify your identity, and add your Carrot account numbers to your payment portal.",
 };
 
 /**

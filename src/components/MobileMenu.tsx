@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { ChevronRightIcon, CloseIcon, SplitPayLogo } from "@/components/icons";
+import { CarrotLogoWhite } from "@/components/carrot-logo";
+import { ChevronRightIcon, CloseIcon } from "@/components/icons";
 import { LottieAnimation } from "@/components/LottieAnimation";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL, MERCHANT_LOGIN_URL } from "@/lib/links";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -91,25 +93,27 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             aria-label="Carrot home"
             href="/"
             onClick={onClose}
-            className="block rounded mr-2 w-38 md:w-50 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
+            className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
           >
-            <SplitPayLogo idPrefix="menu-logo" className="transition-colors duration-200 w-full text-white" />
+            <CarrotLogoWhite className="w-full h-auto" />
           </Link>
           <div className="flex items-center justify-end gap-4 flex-1">
-            <Button
+            <ButtonLink
+              href={GET_STARTED_URL}
               variant="light"
               size="default"
-              className="max-w-45 hidden lg:flex items-center justify-center"
+              className="max-w-45 hidden lg:inline-flex"
             >
               Get started
-            </Button>
-            <Button
+            </ButtonLink>
+            <ButtonLink
+              href={MERCHANT_LOGIN_URL}
               variant="light"
               size="compact"
-              className="max-w-20 md:max-w-30 whitespace-nowrap items-center justify-center"
+              className="max-w-20 md:max-w-30 whitespace-nowrap"
             >
               Sign In
-            </Button>
+            </ButtonLink>
             <Button
               variant="light"
               size="icon"

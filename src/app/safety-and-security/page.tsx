@@ -11,7 +11,7 @@ import { YourPart } from "@/components/safety/YourPart";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
-const TITLE = "Safety & Security - Split Pay";
+const TITLE = "Safety & Security - Carrot";
 const DESCRIPTION =
   "Your money, your account, and your data — protected by layers you never have to think about.";
 
@@ -20,14 +20,13 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   openGraph: {
     type: "website",
-    url: "https://splitpay.com/safety-and-security",
-    siteName: "Split Pay",
+    url: "https://meetcarrot.xyz/safety-and-security",
+    siteName: "Carrot",
     title: TITLE,
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    site: "@splitpay",
     title: TITLE,
     description: DESCRIPTION,
   },

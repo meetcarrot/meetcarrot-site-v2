@@ -73,7 +73,7 @@ export function HowWeKeepSafe() {
             Three jobs. Done in the background.
           </h2>
           <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
-            Behind every Split Pay payment is a stack of encryption, monitoring,
+            Behind every Carrot payment is a stack of encryption, monitoring,
             and partners doing the heavy lifting.
           </p>
         </div>

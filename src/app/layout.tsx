@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
+import { Intercom } from "@/components/Intercom";
 import "./globals.css";
 
 const gtAmerica = localFont({
@@ -94,6 +96,7 @@ export default function RootLayout({
     >
       <body className="transition-colors duration-200 ease-in-out">
         {children}
+        <Intercom />
       </body>
     </html>
   );

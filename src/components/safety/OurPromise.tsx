@@ -4,7 +4,7 @@ const PROMISES = [
   "We will never sell your personal data. Not now. Not ever.",
   "We will never ask for your password by phone, email, or text.",
   "We will never store your passwords in plain text.",
-  "We will never share your transaction history outside Split Pay without your explicit permission.",
+  "We will never share your transaction history outside Carrot without your explicit permission.",
 ];
 
 export function OurPromise() {

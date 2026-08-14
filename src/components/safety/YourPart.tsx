@@ -22,12 +22,12 @@ const HABITS: { icon: ReactNode; title: string; body: string }[] = [
   {
     icon: <BellIcon height={24} width={24} fill="var(--color-white)" />,
     title: "Watch your alerts",
-    body: "We send a notification for every sign-in and split payment. If one looks unfamiliar, tap it and let us know.",
+    body: "We send a notification for every sign-in and cashback payout. If one looks unfamiliar, tap it and let us know.",
   },
   {
     icon: <KeypadLockIcon height={24} width={24} />,
     title: "Never share a code",
-    body: "No one at Split Pay will ever ask for your one-time code. If someone does, they`re not us.",
+    body: "No one at Carrot will ever ask for your one-time code. If someone does, they`re not us.",
   },
 ];
 

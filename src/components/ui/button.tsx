@@ -2,9 +2,9 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 /**
- * Port of splitpay.com's button. The `after:` layer is a fixed 5% black gradient
- * overlay that deepens to 9% while pressed — that, plus the scale/translate nudge,
- * is what gives the buttons their tactile feel.
+ * The `after:` layer is a fixed 5% black gradient overlay that deepens to 9%
+ * while pressed — that, plus the scale/translate nudge, is what gives the
+ * buttons their tactile feel.
  */
 const buttonVariants = cva(
   [
@@ -58,6 +58,40 @@ export function Button({ className, variant, size, children, ...props }: ButtonP
     >
       <div className="relative z-10">{children}</div>
     </button>
+  );
+}
+
+export interface ButtonLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof buttonVariants> {
+  href: string;
+}
+
+/**
+ * Same pill, rendered as an anchor. CTAs that navigate must be links, not
+ * buttons, so they keep middle-click, cmd-click, and "copy link address".
+ *
+ * A plain `<a>` rather than `next/link`: every current caller points at another
+ * origin (the merchant dashboard), where the router's prefetching does nothing.
+ */
+export function ButtonLink({
+  className,
+  variant,
+  size,
+  children,
+  ...props
+}: ButtonLinkProps) {
+  return (
+    <a
+      className={cn(
+        buttonVariants({ variant, size }),
+        "inline-flex items-center justify-center",
+        className,
+      )}
+      {...props}
+    >
+      <div className="relative z-10">{children}</div>
+    </a>
   );
 }
 

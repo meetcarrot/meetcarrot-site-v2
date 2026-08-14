@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL } from "@/lib/links";
 
 export function FinalCta() {
   return (
@@ -17,9 +18,9 @@ export function FinalCta() {
           </p>
           <div className="w-70 max-w-full mx-auto">
             {/* "Get Started" here; the hero's label is "Get started". */}
-            <Button variant="primary" size="default">
+            <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
               Get Started
-            </Button>
+            </ButtonLink>
           </div>
         </div>
         <div className="mt-14 lg:mt-20">

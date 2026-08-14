@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL } from "@/lib/links";
 
 /** Closing CTA — same shell as the homepage's, with this page's copy and art. */
 export function SafetyFinalCta() {
@@ -16,9 +17,9 @@ export function SafetyFinalCta() {
             Two payments instead of one. Same month. Less stress.
           </p>
           <div className="w-70 max-w-full mx-auto">
-            <Button variant="primary" size="default">
+            <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
               Get Started
-            </Button>
+            </ButtonLink>
           </div>
         </div>
         <div className="mt-14 lg:mt-20">
@@ -36,7 +37,7 @@ export function SafetyFinalCta() {
             {/* Centred under `sm` via the left/right-50% + translate trick,
                 right-anchored from `sm` up. */}
             <Image
-              alt="Split Pay app on a phone"
+              alt="Carrot app on a phone"
               loading="lazy"
               width={1308}
               height={2511}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL } from "@/lib/links";
 
 const BACKGROUND_SIZES = "(max-width: 767px) 92vw, (max-width: 1023px) 92vw, 1200px";
 const PHONE_SIZES = "(max-width: 767px) 200px, (max-width: 1023px) 240px, 368px";
@@ -42,9 +43,9 @@ export function ProductCta({
             {description}
           </p>
           <div className="w-70 max-w-full mx-auto">
-            <Button variant="primary" size="default">
+            <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
               {ctaLabel}
-            </Button>
+            </ButtonLink>
           </div>
         </div>
         <div className="mt-14 lg:mt-20">
@@ -59,7 +60,7 @@ export function ProductCta({
             />
             <Image
               src={phoneSrc}
-              alt="Split Pay app on a phone"
+              alt="Carrot app on a phone"
               loading="lazy"
               width={phoneWidth}
               height={phoneHeight}

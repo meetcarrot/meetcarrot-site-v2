@@ -1,7 +1,8 @@
 import Image from "next/image";
 
 import { CheckIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL } from "@/lib/links";
 
 /**
  * Hero band. `data-header-theme` is read by the site header's scroll listener to
@@ -43,9 +44,9 @@ export function HeroSection() {
             </p>
 
             <div className="w-70 max-w-full flex justify-center mx-auto">
-              <Button variant="primary" size="default">
+              <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
                 Get started
-              </Button>
+              </ButtonLink>
             </div>
 
             <div className="py-8 md:py-10 lg:pb-12 opacity-65 flex flex-col md:flex-row md:justify-center lg:flex-col gap-2 md:gap-0 lg:gap-2">

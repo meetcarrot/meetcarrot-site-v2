@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { MenuIcon, SplitPayLogo } from "@/components/icons";
+import { CarrotLogo } from "@/components/carrot-logo";
+import { MenuIcon } from "@/components/icons";
 import { MobileMenu } from "@/components/MobileMenu";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL, MERCHANT_LOGIN_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export type HeaderTheme = "golden" | "black" | "light";
@@ -90,28 +92,35 @@ export function SiteHeader() {
         <div className="relative">
           <div className="w-full">
             <div className="mx-auto px-6 flex justify-between items-center h-16.5 md:h-28">
+              {/*
+                Narrower than the lockup it replaced: Carrot's mark is ~2.23:1,
+                so 152px wide would stand 68px tall and overflow the 66px mobile
+                header band.
+              */}
               <Link
                 aria-label="Carrot home"
                 href="/"
-                className="block rounded mr-2 w-38 md:w-50 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
+                className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
               >
-                <SplitPayLogo className="transition-colors duration-200 w-full text-gray-400" />
+                <CarrotLogo idPrefix="header-logo" className="w-full h-auto" />
               </Link>
               <div className="flex items-center justify-end gap-4 flex-1">
-                <Button
+                <ButtonLink
+                  href={GET_STARTED_URL}
                   variant={pillVariant}
                   size="default"
-                  className="max-w-45 hidden lg:flex items-center justify-center"
+                  className="max-w-45 hidden lg:inline-flex"
                 >
                   Get started
-                </Button>
-                <Button
+                </ButtonLink>
+                <ButtonLink
+                  href={MERCHANT_LOGIN_URL}
                   variant={pillVariant}
                   size="compact"
-                  className="max-w-20 md:max-w-30 whitespace-nowrap items-center justify-center"
+                  className="max-w-20 md:max-w-30 whitespace-nowrap"
                 >
                   Sign In
-                </Button>
+                </ButtonLink>
                 <Button
                   variant="dark"
                   size="icon"

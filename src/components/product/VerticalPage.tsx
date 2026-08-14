@@ -24,6 +24,19 @@ import { FAQS } from "@/data/faqs";
 import { PRODUCT_TESTIMONIALS } from "@/data/product-testimonials";
 import type { VerticalConfig } from "@/data/verticals";
 
+const wholeDollars = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
+
+/**
+ * The revenue figure the two hero chips illustrate. Held constant across
+ * verticals so the chips compare like for like; only the derived cashback spend
+ * and customer count move with each vertical's AOV and rate.
+ */
+const SAMPLE_REVENUE = 2000;
+
 /**
  * All four vertical routes render this. Everything that differs between them
  * lives in `@/data/verticals` — icons and layout stay here so the pages can't
@@ -32,6 +45,7 @@ import type { VerticalConfig } from "@/data/verticals";
 export function VerticalPage({ config }: { config: VerticalConfig }) {
   const dir = `/images/${config.slug}`;
   const photos = Array.from({ length: 9 }, (_, i) => `${dir}/img-${i + 1}.png`);
+  const sampleCustomers = Math.floor(SAMPLE_REVENUE / config.averageOrderValue);
 
   const [benefitOne, benefitTwo, benefitThree] = config.benefits;
   const [stepOne, stepTwo, stepThree] = config.easySteps;
@@ -58,11 +72,15 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
           imageSizes="(min-width: 1024px) 624px, 100vw"
           imageBleedClassName="lg:-bottom-16"
           firstPayment={{
-            amount: "$1,000",
+            label: "Revenue driven",
+            amount: wholeDollars.format(SAMPLE_REVENUE),
+            caption: "Per month",
             className: "top-23 md:top-17 lg:top-55 -left-4 md:-left-6",
           }}
           secondPayment={{
-            amount: "$1,000",
+            label: "Your cashback spend",
+            amount: wholeDollars.format(SAMPLE_REVENUE * config.cashbackRate),
+            caption: `${sampleCustomers} customers`,
             className: "-bottom-4 md:bottom-2 md:-right-6 -right-4",
           }}
         />

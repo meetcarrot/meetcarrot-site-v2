@@ -1,22 +1,40 @@
 @import "tailwindcss";
 
 /*
- * Design tokens extracted verbatim from splitpay.com's compiled Tailwind v4 theme.
- * Values are the exact hex codes the target site ships — do not "improve" them.
+ * Carrot's palette, sampled from meetcarrot.xyz (assets/css/main.css and the
+ * brand logo SVG). The token *names* are inherited from the Split Pay layout
+ * this site was built on — `orange-100` is Carrot's magenta and `golden` is
+ * Carrot's yellow. Renaming them would touch every component for no visual
+ * gain, so the names stay and only the values are Carrot's.
  */
 @theme {
   --color-white: #fff;
   --color-black: #000;
-  --color-golden: #fae182;
-  --color-green: #3acb00;
-  --color-orange-100: #f56b3f;
-  --color-orange-200: #ec683d;
-  --color-orange-300: #d45e37;
-  --color-gray-100: #f5f4f2;
-  --color-gray-200: #e5e5e5;
-  --color-gray-300: #d0cfce;
-  --color-gray-400: #292929;
-  --color-gray-600: #8f8e8d;
+
+  /* The four stops of the brand gradient, in logo order. */
+  --color-brand-magenta: #ff009b;
+  --color-brand-rose: #ff006f;
+  --color-brand-red: #ff0062;
+  --color-brand-orange: #ff4a17;
+
+  /* Primary accent: buttons, avatars, chevron pills, links. */
+  --color-orange-100: #ff0063;
+  --color-orange-200: #ff009b;
+  --color-orange-300: #ff4a17;
+
+  /* Secondary accents from the marketing site. */
+  --color-golden: #ffd336;
+  --color-teal: #61c5d0;
+  --color-purple: #ae6eff;
+  --color-blue: #6179d0;
+  --color-green: #61c5d0;
+
+  --color-gray-100: #f8f8f5;
+  --color-gray-200: #e4e4e4;
+  --color-gray-300: #d4d4d7;
+  --color-gray-400: #2a2638;
+  --color-gray-600: #90919b;
+  --color-pink-100: #fff4f8;
   --color-red: #e61700;
 
   --font-sans: var(--font-gt-america), Arial, sans-serif;

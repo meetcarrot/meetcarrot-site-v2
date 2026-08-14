@@ -2,7 +2,8 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
+import { GET_STARTED_URL } from "@/lib/links";
 
 /**
  * Circle-check bullet used by the trust badges. Local to this file because the
@@ -111,9 +112,11 @@ function PaymentCard({ icon, label, amount, caption, className }: PaymentCardPro
   );
 }
 
-/** The two floating payment chips. Only the amount and the offsets vary. */
+/** The two floating stat chips over the hero photo. */
 export interface ProductHeroPayment {
+  label: string;
   amount: string;
+  caption: string;
   /** Absolute-position utilities for this product, merged over the shared card class. */
   className: string;
 }
@@ -186,9 +189,9 @@ export function ProductHero({
                 the literal spaces split it into four junk classes, so it renders no
                 shadow. Omitted rather than "fixed" — the button carries its own. */}
             <div className="w-70 max-w-full mx-auto lg:mx-0">
-              <Button variant="primary" size="default">
+              <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
                 {ctaLabel}
-              </Button>
+              </ButtonLink>
             </div>
             <ul
               className={cn(
@@ -215,16 +218,16 @@ export function ProductHero({
           >
             <PaymentCard
               icon={<FirstPaymentIcon />}
-              label="1st split payment"
+              label={firstPayment.label}
               amount={firstPayment.amount}
-              caption="Monthly due date"
+              caption={firstPayment.caption}
               className={firstPayment.className}
             />
             <PaymentCard
               icon={<SecondPaymentIcon />}
-              label="2nd split payment"
+              label={secondPayment.label}
               amount={secondPayment.amount}
-              caption="14 days later"
+              caption={secondPayment.caption}
               className={secondPayment.className}
             />
             <div

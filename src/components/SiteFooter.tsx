@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { CarrotLogoWhite } from "@/components/carrot-logo";
+
 import {
   AppStoreBadge,
   CarIcon,
@@ -7,7 +9,6 @@ import {
   MortgageIcon,
   OtherBillsIcon,
   RentIcon,
-  SplitPayLogoWhite,
 } from "@/components/icons";
 
 const APP_STORE_URL =
@@ -53,16 +54,15 @@ const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [
 ];
 
 /**
- * `variant` namespaces the logo's gradient ids. The footer renders this block
- * three times (one per breakpoint layout); without distinct ids the browser
- * resolves them all to the first copy, which is `display:none` and paints nothing.
+ * The footer renders this block three times, one per breakpoint layout. The
+ * white logo cut is a flat fill with no gradient ids, so the copies can't
+ * collide the way a gradient lockup would.
  */
-function BrandBlock({ variant }: { variant: string }) {
+function BrandBlock() {
   return (
     <div>
       <div>
-        {/* TODO: swap for the Carrot wordmark once the logo asset lands. */}
-        <SplitPayLogoWhite idPrefix={`footer-${variant}`} width={152} height={34} />
+        <CarrotLogoWhite width={140} height={63} />
         {/* TODO: awaiting the final footer tagline. */}
         <p className="text-[16px] font-normal leading-[1.33] text-white mt-6">
           Steady revenue on autopilot.{" "}
@@ -153,13 +153,13 @@ export function SiteFooter() {
           the breakpoint behaviour matches.
         */}
         <div className="grid grid-cols-1 gap-14 md:hidden">
-          <BrandBlock variant="mobile" />
+          <BrandBlock />
           <CategoriesNav />
           <LearnMoreNav />
           <LegalBlock />
         </div>
         <div className="hidden md:grid grid-cols-1 gap-14 lg:hidden">
-          <BrandBlock variant="md" />
+          <BrandBlock />
           <div className="grid grid-cols-2 gap-14">
             <CategoriesNav />
             <LearnMoreNav />
@@ -168,7 +168,7 @@ export function SiteFooter() {
         </div>
         <div className="hidden lg:flex items-start justify-between">
           <div>
-            <BrandBlock variant="lg" />
+            <BrandBlock />
             <div className="mt-16">
               <LegalBlock />
             </div>

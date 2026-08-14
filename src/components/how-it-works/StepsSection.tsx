@@ -60,7 +60,7 @@ const STEPS: Step[] = [
     height: 217,
     body: (
       <>
-        Once approved, you&rsquo;ll get Split Pay account and routing numbers
+        Once approved, you&rsquo;ll get Carrot account and routing numbers
         that can be added to your payment portal like a bank account.
       </>
     ),
@@ -73,7 +73,7 @@ const STEPS: Step[] = [
     height: 178,
     body: (
       <>
-        After adding your Split Pay account numbers to your payment portal,
+        After adding your Carrot account numbers to your payment portal,
         you&rsquo;re ready to split your bill.
       </>
     ),
@@ -88,7 +88,7 @@ export function StepsSection() {
     >
       <div className="mx-auto px-6 container lg:max-w-324">
         <h1 className="text-[40px] leading-[115%]! font-poly-sans-wide text-center md:text-[56px] lg:text-[64px]">
-          How Split Pay works
+          How Carrot works
         </h1>
         <div className="mt-10 md:mt-20 grid grid-cols-1 gap-6 md:gap-10 max-w-167 mx-auto">
           {STEPS.map((step) => (

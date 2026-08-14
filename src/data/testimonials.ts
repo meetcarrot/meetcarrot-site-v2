@@ -5,26 +5,25 @@ import type { Testimonial, TestimonialTheme } from "@/types/content";
  * this is what keeps two same-coloured cards from stacking inside a column.
  * Every review set is exactly 18 entries so the sequence lines up.
  *
- * TODO: brand colours aren't final. Once they are, `--color-golden` /
- * `--color-orange-100` in globals.css get the Carrot values and these class
- * fragments keep working unchanged.
+ * The four card colours are the brand's two hues plus ink and white, so the
+ * rail reads as pink and orange rather than one accent repeated.
  */
 export const TESTIMONIAL_THEME_CYCLE: TestimonialTheme[] = [
   "bg-gray-400 text-white",
-  "bg-golden text-gray-400",
-  "bg-orange-100 text-white",
+  "bg-orange text-white",
+  "bg-pink text-white",
   "bg-white text-gray-400",
   "bg-white text-gray-400",
   "bg-gray-400 text-white",
-  "bg-golden text-gray-400",
+  "bg-orange text-white",
   "bg-white text-gray-400",
-  "bg-orange-100 text-white",
+  "bg-pink text-white",
   "bg-gray-400 text-white",
   "bg-white text-gray-400",
-  "bg-golden text-gray-400",
+  "bg-orange text-white",
   "bg-gray-400 text-white",
-  "bg-golden text-gray-400",
-  "bg-orange-100 text-white",
+  "bg-orange text-white",
+  "bg-pink text-white",
   "bg-white text-gray-400",
   "bg-white text-gray-400",
   "bg-gray-400 text-white",

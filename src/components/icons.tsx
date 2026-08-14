@@ -51,7 +51,7 @@ export function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg aria-hidden="true" focusable="false" {...props} fill="none" height="14" viewBox="0 0 18 14" width="18"><rect fill="var(--color-golden)" height="2" rx="1" width="18" /><rect fill="var(--color-golden)" height="2" rx="1" width="18" y="6" /><rect fill="var(--color-golden)" height="2" rx="1" width="18" y="12" /></svg>
+    <svg aria-hidden="true" focusable="false" {...props} fill="none" height="14" viewBox="0 0 18 14" width="18"><rect fill="var(--color-orange)" height="2" rx="1" width="18" /><rect fill="var(--color-orange)" height="2" rx="1" width="18" y="6" /><rect fill="var(--color-orange)" height="2" rx="1" width="18" y="12" /></svg>
   );
 }
 

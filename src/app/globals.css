@@ -2,39 +2,64 @@
 
 /*
  * Carrot's palette, sampled from meetcarrot.xyz (assets/css/main.css and the
- * brand logo SVG). The token *names* are inherited from the Split Pay layout
- * this site was built on — `orange-100` is Carrot's magenta and `golden` is
- * Carrot's yellow. Renaming them would touch every component for no visual
- * gain, so the names stay and only the values are Carrot's.
+ * brand logo SVG).
+ *
+ * The brand is two colours — hot pink and orange — and they are the two ends of
+ * the logo's gradient. Everything accented on this site is drawn from that ramp;
+ * there is no third hue.
  */
 @theme {
   --color-white: #fff;
   --color-black: #000;
 
-  /* The four stops of the brand gradient, in logo order. */
-  --color-brand-magenta: #ff009b;
+  /* The logo gradient, stop for stop. Use for anything spanning both hues. */
+  --color-brand-hot: #ff009b;
   --color-brand-rose: #ff006f;
-  --color-brand-red: #ff0062;
+  --color-brand-pink: #ff0062;
   --color-brand-orange: #ff4a17;
 
-  /* Primary accent: buttons, avatars, chevron pills, links. */
-  --color-orange-100: #ff0063;
-  --color-orange-200: #ff009b;
-  --color-orange-300: #ff4a17;
+  /* Pink — the primary accent: buttons, avatars, chevron pills, links. */
+  --color-pink-50: #fff4f8;
+  --color-pink: #ff0063;
+  --color-pink-hot: #ff009b;
+  --color-pink-dark: #cc004f;
 
-  /* Secondary accents from the marketing site. */
-  --color-golden: #ffd336;
-  --color-teal: #61c5d0;
-  --color-purple: #ae6eff;
-  --color-blue: #6179d0;
-  --color-green: #61c5d0;
+  /* Orange — the secondary accent, the far end of the same gradient. */
+  --color-orange: #ff4a17;
+  --color-orange-dark: #d63a0e;
+
+  /*
+   * Drop Tailwind's stock orange and pink ramps. Without this, a stray
+   * `bg-orange-100` resolves to the framework's pale peach instead of failing
+   * loudly — a wrong colour that still renders is the hardest kind to catch.
+   */
+  --color-orange-50: initial;
+  --color-orange-100: initial;
+  --color-orange-200: initial;
+  --color-orange-300: initial;
+  --color-orange-400: initial;
+  --color-orange-500: initial;
+  --color-orange-600: initial;
+  --color-orange-700: initial;
+  --color-orange-800: initial;
+  --color-orange-900: initial;
+  --color-orange-950: initial;
+  --color-pink-100: initial;
+  --color-pink-200: initial;
+  --color-pink-300: initial;
+  --color-pink-400: initial;
+  --color-pink-500: initial;
+  --color-pink-600: initial;
+  --color-pink-700: initial;
+  --color-pink-800: initial;
+  --color-pink-900: initial;
+  --color-pink-950: initial;
 
   --color-gray-100: #f8f8f5;
   --color-gray-200: #e4e4e4;
   --color-gray-300: #d4d4d7;
   --color-gray-400: #2a2638;
   --color-gray-600: #90919b;
-  --color-pink-100: #fff4f8;
   --color-red: #e61700;
 
   --font-sans: var(--font-gt-america), Arial, sans-serif;

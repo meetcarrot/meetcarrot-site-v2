@@ -43,10 +43,17 @@ export function CarrotLogo({ idPrefix = "carrotlogo", ...props }: CarrotLogoProp
           x2="0%"
           y2="59.7933026%"
         >
-          <stop stopColor="var(--color-brand-magenta)" offset="0%" />
-          <stop stopColor="var(--color-brand-rose)" offset="40.6495298%" />
-          <stop stopColor="var(--color-brand-red)" offset="58.1046469%" />
-          <stop stopColor="var(--color-brand-orange)" offset="100%" />
+          {/*
+            Literal hex, not theme vars. Tailwind only emits a `--color-*` it can
+            see referenced in scanned source, and a var name inside an SVG
+            attribute is easy to miss on a rename — which silently drops a stop
+            and repaints the mark black. The logo is fixed brand artwork, so
+            there is nothing to gain from making it themeable.
+          */}
+          <stop stopColor="#ff009b" offset="0%" />
+          <stop stopColor="#ff006f" offset="40.6495298%" />
+          <stop stopColor="#ff0062" offset="58.1046469%" />
+          <stop stopColor="#ff4a17" offset="100%" />
         </linearGradient>
       </defs>
       <g

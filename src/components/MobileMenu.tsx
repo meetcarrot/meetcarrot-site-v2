@@ -61,14 +61,14 @@ const LEARN_MORE_LINKS = [
 ] as const;
 
 const CARD_CLASS =
-  "relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black cursor-pointer flex flex-col justify-center transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black cursor-pointer flex flex-col justify-center transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
 
 
 const CARD_LABEL_CLASS =
   "font-medium tracking-[-0.56px] text-white text-[18px] text-center";
 
 const LEARN_MORE_LINK_CLASS =
-  "relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "relative block h-12 overflow-hidden rounded-full bg-black/50 px-5 flex items-center justify-between shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
 
 export function MobileMenu({ onClose }: MobileMenuProps) {
   useEffect(() => {
@@ -93,7 +93,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             aria-label="Carrot home"
             href="/"
             onClick={onClose}
-            className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
+            className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
           >
             <CarrotLogoWhite className="w-full h-auto" />
           </Link>

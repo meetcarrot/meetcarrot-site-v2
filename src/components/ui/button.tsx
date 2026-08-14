@@ -17,17 +17,17 @@ const buttonVariants = cva(
     "after:transition-opacity after:duration-200 after:ease-out active:after:opacity-[0.09]",
     "active:scale-[0.98] active:translate-y-[1px]",
     "focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2",
-    "focus-visible:ring-orange-200/80 focus-visible:ring-offset-white focus-visible:ring-offset-2",
+    "focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2",
     "transition duration-200 ease-in-out",
     "shadow-[0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[0_1px_3px_0_rgba(0,0,0,0.12)]",
   ],
   {
     variants: {
       variant: {
-        primary: "text-gray-100 bg-orange-100 hover:bg-orange-100 active:bg-orange-300",
+        primary: "text-gray-100 bg-pink hover:bg-pink active:bg-pink-dark",
         dark: "text-white bg-black hover:bg-black active:bg-gray-400",
-        /** Dark pill as it appears over the golden hero — label picks up the golden. */
-        darkOnGolden: "text-golden bg-black hover:bg-black active:bg-gray-400",
+        /** Dark pill over the pale-pink hero band — the label picks up the pink. */
+        darkOnTint: "text-pink bg-black hover:bg-black active:bg-gray-400",
         /** White pill used by the mobile menu's own header row; softer shadow. */
         light:
           [

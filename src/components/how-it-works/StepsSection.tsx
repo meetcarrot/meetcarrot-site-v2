@@ -83,8 +83,8 @@ const STEPS: Step[] = [
 export function StepsSection() {
   return (
     <section
-      className="bg-golden pb-14 lg:pb-24 pt-30 lg:pt-50"
-      data-header-theme="golden"
+      className="bg-pink-50 pb-14 lg:pb-24 pt-30 lg:pt-50"
+      data-header-theme="tint"
     >
       <div className="mx-auto px-6 container lg:max-w-324">
         <h1 className="text-[40px] leading-[115%]! font-poly-sans-wide text-center md:text-[56px] lg:text-[64px]">

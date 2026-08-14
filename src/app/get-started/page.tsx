@@ -51,7 +51,7 @@ export default function GetStartedPage() {
                 key={step.title}
                 className="bg-white rounded-[20px] lg:rounded-4xl p-6 lg:p-8 shadow-[0_2px_6px_0_rgba(0,0,0,0.06)]"
               >
-                <div className="size-10 rounded-full bg-orange-100 text-white flex items-center justify-center font-semibold text-[16px] mb-4">
+                <div className="size-10 rounded-full bg-pink text-white flex items-center justify-center font-semibold text-[16px] mb-4">
                   {index + 1}
                 </div>
                 <p className="font-medium text-[18px] md:text-[20px] mb-2">
@@ -71,7 +71,7 @@ export default function GetStartedPage() {
           <p className="mt-8 text-center text-[16px] leading-[1.33] text-gray-600">
             Would rather talk it through first?{" "}
             <a
-              className="text-orange-100 underline"
+              className="text-pink underline"
               href={DEMO_URL}
               rel="noopener noreferrer"
               target="_blank"

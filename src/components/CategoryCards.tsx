@@ -55,7 +55,7 @@ const CATEGORIES: Category[] = [
 function CategoryCard({ href, title, description, lottieSrc }: Category) {
   return (
     <Link
-      className="focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
+      className="focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
       href={href}
     >
       <div className={CARD_BODY_CLASS}>
@@ -72,7 +72,7 @@ function CategoryCard({ href, title, description, lottieSrc }: Category) {
             <p className={CARD_TITLE_CLASS}>{title}</p>
             <p className={CARD_DESCRIPTION_CLASS}>{description}</p>
           </div>
-          <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-orange-100 rounded-full shrink-0">
+          <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-pink rounded-full shrink-0">
             <ChevronRightIcon width={12} height={12} />
           </div>
         </div>

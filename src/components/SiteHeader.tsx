@@ -9,10 +9,10 @@ import { Button, ButtonLink } from "@/components/ui/button";
 import { GET_STARTED_URL, MERCHANT_LOGIN_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
-export type HeaderTheme = "golden" | "black" | "light";
+export type HeaderTheme = "tint" | "black" | "light";
 
 function isHeaderTheme(value: string | undefined): value is HeaderTheme {
-  return value === "golden" || value === "black" || value === "light";
+  return value === "tint" || value === "black" || value === "light";
 }
 
 /**
@@ -68,9 +68,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
 
-  // `golden` and `black` share a treatment: golden labels, no backdrop blur.
-  const onDarkBackdrop = theme === "golden" || theme === "black";
-  const pillVariant = onDarkBackdrop ? "darkOnGolden" : "dark";
+  // `tint` and `black` share a treatment: pink labels, no backdrop blur.
+  const onDarkBackdrop = theme === "tint" || theme === "black";
+  const pillVariant = onDarkBackdrop ? "darkOnTint" : "dark";
 
   return (
     <>
@@ -87,7 +87,7 @@ export function SiteHeader() {
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-linear-to-t transition-[opacity,--tw-gradient-from,--tw-gradient-to] duration-300 ease-out from-golden/10 to-golden mask-[linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] opacity-0"
+          className="pointer-events-none absolute inset-0 bg-linear-to-t transition-[opacity,--tw-gradient-from,--tw-gradient-to] duration-300 ease-out from-pink-50/10 to-pink-50 mask-[linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] opacity-0"
         />
         <div className="relative">
           <div className="w-full">
@@ -100,7 +100,7 @@ export function SiteHeader() {
               <Link
                 aria-label="Carrot home"
                 href="/"
-                className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
+                className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
               >
                 <CarrotLogo idPrefix="header-logo" className="w-full h-auto" />
               </Link>

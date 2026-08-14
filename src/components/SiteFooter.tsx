@@ -17,17 +17,17 @@ const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=xyz.meetcarrot.mobile&hl=en_US";
 
 const BADGE_LINK_CLASS =
-  "block rounded-3xl relative shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition duration-200 ease-out hover:brightness-85 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "block rounded-3xl relative shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition duration-200 ease-out hover:brightness-85 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
 
 // The two column families use slightly different hover selectors on the target:
 // the icon columns recolour every `path`, the text columns exclude gradient fills.
 const PRODUCT_LINK_CLASS =
-  "group inline-flex items-center gap-3 hover:[&_svg_path]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "group inline-flex items-center gap-3 hover:[&_svg_path]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
 const TEXT_LINK_CLASS =
-  "group inline-flex items-center gap-3 hover:[&_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "group inline-flex items-center gap-3 hover:[&_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
 
 const COLUMN_LABEL_CLASS =
-  "font-medium tracking-[-0.56px] text-orange-100 text-[12px] mb-6";
+  "font-medium tracking-[-0.56px] text-pink text-[12px] mb-6";
 const LINK_TEXT_CLASS =
   "text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600";
 

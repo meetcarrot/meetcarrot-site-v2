@@ -7,7 +7,7 @@ import { GET_STARTED_URL } from "@/lib/links";
 /**
  * Hero band. `data-header-theme` is read by the site header's scroll listener to
  * flip its palette while this section is in view — the band is white, so the
- * header takes the light (blurred) treatment rather than the golden one.
+ * header takes the light (blurred) treatment rather than the tinted one.
  *
  * The two flanking photo columns and the in-copy `grid-cols-2` block are two
  * renderings of the same pair of images, swapped at the `lg` breakpoint.
@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="mx-auto px-6 container lg:max-w-324 pt-12">
         <div className="flex justify-between gap-6">
           <div className="h-fill flex-1 relative hidden lg:block">
-            {/* -bottom-12 lets the photo bleed 48px past the golden band; nothing above may clip it. */}
+            {/* -bottom-12 lets the photo bleed 48px past the hero band; nothing above may clip it. */}
             <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
               <Image
                 src="/images/deco-left.png"

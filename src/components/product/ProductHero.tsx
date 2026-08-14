@@ -137,7 +137,7 @@ export interface ProductHeroProps {
   imageSizes: string;
   /** Per-product height on the right-hand column (e.g. `md:h-110 lg:h-180`). */
   imageColumnClassName?: string;
-  /** Per-product bleed below the golden band (e.g. `lg:-bottom-30`). */
+  /** Per-vertical bleed below the tinted band (e.g. `lg:-bottom-30`). */
   imageBleedClassName?: string;
   firstPayment: ProductHeroPayment;
   secondPayment: ProductHeroPayment;
@@ -146,10 +146,10 @@ export interface ProductHeroProps {
 /**
  * Golden hero shared by /rent, /mortgage and /car.
  *
- * `data-header-theme="golden"` is read by the site header's intersection
+ * `data-header-theme="tint"` is read by the site header's intersection
  * observer to flip its palette while this section is in view.
  *
- * The right-hand photo bleeds past the golden band via a negative `bottom` on an
+ * The right-hand photo bleeds past the tinted band via a negative `bottom` on an
  * `inset-0` wrapper, so the column's own height is what positions the two
  * floating payment chips — hence the per-product height and offset overrides.
  */
@@ -170,8 +170,8 @@ export function ProductHero({
 }: ProductHeroProps) {
   return (
     <section
-      className="bg-golden pt-18 mb-18 md:pt-28 md:mb-8"
-      data-header-theme="golden"
+      className="bg-pink-50 pt-18 mb-18 md:pt-28 md:mb-8"
+      data-header-theme="tint"
     >
       <div className="mx-auto px-6 container lg:max-w-324 pt-12">
         <div className="block justify-between gap-6 lg:flex">

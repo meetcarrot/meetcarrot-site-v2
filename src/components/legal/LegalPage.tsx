@@ -21,7 +21,7 @@ const RICH_TEXT_CLASS = [
   "[&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4",
   "[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4",
   "[&_li]:mb-2 [&_li_p]:mb-0",
-  "[&_a]:text-orange-100 [&_a]:underline",
+  "[&_a]:text-pink [&_a]:underline",
 ].join(" ");
 
 const CARD_CLASS =
@@ -68,7 +68,7 @@ export function LegalPage({ doc }: LegalPageProps) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenId(isOpen ? null : section.id)}
-                className="flex w-full items-center justify-between gap-8 py-5 px-5 lg:py-6 lg:px-8 cursor-pointer text-left rounded-3xl lg:rounded-4xl transition duration-200 ease-in-out active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
+                className="flex w-full items-center justify-between gap-8 py-5 px-5 lg:py-6 lg:px-8 cursor-pointer text-left rounded-3xl lg:rounded-4xl transition duration-200 ease-in-out active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
               >
                 <span className="text-[18px] font-medium leading-[1.33]">
                   {section.title}

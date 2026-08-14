@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const CARD_CLASS =
-  "flex flex-col items-start gap-5 p-10 bg-white rounded-[32px] shadow-[0_12px_12px_0_rgba(0,0,0,0.05)] transition-shadow duration-200 ease-out hover:shadow-[0_16px_20px_0_rgba(0,0,0,0.08)] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white focus-visible:ring-offset-2";
+  "flex flex-col items-start gap-5 p-10 bg-white rounded-[32px] shadow-[0_12px_12px_0_rgba(0,0,0,0.05)] transition-shadow duration-200 ease-out hover:shadow-[0_16px_20px_0_rgba(0,0,0,0.08)] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2";
 const TITLE_CLASS = "font-poly-sans-wide text-[28px] leading-[1.3]!";
 const DETAIL_CLASS = "text-[18px] leading-[1.3] font-medium text-black";
 const BADGE_CLASS =
@@ -32,12 +32,12 @@ function EmailIcon() {
   );
 }
 
-function IconBadge({ tone, children }: { tone: "orange" | "gray"; children: React.ReactNode }) {
+function IconBadge({ tone, children }: { tone: "pink" | "gray"; children: React.ReactNode }) {
   return (
     <div
       className={cn(
         "flex items-center justify-center size-14 rounded-full",
-        tone === "orange" ? "bg-orange-100" : "bg-gray-600",
+        tone === "pink" ? "bg-pink" : "bg-gray-600",
       )}
     >
       {children}
@@ -65,7 +65,7 @@ export function StillNeedHelp() {
               it is inert until then, matching the target's own behaviour.
             */}
             <button type="button" className={cn(CARD_CLASS, "cursor-pointer text-left")}>
-              <IconBadge tone="orange">
+              <IconBadge tone="pink">
                 <ChatIcon />
               </IconBadge>
               <div className="flex flex-col gap-3">
@@ -74,7 +74,7 @@ export function StillNeedHelp() {
                   Start a conversation with our team
                 </p>
               </div>
-              <span className={cn(BADGE_CLASS, "bg-golden")}>Available 24/7</span>
+              <span className={cn(BADGE_CLASS, "bg-pink-50")}>Available 24/7</span>
             </button>
 
             <a className={CARD_CLASS} href="mailto:support@meetcarrot.xyz">

@@ -8,20 +8,21 @@ import { TESTIMONIALS } from "@/data/testimonials";
 import type { Testimonial, TestimonialTheme } from "@/types/content";
 
 /**
- * Measured per-theme colours, not derivable by swapping: the `bg-white` card's
- * avatar is orange, not grey.
+ * Avatar and divider colours per card theme. Not derivable by swapping the card
+ * colours around — the white card's avatar is pink, and the two brand-coloured
+ * cards both take a white avatar so the initials stay legible.
  */
 const AVATAR_THEME: Record<TestimonialTheme, string> = {
   "bg-gray-400 text-white": "bg-white text-gray-400",
-  "bg-golden text-gray-400": "bg-gray-400 text-golden",
-  "bg-orange-100 text-white": "bg-white text-orange-100",
-  "bg-white text-gray-400": "bg-orange-100 text-white",
+  "bg-orange text-white": "bg-white text-orange",
+  "bg-pink text-white": "bg-white text-pink",
+  "bg-white text-gray-400": "bg-pink text-white",
 };
 
 const DIVIDER_THEME: Record<TestimonialTheme, string> = {
   "bg-gray-400 text-white": "bg-white/15",
-  "bg-golden text-gray-400": "bg-black/15",
-  "bg-orange-100 text-white": "bg-black/15",
+  "bg-orange text-white": "bg-black/15",
+  "bg-pink text-white": "bg-black/15",
   "bg-white text-gray-400": "bg-black/10",
 };
 

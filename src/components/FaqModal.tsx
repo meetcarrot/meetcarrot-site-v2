@@ -104,7 +104,7 @@ export function FaqModal({ faqs, index, onIndexChange, onClose, triggerRef }: Fa
           type="button"
           aria-label="Close"
           onClick={onClose}
-          className="absolute top-4 right-4 md:top-6 md:right-6 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-[22px] leading-none text-gray-400 transition duration-200 ease-in-out active:scale-[0.96] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
+          className="absolute top-4 right-4 md:top-6 md:right-6 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-[22px] leading-none text-gray-400 transition duration-200 ease-in-out active:scale-[0.96] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
         >
           <span aria-hidden="true">&times;</span>
         </button>
@@ -114,7 +114,7 @@ export function FaqModal({ faqs, index, onIndexChange, onClose, triggerRef }: Fa
         </h3>
 
         <div
-          className="text-[16px] leading-[1.5] [&_p]:mb-4 [&_p:last-child]:mb-0 [&_strong]:font-medium [&_a.external-link]:text-orange-100 [&_a.external-link]:underline"
+          className="text-[16px] leading-[1.5] [&_p]:mb-4 [&_p:last-child]:mb-0 [&_strong]:font-medium [&_a.external-link]:text-pink [&_a.external-link]:underline"
           dangerouslySetInnerHTML={{ __html: faq.answer }}
         />
 

@@ -17,7 +17,7 @@ const INTAKE_ENDPOINT = process.env.NEXT_PUBLIC_INTAKE_ENDPOINT;
 const SUPPORT_EMAIL = "support@meetcarrot.xyz";
 
 const FIELD_CLASS =
-  "w-full h-12 rounded-2xl border border-black/10 bg-white px-4 text-[16px] leading-[1.33] placeholder:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 transition duration-200 ease-in-out";
+  "w-full h-12 rounded-2xl border border-black/10 bg-white px-4 text-[16px] leading-[1.33] placeholder:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-100 transition duration-200 ease-in-out";
 const LABEL_CLASS = "block text-[14px] font-medium mb-2";
 
 type Status = "idle" | "submitting" | "sent" | "error";

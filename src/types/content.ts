@@ -1,8 +1,8 @@
 /** Colour pairing a testimonial card is rendered with, as Tailwind class fragments. */
 export type TestimonialTheme =
   | "bg-gray-400 text-white"
-  | "bg-golden text-gray-400"
-  | "bg-orange-100 text-white"
+  | "bg-orange text-white"
+  | "bg-pink text-white"
   | "bg-white text-gray-400";
 
 export interface Testimonial {

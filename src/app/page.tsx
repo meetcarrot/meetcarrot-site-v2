@@ -1,8 +1,8 @@
+import { CategoryCards } from "@/components/CategoryCards";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { HeroSection } from "@/components/HeroSection";
 import { HowItWorks } from "@/components/HowItWorks";
-import { ProductCards } from "@/components/ProductCards";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Testimonials } from "@/components/Testimonials";
@@ -18,7 +18,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <ProductCards />
+        <CategoryCards />
         <HowItWorks />
         <Testimonials />
         <FaqSection />

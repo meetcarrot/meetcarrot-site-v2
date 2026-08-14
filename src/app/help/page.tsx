@@ -2,21 +2,14 @@ import type { Metadata } from "next";
 import { FaqSection } from "@/components/FaqSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { HELP_CATEGORIES, HELP_FAQS } from "@/data/help";
+import { FAQS } from "@/data/faqs";
 import { StillNeedHelp } from "./StillNeedHelp";
 
 export const metadata: Metadata = {
-  title: "Help Center - Split Pay",
+  title: "Help & FAQs - Carrot",
   description:
-    "Answers about Split Pay accounts, payments, eligibility, and support. Browse help articles or reach our team by chat, text, email, or phone.",
+    "Answers about Carrot offers, payouts, and merchant accounts. Reach our team by chat or email.",
 };
-
-/** Verbatim from `docs/research/markup-help/section-01.txt`. */
-const CATEGORY_CARD_CLASS =
-  "focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white focus-visible:ring-offset-2 flex flex-col gap-1 py-5 px-5 lg:py-6 lg:px-8 bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl transition duration-200 ease-in-out shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] active:shadow-[0_4px_8px_0_rgba(0,0,0,0.04)] active:scale-[0.99] active:translate-y-px";
-
-const SECTION_HEADING_CLASS =
-  "text-[40px] font-poly-sans-wide text-center leading-[1.3]!";
 
 /**
  * The hero carries its own `pt-18 md:pt-28` — that, not page-level padding, is
@@ -49,30 +42,14 @@ export default function HelpPage() {
           </div>
         </section>
 
-        <section className="bg-gray-100">
-          <div className="mx-auto px-6 container lg:max-w-324 pt-24 md:pt-28 lg:pt-40">
-            <div className="flex flex-col gap-6 md:gap-8">
-              <h2 className={SECTION_HEADING_CLASS}>How can we help?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-                {HELP_CATEGORIES.map((category) => (
-                  <a
-                    key={category.slug}
-                    href={`/help/${category.slug}`}
-                    className={CATEGORY_CARD_CLASS}
-                  >
-                    <span className="text-[18px] font-medium">{category.title}</span>
-                    <span className="text-[16px] font-normal leading-[1.33] text-gray-600">
-                      {category.articleCount}{" "}
-                      {category.articleCount === 1 ? "article" : "articles"}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/*
+          The help-article category grid is hidden for now — there are no
+          articles behind it yet. `HELP_CATEGORIES` still lives in @/data/help
+          for when it comes back.
+        */}
 
-        <FaqSection faqs={HELP_FAQS} />
+        {/* TODO: swap for Carrot's own 12 FAQs once that copy lands. */}
+        <FaqSection faqs={FAQS} />
 
         <StillNeedHelp />
       </main>

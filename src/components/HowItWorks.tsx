@@ -11,43 +11,48 @@ interface Step {
   copy: ReactNode;
 }
 
+/**
+ * TODO: the three phone screens are being replaced by animations (see the
+ * changes doc). Until that art lands the existing 296x418 / 432x611 crops stay
+ * so the section keeps its intrinsic ratio; only `mobileSrc`/`desktopSrc` change.
+ */
 const steps: Step[] = [
   {
-    alt: "app view: product selector",
+    alt: "set your terms",
     mobileSrc: "/images/slide-1.png",
     desktopSrc: "/images/slide-1-lg.png",
-    title: "Pick your bill",
+    title: "Set Your Terms",
     copy: (
       <>
-        Add your rent, mortgage, car payment,{" "}
+        You’re in full control. Choose your rates, limits,{" "}
         <br className="hidden md:block" />
-        or other bills. Takes about 2 minutes.
+        and caps — then change them whenever you want.
       </>
     ),
   },
   {
-    alt: "app view: split example",
+    alt: "we promote it",
     mobileSrc: "/images/slide-2.png",
     desktopSrc: "/images/slide-2-lg.png",
-    title: "We split it",
+    title: "We Promote It",
     copy: (
       <>
-        We look at your cash flow and set your split,{" "}
+        Carrot automatically targets the right customers{" "}
         <br className="hidden md:block" />
-        anywhere from 30% to 50% of the bill.
+        and sends dynamic offers in real time.
       </>
     ),
   },
   {
-    alt: "app view: schedule",
+    alt: "you earn steady revenue",
     mobileSrc: "/images/slide-3.png",
     desktopSrc: "/images/slide-3-lg.png",
-    title: "Pay on your schedule",
+    title: "You Earn Steady Revenue",
     copy: (
       <>
-        1st half when the bill is due.{" "}
+        Consistent revenue from real purchases —{" "}
         <br className="hidden md:block" />
-        2nd half two weeks later.
+        month after month.
       </>
     ),
   },
@@ -59,9 +64,7 @@ export function HowItWorks() {
       <div className="mx-auto px-6 container lg:max-w-324">
         <div className="flex flex-col gap-6 md:gap-6">
           <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
-            One bill,{" "}
-            <br className="md:hidden" />
-            two payments
+            How It Works
           </h2>
         </div>
         <div className="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-0 lg:-ml-6 lg:-mr-6">

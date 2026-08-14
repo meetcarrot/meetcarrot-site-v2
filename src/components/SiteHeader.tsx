@@ -91,7 +91,7 @@ export function SiteHeader() {
           <div className="w-full">
             <div className="mx-auto px-6 flex justify-between items-center h-16.5 md:h-28">
               <Link
-                aria-label="Split Pay home"
+                aria-label="Carrot home"
                 href="/"
                 className="block rounded mr-2 w-38 md:w-50 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
               >

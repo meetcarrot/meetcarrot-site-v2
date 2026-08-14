@@ -9,11 +9,11 @@ export function FinalCta() {
       <div className="mx-auto px-6 container lg:max-w-324">
         <div className="flex flex-col gap-6 md:gap-6">
           <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
-            Make the month easier
+            Make The Month Easier
           </h2>
           <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
-            Split your bills into smaller payments and make room for the things
-            that matter most.
+            Steady revenue on autopilot. Turn it on, then get back to your
+            business — you only pay when it works.
           </p>
           <div className="w-70 max-w-full mx-auto">
             {/* "Get Started" here; the hero's label is "Get started". */}
@@ -37,7 +37,7 @@ export function FinalCta() {
             {/* Centred under `sm` via the left/right-50% + translate trick,
                 right-anchored from `sm` up. */}
             <Image
-              alt="Split Pay app on a phone"
+              alt="Carrot app on a phone"
               loading="lazy"
               width={872}
               height={1674}

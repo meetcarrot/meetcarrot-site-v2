@@ -1,0 +1,19 @@
+<!--
+  PLACEHOLDER lockup on the shared 299x112 partner artboard. Every other partner
+  logo here is a path-traced wordmark; this one is set in type because Stripe's
+  official SVG has not been dropped into assets-inbox yet. Replace the whole
+  file with the real asset — keep the 299x112 viewBox so the grid does not shift.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="299" height="112" fill="none" viewBox="0 0 299 112">
+  <text
+    x="149.5"
+    y="56"
+    fill="#635BFF"
+    dominant-baseline="central"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="44"
+    font-weight="700"
+    letter-spacing="-1.5"
+  >Stripe</text>
+</svg>

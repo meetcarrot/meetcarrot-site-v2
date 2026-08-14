@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { ChevronRightIcon, CloseIcon, SplitPayLogo } from "@/components/icons";
@@ -11,7 +10,7 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
-interface BillCard {
+interface CategoryCard {
   label: string;
   href: string;
   lottie: string;
@@ -20,42 +19,48 @@ interface BillCard {
   figureClassName: string;
 }
 
-const BILL_CARDS: readonly BillCard[] = [
+// TODO: placeholder art — the four animated category icons are still pending,
+// so these reuse the leftover dark lotties. Only `lottie` needs swapping.
+const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
-    label: "Rent",
-    href: "/rent",
+    label: "Hospitality",
+    href: "/hospitality",
     lottie: "/lottie/product_rent_dark.json",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",
   },
   {
-    label: "Mortgage",
-    href: "/mortgage",
+    label: "Retail",
+    href: "/retail",
     lottie: "/lottie/product_mortgage_dark.json",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-19",
   },
   {
-    label: "Car payment",
-    href: "/car",
+    label: "Services",
+    href: "/services",
     lottie: "/lottie/product_carloan_dark.json",
     slotClassName: "h-25 mt-1 flex justify-center items-end",
     figureClassName: "h-19",
+  },
+  {
+    label: "Digital",
+    href: "/digital",
+    lottie: "/lottie/product_rent_dark.json",
+    slotClassName: "h-25 flex justify-center items-end",
+    figureClassName: "h-25",
   },
 ];
 
 const LEARN_MORE_LINKS = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Safety & security", href: "/safety-and-security" },
-  { label: "About us", href: "/about-us" },
   { label: "Help & FAQs", href: "/help" },
 ] as const;
 
 const CARD_CLASS =
   "relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black cursor-pointer flex flex-col justify-center transition-[filter] duration-200 ease-out hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
 
-const DISABLED_CARD_CLASS =
-  "relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-linear-to-b from-white/10 to-transparent shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 bg-black flex flex-col justify-center hover:brightness-90 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out cursor-auto";
 
 const CARD_LABEL_CLASS =
   "font-medium tracking-[-0.56px] text-white text-[18px] text-center";
@@ -83,7 +88,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
       <div className="w-full">
         <div className="mx-auto px-6 flex justify-between items-center h-16.5 md:h-28">
           <Link
-            aria-label="Split Pay home"
+            aria-label="Carrot home"
             href="/"
             onClick={onClose}
             className="block rounded mr-2 w-38 md:w-50 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
@@ -129,10 +134,10 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         <div className="py-6 md:py-14 lg:flex lg:gap-14">
           <div className="lg:flex-1 lg:flex lg:flex-col">
             <p className="text-[16px] leading-[1.33] font-medium text-white md:text-[24px] mb-6 md:mb-8">
-              Which bill would you like to split?
+              What kind of business do you run?
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:flex-1">
-              {BILL_CARDS.map((card) => (
+              {CATEGORY_CARDS.map((card) => (
                 <Link
                   key={card.href}
                   href={card.href}
@@ -147,17 +152,6 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                   </div>
                 </Link>
               ))}
-              <button type="button" className={DISABLED_CARD_CLASS}>
-                <div className="illustration-component flex items-center justify-center h-25">
-                  <Image src="/images/bill.svg" alt="dollar" width={112} height={81} />
-                </div>
-                <div className="mt-4 h-12">
-                  <p className={CARD_LABEL_CLASS}>Other Bills</p>
-                  <p className="font-normal text-gray-600 text-[12px] text-center mt-1.5">
-                    Coming soon
-                  </p>
-                </div>
-              </button>
             </div>
           </div>
           <div className="mt-10 md:mt-14 lg:mt-0 lg:w-79.5">

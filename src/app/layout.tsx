@@ -46,28 +46,30 @@ const polySansWide = localFont({
   ],
 });
 
+const TITLE = "Carrot - The Way Marketing Should Be";
+const DESCRIPTION =
+  "Turn on steady, automated revenue with intelligent cashback offers. No upfront or monthly fee — you pay for revenue, not clicks.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://splitpay.com"),
-  title: "Split Pay - Split Your Biggest Monthly Bill into Two",
-  description:
-    "Turn your biggest monthly payment into two smaller ones. Split Pay works for rent, mortgage, and car payments. Same total, smarter timing.",
+  metadataBase: new URL("https://meetcarrot.xyz"),
+  title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
     type: "website",
-    url: "https://splitpay.com",
-    siteName: "Split Pay",
-    title: "Split Pay - Split Your Biggest Monthly Bill into Two",
-    description:
-      "Turn your biggest monthly payment into two smaller ones. Split Pay works for rent, mortgage, and car payments. Same total, smarter timing.",
+    url: "https://meetcarrot.xyz",
+    siteName: "Carrot",
+    title: TITLE,
+    description: DESCRIPTION,
+    // TODO: still the Split Pay OG image — awaiting Carrot artwork.
     images: [{ url: "/seo/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@splitpay",
-    title: "Split Pay - Split Your Biggest Monthly Bill into Two",
-    description:
-      "Turn your biggest monthly payment into two smaller ones. Split Pay works for rent, mortgage, and car payments. Same total, smarter timing.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/seo/og-image.png"],
   },
+  // TODO: favicons are still Split Pay's — awaiting the Carrot icon asset.
   icons: {
     icon: [
       { url: "/seo/favicon.svg", type: "image/svg+xml" },
@@ -85,7 +87,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      id="split-pay-app"
+      id="carrot-app"
       lang="en"
       translate="no"
       className={`${gtAmerica.variable} ${gtAmericaMono.variable} ${polySansWide.variable}`}

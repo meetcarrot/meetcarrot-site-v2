@@ -5,9 +5,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { PRIVACY } from "@/data/legal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Split Pay",
+  title: "Privacy Policy - Carrot",
   description:
-    "How Visible Ideas, Inc. collects, uses, shares, and protects personal information across the Split Pay platform.",
+    "How Carrot collects, uses, and shares information when you use our website.",
 };
 
 // Content routes have no hero, so <main> supplies the padding that clears the

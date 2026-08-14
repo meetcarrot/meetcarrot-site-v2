@@ -214,7 +214,7 @@ export function Testimonials({
           className="w-40 mx-auto h-auto md:w-57.5"
         />
         <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
-          What people are saying
+          What People Are Saying
         </h2>
       </div>
       <div className="mt-8 lg:mt-14">

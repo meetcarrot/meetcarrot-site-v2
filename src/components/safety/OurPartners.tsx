@@ -13,29 +13,15 @@ const PARTNERS = [
     body: "Securely connects your bank account without storing your credentials.",
   },
   {
-    alt: "Footprint",
-    src: "/images/brands/footprint.svg",
-    body: "Verifies it`s really you when you sign up — not a bot or a stolen identity.",
-  },
-  {
-    alt: "SentiLink",
-    src: "/images/safety-and-security/sentilink.svg",
-    body: "Catches synthetic identities and fraud rings before they reach your account.",
-  },
-  {
-    alt: "LexisNexis",
-    src: "/images/brands/lexisnexis.svg",
-    body: "Verifies identities and screens for risk using decades of trusted reference data.",
+    // TODO: placeholder type-set lockup — swap for Stripe's official SVG.
+    alt: "Stripe",
+    src: "/images/brands/stripe.svg",
+    body: "Processes every payment on infrastructure trusted by millions of businesses.",
   },
   {
     alt: "Drata",
     src: "/images/brands/drata.svg",
     body: "Continuously monitors our security controls, so we stay audit-ready every day.",
-  },
-  {
-    alt: "Auth0 by Okta",
-    src: "/images/safety-and-security/okta.svg",
-    body: "Powers secure sign-in with multi-factor authentication and modern auth standards.",
   },
 ];
 

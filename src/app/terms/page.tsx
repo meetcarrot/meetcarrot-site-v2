@@ -5,9 +5,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { TERMS } from "@/data/legal";
 
 export const metadata: Metadata = {
-  title: "Terms of Use - Split Pay",
+  title: "Website Terms of Service - Carrot",
   description:
-    "The legally binding terms and conditions that govern your use of Split Pay's website, app, and services.",
+    "The terms and conditions that govern your access to and use of Carrot's website.",
 };
 
 // Content routes have no hero, so <main> supplies the padding that clears the

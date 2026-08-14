@@ -11,9 +11,9 @@ import {
 } from "@/components/icons";
 
 const APP_STORE_URL =
-  "https://apps.apple.com/us/app/rent-app-best-way-to-pay-rent/id6448634850";
+  "https://apps.apple.com/us/app/carrot-cashback/id1663585181";
 const GOOGLE_PLAY_URL =
-  "https://play.google.com/store/apps/details?id=xyz.visible.visiblerentapp";
+  "https://play.google.com/store/apps/details?id=xyz.meetcarrot.mobile&hl=en_US";
 
 const BADGE_LINK_CLASS =
   "block rounded-3xl relative shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition duration-200 ease-out hover:brightness-85 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-200/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
@@ -29,24 +29,24 @@ const COLUMN_LABEL_CLASS =
   "font-medium tracking-[-0.56px] text-orange-100 text-[12px] mb-6";
 const LINK_TEXT_CLASS =
   "text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600";
-const MUTED_TEXT_CLASS = "text-[16px] font-normal leading-[1.33] text-gray-600";
 
 type IconComponent = (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
 
-const PRODUCT_LINKS: ReadonlyArray<{
+// TODO: placeholder icons — the four animated category icons are still pending.
+const CATEGORY_LINKS: ReadonlyArray<{
   href: string;
   label: string;
   Icon: IconComponent;
 }> = [
-  { href: "/rent", label: "Rent", Icon: RentIcon },
-  { href: "/mortgage", label: "Mortgage", Icon: MortgageIcon },
-  { href: "/car", label: "Car payment", Icon: CarIcon },
+  { href: "/hospitality", label: "Hospitality", Icon: RentIcon },
+  { href: "/retail", label: "Retail", Icon: MortgageIcon },
+  { href: "/services", label: "Services", Icon: CarIcon },
+  { href: "/digital", label: "Digital", Icon: OtherBillsIcon },
 ];
 
 const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/how-it-works", label: "How it works" },
   { href: "/safety-and-security", label: "Safety & security" },
-  { href: "/about-us", label: "About us" },
   { href: "/help", label: "Help & FAQs" },
   { href: "/terms", label: "Terms of service" },
   { href: "/privacy", label: "Privacy policy" },
@@ -61,11 +61,13 @@ function BrandBlock({ variant }: { variant: string }) {
   return (
     <div>
       <div>
+        {/* TODO: swap for the Carrot wordmark once the logo asset lands. */}
         <SplitPayLogoWhite idPrefix={`footer-${variant}`} width={152} height={34} />
+        {/* TODO: awaiting the final footer tagline. */}
         <p className="text-[16px] font-normal leading-[1.33] text-white mt-6">
-          Split your bills into two.{" "}
+          Steady revenue on autopilot.{" "}
           <br className="md:hidden" />
-          Less stress, better timing.
+          Intelligent cashback offers for local business.
         </p>
       </div>
       <div className="mt-10 flex flex-col items-start gap-4 min-[401px]:flex-row min-[401px]:items-center min-[401px]:gap-6">
@@ -92,12 +94,12 @@ function BrandBlock({ variant }: { variant: string }) {
   );
 }
 
-function ProductsNav() {
+function CategoriesNav() {
   return (
-    <nav aria-label="Products">
-      <p className={COLUMN_LABEL_CLASS}>PRODUCTS</p>
+    <nav aria-label="Categories">
+      <p className={COLUMN_LABEL_CLASS}>CATEGORIES</p>
       <ul className="grid grid-cols-1 gap-4">
-        {PRODUCT_LINKS.map(({ href, label, Icon }) => (
+        {CATEGORY_LINKS.map(({ href, label, Icon }) => (
           <li key={href}>
             <Link className={PRODUCT_LINK_CLASS} href={href}>
               <Icon />
@@ -105,13 +107,6 @@ function ProductsNav() {
             </Link>
           </li>
         ))}
-        <li>
-          {/* Not yet shipped on the target, so it renders as plain text. */}
-          <div className={PRODUCT_LINK_CLASS}>
-            <OtherBillsIcon />
-            <p className={MUTED_TEXT_CLASS}>Other bills (coming soon)</p>
-          </div>
-        </li>
       </ul>
     </nav>
   );
@@ -137,13 +132,12 @@ function LearnMoreNav() {
 function LegalBlock() {
   return (
     <div className="max-w-90">
-      {/* Literal year — the target ships a static 2026, not a computed date. */}
       <p className="font-normal text-[12px] text-gray-600">
-        © 2026 Visible Ideas Inc.
+        © 2026 Carrot Company Limited, USA. All rights reserved.
       </p>
       <p className="font-normal text-[12px] text-gray-600 mt-2">
-        Split Pay™ is a financial technology company, not a bank. Banking
-        services are provided by Evolve Bank &amp; Trust, Members FDIC.
+        Carrot is a marketing technology company, not a bank. Payments are
+        processed by Stripe.
       </p>
     </div>
   );
@@ -160,14 +154,14 @@ export function SiteFooter() {
         */}
         <div className="grid grid-cols-1 gap-14 md:hidden">
           <BrandBlock variant="mobile" />
-          <ProductsNav />
+          <CategoriesNav />
           <LearnMoreNav />
           <LegalBlock />
         </div>
         <div className="hidden md:grid grid-cols-1 gap-14 lg:hidden">
           <BrandBlock variant="md" />
           <div className="grid grid-cols-2 gap-14">
-            <ProductsNav />
+            <CategoriesNav />
             <LearnMoreNav />
           </div>
           <LegalBlock />
@@ -180,7 +174,7 @@ export function SiteFooter() {
             </div>
           </div>
           <div>
-            <ProductsNav />
+            <CategoriesNav />
           </div>
           <div>
             <LearnMoreNav />

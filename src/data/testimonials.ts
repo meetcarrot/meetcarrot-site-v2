@@ -1,130 +1,151 @@
-import type { Testimonial } from "@/types/content";
+import type { Testimonial, TestimonialTheme } from "@/types/content";
 
-export const TESTIMONIALS: Testimonial[] = [
+/**
+ * Card colours cycle in a fixed 18-long sequence rather than a simple repeat —
+ * this is what keeps two same-coloured cards from stacking inside a column.
+ * Every review set is exactly 18 entries so the sequence lines up.
+ *
+ * TODO: brand colours aren't final. Once they are, `--color-golden` /
+ * `--color-orange-100` in globals.css get the Carrot values and these class
+ * fragments keep working unchanged.
+ */
+export const TESTIMONIAL_THEME_CYCLE: TestimonialTheme[] = [
+  "bg-gray-400 text-white",
+  "bg-golden text-gray-400",
+  "bg-orange-100 text-white",
+  "bg-white text-gray-400",
+  "bg-white text-gray-400",
+  "bg-gray-400 text-white",
+  "bg-golden text-gray-400",
+  "bg-white text-gray-400",
+  "bg-orange-100 text-white",
+  "bg-gray-400 text-white",
+  "bg-white text-gray-400",
+  "bg-golden text-gray-400",
+  "bg-gray-400 text-white",
+  "bg-golden text-gray-400",
+  "bg-orange-100 text-white",
+  "bg-white text-gray-400",
+  "bg-white text-gray-400",
+  "bg-gray-400 text-white",
+];
+
+/** Applies the shared colour cycle so review sets stay plain content. */
+export function withThemes(
+  reviews: ReadonlyArray<Omit<Testimonial, "theme">>,
+): Testimonial[] {
+  return reviews.map((review, index) => ({
+    ...review,
+    theme: TESTIMONIAL_THEME_CYCLE[index % TESTIMONIAL_THEME_CYCLE.length],
+  }));
+}
+
+/** Homepage set — a mix of consumer and merchant voices. */
+export const TESTIMONIALS: Testimonial[] = withThemes([
   {
-    initials: "CP",
-    name: "Clever_pooh",
+    initials: "MR",
+    name: "@maya.reads",
     quote:
-      "Split Pay has been such a relief! I’ve been able to manage my finances much better since using this app. It makes paying big bills a breeze and less stressful!",
-    theme: "bg-gray-400 text-white",
+      "Easy to use and actually fun. I check Carrot before I go out now — it’s how I decide where to eat or shop. Feels like I’m always getting a little win.",
   },
   {
-    initials: "DP",
-    name: "Denise Pike",
-    quote:
-      "Not sure what I’d do without this app — I haven’t had a late fee since I started using it.",
-    theme: "bg-golden text-gray-400",
-  },
-  {
-    initials: "JS",
-    name: "Jenica Sophia",
-    quote:
-      "Easy to use, clean interface, and quick payments. I can see my full payment history in one place and the reminders keep me on track. Convenient and reliable.",
-    theme: "bg-orange-100 text-white",
-  },
-  {
-    initials: "VW",
-    name: "Vishon Warfield",
-    quote:
-      "This app comes in clutch every time. So easy to manage.",
-    theme: "bg-white text-gray-400",
+    initials: "J",
+    name: "Jordan",
+    quote: "This app comes in clutch every time. So easy.",
   },
   {
     initials: "RK",
     name: "Ritzy Kelly",
     quote:
-      "When I tell you this app literally gave life to my budget, it LITERALLY gave LIFE to my budget. This is the best thing since sliced bread. Thank you to the inventor of this app.",
-    theme: "bg-white text-gray-400",
+      "When I tell you this app literally changed how I spend money… it did. I find new places, get cash back, and still feel like I’m saving. Best thing on my phone.",
   },
   {
-    initials: "K",
-    name: "Klosmith",
+    initials: "EM",
+    name: "Elena M.",
     quote:
-      "This really helps manage my bills. It’s really convenient to split my largest bill in two when budgeting.",
-    theme: "bg-gray-400 text-white",
+      "Carrot has been incredibly easy to work with. The team just gets it. We’re seeing consistent revenue from customers we wouldn’t have reached otherwise.",
   },
   {
-    initials: "CC",
+    initials: "MT",
+    name: "Marcus T.",
+    quote:
+      "Finally a marketing tool that doesn’t feel like a gamble. We set our terms, they handle the rest, and the revenue shows up steadily.",
+  },
+  {
+    initials: "DP",
+    name: "Denise Pike",
+    quote:
+      "I don’t usually leave reviews, but this one actually helps. I open it when I’m deciding what to do with the family on weekends.",
+  },
+  {
+    initials: "PS",
+    name: "Priya S.",
+    quote:
+      "The Carrot team is responsive, clear, and genuinely helpful. It’s the most straightforward marketing partnership we’ve had.",
+  },
+  {
+    initials: "SJ",
+    name: "@sammy.j",
+    quote:
+      "I wish I knew about this sooner. It’s become part of how I plan my week — where to grab coffee, where to take the kids, where to spend a little.",
+  },
+  {
+    initials: "DR",
+    name: "Dave R.",
+    quote:
+      "We were skeptical at first, but the steady stream of customers has been real. Automated, simple, and we stay in control.",
+  },
+  {
+    initials: "JS",
+    name: "Jenica Sophia",
+    quote:
+      "Best cashback experience I’ve had. Clean, fast, and I actually use it to choose where I’m going.",
+  },
+  {
+    initials: "LG",
+    name: "Luis G.",
+    quote:
+      "Carrot delivers consistent revenue without the usual marketing headaches. The team is easy to work with and the system just runs.",
+  },
+  {
+    initials: "CW",
+    name: "@cleo.wins",
+    quote:
+      "High quality offers and zero hassle. It’s the first app that makes me feel like I’m getting something real back.",
+  },
+  {
+    initials: "AK",
+    name: "Amber K.",
+    quote:
+      "Such a relief to have a partner that actually sends customers our way. The automation is smart and we love the control we still have.",
+  },
+  {
+    initials: "T",
+    name: "Tyler",
+    quote: "Makes finding good deals and new spots genuinely easy.",
+  },
+  {
+    initials: "NP",
+    name: "Nina P.",
+    quote:
+      "We’ve tried a lot of marketing. Carrot is the first one that feels intelligent and actually produces steady results.",
+  },
+  {
+    initials: "FF",
+    name: "@family.found",
+    quote:
+      "Carrot has helped me stretch our family budget while still doing fun things. We check it together now.",
+  },
+  {
+    initials: "KH",
+    name: "Kevin H.",
+    quote:
+      "The team at Carrot has been fantastic. Setup was simple, support is quick, and we’re getting consistent revenue every month.",
+  },
+  {
+    initials: "C",
     name: "Cece16",
     quote:
-      "Great app and has come in handy in so many ways. I’m finally able to breathe again and have a little extra income.",
-    theme: "bg-golden text-gray-400",
+      "Not sure what I’d do without it at this point — I open it before almost every outing.",
   },
-  {
-    initials: "BB",
-    name: "BreBar93",
-    quote:
-      "I really don’t write reviews, but this app is a lifesaver and it comes in clutch when you need it.",
-    theme: "bg-white text-gray-400",
-  },
-  {
-    initials: "W",
-    name: "W.H20555",
-    quote:
-      "It changed our life tremendously. It really gives us a stress-free feeling, knowing that our bill is paid on time and in full. Customer Service is very nice and helpful.",
-    theme: "bg-orange-100 text-white",
-  },
-  {
-    initials: "NN",
-    name: "Nerlande Noel",
-    quote:
-      "I wish I knew about this a long time ago. It really helps you have a better balance with your bills. I’m already excited for the journey.",
-    theme: "bg-gray-400 text-white",
-  },
-  {
-    initials: "MM",
-    name: "Ms. Monea",
-    quote:
-      "Easy to use. Great customer service. Helps those months where I struggle so I don’t have to get a late!",
-    theme: "bg-white text-gray-400",
-  },
-  {
-    initials: "TL",
-    name: "TerrorificLady",
-    quote:
-      "Best payment app out - Customer support is top-notch — they responded quickly and resolved my issue efficiently.",
-    theme: "bg-golden text-gray-400",
-  },
-  {
-    initials: "B",
-    name: "B70410",
-    quote:
-      "As a single mom with one income, Split Pay has drastically taken the pressure off and helped me catch up on all my bills.",
-    theme: "bg-gray-400 text-white",
-  },
-  {
-    initials: "WP",
-    name: "Walkins Pierre",
-    quote:
-      "High payment limit and great flexibility. They’re the best option when you need them.",
-    theme: "bg-golden text-gray-400",
-  },
-  {
-    initials: "AG",
-    name: "Alicia Gray",
-    quote:
-      "Such a blessing in a time of need — it gives me the opportunity to stay caught up on other bills. Wish I’d known about it sooner.",
-    theme: "bg-orange-100 text-white",
-  },
-  {
-    initials: "MM",
-    name: "Marlo Martin",
-    quote:
-      "Makes staying on top of finances and credit fun and easy.",
-    theme: "bg-white text-gray-400",
-  },
-  {
-    initials: "SA",
-    name: "Sharkattack4457",
-    quote:
-      "This app is awesome. It is reliable and you have your own account and routing number. You can use it every month.",
-    theme: "bg-white text-gray-400",
-  },
-  {
-    initials: "M",
-    name: "Moneyy1997",
-    quote:
-      "Split pay has assisted me in getting all my bills in a row and making my paychecks more flexible.",
-    theme: "bg-gray-400 text-white",
-  },
-];
+]);

@@ -20,19 +20,6 @@ function ChatIcon() {
   );
 }
 
-function TextIcon() {
-  return (
-    <svg height="24" viewBox="0 0 24 24" width="24" aria-hidden="true" focusable="false">
-      <path
-        clipRule="evenodd"
-        fillRule="evenodd"
-        fill="var(--color-white)"
-        d="M4.38768 0.823013C6.83344 0.566127 9.38764 0.427734 11.9992 0.427734C14.6051 0.427734 17.1144 0.57463 19.5588 0.827382C21.3897 1.01668 22.8976 2.4017 23.1617 4.25368C23.4218 6.07624 23.5706 7.97555 23.5706 9.91296C23.5706 11.84 23.4074 13.7075 23.1526 15.5116C22.8878 17.3878 21.364 18.8071 19.4997 18.9964C17.1458 19.2355 14.7152 19.39 12.2032 19.3978C10.4452 21.3655 8.98877 22.414 6.58113 23.4953C6.31589 23.6145 6.00837 23.591 5.76427 23.4331C5.52017 23.275 5.3728 23.0042 5.3728 22.7134V19.0049L4.98768 18.9691L4.61436 18.9343C2.72673 18.7586 1.08588 17.3686 0.813541 15.4123C0.565717 13.6321 0.427734 11.8001 0.427734 9.91296C0.427734 7.96271 0.565481 6.04205 0.831346 4.20086C1.0953 2.3729 2.58391 1.01247 4.38768 0.823013ZM8.28014 9.55392C8.28014 8.84383 7.7045 8.26821 6.99443 8.26821C6.28433 8.26821 5.70871 8.84383 5.70871 9.55392V10.2966C5.70871 11.0067 6.28433 11.5823 6.99443 11.5823C7.7045 11.5823 8.28014 11.0067 8.28014 10.2966V9.55392ZM13.2849 9.55392C13.2849 8.84383 12.7092 8.26821 11.9992 8.26821C11.2891 8.26821 10.7134 8.84383 10.7134 9.55392V10.2966C10.7134 11.0067 11.2891 11.5823 11.9992 11.5823C12.7092 11.5823 13.2849 11.0067 13.2849 10.2966V9.55392ZM17.0039 8.26821C17.7139 8.26821 18.2896 8.84383 18.2896 9.55392V10.2966C18.2896 11.0067 17.7139 11.5823 17.0039 11.5823C16.2938 11.5823 15.7182 11.0067 15.7182 10.2966V9.55392C15.7182 8.84383 16.2938 8.26821 17.0039 8.26821Z"
-      />
-    </svg>
-  );
-}
-
 function EmailIcon() {
   return (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24" aria-hidden="true" focusable="false">
@@ -40,17 +27,6 @@ function EmailIcon() {
         fillRule="evenodd"
         fill="var(--color-white)"
         d="M17.2066 0.581589C13.6859 0.376775 10.3147 0.376775 6.79404 0.581589C4.6552 0.706017 2.92209 2.37009 2.79151 4.50022C2.72783 5.53906 2.68367 6.8508 2.65878 8.11231C5.03001 10.1419 7.47804 12.0059 10.1291 13.6567C11.2507 14.355 12.7503 14.355 13.8719 13.6567C16.5228 12.006 18.9708 10.142 21.3418 8.11257C21.317 6.85087 21.2727 5.53949 21.2091 4.50022C21.0785 2.37009 19.3454 0.706017 17.2066 0.581589ZM7.6443 14.5299L7.64964 14.5337C8.09058 14.8267 8.53708 15.1142 8.9897 15.3961C6.12712 13.6136 3.5094 11.6035 0.997958 9.43634C0.925288 9.64419 0.872169 9.8568 0.839576 10.0726C0.617404 11.5872 0.428558 13.1399 0.428558 14.7253C0.428558 16.3106 0.617404 17.8648 0.839576 19.3778C0.98991 20.3733 1.57693 21.3005 2.5049 22.0082C3.4329 22.7159 4.64709 23.1623 5.94952 23.2747C7.91759 23.436 9.93935 23.572 12 23.572C14.0606 23.572 16.0824 23.436 18.0523 23.2747C19.3548 23.1623 20.569 22.7159 21.497 22.0082C22.4249 21.3005 23.0119 20.3733 23.1622 19.3778C23.3808 17.8634 23.5714 16.3106 23.5714 14.7253C23.5714 13.1399 23.3825 11.5857 23.1603 10.0726C23.1278 9.85697 23.0748 9.64454 23.0023 9.43683C20.8856 11.2631 18.6939 12.9779 16.3435 14.5389L16.3481 14.5356C15.9083 14.8278 15.4629 15.1146 15.0114 15.3957C13.195 16.5268 10.8061 16.5271 8.9897 15.3961C8.53526 15.1131 8.08692 14.8241 7.6443 14.5299ZM9.42669 8.20231C8.83495 8.20231 8.35526 8.682 8.35526 9.27374C8.35526 9.86547 8.83495 10.3452 9.42669 10.3452H14.5744C15.1662 10.3452 15.6459 9.86547 15.6459 9.27374C15.6459 8.682 15.1662 8.20231 14.5744 8.20231H9.42669ZM8.35526 5.09181C8.35526 4.50009 8.83495 4.02038 9.42669 4.02038H14.5744C15.1662 4.02038 15.6459 4.50009 15.6459 5.09181C15.6459 5.68354 15.1662 6.16323 14.5744 6.16323H9.42669C8.83495 6.16323 8.35526 5.68354 8.35526 5.09181Z"
-      />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" aria-hidden="true" focusable="false">
-      <path
-        fill="var(--color-white)"
-        d="M7.01609 0.649452C5.80565 -0.334035 4.01182 -0.200852 3.08096 1.05122C2.6985 1.56576 2.35359 2.10041 1.53502 3.12617C-0.513554 5.69292 -0.513554 9.40953 1.54633 11.9672C3.0669 13.8553 4.66119 15.7605 6.44353 17.5457C8.22577 19.331 10.1278 20.928 12.0127 22.4511C14.5661 24.5145 18.2765 24.5145 20.839 22.4625C21.9056 21.6084 22.4337 21.2758 22.965 20.8755C24.1676 19.9692 24.3344 18.2443 23.4016 17.0611C22.3426 15.7179 21.1108 14.4524 19.9467 13.2203C19.301 12.5369 18.2252 12.4951 17.5122 13.1076C16.949 13.5914 16.5746 13.8863 15.6098 14.7924C12.6787 13.0478 10.9022 11.2466 9.19227 8.36412C10.1009 7.39323 10.3959 7.01733 10.8829 6.44875C11.4939 5.73554 11.4527 4.65981 10.7669 4.01851C9.55246 2.88285 8.3144 1.70441 7.01609 0.649452Z"
       />
     </svg>
   );
@@ -70,9 +46,10 @@ function IconBadge({ tone, children }: { tone: "orange" | "gray"; children: Reac
 }
 
 /**
- * The four support entry points below the FAQs. The first card is a `<button>`
- * on the target because live chat is mounted by a third-party widget we do not
- * ship; the remaining three are real `tel:`/`sms:`/`mailto:` links.
+ * The support entry points below the FAQs. Chat is a `<button>` rather than a
+ * link because it is mounted by a third-party widget (Intercom, pending); email
+ * is a real `mailto:`. Text and phone cards are omitted — Carrot has no support
+ * line to point them at.
  */
 export function StillNeedHelp() {
   return (
@@ -83,6 +60,10 @@ export function StillNeedHelp() {
             Still need help?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+            {/*
+              TODO: this button opens live chat once Intercom is installed —
+              it is inert until then, matching the target's own behaviour.
+            */}
             <button type="button" className={cn(CARD_CLASS, "cursor-pointer text-left")}>
               <IconBadge tone="orange">
                 <ChatIcon />
@@ -90,43 +71,21 @@ export function StillNeedHelp() {
               <div className="flex flex-col gap-3">
                 <h3 className={TITLE_CLASS}>Chat with us</h3>
                 <p className="text-[18px] leading-[1.3] font-normal text-gray-600">
-                  Sign in to start a conversation
+                  Start a conversation with our team
                 </p>
               </div>
               <span className={cn(BADGE_CLASS, "bg-golden")}>Available 24/7</span>
             </button>
 
-            <a className={CARD_CLASS} href="sms:+18777493592">
-              <IconBadge tone="orange">
-                <TextIcon />
-              </IconBadge>
-              <div className="flex flex-col gap-3">
-                <h3 className={TITLE_CLASS}>Text us</h3>
-                <p className={DETAIL_CLASS}>1 (877) 749-3592</p>
-              </div>
-              <span className={cn(BADGE_CLASS, "bg-golden")}>Available 24/7</span>
-            </a>
-
-            <a className={CARD_CLASS} href="mailto:support@splitpay.com">
+            <a className={CARD_CLASS} href="mailto:support@meetcarrot.xyz">
               <IconBadge tone="gray">
                 <EmailIcon />
               </IconBadge>
               <div className="flex flex-col gap-3">
                 <h3 className={TITLE_CLASS}>Email us</h3>
-                <p className={DETAIL_CLASS}>support@splitpay.com</p>
+                <p className={DETAIL_CLASS}>support@meetcarrot.xyz</p>
               </div>
               <span className={cn(BADGE_CLASS, "bg-gray-200")}>Replies in ~1 business day</span>
-            </a>
-
-            <a className={CARD_CLASS} href="tel:+18777493592">
-              <IconBadge tone="gray">
-                <PhoneIcon />
-              </IconBadge>
-              <div className="flex flex-col gap-3">
-                <h3 className={TITLE_CLASS}>Call us</h3>
-                <p className={DETAIL_CLASS}>1 (877) 749-3592</p>
-              </div>
-              <span className={cn(BADGE_CLASS, "bg-gray-200")}>Mon–Fri 9am–8pm EST</span>
             </a>
           </div>
         </div>

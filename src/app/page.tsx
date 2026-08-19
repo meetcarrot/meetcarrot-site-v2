@@ -1,6 +1,6 @@
+import { AutopilotCta } from "@/components/AutopilotCta";
 import { CategoryCards } from "@/components/CategoryCards";
 import { FaqSection } from "@/components/FaqSection";
-import { FinalCta } from "@/components/FinalCta";
 import { HeroSection } from "@/components/HeroSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -22,7 +22,12 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <FaqSection />
-        <FinalCta />
+        <AutopilotCta
+          backgroundSrc="/images/homepage.jpg"
+          phoneSrc="/images/homepage-phone.png"
+          phoneWidth={872}
+          phoneHeight={1674}
+        />
       </main>
       <SiteFooter />
     </>

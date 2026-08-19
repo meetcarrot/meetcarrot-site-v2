@@ -1,8 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { FaqModal } from "@/components/FaqModal";
+import { AnimatePresence } from "motion/react";
+
+import { DocModal } from "@/components/DocModal";
 import { ChevronRightIcon } from "@/components/icons";
+import { Reveal } from "@/components/Reveal";
 import { FAQS } from "@/data/faqs";
 import type { Faq } from "@/types/content";
 
@@ -19,6 +22,14 @@ export function FaqSection({ faqs = FAQS }: FaqSectionProps = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
 
+  // The modal is shared with the legal pages, so it pages over a neutral
+  // {title, html} shape rather than knowing what an FAQ is.
+  const faqItems = faqs.map((faq) => ({
+    id: faq.id,
+    title: faq.question,
+    html: faq.answer,
+  }));
+
   function handleOpen(index: number, element: HTMLButtonElement) {
     triggerRef.current = element;
     setOpenIndex(index);
@@ -27,11 +38,11 @@ export function FaqSection({ faqs = FAQS }: FaqSectionProps = {}) {
   return (
     <section className="py-14 lg:py-24">
       <div className="mx-auto px-6 container lg:max-w-324">
-        <div className="flex flex-col gap-6 md:gap-6">
+        <Reveal className="flex flex-col gap-6 md:gap-6">
           <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
             FAQs
           </h2>
-        </div>
+        </Reveal>
         <div className="mt-14 lg:mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             {faqs.map((faq, index) => (
@@ -60,15 +71,17 @@ export function FaqSection({ faqs = FAQS }: FaqSectionProps = {}) {
         </div>
       </div>
 
-      {openIndex !== null && (
-        <FaqModal
-          faqs={faqs}
+      <AnimatePresence>
+        {openIndex !== null && (
+        <DocModal
+          items={faqItems}
           index={openIndex}
           onIndexChange={setOpenIndex}
           onClose={() => setOpenIndex(null)}
           triggerRef={triggerRef}
-        />
-      )}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

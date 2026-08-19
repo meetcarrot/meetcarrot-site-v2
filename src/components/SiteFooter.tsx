@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { CarrotLogoWhite } from "@/components/carrot-logo";
+import { CarrotLogo } from "@/components/carrot-logo";
 
 import {
   AppStoreBadge,
@@ -16,24 +16,33 @@ const APP_STORE_URL =
 const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=xyz.meetcarrot.mobile&hl=en_US";
 
+/**
+ * The store badges are dark lockups — white type over a half-opacity black
+ * plate. On the old black footer the plate blended into the background; on a
+ * light one it needs its own solid fill, or the badge reads as washed-out grey.
+ */
 const BADGE_LINK_CLASS =
-  "block rounded-3xl relative shadow-[0_12px_24px_rgba(0,0,0,0.5)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.18),inset_0_-1px_1px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-linear-to-b before:from-white before:to-transparent before:opacity-10 transition duration-200 ease-out hover:brightness-85 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "block rounded-3xl overflow-hidden bg-black shadow-[0_2px_8px_0_rgba(0,0,0,0.12)] transition duration-200 ease-out hover:brightness-90 active:scale-[0.99] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2";
 
-// The two column families use slightly different hover selectors on the target:
-// the icon columns recolour every `path`, the text columns exclude gradient fills.
-const PRODUCT_LINK_CLASS =
-  "group inline-flex items-center gap-3 hover:[&_svg_path]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+/**
+ * The category icons ship with a hard-coded white fill for the old dark footer,
+ * so they are recoloured here rather than in the shared icon set — the same
+ * icons are used on dark surfaces elsewhere.
+ */
+const NAV_LINK_CLASS =
+  "group inline-flex items-center gap-3 [&_svg_path]:fill-gray-400 [&_svg_path]:transition-colors hover:[&_svg_path]:fill-pink-dark focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2 rounded";
 const TEXT_LINK_CLASS =
-  "group inline-flex items-center gap-3 hover:[&_svg_path:not([fill^=url])]:fill-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out";
+  "group inline-flex items-center gap-3 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2 rounded";
 
 const COLUMN_LABEL_CLASS =
-  "font-medium tracking-[-0.56px] text-pink text-[12px] mb-6";
+  "font-medium tracking-[0.06em] text-pink-dark text-[12px] uppercase mb-5";
 const LINK_TEXT_CLASS =
-  "text-[16px] font-normal leading-[1.33] text-white group-hover:text-gray-600";
+  "text-[16px] font-normal leading-[1.33] transition-colors duration-200 group-hover:text-pink-dark";
 
 type IconComponent = (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
 
-// TODO: placeholder icons — the four animated category icons are still pending.
+// TODO: placeholder icons — the four category marks are still the leftover
+// rent/mortgage/car set. The illustrated versions are too detailed at 16px.
 const CATEGORY_LINKS: ReadonlyArray<{
   href: string;
   label: string;
@@ -54,131 +63,88 @@ const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [
 ];
 
 /**
- * The footer renders this block three times, one per breakpoint layout. The
- * white logo cut is a flat fill with no gradient ids, so the copies can't
- * collide the way a gradient lockup would.
+ * Footer. Sits on the page background rather than its own black band, so the
+ * page ends as one continuous surface.
+ *
+ * One responsive grid, rendered once. It previously shipped the same three
+ * blocks three times over, each gated to a breakpoint, which meant every copy
+ * change had to be made in triplicate.
  */
-function BrandBlock() {
-  return (
-    <div>
-      <div>
-        <CarrotLogoWhite width={140} height={63} />
-        {/* TODO: awaiting the final footer tagline. */}
-        <p className="text-[16px] font-normal leading-[1.33] text-white mt-6">
-          Steady revenue on autopilot.{" "}
-          <br className="md:hidden" />
-          Intelligent cashback offers for local business.
-        </p>
-      </div>
-      <div className="mt-10 flex flex-col items-start gap-4 min-[401px]:flex-row min-[401px]:items-center min-[401px]:gap-6">
-        <a
-          aria-label="Download on the App Store"
-          className={BADGE_LINK_CLASS}
-          href={APP_STORE_URL}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <AppStoreBadge />
-        </a>
-        <a
-          aria-label="Get it on Google Play"
-          className={BADGE_LINK_CLASS}
-          href={GOOGLE_PLAY_URL}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <GooglePlayBadge />
-        </a>
-      </div>
-    </div>
-  );
-}
-
-function CategoriesNav() {
-  return (
-    <nav aria-label="Categories">
-      <p className={COLUMN_LABEL_CLASS}>CATEGORIES</p>
-      <ul className="grid grid-cols-1 gap-4">
-        {CATEGORY_LINKS.map(({ href, label, Icon }) => (
-          <li key={href}>
-            <Link className={PRODUCT_LINK_CLASS} href={href}>
-              <Icon />
-              <p className={LINK_TEXT_CLASS}>{label}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-
-function LearnMoreNav() {
-  return (
-    <nav aria-label="Learn more">
-      <p className={COLUMN_LABEL_CLASS}>LEARN MORE</p>
-      <ul className="grid grid-cols-1 gap-4">
-        {LEARN_MORE_LINKS.map(({ href, label }) => (
-          <li key={href}>
-            <Link className={TEXT_LINK_CLASS} href={href}>
-              <p className={LINK_TEXT_CLASS}>{label}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-
-function LegalBlock() {
-  return (
-    <div className="max-w-90">
-      <p className="font-normal text-[12px] text-gray-600">
-        © 2026 Carrot Company Limited, USA. All rights reserved.
-      </p>
-      <p className="font-normal text-[12px] text-gray-600 mt-2">
-        Carrot is a marketing technology company, not a bank. Payments are
-        processed by Stripe.
-      </p>
-    </div>
-  );
-}
-
 export function SiteFooter() {
   return (
-    <footer className="py-14 lg:pt-24 lg:pb-30 bg-black" data-header-theme="black">
+    <footer
+      className="bg-gray-100 border-t border-black/10 py-14 lg:py-20"
+      data-header-theme="light"
+    >
       <div className="mx-auto px-6 container lg:max-w-324">
-        {/*
-          The target ships the same content three times, each gated by a
-          breakpoint, rather than one responsive grid. Reproduced verbatim so
-          the breakpoint behaviour matches.
-        */}
-        <div className="grid grid-cols-1 gap-14 md:hidden">
-          <BrandBlock />
-          <CategoriesNav />
-          <LearnMoreNav />
-          <LegalBlock />
-        </div>
-        <div className="hidden md:grid grid-cols-1 gap-14 lg:hidden">
-          <BrandBlock />
-          <div className="grid grid-cols-2 gap-14">
-            <CategoriesNav />
-            <LearnMoreNav />
-          </div>
-          <LegalBlock />
-        </div>
-        <div className="hidden lg:flex items-start justify-between">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
           <div>
-            <BrandBlock />
-            <div className="mt-16">
-              <LegalBlock />
+            <CarrotLogo idPrefix="footer-logo" width={96} height={43} />
+            <p className="text-[16px] font-normal leading-[1.33] mt-5 max-w-70">
+              Pay for Revenue, Not Clicks
+            </p>
+            <div className="mt-8 flex flex-col items-start gap-4 min-[401px]:flex-row min-[401px]:items-center">
+              <a
+                aria-label="Download on the App Store"
+                className={BADGE_LINK_CLASS}
+                href={APP_STORE_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <AppStoreBadge />
+              </a>
+              <a
+                aria-label="Get it on Google Play"
+                className={BADGE_LINK_CLASS}
+                href={GOOGLE_PLAY_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <GooglePlayBadge />
+              </a>
             </div>
           </div>
-          <div>
-            <CategoriesNav />
-          </div>
-          <div>
-            <LearnMoreNav />
-          </div>
+
+          <nav aria-label="Categories">
+            <p className={COLUMN_LABEL_CLASS}>Categories</p>
+            <ul className="grid grid-cols-1 gap-4">
+              {CATEGORY_LINKS.map(({ href, label, Icon }) => (
+                <li key={href}>
+                  <Link className={NAV_LINK_CLASS} href={href}>
+                    <Icon />
+                    <span className={LINK_TEXT_CLASS}>{label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Learn more">
+            <p className={COLUMN_LABEL_CLASS}>Learn more</p>
+            <ul className="grid grid-cols-1 gap-4">
+              {LEARN_MORE_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <Link className={TEXT_LINK_CLASS} href={href}>
+                    <span className={LINK_TEXT_CLASS}>{label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/*
+          `text-gray-400/70`, not `text-gray-600`: the muted token is #90919b,
+          which lands at 2.9:1 on this background — fine as white-on-black in the
+          old footer, well under the 4.5:1 floor here. Compositing the ink colour
+          at 70% clears it.
+        */}
+        <div className="mt-12 pt-8 border-t border-black/10">
+          <p className="font-normal text-[12px] leading-[1.5] text-gray-400/70 max-w-180">
+            © 2026 Carrot Company Limited, USA. Carrot is a technology company
+            that provides cashback services. All payments and remittances are
+            handled by Stripe.
+          </p>
         </div>
       </div>
     </footer>

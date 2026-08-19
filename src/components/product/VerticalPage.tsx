@@ -1,4 +1,4 @@
-import { LottieAnimation } from "@/components/LottieAnimation";
+import Image from "next/image";
 import { CashbackCalculator } from "@/components/product/CashbackCalculator";
 import { LenderSection } from "@/components/product/LenderSection";
 import {
@@ -12,7 +12,7 @@ import {
   SplitGradientIcon,
 } from "@/components/product/product-icons";
 import { ProductBenefits } from "@/components/product/ProductBenefits";
-import { ProductCta } from "@/components/product/ProductCta";
+import { AutopilotCta } from "@/components/AutopilotCta";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ThreeSteps } from "@/components/product/ThreeSteps";
 import { WinWinWin } from "@/components/product/WinWinWin";
@@ -44,7 +44,7 @@ const SAMPLE_REVENUE = 2000;
  */
 export function VerticalPage({ config }: { config: VerticalConfig }) {
   const dir = `/images/${config.slug}`;
-  const photos = Array.from({ length: 9 }, (_, i) => `${dir}/img-${i + 1}.png`);
+  const photos = Array.from({ length: 9 }, (_, i) => `${dir}/img-${i + 1}.jpg`);
   const sampleCustomers = Math.floor(SAMPLE_REVENUE / config.averageOrderValue);
 
   const [benefitOne, benefitTwo, benefitThree] = config.benefits;
@@ -58,16 +58,20 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
       <main>
         <ProductHero
           illustration={
-            // TODO: placeholder art — the per-vertical animated icon is pending.
-            <LottieAnimation
-              src="/lottie/product_rent.json"
-              className="h-full w-full [&_svg]:h-full! [&_svg]:w-full!"
+            // Same icon the homepage category card and menu use, so a visitor
+            // arriving from either lands on art they already recognise.
+            <Image
+              src={`/images/categories/${config.slug}.png`}
+              alt=""
+              width={512}
+              height={512}
+              className="h-full w-auto object-contain animate-icon-float"
             />
           }
           title={config.heading}
           subtitle={config.subheading}
           badges={config.badges}
-          imageSrc={`${dir}/hero.png`}
+          imageSrc={`${dir}/hero.jpg`}
           imageAlt={config.name}
           imageSizes="(min-width: 1024px) 624px, 100vw"
           imageBleedClassName="lg:-bottom-16"
@@ -87,7 +91,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
 
         <ProductBenefits
           heading={config.benefitsHeading}
-          image={{ src: `${dir}/bg-benefits.png`, alt: config.name }}
+          image={{ src: `${dir}/bg-benefits.jpg`, alt: config.name }}
           benefits={[
             { icon: <CashIcon />, title: benefitOne.title, copy: benefitOne.copy },
             {
@@ -130,7 +134,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
               copy: stepThree.copy,
             },
           ]}
-          image={{ src: `${dir}/bg-lender.png`, alt: config.name }}
+          image={{ src: `${dir}/bg-lender.jpg`, alt: config.name }}
           cards={[
             { icon: <SplitGradientIcon />, title: cardOne.title, copy: cardOne.copy },
             { icon: <BuildingIcon />, title: cardTwo.title, copy: cardTwo.copy },
@@ -170,12 +174,12 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
           photos={photos}
         />
 
-        {/* TODO: per-vertical FAQ sets are pending; the shared 12 run everywhere. */}
+        {/* The standard 12 by design — there is no per-vertical FAQ variant. */}
         <FaqSection faqs={FAQS} />
 
-        <ProductCta
+        <AutopilotCta
           title={config.ctaTitle}
-          backgroundSrc={`${dir}/cta-bg.png`}
+          backgroundSrc={`${dir}/cta-bg.jpg`}
           phoneSrc={`${dir}/cta-phone.png`}
           phoneWidth={1308}
           phoneHeight={2511}

@@ -2,8 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
-import { ButtonLink } from "@/components/ui/button";
-import { GET_STARTED_URL } from "@/lib/links";
+import { GetStartedButton } from "@/components/GetStartedButton";
 
 /**
  * Circle-check bullet used by the trust badges. Local to this file because the
@@ -189,9 +188,9 @@ export function ProductHero({
                 the literal spaces split it into four junk classes, so it renders no
                 shadow. Omitted rather than "fixed" — the button carries its own. */}
             <div className="w-70 max-w-full mx-auto lg:mx-0">
-              <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
+              <GetStartedButton variant="primary" size="default">
                 {ctaLabel}
-              </ButtonLink>
+              </GetStartedButton>
             </div>
             <ul
               className={cn(

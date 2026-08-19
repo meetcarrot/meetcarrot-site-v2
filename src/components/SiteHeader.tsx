@@ -4,9 +4,12 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { CarrotLogo } from "@/components/carrot-logo";
 import { MenuIcon } from "@/components/icons";
+import { AnimatePresence } from "motion/react";
+
 import { MobileMenu } from "@/components/MobileMenu";
+import { GetStartedButton } from "@/components/GetStartedButton";
 import { Button, ButtonLink } from "@/components/ui/button";
-import { GET_STARTED_URL, MERCHANT_LOGIN_URL } from "@/lib/links";
+import { MERCHANT_LOGIN_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 export type HeaderTheme = "tint" | "black" | "light";
@@ -100,19 +103,16 @@ export function SiteHeader() {
               <Link
                 aria-label="Carrot home"
                 href="/"
-                className="block rounded mr-2 w-24 md:w-32 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
+                className="block rounded mr-2 w-16 md:w-20 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
               >
                 <CarrotLogo idPrefix="header-logo" className="w-full h-auto" />
               </Link>
               <div className="flex items-center justify-end gap-4 flex-1">
-                <ButtonLink
-                  href={GET_STARTED_URL}
+                <GetStartedButton
                   variant={pillVariant}
                   size="default"
                   className="max-w-45 hidden lg:inline-flex"
-                >
-                  Get started
-                </ButtonLink>
+                />
                 <ButtonLink
                   href={MERCHANT_LOGIN_URL}
                   variant={pillVariant}
@@ -144,7 +144,10 @@ export function SiteHeader() {
           </div>
         </div>
       </header>
-      {open ? <MobileMenu onClose={close} /> : null}
+      {/* AnimatePresence keeps the panel mounted through its exit animation. */}
+      <AnimatePresence>
+        {open ? <MobileMenu onClose={close} /> : null}
+      </AnimatePresence>
     </>
   );
 }

@@ -8,6 +8,7 @@ const config = VERTICALS.digital;
 export const metadata: Metadata = {
   title: config.metaTitle,
   description: config.metaDescription,
+  alternates: { canonical: "/digital" },
 };
 
 export default function DigitalPage() {

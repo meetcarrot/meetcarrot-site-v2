@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "How Carrot Works - Carrot",
   description:
     "Choose a bill to split, check your eligibility, verify your identity, and add your Carrot account numbers to your payment portal.",
+  alternates: { canonical: "/how-it-works" },
 };
 
 /**

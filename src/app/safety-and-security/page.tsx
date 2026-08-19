@@ -4,7 +4,7 @@ import { HowWeKeepSafe } from "@/components/safety/HowWeKeepSafe";
 import { OurPartners } from "@/components/safety/OurPartners";
 import { OurPromise } from "@/components/safety/OurPromise";
 import { ReportAnIssue } from "@/components/safety/ReportAnIssue";
-import { SafetyFinalCta } from "@/components/safety/SafetyFinalCta";
+import { AutopilotCta } from "@/components/AutopilotCta";
 import { SafetyHero } from "@/components/safety/SafetyHero";
 import { SecurityAudits } from "@/components/safety/SecurityAudits";
 import { YourPart } from "@/components/safety/YourPart";
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
   },
+  alternates: { canonical: "/safety-and-security" },
 };
 
 /**
@@ -48,7 +49,12 @@ export default function SafetyAndSecurityPage() {
         <OurPartners />
         <SecurityAudits />
         <ReportAnIssue />
-        <SafetyFinalCta />
+        <AutopilotCta
+          backgroundSrc="/images/safety-and-security/cta-bg.jpg"
+          phoneSrc="/images/safety-and-security/get-started-phone.png"
+          phoneWidth={1308}
+          phoneHeight={2511}
+        />
       </main>
       <SiteFooter />
     </>

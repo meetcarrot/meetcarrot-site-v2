@@ -1,85 +1,14 @@
-import Image from "next/image";
-import type { ReactNode } from "react";
+import { StepIllustration } from "@/components/how-it-works/StepIllustration";
+import { HOW_IT_WORKS_STEPS } from "@/data/how-it-works";
 
-interface Step {
-  /** Badge label rendered above the illustration. */
-  label: string;
-  src: string;
-  alt: string;
-  /** Intrinsic SVG dimensions — needed by next/image, not a rendered size. */
-  width: number;
-  height: number;
-  body: ReactNode;
-}
-
-const STEPS: Step[] = [
-  {
-    label: "Step 1",
-    src: "/images/how-it-works/deco-1.svg",
-    alt: "choose product",
-    width: 286,
-    height: 218,
-    body: (
-      <>
-        Choose a bill to split. It can be your rent,
-        <br className="hidden md:block" /> mortgage, or car payment.
-      </>
-    ),
-  },
-  {
-    label: "Step 2",
-    src: "/images/how-it-works/deco-2.svg",
-    alt: "check eligibility",
-    width: 253,
-    height: 248,
-    body: (
-      <>
-        We&rsquo;ll check your eligibility by reviewing your income, spending,
-        and savings.
-      </>
-    ),
-  },
-  {
-    label: "Step 3",
-    src: "/images/how-it-works/deco-3.svg",
-    alt: "verify identity",
-    width: 275,
-    height: 208,
-    body: (
-      <>
-        We&rsquo;ll also verify your identity to keep
-        <br className="hidden md:block" /> everything secure.
-      </>
-    ),
-  },
-  {
-    label: "Step 4",
-    src: "/images/how-it-works/deco-4.svg",
-    alt: "payment portal",
-    width: 308,
-    height: 217,
-    body: (
-      <>
-        Once approved, you&rsquo;ll get Carrot account and routing numbers
-        that can be added to your payment portal like a bank account.
-      </>
-    ),
-  },
-  {
-    label: "Step 5",
-    src: "/images/how-it-works/deco-5.svg",
-    alt: "split your bill",
-    width: 253,
-    height: 178,
-    body: (
-      <>
-        After adding your Carrot account numbers to your payment portal,
-        you&rsquo;re ready to split your bill.
-      </>
-    ),
-  },
-];
-
+/**
+ * The dedicated /how-it-works page: all four steps, stacked, each numbered.
+ *
+ * The illustrations are live cards rather than artwork — each shows the actual
+ * thing its step describes, in shared card chrome, so the sequence reads as one
+ * system: set terms, push them out, revenue lands, Carrot collects. They size
+ * themselves, so there is no fixed-height frame here.
+ */
 export function StepsSection() {
   return (
     <section
@@ -91,34 +20,21 @@ export function StepsSection() {
           How Carrot works
         </h1>
         <div className="mt-10 md:mt-20 grid grid-cols-1 gap-6 md:gap-10 max-w-167 mx-auto">
-          {STEPS.map((step) => (
+          {HOW_IT_WORKS_STEPS.map((step, index) => (
             <div
-              key={step.label}
+              key={step.id}
               className="shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] px-6 md:px-10 py-10 border border-black/15 rounded-3xl flex flex-col gap-6"
             >
               <div className="w-full flex justify-center">
                 <p className="px-4 border border-black/15 h-9 flex items-center rounded-full font-medium text-[14px] md:text-[16px]">
-                  {step.label}
+                  Step {index + 1}
                 </p>
               </div>
-              <div className="illustration-component flex items-center justify-center h-42 md:h-63 w-full">
-                {/*
-                  Static SVG: unoptimized because Next refuses to run SVG through
-                  the image optimizer. `max-h-full w-auto` reproduces the target's
-                  `.illustration-component` contain behaviour so tall illustrations
-                  scale down inside the fixed-height frame instead of overflowing.
-                */}
-                <Image
-                  src={step.src}
-                  alt={step.alt}
-                  width={step.width}
-                  height={step.height}
-                  className="max-h-full w-auto object-contain"
-                  unoptimized
-                />
+              <div className="flex items-center justify-center w-full">
+                <StepIllustration id={step.id} />
               </div>
               <p className="font-normal text-center text-[18px] md:text-[24px] w-full">
-                {step.body}
+                <b className="font-medium">{step.title}.</b> {step.copy}
               </p>
             </div>
           ))}

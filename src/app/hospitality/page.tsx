@@ -8,6 +8,7 @@ const config = VERTICALS.hospitality;
 export const metadata: Metadata = {
   title: config.metaTitle,
   description: config.metaDescription,
+  alternates: { canonical: "/hospitality" },
 };
 
 export default function HospitalityPage() {

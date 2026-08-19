@@ -1,8 +1,7 @@
 import Image from "next/image";
 
 import { CheckIcon } from "@/components/icons";
-import { ButtonLink } from "@/components/ui/button";
-import { GET_STARTED_URL } from "@/lib/links";
+import { GetStartedButton } from "@/components/GetStartedButton";
 
 /**
  * Hero band. `data-header-theme` is read by the site header's scroll listener to
@@ -21,7 +20,7 @@ export function HeroSection() {
             {/* -bottom-12 lets the photo bleed 48px past the hero band; nothing above may clip it. */}
             <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
               <Image
-                src="/images/deco-left.png"
+                src="/images/deco-left.jpg"
                 alt="dad with son"
                 fill
                 priority
@@ -44,9 +43,7 @@ export function HeroSection() {
             </p>
 
             <div className="w-70 max-w-full flex justify-center mx-auto">
-              <ButtonLink href={GET_STARTED_URL} variant="primary" size="default">
-                Get started
-              </ButtonLink>
+              <GetStartedButton variant="primary" size="default" />
             </div>
 
             <div className="py-8 md:py-10 lg:pb-12 opacity-65 flex flex-col md:flex-row md:justify-center lg:flex-col gap-2 md:gap-0 lg:gap-2">
@@ -74,7 +71,7 @@ export function HeroSection() {
             <div className="grid grid-cols-2 gap-6 h-60 md:h-134 lg:hidden">
               <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
                 <Image
-                  src="/images/deco-left.png"
+                  src="/images/deco-left.jpg"
                   alt="dad with son"
                   fill
                   priority
@@ -84,7 +81,7 @@ export function HeroSection() {
               </div>
               <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
                 <Image
-                  src="/images/deco-right.png"
+                  src="/images/deco-right.jpg"
                   alt="girl with dog"
                   fill
                   className="object-cover"
@@ -97,7 +94,7 @@ export function HeroSection() {
           <div className="h-fill flex-1 relative hidden lg:block">
             <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
               <Image
-                src="/images/deco-right.png"
+                src="/images/deco-right.jpg"
                 alt="girl with dog"
                 fill
                 className="object-cover"

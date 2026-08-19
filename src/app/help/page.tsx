@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Help & FAQs - Carrot",
   description:
     "Answers about Carrot offers, payouts, and merchant accounts. Reach our team by chat or email.",
+  alternates: { canonical: "/help" },
 };
 
 /**
@@ -48,7 +49,6 @@ export default function HelpPage() {
           removed; rebuild the list from Carrot's own articles when they exist.
         */}
 
-        {/* TODO: swap for Carrot's own 12 FAQs once that copy lands. */}
         <FaqSection faqs={FAQS} />
 
         <StillNeedHelp />

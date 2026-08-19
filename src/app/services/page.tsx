@@ -8,6 +8,7 @@ const config = VERTICALS.services;
 export const metadata: Metadata = {
   title: config.metaTitle,
   description: config.metaDescription,
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

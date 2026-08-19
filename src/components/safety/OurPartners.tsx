@@ -16,7 +16,7 @@ const PARTNERS = [
     // TODO: placeholder type-set lockup — swap for Stripe's official SVG.
     alt: "Stripe",
     src: "/images/brands/stripe.svg",
-    body: "Processes every payment on infrastructure trusted by millions of businesses.",
+    body: "Securely processes payments and reimbursements with bank-level protection.",
   },
   {
     alt: "Drata",

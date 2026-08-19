@@ -1,3 +1,5 @@
+import { HOW_IT_WORKS_STEPS } from "@/data/how-it-works";
+
 import type { Vertical } from "@/data/product-testimonials";
 
 export interface VerticalCopyBlock {
@@ -64,23 +66,23 @@ const SHARED_CONSUMER_STEPS: [string, string, string] = [
   "Get cash back automatically",
 ];
 
+/**
+ * Derived from the canonical flow rather than written again here — this block
+ * had drifted to its own third step ("You get paid") while the homepage and
+ * /how-it-works both said "Earn Steady Revenue". One source, one wording.
+ */
 const SHARED_EASY_STEPS: [
   VerticalCopyBlock,
   VerticalCopyBlock,
   VerticalCopyBlock,
 ] = [
-  {
-    title: "Set your terms",
-    copy: "Choose your rate, your limits, and your caps. Change them whenever you want.",
-  },
-  {
-    title: "We promote it",
-    copy: "Carrot targets the right customers and sends dynamic offers in real time.",
-  },
-  {
-    title: "You get paid",
-    copy: "Customers pay you directly, the way they already do. Nothing changes at the counter.",
-  },
+  HOW_IT_WORKS_STEPS[0],
+  HOW_IT_WORKS_STEPS[1],
+  HOW_IT_WORKS_STEPS[2],
+].map((step) => ({ title: step.title, copy: step.copy })) as [
+  VerticalCopyBlock,
+  VerticalCopyBlock,
+  VerticalCopyBlock,
 ];
 
 const SHARED_WIN_WIN_WIN: [

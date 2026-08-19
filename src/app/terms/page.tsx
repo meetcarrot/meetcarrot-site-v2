@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LegalHero } from "@/components/legal/LegalHero";
 import { LegalPage } from "@/components/legal/LegalPage";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -8,15 +9,16 @@ export const metadata: Metadata = {
   title: "Website Terms of Service - Carrot",
   description:
     "The terms and conditions that govern your access to and use of Carrot's website.",
+  alternates: { canonical: "/terms" },
 };
 
-// Content routes have no hero, so <main> supplies the padding that clears the
-// fixed header (h-16.5 mobile / h-28 desktop).
+// The hero band carries its own header-clearing padding, so <main> adds none.
 export default function TermsPage() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-28 md:pt-40 pb-24">
+      <main>
+        <LegalHero title={TERMS.title} />
         <LegalPage doc={TERMS} />
       </main>
       <SiteFooter />

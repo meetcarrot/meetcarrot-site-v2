@@ -1,9 +1,9 @@
-import { TESTIMONIALS, withThemes } from "@/data/testimonials";
+import { TESTIMONIALS } from "@/data/testimonials";
 import type { Testimonial } from "@/types/content";
 
 export type Vertical = "hospitality" | "retail" | "services" | "digital";
 
-const HOSPITALITY: Testimonial[] = withThemes([
+const HOSPITALITY: Testimonial[] = [
   {
     initials: "AE",
     name: "@alex.eats",
@@ -110,9 +110,9 @@ const HOSPITALITY: Testimonial[] = withThemes([
     quote:
       "I’ve found so many new local restaurants and cafés through Carrot. It feels like having a friend who always knows the good spots.",
   },
-]);
+];
 
-const RETAIL: Testimonial[] = withThemes([
+const RETAIL: Testimonial[] = [
   {
     initials: "DK",
     name: "Daniel K.",
@@ -220,9 +220,9 @@ const RETAIL: Testimonial[] = withThemes([
     quote:
       "Helps me treat myself and still feel responsible about money. Rare combination.",
   },
-]);
+];
 
-const SERVICES: Testimonial[] = withThemes([
+const SERVICES: Testimonial[] = [
   {
     initials: "DP",
     name: "@derek.plans",
@@ -329,7 +329,7 @@ const SERVICES: Testimonial[] = withThemes([
     quote:
       "It’s the first app in a long time that feels like it’s actually on my side.",
   },
-]);
+];
 
 export const PRODUCT_TESTIMONIALS: Record<Vertical, Testimonial[]> = {
   hospitality: HOSPITALITY,

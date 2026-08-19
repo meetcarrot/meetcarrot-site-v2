@@ -9,6 +9,10 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva(
   [
     "relative w-full overflow-hidden cursor-pointer font-medium text-[16px]",
+    // Inert while the button is display:block, but callers switch it to
+    // inline-flex to size it to a header row — and without these the label
+    // lands top-left in the pill instead of centred.
+    "text-center items-center justify-center",
     "border border-black/15 rounded-3xl",
     "disabled:cursor-not-allowed disabled:pointer-events-none",
     "aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none",

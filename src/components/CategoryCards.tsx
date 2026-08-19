@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ChevronRightIcon } from "@/components/icons";
-import { LottieAnimation } from "@/components/LottieAnimation";
+import { Reveal } from "@/components/Reveal";
 
 const CARD_BODY_CLASS =
   "shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] p-6 pt-8 lg:p-12 rounded-[20px] bg-white";
@@ -13,12 +14,11 @@ interface Category {
   href: string;
   title: string;
   description: string;
+  icon: string;
   /**
-   * TODO: placeholder art. The four animated category icons are still pending —
-   * these currently point at the leftover Split Pay lotties so the layout has
-   * something to size against. Swap the paths, not the markup.
+   * Staggers the float so a row of four doesn't rise and fall as one block.
    */
-  lottieSrc: string;
+  floatDelay: string;
 }
 
 const CATEGORIES: Category[] = [
@@ -27,32 +27,36 @@ const CATEGORIES: Category[] = [
     title: "Hospitality",
     description:
       "Restaurants, cafés, bars, and hospitality venues focused on food, drinks, and in-person experiences.",
-    lottieSrc: "/lottie/product_rent.json",
+    icon: "/images/categories/hospitality.png",
+    floatDelay: "0s",
   },
   {
     href: "/retail",
     title: "Retail",
     description:
       "Local boutiques, specialty shops, and stores where customers browse and buy in person.",
-    lottieSrc: "/lottie/product_mortgage.json",
+    icon: "/images/categories/retail.png",
+    floatDelay: "0.6s",
   },
   {
     href: "/services",
     title: "Services",
     description:
       "Everyday local services — from auto care and wellness to fitness, beauty, and professional help.",
-    lottieSrc: "/lottie/product_carloan.json",
+    icon: "/images/categories/services.png",
+    floatDelay: "1.2s",
   },
   {
     href: "/digital",
     title: "Digital",
     description:
       "E-commerce, online events, digital products, and businesses that operate primarily online.",
-    lottieSrc: "/lottie/product_rent.json",
+    icon: "/images/categories/digital.png",
+    floatDelay: "1.8s",
   },
 ];
 
-function CategoryCard({ href, title, description, lottieSrc }: Category) {
+function CategoryCard({ href, title, description, icon, floatDelay }: Category) {
   return (
     <Link
       className="focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
@@ -61,9 +65,13 @@ function CategoryCard({ href, title, description, lottieSrc }: Category) {
       <div className={CARD_BODY_CLASS}>
         <div className="h-26 lg:h-54 w-40 lg:w-54 mx-auto mb-6 lg:mb-12 flex items-center lg:items-end">
           <div className="h-26 lg:h-46">
-            <LottieAnimation
-              src={lottieSrc}
-              className="h-full w-full [&_svg]:h-full! [&_svg]:w-full!"
+            <Image
+              src={icon}
+              alt=""
+              width={512}
+              height={512}
+              className="h-full w-auto object-contain animate-icon-float"
+              style={{ animationDelay: floatDelay }}
             />
           </div>
         </div>
@@ -98,8 +106,13 @@ export function CategoryCards() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-14 lg:mt-20">
-          {CATEGORIES.map((category) => (
-            <CategoryCard key={category.href} {...category} />
+          {CATEGORIES.map((category, index) => (
+            // Short stagger so the row resolves in sequence rather than as one
+            // block. Kept under a tenth of a second each — any longer and the
+            // last card feels late rather than deliberate.
+            <Reveal key={category.href} delay={index * 0.08}>
+              <CategoryCard {...category} />
+            </Reveal>
           ))}
         </div>
       </div>

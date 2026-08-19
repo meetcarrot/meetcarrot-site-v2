@@ -117,3 +117,30 @@
     display: none;
   }
 }
+
+/*
+ * Category icons breathe rather than perform. The brief asked for animated
+ * icons; a slow vertical drift reads as alive at a glance without competing
+ * with the copy beside it. Each card offsets its own delay so a row of four
+ * doesn't bob in lockstep.
+ */
+@keyframes icon-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-icon-float {
+  animation: icon-float 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-icon-float {
+    animation: none;
+  }
+}

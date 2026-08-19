@@ -8,6 +8,7 @@ const config = VERTICALS.retail;
 export const metadata: Metadata = {
   title: config.metaTitle,
   description: config.metaDescription,
+  alternates: { canonical: "/retail" },
 };
 
 export default function RetailPage() {

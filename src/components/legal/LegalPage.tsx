@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { AnimatePresence } from "motion/react";
+
+import { DocModal } from "@/components/DocModal";
 import { ChevronRightIcon } from "@/components/icons";
 import type { LegalDoc } from "@/data/legal";
-import { cn } from "@/lib/utils";
 
 /**
  * Shared styling for the CMS HTML. The source markup leans on `<h1>`/`<h2>` for
@@ -11,7 +13,7 @@ import { cn } from "@/lib/utils";
  * size — hence the explicit heading rules.
  */
 const RICH_TEXT_CLASS = [
-  "text-[16px] leading-[1.33]",
+  "text-[16px] leading-[1.5]",
   "[&>*:first-child]:mt-0",
   "[&_p]:mb-4 [&_p:last-child]:mb-0",
   "[&_strong]:font-medium [&_b]:font-medium",
@@ -24,86 +26,76 @@ const RICH_TEXT_CLASS = [
   "[&_a]:text-pink [&_a]:underline",
 ].join(" ");
 
-const CARD_CLASS =
-  "bg-white rounded-3xl lg:rounded-4xl shadow-[0_8px_16px_0_rgba(0,0,0,0.05)]";
+/** Same pill the FAQ grid uses — the two grids are the same control. */
+const SECTION_BUTTON_CLASS =
+  "flex items-center justify-between gap-8 py-4 px-5 lg:px-8 cursor-pointer bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl md:min-h-18 lg:min-h-22 transition duration-200 ease-in-out shadow-[0_8px_16px_0_rgba(0,0,0,0.05)] active:shadow-[0_4px_8px_0_rgba(0,0,0,0.04)] active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2";
 
 export interface LegalPageProps {
   doc: LegalDoc;
 }
 
 export function LegalPage({ doc }: LegalPageProps) {
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+
+  function handleOpen(index: number, element: HTMLButtonElement) {
+    triggerRef.current = element;
+    setOpenIndex(index);
+  }
 
   return (
-    <div className="mx-auto px-6 container lg:max-w-256 flex flex-col gap-10 md:gap-14">
-      <header className="flex flex-col items-center gap-4 text-center">
-        <h1 className="font-poly-sans-wide text-[40px] md:text-[48px] lg:text-[56px] leading-[1.15]!">
-          {doc.title}
-        </h1>
-        <p className="text-[16px] leading-[1.33] text-gray-600">
-          Last Updated {doc.lastUpdated}
-        </p>
-      </header>
-
-      {doc.intro ? (
-        <div className={cn(CARD_CLASS, "px-6 py-8 md:px-10 md:py-10")}>
-          <div
-            className={RICH_TEXT_CLASS}
-            dangerouslySetInnerHTML={{ __html: doc.intro }}
-          />
+    <section className="bg-gray-100 pb-14 lg:pb-24 pt-24 lg:pt-40">
+      <div className="mx-auto px-6 container lg:max-w-324 flex flex-col gap-10 md:gap-14">
+        <div className="flex flex-col gap-4">
+          <p className="text-[16px] leading-[1.5] font-medium">
+            Last Updated {doc.lastUpdated}
+          </p>
+          {doc.intro ? (
+            <div
+              className={RICH_TEXT_CLASS}
+              dangerouslySetInnerHTML={{ __html: doc.intro }}
+            />
+          ) : null}
         </div>
-      ) : null}
 
-      <div className="flex flex-col gap-4 lg:gap-6">
-        {doc.sections.map((section) => {
-          const isOpen = openId === section.id;
-          const buttonId = `legal-section-${section.id}`;
-          const panelId = `legal-panel-${section.id}`;
-
-          return (
-            <div key={section.id} className={CARD_CLASS}>
-              <button
-                type="button"
-                id={buttonId}
-                aria-expanded={isOpen}
-                aria-controls={panelId}
-                onClick={() => setOpenId(isOpen ? null : section.id)}
-                className="flex w-full items-center justify-between gap-8 py-5 px-5 lg:py-6 lg:px-8 cursor-pointer text-left rounded-3xl lg:rounded-4xl transition duration-200 ease-in-out active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
-              >
-                <span className="text-[18px] font-medium leading-[1.33]">
-                  {section.title}
-                </span>
-                {/*
-                  The shared ChevronRightIcon hard-codes a white stroke for use on
-                  dark buttons; on a white card it needs the black stroke instead.
-                */}
-                <ChevronRightIcon
-                  width={12}
-                  height={12}
-                  className={cn(
-                    "shrink-0 transition-transform duration-200 ease-out [&_path]:stroke-black",
-                    isOpen && "rotate-90",
-                  )}
-                />
-              </button>
-
-              {isOpen ? (
-                <div
-                  id={panelId}
-                  role="region"
-                  aria-labelledby={buttonId}
-                  className="px-5 pb-6 lg:px-8 lg:pb-8"
-                >
-                  <div
-                    className={RICH_TEXT_CLASS}
-                    dangerouslySetInnerHTML={{ __html: section.html }}
-                  />
-                </div>
-              ) : null}
-            </div>
-          );
-        })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+          {doc.sections.map((section, index) => (
+            <button
+              key={section.id}
+              type="button"
+              aria-haspopup="dialog"
+              onClick={(event) => handleOpen(index, event.currentTarget)}
+              className={SECTION_BUTTON_CLASS}
+            >
+              <span className="text-[16px] leading-[1.33] font-medium text-left">
+                {section.title}
+              </span>
+              {/*
+                The shared ChevronRightIcon hard-codes a white stroke for use on
+                dark buttons; on a white card it needs the black stroke instead.
+              */}
+              <ChevronRightIcon
+                width={12}
+                height={12}
+                className="shrink-0 [&_path]:stroke-black"
+              />
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
+
+      <AnimatePresence>
+        {openIndex !== null && (
+        <DocModal
+          items={doc.sections}
+          index={openIndex}
+          onIndexChange={setOpenIndex}
+          onClose={() => setOpenIndex(null)}
+          triggerRef={triggerRef}
+          bodyClassName={RICH_TEXT_CLASS}
+          />
+        )}
+      </AnimatePresence>
+    </section>
   );
 }

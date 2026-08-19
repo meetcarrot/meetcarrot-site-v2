@@ -18,11 +18,11 @@ export function SafetyHero() {
                 rule so the artwork fills the fixed-height slot at every breakpoint. */}
             <Image
               alt="security"
-              src="/images/safety-and-security/welcome-img.png"
-              width={840}
-              height={636}
+              src="/images/safety-and-security/shield.png"
+              width={512}
+              height={512}
               priority
-              className="h-full w-auto"
+              className="h-full w-auto animate-icon-float"
             />
           </div>
           <h1 className="leading-[115%]! font-poly-sans-wide text-center text-[40px] md:text-[56px] lg:text-[64px] mt-2 md:mt-6 lg:mt-10">

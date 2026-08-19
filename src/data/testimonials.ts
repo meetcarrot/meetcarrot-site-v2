@@ -1,46 +1,7 @@
-import type { Testimonial, TestimonialTheme } from "@/types/content";
-
-/**
- * Card colours cycle in a fixed 18-long sequence rather than a simple repeat —
- * this is what keeps two same-coloured cards from stacking inside a column.
- * Every review set is exactly 18 entries so the sequence lines up.
- *
- * The four card colours are the brand's two hues plus ink and white, so the
- * rail reads as pink and orange rather than one accent repeated.
- */
-export const TESTIMONIAL_THEME_CYCLE: TestimonialTheme[] = [
-  "bg-gray-400 text-white",
-  "bg-orange text-white",
-  "bg-pink text-white",
-  "bg-white text-gray-400",
-  "bg-white text-gray-400",
-  "bg-gray-400 text-white",
-  "bg-orange text-white",
-  "bg-white text-gray-400",
-  "bg-pink text-white",
-  "bg-gray-400 text-white",
-  "bg-white text-gray-400",
-  "bg-orange text-white",
-  "bg-gray-400 text-white",
-  "bg-orange text-white",
-  "bg-pink text-white",
-  "bg-white text-gray-400",
-  "bg-white text-gray-400",
-  "bg-gray-400 text-white",
-];
-
-/** Applies the shared colour cycle so review sets stay plain content. */
-export function withThemes(
-  reviews: ReadonlyArray<Omit<Testimonial, "theme">>,
-): Testimonial[] {
-  return reviews.map((review, index) => ({
-    ...review,
-    theme: TESTIMONIAL_THEME_CYCLE[index % TESTIMONIAL_THEME_CYCLE.length],
-  }));
-}
+import type { Testimonial } from "@/types/content";
 
 /** Homepage set — a mix of consumer and merchant voices. */
-export const TESTIMONIALS: Testimonial[] = withThemes([
+export const TESTIMONIALS: Testimonial[] = [
   {
     initials: "MR",
     name: "@maya.reads",
@@ -147,4 +108,4 @@ export const TESTIMONIALS: Testimonial[] = withThemes([
     quote:
       "Not sure what I’d do without it at this point — I open it before almost every outing.",
   },
-]);
+];

@@ -6,5 +6,12 @@
 /** Merchant dashboard sign-in. */
 export const MERCHANT_LOGIN_URL = "https://merchant.meetcarrot.xyz/";
 
-/** Where "Get started" sends a prospective merchant. */
-export const GET_STARTED_URL = "/get-started";
+/** Support inbox — also the fallback when the Messenger cannot load. */
+export const SUPPORT_EMAIL = "support@meetcarrot.xyz";
+
+/**
+ * Prefilled into the Intercom composer when a merchant clicks "Get started".
+ * Written in the merchant's voice because it is sent as their message, not ours.
+ */
+export const GET_STARTED_MESSAGE =
+  "Hi! I'd like to get started with Carrot for my business.";

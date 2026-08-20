@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import { AnimatedIcon } from "@/components/AnimatedIcon";
 import { ChevronRightIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
+import { CATEGORY_ICONS } from "@/data/category-icons";
 
 const CARD_BODY_CLASS =
   "shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] p-6 pt-8 lg:p-12 rounded-[20px] bg-white";
@@ -14,7 +15,8 @@ interface Category {
   href: string;
   title: string;
   description: string;
-  icon: string;
+  /** Key into the shared icon config. */
+  slug: keyof typeof CATEGORY_ICONS;
   /**
    * Staggers the float so a row of four doesn't rise and fall as one block.
    */
@@ -27,7 +29,7 @@ const CATEGORIES: Category[] = [
     title: "Hospitality",
     description:
       "Restaurants, cafés, bars, and hospitality venues focused on food, drinks, and in-person experiences.",
-    icon: "/images/categories/hospitality-iso.png",
+    slug: "hospitality",
     floatDelay: "0s",
   },
   {
@@ -35,7 +37,7 @@ const CATEGORIES: Category[] = [
     title: "Retail",
     description:
       "Local boutiques, specialty shops, and stores where customers browse and buy in person.",
-    icon: "/images/categories/retail-iso.png",
+    slug: "retail",
     floatDelay: "0.6s",
   },
   {
@@ -43,7 +45,7 @@ const CATEGORIES: Category[] = [
     title: "Services",
     description:
       "Everyday local services — from auto care and wellness to fitness, beauty, and professional help.",
-    icon: "/images/categories/services-iso.png",
+    slug: "services",
     floatDelay: "1.2s",
   },
   {
@@ -51,39 +53,22 @@ const CATEGORIES: Category[] = [
     title: "Digital",
     description:
       "E-commerce, online events, digital products, and businesses that operate primarily online.",
-    icon: "/images/categories/digital-iso.png",
+    slug: "digital",
     floatDelay: "1.8s",
   },
 ];
 
-function CategoryCard({ href, title, description, icon, floatDelay }: Category) {
+function CategoryCard({ href, title, description, slug, floatDelay }: Category) {
+  const icon = CATEGORY_ICONS[slug];
   return (
     <Link
       className="group focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
       href={href}
     >
       <div className={CARD_BODY_CLASS}>
-        <div className="h-26 lg:h-54 w-40 lg:w-54 mx-auto mb-6 lg:mb-12 flex items-center lg:items-end">
-          {/*
-            Two layers of motion, deliberately separated: the idle float lives on
-            the outer element and the hover lift on the inner one, so hovering
-            does not fight or restart the drift — they compose.
-
-            An isometric object reads as sitting on a surface, so the hover is a
-            lift off it: rise, a touch of scale, and a contact shadow that
-            spreads and softens the way a real one does as the object rises.
-          */}
-          <div
-            className="h-26 lg:h-46 animate-icon-float"
-            style={{ animationDelay: floatDelay }}
-          >
-            <Image
-              src={icon}
-              alt=""
-              width={512}
-              height={512}
-              className="h-full w-auto object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:scale-[1.06] drop-shadow-[0_6px_10px_rgba(0,0,0,0.10)] group-hover:drop-shadow-[0_18px_22px_rgba(0,0,0,0.14)]"
-            />
+        <div className="h-26 lg:h-54 w-40 lg:w-54 mx-auto mb-6 lg:mb-12 flex items-center justify-center lg:items-end">
+          <div className="h-26 lg:h-46">
+            <AnimatedIcon {...icon} floatDelay={floatDelay} />
           </div>
         </div>
         <div className="flex items-end gap-4">

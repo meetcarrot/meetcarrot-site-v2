@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { AnimatedIcon } from "@/components/AnimatedIcon";
+import { CATEGORY_ICONS } from "@/data/category-icons";
 import { CashbackCalculator } from "@/components/product/CashbackCalculator";
 import { LenderSection } from "@/components/product/LenderSection";
 import {
@@ -60,13 +61,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
           illustration={
             // Same icon the homepage category card and menu use, so a visitor
             // arriving from either lands on art they already recognise.
-            <Image
-              src={`/images/categories/${config.slug}-iso.png`}
-              alt=""
-              width={512}
-              height={512}
-              className="h-full w-auto object-contain animate-icon-float"
-            />
+            <AnimatedIcon {...CATEGORY_ICONS[config.slug]} />
           }
           title={config.heading}
           subtitle={config.subheading}

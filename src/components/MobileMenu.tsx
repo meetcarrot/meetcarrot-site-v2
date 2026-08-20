@@ -3,8 +3,9 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect } from "react";
+import { AnimatedIcon } from "@/components/AnimatedIcon";
 import { ChevronRightIcon } from "@/components/icons";
-import Image from "next/image";
+import { CATEGORY_ICONS } from "@/data/category-icons";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -13,7 +14,7 @@ interface MobileMenuProps {
 interface CategoryCard {
   label: string;
   href: string;
-  icon: string;
+  slug: keyof typeof CATEGORY_ICONS;
   /** Staggers the float across the row. */
   floatDelay: string;
   /** Fixed-height slot the illustration sits in; heights differ per card. */
@@ -25,7 +26,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Hospitality",
     href: "/hospitality",
-    icon: "/images/categories/hospitality-iso.png",
+    slug: "hospitality",
     floatDelay: "0s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",
@@ -33,7 +34,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Retail",
     href: "/retail",
-    icon: "/images/categories/retail-iso.png",
+    slug: "retail",
     floatDelay: "0.6s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-19",
@@ -41,7 +42,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Services",
     href: "/services",
-    icon: "/images/categories/services-iso.png",
+    slug: "services",
     floatDelay: "1.2s",
     slotClassName: "h-25 mt-1 flex justify-center items-end",
     figureClassName: "h-19",
@@ -49,7 +50,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Digital",
     href: "/digital",
-    icon: "/images/categories/digital-iso.png",
+    slug: "digital",
     floatDelay: "1.8s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",
@@ -130,13 +131,9 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                   className={CARD_CLASS}
                 >
                   <div className={card.slotClassName}>
-                    <Image
-                      src={card.icon}
-                      alt=""
-                      width={512}
-                      height={512}
-                      className={`${card.figureClassName} w-auto object-contain animate-icon-float`}
-                      style={{ animationDelay: card.floatDelay }}
+                    <AnimatedIcon
+                      {...CATEGORY_ICONS[card.slug]}
+                      floatDelay={card.floatDelay}
                     />
                   </div>
                   <div className="mt-4 h-12">

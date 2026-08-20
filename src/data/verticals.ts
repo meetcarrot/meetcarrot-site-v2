@@ -274,6 +274,11 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     ctaTitle: "Book more clients",
   },
 
+  /*
+   * No route while Digital is marked coming soon — the nav, the homepage card
+   * and the footer all render it unlinked. The config stays so restoring the
+   * page is one file, not a rewrite.
+   */
   digital: {
     slug: "digital",
     name: "Digital",

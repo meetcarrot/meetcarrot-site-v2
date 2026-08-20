@@ -24,8 +24,6 @@ export interface AnimatedIconProps {
   motion: AccentMotion;
   /** Wisps rising off the accent — only sensible on something hot. */
   steam?: boolean;
-  /** Offsets this icon's idle drift so a row of them doesn't move in lockstep. */
-  floatDelay?: string;
   className?: string;
 }
 
@@ -43,20 +41,13 @@ export function AnimatedIcon({
   accentBox,
   motion,
   steam = false,
-  floatDelay,
   className,
 }: AnimatedIconProps) {
   return (
-    <div
-      className={cn(
-        "relative aspect-square h-full animate-icon-float",
-        // The lift is on this wrapper and the part motion on the accent inside,
-        // so hovering composes with the idle animation instead of restarting it.
-        "transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:scale-[1.06]",
-        className,
-      )}
-      style={floatDelay ? { animationDelay: floatDelay } : undefined}
-    >
+    // The icon itself is static: only its accent moves. It previously also
+    // drifted and lifted on hover, which competed with the part motion for
+    // attention and made the whole object look unsettled.
+    <div className={cn("relative aspect-square h-full", className)}>
       <Image
         src={base}
         alt={alt}

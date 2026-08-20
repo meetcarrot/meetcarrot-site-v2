@@ -17,10 +17,6 @@ interface Category {
   description: string;
   /** Key into the shared icon config. */
   slug: keyof typeof CATEGORY_ICONS;
-  /**
-   * Staggers the float so a row of four doesn't rise and fall as one block.
-   */
-  floatDelay: string;
 }
 
 const CATEGORIES: Category[] = [
@@ -30,7 +26,6 @@ const CATEGORIES: Category[] = [
     description:
       "Restaurants, cafés, bars, and hospitality venues focused on food, drinks, and in-person experiences.",
     slug: "hospitality",
-    floatDelay: "0s",
   },
   {
     href: "/retail",
@@ -38,7 +33,6 @@ const CATEGORIES: Category[] = [
     description:
       "Local boutiques, specialty shops, and stores where customers browse and buy in person.",
     slug: "retail",
-    floatDelay: "0.6s",
   },
   {
     href: "/services",
@@ -46,7 +40,6 @@ const CATEGORIES: Category[] = [
     description:
       "Everyday local services — from auto care and wellness to fitness, beauty, and professional help.",
     slug: "services",
-    floatDelay: "1.2s",
   },
   {
     href: "/digital",
@@ -54,11 +47,10 @@ const CATEGORIES: Category[] = [
     description:
       "E-commerce, online events, digital products, and businesses that operate primarily online.",
     slug: "digital",
-    floatDelay: "1.8s",
   },
 ];
 
-function CategoryCard({ href, title, description, slug, floatDelay }: Category) {
+function CategoryCard({ href, title, description, slug }: Category) {
   const icon = CATEGORY_ICONS[slug];
   return (
     <Link
@@ -68,7 +60,7 @@ function CategoryCard({ href, title, description, slug, floatDelay }: Category) 
       <div className={CARD_BODY_CLASS}>
         <div className="h-26 lg:h-54 w-40 lg:w-54 mx-auto mb-6 lg:mb-12 flex items-center justify-center lg:items-end">
           <div className="h-26 lg:h-46">
-            <AnimatedIcon {...icon} floatDelay={floatDelay} />
+            <AnimatedIcon {...icon} />
           </div>
         </div>
         <div className="flex items-end gap-4">

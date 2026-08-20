@@ -22,7 +22,7 @@ export function SafetyHero() {
               width={512}
               height={512}
               priority
-              className="h-full w-auto animate-icon-float"
+              className="h-full w-auto"
             />
           </div>
           <h1 className="leading-[115%]! font-poly-sans-wide text-center text-[40px] md:text-[56px] lg:text-[64px] mt-2 md:mt-6 lg:mt-10">

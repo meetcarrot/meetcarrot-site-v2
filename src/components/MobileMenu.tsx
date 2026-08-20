@@ -15,8 +15,6 @@ interface CategoryCard {
   label: string;
   href: string;
   slug: keyof typeof CATEGORY_ICONS;
-  /** Staggers the float across the row. */
-  floatDelay: string;
   /** Fixed-height slot the illustration sits in; heights differ per card. */
   slotClassName: string;
   figureClassName: string;
@@ -27,7 +25,6 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
     label: "Hospitality",
     href: "/hospitality",
     slug: "hospitality",
-    floatDelay: "0s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",
   },
@@ -35,7 +32,6 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
     label: "Retail",
     href: "/retail",
     slug: "retail",
-    floatDelay: "0.6s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-19",
   },
@@ -43,7 +39,6 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
     label: "Services",
     href: "/services",
     slug: "services",
-    floatDelay: "1.2s",
     slotClassName: "h-25 mt-1 flex justify-center items-end",
     figureClassName: "h-19",
   },
@@ -51,7 +46,6 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
     label: "Digital",
     href: "/digital",
     slug: "digital",
-    floatDelay: "1.8s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",
   },
@@ -131,10 +125,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                   className={CARD_CLASS}
                 >
                   <div className={card.slotClassName}>
-                    <AnimatedIcon
-                      {...CATEGORY_ICONS[card.slug]}
-                      floatDelay={card.floatDelay}
-                    />
+                    <AnimatedIcon {...CATEGORY_ICONS[card.slug]} />
                   </div>
                   <div className="mt-4 h-12">
                     <p className={CARD_LABEL_CLASS}>{card.label}</p>

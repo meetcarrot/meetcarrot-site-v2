@@ -61,7 +61,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
             // Same icon the homepage category card and menu use, so a visitor
             // arriving from either lands on art they already recognise.
             <Image
-              src={`/images/categories/${config.slug}.png`}
+              src={`/images/categories/${config.slug}-iso.png`}
               alt=""
               width={512}
               height={512}

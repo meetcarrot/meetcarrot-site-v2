@@ -27,7 +27,7 @@ const CATEGORIES: Category[] = [
     title: "Hospitality",
     description:
       "Restaurants, cafés, bars, and hospitality venues focused on food, drinks, and in-person experiences.",
-    icon: "/images/categories/hospitality.png",
+    icon: "/images/categories/hospitality-iso.png",
     floatDelay: "0s",
   },
   {
@@ -35,7 +35,7 @@ const CATEGORIES: Category[] = [
     title: "Retail",
     description:
       "Local boutiques, specialty shops, and stores where customers browse and buy in person.",
-    icon: "/images/categories/retail.png",
+    icon: "/images/categories/retail-iso.png",
     floatDelay: "0.6s",
   },
   {
@@ -43,7 +43,7 @@ const CATEGORIES: Category[] = [
     title: "Services",
     description:
       "Everyday local services — from auto care and wellness to fitness, beauty, and professional help.",
-    icon: "/images/categories/services.png",
+    icon: "/images/categories/services-iso.png",
     floatDelay: "1.2s",
   },
   {
@@ -51,7 +51,7 @@ const CATEGORIES: Category[] = [
     title: "Digital",
     description:
       "E-commerce, online events, digital products, and businesses that operate primarily online.",
-    icon: "/images/categories/digital.png",
+    icon: "/images/categories/digital-iso.png",
     floatDelay: "1.8s",
   },
 ];

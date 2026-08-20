@@ -25,7 +25,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Hospitality",
     href: "/hospitality",
-    icon: "/images/categories/hospitality.png",
+    icon: "/images/categories/hospitality-iso.png",
     floatDelay: "0s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",
@@ -33,7 +33,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Retail",
     href: "/retail",
-    icon: "/images/categories/retail.png",
+    icon: "/images/categories/retail-iso.png",
     floatDelay: "0.6s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-19",
@@ -41,7 +41,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Services",
     href: "/services",
-    icon: "/images/categories/services.png",
+    icon: "/images/categories/services-iso.png",
     floatDelay: "1.2s",
     slotClassName: "h-25 mt-1 flex justify-center items-end",
     figureClassName: "h-19",
@@ -49,7 +49,7 @@ const CATEGORY_CARDS: readonly CategoryCard[] = [
   {
     label: "Digital",
     href: "/digital",
-    icon: "/images/categories/digital.png",
+    icon: "/images/categories/digital-iso.png",
     floatDelay: "1.8s",
     slotClassName: "h-25 flex justify-center items-end",
     figureClassName: "h-25",

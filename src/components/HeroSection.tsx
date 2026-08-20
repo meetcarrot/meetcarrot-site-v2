@@ -81,7 +81,7 @@ export function HeroSection() {
               </div>
               <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
                 <Image
-                  src="/images/deco-right.jpg"
+                  src="/images/deco-right-cafe.jpg"
                   alt="girl with dog"
                   fill
                   className="object-cover"
@@ -94,7 +94,7 @@ export function HeroSection() {
           <div className="h-fill flex-1 relative hidden lg:block">
             <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
               <Image
-                src="/images/deco-right.jpg"
+                src="/images/deco-right-cafe.jpg"
                 alt="girl with dog"
                 fill
                 className="object-cover"

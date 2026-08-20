@@ -18,7 +18,7 @@ export function SafetyHero() {
                 rule so the artwork fills the fixed-height slot at every breakpoint. */}
             <Image
               alt="security"
-              src="/images/safety-and-security/shield.png"
+              src="/images/safety-and-security/shield-iso.png"
               width={512}
               height={512}
               priority

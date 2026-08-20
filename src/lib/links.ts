@@ -11,7 +11,13 @@ export const SUPPORT_EMAIL = "support@meetcarrot.xyz";
 
 /**
  * Prefilled into the Intercom composer when a merchant clicks "Get started".
- * Written in the merchant's voice because it is sent as their message, not ours.
+ * `showNewMessage` can only seed the text field — not a real form — so this is
+ * a short welcome plus labeled blanks they complete and send.
  */
-export const GET_STARTED_MESSAGE =
-  "Hi! I'd like to get started with Carrot for my business.";
+export const GET_STARTED_MESSAGE = `We'd love to help you get started with Carrot.
+
+Please tell us a bit about you so we can follow up:
+
+Who you are:
+Best way to reach you:
+The name of your business:`;

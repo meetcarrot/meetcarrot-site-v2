@@ -24,12 +24,12 @@ export function HowItWorks() {
             // Staggered by a tenth of a second so the three read left to right
             // rather than snapping in as one row.
             <Reveal key={step.id} delay={index * 0.1} className="flex flex-col">
-              {/* `items-start` so a shorter card doesn't stretch to match its
-                  neighbours — these are fixed-height chrome, not fluid boxes. */}
-              <div className="flex justify-center items-start mb-8">
+              {/* Equal-height frames, so titles and copy start on the same row
+                  when the three sit side by side. */}
+              <div className="flex justify-center mb-8">
                 <StepIllustration id={step.id} />
               </div>
-              <p className="font-medium text-[18px] md:text-[24px] text-center mb-2">
+              <p className="font-medium text-[18px] md:text-[24px] leading-[1.2] text-center mb-2 min-h-[1.2em]">
                 {step.title}
               </p>
               <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">

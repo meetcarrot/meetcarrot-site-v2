@@ -14,7 +14,6 @@ export const ROUTES = [
   { path: "/hospitality", priority: 0.8 },
   { path: "/retail", priority: 0.8 },
   { path: "/services", priority: 0.8 },
-  { path: "/digital", priority: 0.8 },
   { path: "/safety-and-security", priority: 0.6 },
   { path: "/help", priority: 0.6 },
   { path: "/terms", priority: 0.3 },

@@ -72,7 +72,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className="w-full rounded-[20px] p-6 lg:rounded-4xl lg:p-10 shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] bg-white text-gray-400">
       <div className="flex items-center gap-3 lg:gap-4">
-        <div className="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-pink text-white">
+        <div className="size-10 lg:size-14 rounded-full flex items-center justify-center font-semibold text-[14px] lg:text-[18px] leading-none uppercase shrink-0 bg-gray-400 text-white">
           {testimonial.initials}
         </div>
         <span className="text-[14px] lg:text-[18px] font-medium leading-none">

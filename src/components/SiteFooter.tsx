@@ -44,14 +44,15 @@ type IconComponent = (props: React.SVGProps<SVGSVGElement>) => React.ReactElemen
 // TODO: placeholder icons — the four category marks are still the leftover
 // rent/mortgage/car set. The illustrated versions are too detailed at 16px.
 const CATEGORY_LINKS: ReadonlyArray<{
-  href: string;
+  href?: string;
   label: string;
   Icon: IconComponent;
+  comingSoon?: boolean;
 }> = [
   { href: "/hospitality", label: "Hospitality", Icon: RentIcon },
   { href: "/retail", label: "Retail", Icon: MortgageIcon },
   { href: "/services", label: "Services", Icon: CarIcon },
-  { href: "/digital", label: "Digital", Icon: OtherBillsIcon },
+  { label: "Digital", Icon: OtherBillsIcon, comingSoon: true },
 ];
 
 const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [
@@ -108,12 +109,21 @@ export function SiteFooter() {
           <nav aria-label="Categories">
             <p className={COLUMN_LABEL_CLASS}>Categories</p>
             <ul className="grid grid-cols-1 gap-4">
-              {CATEGORY_LINKS.map(({ href, label, Icon }) => (
-                <li key={href}>
-                  <Link className={NAV_LINK_CLASS} href={href}>
-                    <Icon />
-                    <span className={LINK_TEXT_CLASS}>{label}</span>
-                  </Link>
+              {CATEGORY_LINKS.map(({ href, label, Icon, comingSoon }) => (
+                <li key={label}>
+                  {comingSoon || !href ? (
+                    <div className="inline-flex items-center gap-3 [&_svg_path]:fill-gray-400">
+                      <Icon />
+                      <span className="text-[16px] font-normal leading-[1.33] text-gray-600">
+                        {label} (coming soon)
+                      </span>
+                    </div>
+                  ) : (
+                    <Link className={NAV_LINK_CLASS} href={href}>
+                      <Icon />
+                      <span className={LINK_TEXT_CLASS}>{label}</span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

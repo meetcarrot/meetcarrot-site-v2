@@ -49,12 +49,7 @@ export default function SafetyAndSecurityPage() {
         <OurPartners />
         <SecurityAudits />
         <ReportAnIssue />
-        <AutopilotCta
-          backgroundSrc="/images/safety-and-security/cta-bg.jpg"
-          phoneSrc="/images/safety-and-security/get-started-phone.png"
-          phoneWidth={1308}
-          phoneHeight={2511}
-        />
+        <AutopilotCta backgroundSrc="/images/safety-and-security/cta-bg.jpg" />
       </main>
       <SiteFooter />
     </>

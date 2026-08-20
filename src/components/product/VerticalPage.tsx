@@ -1,5 +1,4 @@
-import { AnimatedIcon } from "@/components/AnimatedIcon";
-import { CATEGORY_ICONS } from "@/data/category-icons";
+import { CategoryIcon } from "@/components/CategoryIcon";
 import { CashbackCalculator } from "@/components/product/CashbackCalculator";
 import { LenderSection } from "@/components/product/LenderSection";
 import {
@@ -51,7 +50,6 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
   const [benefitOne, benefitTwo, benefitThree] = config.benefits;
   const [stepOne, stepTwo, stepThree] = config.easySteps;
   const [cardOne, cardTwo, cardThree] = config.easyCards;
-  const [consumerOne, consumerTwo, consumerThree] = config.consumerSteps;
 
   return (
     <>
@@ -61,7 +59,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
           illustration={
             // Same icon the homepage category card and menu use, so a visitor
             // arriving from either lands on art they already recognise.
-            <AnimatedIcon {...CATEGORY_ICONS[config.slug]} />
+            <CategoryIcon id={config.slug} />
           }
           title={config.heading}
           subtitle={config.subheading}
@@ -142,25 +140,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
         />
 
         {/* The consumer-side flow sits under "Easy for you", per the changes doc. */}
-        <ThreeSteps
-          steps={[
-            {
-              imageSrc: `${dir}/left-phone.png`,
-              imageAlt: `app view: ${consumerOne.toLowerCase()}`,
-              label: consumerOne,
-            },
-            {
-              imageSrc: `${dir}/central-phone.png`,
-              imageAlt: `app view: ${consumerTwo.toLowerCase()}`,
-              label: consumerTwo,
-            },
-            {
-              imageSrc: `${dir}/right-phone.png`,
-              imageAlt: `app view: ${consumerThree.toLowerCase()}`,
-              label: consumerThree,
-            },
-          ]}
-        />
+        <ThreeSteps steps={config.consumerSteps} />
 
         <WinWinWin entries={config.winWinWin} />
 
@@ -175,9 +155,6 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
         <AutopilotCta
           title={config.ctaTitle}
           backgroundSrc={`${dir}/cta-bg.jpg`}
-          phoneSrc={`${dir}/cta-phone.png`}
-          phoneWidth={1308}
-          phoneHeight={2511}
         />
       </main>
       <SiteFooter />

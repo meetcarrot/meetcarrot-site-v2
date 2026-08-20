@@ -89,6 +89,11 @@ export function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
+/** Symmetric ease — a pointer travelling between two points should ease both ends. */
+export function easeInOutCubic(t: number) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
 /** Clamped 0–1 progress of `elapsed` across a segment starting at `from`. */
 export function segment(elapsed: number, from: number, duration: number) {
   return Math.min(Math.max((elapsed - from) / duration, 0), 1);
@@ -114,3 +119,10 @@ export const STEP_CARD_CLASS =
  */
 export const STEP_ILLUSTRATION_BOX =
   "flex h-84 w-full items-center justify-center";
+
+/**
+ * Square frame for the illustrations that draw their own scene rather than a
+ * card — the offer-terms step and the three consumer-side steps. Sitting them
+ * all in one square is what lines their titles up across a row.
+ */
+export const STEP_FRAME_CLASS = "w-full max-w-84 mx-auto aspect-square";

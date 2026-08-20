@@ -32,8 +32,8 @@ export interface VerticalConfig {
   /** The three value props. */
   benefits: [VerticalCopyBlock, VerticalCopyBlock, VerticalCopyBlock];
 
-  /** "How it works" for consumers — the three phone screens. */
-  consumerSteps: [string, string, string];
+  /** "How customers use it" — the three consumer-side animations. */
+  consumerSteps: [VerticalCopyBlock, VerticalCopyBlock, VerticalCopyBlock];
 
   easyHeading: string;
   easyIntro: string;
@@ -60,10 +60,23 @@ const SHARED_BADGES: [string, string, string] = [
 
 // PENDING: consumer-side flow is the same product everywhere, so the three
 // steps are shared until the doc says otherwise.
-const SHARED_CONSUMER_STEPS: [string, string, string] = [
-  "Find your business",
-  "Pay as they normally would",
-  "Get cash back automatically",
+const SHARED_CONSUMER_STEPS: [
+  VerticalCopyBlock,
+  VerticalCopyBlock,
+  VerticalCopyBlock,
+] = [
+  {
+    title: "Discover",
+    copy: "Customers find your offer.",
+  },
+  {
+    title: "Activate",
+    copy: "They activate your offer.",
+  },
+  {
+    title: "Spend",
+    copy: "They visit and make a purchase. Once verified, cashback is earned.",
+  },
 ];
 
 /**

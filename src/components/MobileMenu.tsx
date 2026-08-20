@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect } from "react";
-import { AnimatedIcon } from "@/components/AnimatedIcon";
+import { CategoryIcon, type CategoryId } from "@/components/CategoryIcon";
 import { ChevronRightIcon } from "@/components/icons";
-import { CATEGORY_ICONS } from "@/data/category-icons";
+import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -13,42 +13,19 @@ interface MobileMenuProps {
 
 interface CategoryCard {
   label: string;
-  href: string;
-  slug: keyof typeof CATEGORY_ICONS;
-  /** Fixed-height slot the illustration sits in; heights differ per card. */
-  slotClassName: string;
-  figureClassName: string;
+  /** Absent while the category is still coming soon. */
+  href?: string;
+  icon: CategoryId;
+  /** Staggers the entrance across the row. */
+  floatDelay: string;
+  comingSoon?: boolean;
 }
 
 const CATEGORY_CARDS: readonly CategoryCard[] = [
-  {
-    label: "Hospitality",
-    href: "/hospitality",
-    slug: "hospitality",
-    slotClassName: "h-25 flex justify-center items-end",
-    figureClassName: "h-25",
-  },
-  {
-    label: "Retail",
-    href: "/retail",
-    slug: "retail",
-    slotClassName: "h-25 flex justify-center items-end",
-    figureClassName: "h-19",
-  },
-  {
-    label: "Services",
-    href: "/services",
-    slug: "services",
-    slotClassName: "h-25 mt-1 flex justify-center items-end",
-    figureClassName: "h-19",
-  },
-  {
-    label: "Digital",
-    href: "/digital",
-    slug: "digital",
-    slotClassName: "h-25 flex justify-center items-end",
-    figureClassName: "h-25",
-  },
+  { label: "Hospitality", href: "/hospitality", icon: "hospitality", floatDelay: "0s" },
+  { label: "Retail", href: "/retail", icon: "retail", floatDelay: "0.6s" },
+  { label: "Services", href: "/services", icon: "services", floatDelay: "1.2s" },
+  { label: "Digital", icon: "digital", floatDelay: "1.8s", comingSoon: true },
 ];
 
 const LEARN_MORE_LINKS = [
@@ -64,7 +41,7 @@ const LEARN_MORE_LINKS = [
  * alone carries the elevation.
  */
 const CARD_CLASS =
-  "relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-white border border-black/5 shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] cursor-pointer flex flex-col justify-center transition duration-200 ease-in-out hover:shadow-[0_12px_32px_0_rgba(0,0,0,0.12)] active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2";
+  "group/cat relative h-54 md:h-58 lg:h-full rounded-3xl px-4 bg-white border border-black/5 shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] cursor-pointer flex flex-col justify-center transition duration-200 ease-in-out hover:shadow-[0_12px_32px_0_rgba(0,0,0,0.12)] active:scale-[0.99] active:translate-y-px focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2";
 
 const CARD_LABEL_CLASS =
   "font-medium tracking-[-0.56px] text-[18px] text-center";
@@ -117,21 +94,50 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
               What kind of business do you run?
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:flex-1">
-              {CATEGORY_CARDS.map((card) => (
-                <Link
-                  key={card.href}
-                  href={card.href}
-                  onClick={onClose}
-                  className={CARD_CLASS}
-                >
-                  <div className={card.slotClassName}>
-                    <AnimatedIcon {...CATEGORY_ICONS[card.slug]} />
-                  </div>
-                  <div className="mt-4 h-12">
-                    <p className={CARD_LABEL_CLASS}>{card.label}</p>
-                  </div>
-                </Link>
-              ))}
+              {CATEGORY_CARDS.map((card) => {
+                const body = (
+                  <>
+                    <div className="flex h-25 items-end justify-center">
+                      <CategoryIcon id={card.icon} delay={card.floatDelay} />
+                    </div>
+                    <div className="mt-4 h-12">
+                      <p className={CARD_LABEL_CLASS}>{card.label}</p>
+                      {card.comingSoon ? (
+                        <p className="font-normal text-gray-600 text-[12px] text-center mt-1.5">
+                          Coming soon
+                        </p>
+                      ) : null}
+                    </div>
+                  </>
+                );
+
+                // A card with nowhere to go is not a control: it keeps the
+                // chrome but drops the pointer, hover lift and press response.
+                if (card.comingSoon || !card.href) {
+                  return (
+                    <div
+                      key={card.label}
+                      className={cn(
+                        CARD_CLASS,
+                        "cursor-auto hover:shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] active:scale-100 active:translate-y-0",
+                      )}
+                    >
+                      {body}
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={card.href}
+                    href={card.href}
+                    onClick={onClose}
+                    className={CARD_CLASS}
+                  >
+                    {body}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className="mt-10 md:mt-14 lg:mt-0 lg:w-79.5">

@@ -53,6 +53,7 @@ export function DocModal({
   bodyClassName,
 }: DocModalProps) {
   const panelRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const item = items[index];
 
   /*
@@ -105,7 +106,7 @@ export function DocModal({
   // Paging swaps the body under a scrolled panel, so send the reader back to the
   // top — otherwise a short section opens already scrolled past its heading.
   useEffect(() => {
-    panelRef.current?.scrollTo({ top: 0 });
+    contentRef.current?.scrollTo({ top: 0 });
   }, [index]);
 
   function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
@@ -132,7 +133,7 @@ export function DocModal({
   if (!item) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 md:px-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6">
       <motion.div
         aria-hidden="true"
         onClick={onClose}
@@ -153,59 +154,77 @@ export function DocModal({
         aria-labelledby={TITLE_ID}
         tabIndex={-1}
         onKeyDown={handleKeyDown}
-        className="relative flex max-h-[85vh] w-full max-w-[720px] flex-col overflow-y-auto bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl px-6 py-8 md:px-10 md:py-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] focus-visible:outline-none"
+        className="relative flex h-full w-full max-w-[720px] flex-col overflow-hidden bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] focus-visible:outline-none"
       >
         <button
           type="button"
           aria-label="Close"
           onClick={onClose}
-          className="absolute top-4 right-4 md:top-6 md:right-6 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-[22px] leading-none text-gray-400 transition duration-200 ease-in-out active:scale-[0.96] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
+          className="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-[22px] leading-none text-gray-400 transition duration-200 ease-in-out active:scale-[0.96] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white focus-visible:ring-offset-2"
         >
           <span aria-hidden="true">&times;</span>
         </button>
 
-        <h3 id={TITLE_ID} className="font-medium text-[20px] lg:text-[24px] mb-4 pr-12">
+        <h3
+          id={TITLE_ID}
+          className="shrink-0 font-medium text-[20px] lg:text-[24px] px-6 pt-8 pr-14 md:px-10 md:pt-10 md:pr-16"
+        >
           {item.title}
         </h3>
 
-        {/* Replaces rather than merges: `cn` would run these arbitrary variants
-            through tailwind-merge, which resolves `[&_p]:mb-4` against the
-            default rules and silently drops one side. */}
+        {/*
+          The panel height is fixed; only this region grows, shrinks, and
+          scrolls as the paged entry gets longer or shorter.
+        */}
         <div
-          className={bodyClassName ?? BODY_CLASS}
-          dangerouslySetInnerHTML={{ __html: item.html }}
-        />
+          ref={contentRef}
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-4 md:px-10"
+        >
+          {/* Replaces rather than merges: `cn` would run these arbitrary variants
+              through tailwind-merge, which resolves `[&_p]:mb-4` against the
+              default rules and silently drops one side. */}
+          <div
+            className={bodyClassName ?? BODY_CLASS}
+            dangerouslySetInnerHTML={{ __html: item.html }}
+          />
+        </div>
 
-        <div className="mt-8 flex items-center justify-between gap-4">
-          <Button
-            variant="dark"
-            size="compact"
-            disabled={index === 0}
-            onClick={() => onIndexChange(index - 1)}
-            className="w-auto rounded-full px-5 disabled:opacity-40"
-          >
-            <span className="flex items-center gap-2">
-              <ChevronRightIcon width={12} height={12} className="rotate-180" />
-              Prev
+        <div className="relative shrink-0 px-6 pb-6 pt-4 md:px-10 md:pb-8 md:pt-5">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-8 h-8 bg-linear-to-t from-white to-transparent"
+          />
+          <div className="flex items-center justify-between gap-4">
+            <Button
+              variant="dark"
+              size="compact"
+              disabled={index === 0}
+              onClick={() => onIndexChange(index - 1)}
+              className="w-auto rounded-full px-5 disabled:opacity-40"
+            >
+              <span className="flex items-center gap-2">
+                <ChevronRightIcon width={12} height={12} className="rotate-180" />
+                Prev
+              </span>
+            </Button>
+
+            <span className="text-[14px] font-medium text-gray-600">
+              {index + 1} of {items.length}
             </span>
-          </Button>
 
-          <span className="text-[14px] font-medium text-gray-600">
-            {index + 1} of {items.length}
-          </span>
-
-          <Button
-            variant="dark"
-            size="compact"
-            disabled={index === items.length - 1}
-            onClick={() => onIndexChange(index + 1)}
-            className="w-auto rounded-full px-5 disabled:opacity-40"
-          >
-            <span className="flex items-center gap-2">
-              Next
-              <ChevronRightIcon width={12} height={12} />
-            </span>
-          </Button>
+            <Button
+              variant="dark"
+              size="compact"
+              disabled={index === items.length - 1}
+              onClick={() => onIndexChange(index + 1)}
+              className="w-auto rounded-full px-5 disabled:opacity-40"
+            >
+              <span className="flex items-center gap-2">
+                Next
+                <ChevronRightIcon width={12} height={12} />
+              </span>
+            </Button>
+          </div>
         </div>
       </motion.div>
     </div>,

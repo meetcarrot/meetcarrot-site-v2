@@ -22,12 +22,7 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <FaqSection />
-        <AutopilotCta
-          backgroundSrc="/images/homepage.jpg"
-          phoneSrc="/images/homepage-phone.png"
-          phoneWidth={872}
-          phoneHeight={1674}
-        />
+        <AutopilotCta backgroundSrc="/images/homepage.jpg" />
       </main>
       <SiteFooter />
     </>

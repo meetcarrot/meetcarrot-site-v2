@@ -7,10 +7,8 @@ import { useParallax } from "@/components/useParallax";
 /**
  * The closing CTA photograph, drifting slightly slower than the page scrolls.
  *
- * It brings its own `overflow-hidden` wrapper rather than relying on the parent:
- * the CTA section deliberately has none, because the phone render breaks out
- * past its bottom edge. Clipping here keeps the drift contained without
- * cropping the phone.
+ * It brings its own `overflow-hidden` wrapper so the drift stays inside the
+ * rounded frame.
  *
  * The inner frame is 20% taller than the window it sits in, so a ±6% drift can
  * never pull an edge into view.

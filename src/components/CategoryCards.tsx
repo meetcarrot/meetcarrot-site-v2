@@ -1,22 +1,25 @@
 import Link from "next/link";
 
-import { AnimatedIcon } from "@/components/AnimatedIcon";
-import { ChevronRightIcon } from "@/components/icons";
+import { CategoryIcon, type CategoryId } from "@/components/CategoryIcon";
+import { ChevronRightIcon, ClockIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
-import { CATEGORY_ICONS } from "@/data/category-icons";
 
 const CARD_BODY_CLASS =
-  "shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] p-6 pt-8 lg:p-12 rounded-[20px] bg-white";
+  "group/cat shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] p-6 pt-8 lg:p-12 rounded-[20px] bg-white";
 const CARD_TITLE_CLASS =
   "leading-[115%]! font-poly-sans-wide text-[22px] md:text-[24px] lg:text-[40px] lg:tracking-[0.8px] mb-1";
 const CARD_DESCRIPTION_CLASS = "text-[16px] font-normal leading-[1.33] lg:h-16";
 
 interface Category {
-  href: string;
+  href?: string;
   title: string;
   description: string;
-  /** Key into the shared icon config. */
-  slug: keyof typeof CATEGORY_ICONS;
+  icon: CategoryId;
+  /**
+   * Staggers the float so a row of four doesn't rise and fall as one block.
+   */
+  floatDelay: string;
+  comingSoon?: boolean;
 }
 
 const CATEGORIES: Category[] = [
@@ -25,54 +28,83 @@ const CATEGORIES: Category[] = [
     title: "Hospitality",
     description:
       "Restaurants, cafés, bars, and hospitality venues focused on food, drinks, and in-person experiences.",
-    slug: "hospitality",
+    icon: "hospitality" as const,
+    floatDelay: "0s",
   },
   {
     href: "/retail",
     title: "Retail",
     description:
       "Local boutiques, specialty shops, and stores where customers browse and buy in person.",
-    slug: "retail",
+    icon: "retail" as const,
+    floatDelay: "0.6s",
   },
   {
     href: "/services",
     title: "Services",
     description:
       "Everyday local services — from auto care and wellness to fitness, beauty, and professional help.",
-    slug: "services",
+    icon: "services" as const,
+    floatDelay: "1.2s",
   },
   {
-    href: "/digital",
     title: "Digital",
     description:
       "E-commerce, online events, digital products, and businesses that operate primarily online.",
-    slug: "digital",
+    icon: "digital" as const,
+    floatDelay: "1.8s",
+    comingSoon: true,
   },
 ];
 
-function CategoryCard({ href, title, description, slug }: Category) {
-  const icon = CATEGORY_ICONS[slug];
-  return (
-    <Link
-      className="group focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
-      href={href}
-    >
-      <div className={CARD_BODY_CLASS}>
-        <div className="h-26 lg:h-54 w-40 lg:w-54 mx-auto mb-6 lg:mb-12 flex items-center justify-center lg:items-end">
-          <div className="h-26 lg:h-46">
-            <AnimatedIcon {...icon} />
-          </div>
+function CategoryCard({
+  href,
+  title,
+  description,
+  icon,
+  floatDelay,
+  comingSoon,
+}: Category) {
+  const card = (
+    <div className={CARD_BODY_CLASS}>
+      <div className="mx-auto mb-6 flex h-26 w-40 items-center justify-center lg:mb-12 lg:h-54 lg:w-54">
+        <CategoryIcon id={icon} delay={floatDelay} />
+      </div>
+      <div className="flex items-end gap-4">
+        <div className="flex-1">
+          <p className={CARD_TITLE_CLASS}>{title}</p>
+          <p className={CARD_DESCRIPTION_CLASS}>{description}</p>
         </div>
-        <div className="flex items-end gap-4">
-          <div className="flex-1">
-            <p className={CARD_TITLE_CLASS}>{title}</p>
-            <p className={CARD_DESCRIPTION_CLASS}>{description}</p>
-          </div>
-          <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-pink rounded-full shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1">
+        {comingSoon ? (
+          <>
+            <div className="bg-gray-200 h-12 rounded-3xl px-4 items-center hidden lg:flex shrink-0">
+              <p className="text-[16px] font-normal leading-[1.33] text-gray-600">
+                Coming soon
+              </p>
+            </div>
+            <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-gray-200 rounded-full lg:hidden shrink-0">
+              <ClockIcon width={14} height={14} />
+            </div>
+          </>
+        ) : (
+          <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-pink rounded-full shrink-0">
             <ChevronRightIcon width={12} height={12} />
           </div>
-        </div>
+        )}
       </div>
+    </div>
+  );
+
+  if (comingSoon || !href) {
+    return card;
+  }
+
+  return (
+    <Link
+      className="group/cat focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
+      href={href}
+    >
+      {card}
     </Link>
   );
 }
@@ -98,7 +130,7 @@ export function CategoryCards() {
             // Short stagger so the row resolves in sequence rather than as one
             // block. Kept under a tenth of a second each — any longer and the
             // last card feels late rather than deliberate.
-            <Reveal key={category.href} delay={index * 0.08}>
+            <Reveal key={category.title} delay={index * 0.08}>
               <CategoryCard {...category} />
             </Reveal>
           ))}

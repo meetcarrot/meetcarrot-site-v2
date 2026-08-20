@@ -7,13 +7,13 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "How Carrot Works - Carrot",
   description:
-    "Choose a bill to split, check your eligibility, verify your identity, and add your Carrot account numbers to your payment portal.",
+    "Set your offer terms, let Carrot promote it to the right customers, and earn steady revenue from real purchases.",
   alternates: { canonical: "/how-it-works" },
 };
 
 /**
  * Single-section page. The steps section carries its own `pt-30 lg:pt-50`, which
- * is what clears the fixed header — no page-level padding, matching the target.
+ * is what clears the fixed header — no page-level padding, matching the homepage.
  */
 export default function HowItWorksPage() {
   return (

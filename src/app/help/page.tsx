@@ -45,8 +45,8 @@ export default function HelpPage() {
 
         {/*
           The help-article category grid is hidden for now — there are no
-          articles behind it yet. Its data source was Split Pay's and has been
-          removed; rebuild the list from Carrot's own articles when they exist.
+          articles behind it yet. Rebuild the list from Carrot's own articles
+          when they exist.
         */}
 
         <FaqSection faqs={FAQS} />

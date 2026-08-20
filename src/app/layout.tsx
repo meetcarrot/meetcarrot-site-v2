@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import { Analytics } from "@/components/Analytics";
 import { Intercom } from "@/components/Intercom";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -50,9 +51,8 @@ const polySansWide = localFont({
   ],
 });
 
-const TITLE = "Carrot - The Way Marketing Should Be";
-const DESCRIPTION =
-  "Turn on steady, automated revenue with intelligent cashback offers. No upfront or monthly fee — you pay for revenue, not clicks.";
+const TITLE = SITE_TITLE;
+const DESCRIPTION = SITE_DESCRIPTION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -72,14 +72,11 @@ export const metadata: Metadata = {
     siteName: "Carrot",
     title: TITLE,
     description: DESCRIPTION,
-    // TODO: still the Split Pay OG image — awaiting Carrot artwork.
-    images: [{ url: "/seo/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/seo/og-image.png"],
   },
   // Generated from the delivered Icon.svg. The mark is much taller than it is
   // wide, so favicon.svg re-squares the artboard with padding rather than

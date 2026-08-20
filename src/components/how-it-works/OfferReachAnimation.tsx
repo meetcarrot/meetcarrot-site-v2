@@ -1,69 +1,56 @@
 "use client";
 
-import Image from "next/image";
 import { useRef, useState } from "react";
 
 import {
+  STEP_FRAME_CLASS,
   easeOutCubic,
   segment,
   useStepAnimation,
 } from "@/components/how-it-works/useStepAnimation";
 
 /**
- * Step 2's illustration: the offer leaving the business and reaching people
- * across the city, one after another, on a loop.
+ * Step 2's illustration: targeted offers going out to nearby customers.
  *
- * The map is a rendered isometric plate rather than a CSS-tilted plane. An
- * earlier version rotated a flat div with `rotateX` and then counter-rotated
- * every avatar to keep faces upright, which fought itself and read as skew
- * rather than depth. With the perspective baked into the artwork, everything on
- * top is plain 2D and simply sits where it is put.
- *
- * The arcs travel outward, from the shop to the people. Drawn inward they read
- * as footfall, which is step 3's claim — this step is distribution, so the
- * direction has to say "sent".
+ * The centre card is the offer being sent right now. Each customer gets their
+ * own rate — the number changes, a line draws out to them, and as soon as it
+ * lands the next amount appears and the next line kicks off. Direction matters:
+ * the dash runs from the offer to the person, not the other way around.
  *
  * Faces are the review-tile crops already in the repo, so the people here are
  * the same people quoted further down the page rather than a second cast.
  */
 
-/**
- * Percent coordinates over the plate. Spread around the map so they read as
- * different parts of a city rather than a ring around the shop.
- */
+/** Positions are percentages of the map, measured from its top-left. */
 const CUSTOMERS = [
-  { photo: "/images/img-2.jpg", x: 15, y: 30 },
-  { photo: "/images/img-5.jpg", x: 78, y: 20 },
-  { photo: "/images/img-7.jpg", x: 90, y: 55 },
-  { photo: "/images/img-3.jpg", x: 58, y: 86 },
-  { photo: "/images/img-9.jpg", x: 14, y: 68 },
-];
-
-/** The shop sits slightly above centre so it reads as standing on the plate. */
-const SHOP = { x: 50, y: 44 };
+  { photo: "/images/img-2.jpg", x: 12, y: 18, rate: 15 },
+  { photo: "/images/img-5.jpg", x: 78, y: 10, rate: 25 },
+  { photo: "/images/img-7.jpg", x: 88, y: 58, rate: 10 },
+  { photo: "/images/img-3.jpg", x: 62, y: 86, rate: 35 },
+  { photo: "/images/img-9.jpg", x: 20, y: 78, rate: 5 },
+  { photo: "/images/img-6.jpg", x: 2, y: 48, rate: 20 },
+] as const;
 
 const REACH_TO = 1240;
-const REACH_MS = 3200;
-const SEND_AT = 700;
-const SEND_STAGGER = 460;
-/** Arc draw time; the avatar lands as its arc completes. */
-const DRAW_MS = 520;
-const CYCLE_MS = SEND_AT + SEND_STAGGER * CUSTOMERS.length + DRAW_MS + 1800;
 
-/** Quadratic arc from the shop out to a customer, bowed off the straight run. */
-function arcPath(x: number, y: number) {
-  const dx = x - SHOP.x;
-  const dy = y - SHOP.y;
-  const midX = (SHOP.x + x) / 2;
-  const midY = (SHOP.y + y) / 2;
-  // Perpendicular offset. A straight line reads as a fixed connection; a bow
-  // reads as something that travelled.
-  return `M ${SHOP.x} ${SHOP.y} Q ${midX - dy * 0.22} ${midY + dx * 0.22} ${x} ${y}`;
-}
+/** Let the new amount sit long enough to read before the line leaves. */
+const SHOW_MS = 350;
+/** Time for a line to travel from the offer to the customer. */
+const DRAW_MS = 800;
+const BEAT_MS = SHOW_MS + DRAW_MS;
+const START_AT = 180;
+const HOLD_MS = 2200;
+const CYCLE_MS = START_AT + BEAT_MS * CUSTOMERS.length + HOLD_MS;
+const REACH_MS = START_AT + BEAT_MS * CUSTOMERS.length;
+
+const CENTER = 50;
+/** Long enough to cover a corner-to-centre line in the 100×100 viewBox. */
+const LINE_LENGTH = 80;
 
 export function OfferReachAnimation() {
   const reachRef = useRef<HTMLSpanElement>(null);
-  const [sent, setSent] = useState(0);
+  const [arrived, setArrived] = useState(0);
+  const [offerIndex, setOfferIndex] = useState(0);
 
   const rootRef = useStepAnimation({
     cycleMs: CYCLE_MS,
@@ -72,101 +59,106 @@ export function OfferReachAnimation() {
       if (reachRef.current) {
         reachRef.current.textContent = Math.round(REACH_TO * progress).toLocaleString("en-US");
       }
-      const landed = CUSTOMERS.filter(
-        (_, index) => elapsed >= SEND_AT + index * SEND_STAGGER,
-      ).length;
-      setSent((current) => (current === landed ? current : landed));
+
+      const t = elapsed - START_AT;
+      if (t < 0) {
+        setOfferIndex(0);
+        setArrived(0);
+        return;
+      }
+
+      const index = Math.min(Math.floor(t / BEAT_MS), CUSTOMERS.length - 1);
+      const local = t - index * BEAT_MS;
+      const drawn = index + (local >= SHOW_MS ? 1 : 0);
+
+      setOfferIndex((current) => (current === index ? current : index));
+      setArrived((current) => (current === drawn ? current : drawn));
     },
     onReducedMotion: () => {
       if (reachRef.current) reachRef.current.textContent = REACH_TO.toLocaleString("en-US");
-      setSent(CUSTOMERS.length);
+      setArrived(CUSTOMERS.length);
+      setOfferIndex(CUSTOMERS.length - 1);
     },
   });
+
+  const rate = CUSTOMERS[offerIndex].rate;
 
   return (
     <div
       ref={rootRef}
       role="img"
-      aria-label="An offer leaving a business on a city map and reaching customers in different parts of the city."
-      className="w-full max-w-72 mx-auto"
+      aria-label="Targeted cashback offers going out to nearby customers, each person receiving a different offer amount."
+      className={`${STEP_FRAME_CLASS} flex flex-col`}
     >
-      <div className="relative aspect-square w-full">
-        <Image
-          src="/images/how-it-works/map-plate.png"
-          alt=""
-          fill
-          loading="lazy"
-          sizes="288px"
-          className="object-contain"
-        />
-
+      <div className="relative min-h-0 flex-1">
+        {/* Lines draw from the offer out to each person. Dash offset is measured
+            from x1,y1, so the offer has to be the start of the path. */}
         <svg
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
-          className="absolute inset-0 h-full w-full overflow-visible"
+          className="absolute inset-0 h-full w-full"
           aria-hidden="true"
         >
           {CUSTOMERS.map((customer, index) => (
-            <path
+            <line
               key={customer.photo}
-              d={arcPath(customer.x, customer.y)}
-              fill="none"
+              x1={CENTER}
+              y1={CENTER}
+              x2={customer.x + 6}
+              y2={customer.y + 6}
               stroke="var(--color-pink)"
-              strokeWidth="0.8"
+              strokeWidth="0.5"
               strokeLinecap="round"
-              // `pathLength` normalises every arc to 1 so they all draw at the
-              // same rate regardless of how far the customer is.
-              pathLength={1}
-              strokeDasharray="1"
-              className="transition-[stroke-dashoffset,opacity] duration-500 ease-out"
+              strokeDasharray={LINE_LENGTH}
+              className="transition-[stroke-dashoffset,opacity] ease-out"
               style={{
-                strokeDashoffset: index < sent ? 0 : 1,
-                opacity: index < sent ? 0.7 : 0,
+                transitionDuration: `${DRAW_MS}ms`,
+                strokeDashoffset: index < arrived ? 0 : LINE_LENGTH,
+                opacity: index < arrived ? 0.35 : 0,
               }}
             />
           ))}
         </svg>
 
-        <div
-          className="absolute w-[26%]"
-          style={{ left: `${SHOP.x}%`, top: `${SHOP.y}%`, transform: "translate(-50%, -62%)" }}
-        >
-          <Image
-            src="/images/how-it-works/map-business.png"
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className="h-auto w-full drop-shadow-[0_8px_12px_rgba(0,0,0,0.10)]"
-          />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="rounded-2xl bg-white border border-black/10 shadow-[0_8px_24px_0_rgba(0,0,0,0.10)] px-4 py-3 text-center">
+            <p className="text-[11px] text-gray-600">Promoted Offer</p>
+            <p className="text-[18px] font-medium leading-tight tabular-nums">
+              {rate}% back
+            </p>
+          </div>
         </div>
 
         {CUSTOMERS.map((customer, index) => (
           <div
             key={customer.photo}
             className={[
-              "absolute size-11 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white shadow-[0_6px_16px_0_rgba(0,0,0,0.18)] transition-all duration-500 ease-out",
-              index < sent ? "opacity-100 scale-100" : "opacity-0 scale-75",
+              "absolute size-12 rounded-full overflow-hidden border-2 border-white shadow-[0_4px_12px_0_rgba(0,0,0,0.12)] transition-all ease-out",
+              index < arrived ? "opacity-100 scale-100" : "opacity-0 scale-75",
             ].join(" ")}
-            style={{ left: `${customer.x}%`, top: `${customer.y}%` }}
+            style={{
+              left: `${customer.x}%`,
+              top: `${customer.y}%`,
+              transitionDuration: `${DRAW_MS}ms`,
+            }}
           >
-            {/* Plain <img>: decorative crops of images next/image has already
-                optimised elsewhere on the page. */}
+            {/* Plain <img>: these are decorative crops of images next/image has
+                already optimised elsewhere on the page. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={customer.photo}
               alt=""
               loading="lazy"
-              width={44}
-              height={44}
+              width={48}
+              height={48}
               className="h-full w-full object-cover"
             />
           </div>
         ))}
       </div>
 
-      <p className="mt-1 text-center text-[13px] text-gray-600">
-        Sent to{" "}
+      <p className="shrink-0 pt-2 text-center text-[13px] text-gray-600">
+        Promoted to{" "}
         <span ref={reachRef} className="font-medium tabular-nums text-black">
           0
         </span>{" "}

@@ -18,8 +18,8 @@ Keep the original filenames from Drive; I'll match them against the list below.
 - [ ] Tile images (9) — used in the reviews rail
 - [ ] Ending image — final CTA band
 - [ ] Ending phone screen — animation #3, square white box w/ rounded edges
-- [ ] Category section animated icons (4: hospitality, retail, services, digital)
-- [ ] How It Works animations (3: Set Your Terms / We Promote It / You Earn Steady Revenue)
+- [x] Category section animated icons (4: hospitality, retail, services, digital)
+- [x] How It Works animations (3: Set Your Terms / We Promote It / You Earn Steady Revenue)
 
 ### Hospitality
 - [ ] Hero image

@@ -10,6 +10,7 @@ import { SecurityAudits } from "@/components/safety/SecurityAudits";
 import { YourPart } from "@/components/safety/YourPart";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Safety & Security - Carrot";
 const DESCRIPTION =
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   openGraph: {
     type: "website",
-    url: "https://meetcarrot.xyz/safety-and-security",
+    url: `${SITE_URL}/safety-and-security`,
     siteName: "Carrot",
     title: TITLE,
     description: DESCRIPTION,

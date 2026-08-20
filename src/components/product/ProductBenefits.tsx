@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { Reveal } from "@/components/Reveal";
 
 export interface ProductBenefit {
   /** 24×24 SVG, rendered inside the dark circle. See `product-icons.tsx`. */
@@ -35,14 +36,14 @@ export function ProductBenefits({
   return (
     <section className="overflow-x-clip py-14 lg:py-24" data-header-theme="gray">
       <div className="mx-auto px-6 container lg:max-w-324">
-        <div className="flex flex-col gap-6 md:gap-6">
-          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        <Reveal className="flex flex-col gap-6 md:gap-6">
+          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center max-w-200 mx-auto">
             {heading}
           </h2>
           <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
             {subheading}
           </p>
-        </div>
+        </Reveal>
         <div className="mt-14 lg:mt-20 relative">
           <div className="relative rounded-4xl overflow-hidden h-100 md:h-110.5 lg:h-200">
             <Image
@@ -55,9 +56,10 @@ export function ProductBenefits({
             />
           </div>
           <div className="relative z-10 -mt-10 lg:-mt-20 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mx-4 md:mx-10">
-            {benefits.map((benefit) => (
-              <div
+            {benefits.map((benefit, index) => (
+              <Reveal
                 key={benefit.title}
+                delay={index * 0.08}
                 className="rounded-4xl p-7 lg:p-10 bg-white shadow-[0_8px_16px_0_rgba(0,0,0,0.05)]"
               >
                 <div className="flex justify-center mb-4 lg:mb-6">
@@ -71,7 +73,7 @@ export function ProductBenefits({
                 <p className="font-normal text-center text-[16px] md:text-[18px] leading-[130%]">
                   {benefit.copy}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

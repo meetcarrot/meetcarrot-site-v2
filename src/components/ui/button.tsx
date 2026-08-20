@@ -30,8 +30,6 @@ const buttonVariants = cva(
       variant: {
         primary: "text-gray-100 bg-pink hover:bg-pink active:bg-pink-dark",
         dark: "text-white bg-black hover:bg-black active:bg-gray-400",
-        /** Dark pill over the pale-pink hero band — the label picks up the pink. */
-        darkOnTint: "text-pink bg-black hover:bg-black active:bg-gray-400",
         /** White pill used by the mobile menu's own header row; softer shadow. */
         light:
           [

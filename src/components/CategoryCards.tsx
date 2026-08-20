@@ -59,19 +59,30 @@ const CATEGORIES: Category[] = [
 function CategoryCard({ href, title, description, icon, floatDelay }: Category) {
   return (
     <Link
-      className="focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
+      className="group focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2 rounded-[20px] block"
       href={href}
     >
       <div className={CARD_BODY_CLASS}>
         <div className="h-26 lg:h-54 w-40 lg:w-54 mx-auto mb-6 lg:mb-12 flex items-center lg:items-end">
-          <div className="h-26 lg:h-46">
+          {/*
+            Two layers of motion, deliberately separated: the idle float lives on
+            the outer element and the hover lift on the inner one, so hovering
+            does not fight or restart the drift — they compose.
+
+            An isometric object reads as sitting on a surface, so the hover is a
+            lift off it: rise, a touch of scale, and a contact shadow that
+            spreads and softens the way a real one does as the object rises.
+          */}
+          <div
+            className="h-26 lg:h-46 animate-icon-float"
+            style={{ animationDelay: floatDelay }}
+          >
             <Image
               src={icon}
               alt=""
               width={512}
               height={512}
-              className="h-full w-auto object-contain animate-icon-float"
-              style={{ animationDelay: floatDelay }}
+              className="h-full w-auto object-contain transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:scale-[1.06] drop-shadow-[0_6px_10px_rgba(0,0,0,0.10)] group-hover:drop-shadow-[0_18px_22px_rgba(0,0,0,0.14)]"
             />
           </div>
         </div>
@@ -80,7 +91,7 @@ function CategoryCard({ href, title, description, icon, floatDelay }: Category) 
             <p className={CARD_TITLE_CLASS}>{title}</p>
             <p className={CARD_DESCRIPTION_CLASS}>{description}</p>
           </div>
-          <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-pink rounded-full shrink-0">
+          <div className="w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center bg-pink rounded-full shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1">
             <ChevronRightIcon width={12} height={12} />
           </div>
         </div>

@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 
+import { CarrotIcon } from "@/components/carrot-logo";
+
 import {
   STEP_CARD_CLASS,
   easeOutCubic,
@@ -128,7 +130,10 @@ export function WeeklyStatementAnimation() {
         ].join(" ")}
       >
         <div className="flex items-center justify-between">
-          <p className="text-[13px] font-medium">Weekly statement</p>
+          <span className="flex items-center gap-2">
+            <CarrotIcon idPrefix="statement-mark" className="h-4 w-auto" />
+            <span className="text-[13px] font-medium">Weekly statement</span>
+          </span>
           <span
             className={[
               "flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium transition-colors duration-300 ease-out",

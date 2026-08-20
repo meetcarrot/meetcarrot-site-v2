@@ -11,25 +11,33 @@ import {
 } from "@/components/how-it-works/useStepAnimation";
 
 /**
- * Step 1's illustration: the merchant dialling in their own offer.
+ * Step 1's illustration: the merchant dialling in their own offer, which then
+ * resolves into the offer a customer will actually see.
  *
- * The point of the step is control, so the four inputs fill one after another —
- * the viewer reads it as someone deciding, not as a dashboard loading. When the
- * last one lands the card flips to a ready state, which is the handoff into
- * step 2.
+ * The point of the step is control, so the parameters fill one after another —
+ * that reads as someone deciding, where filling together reads as a dashboard
+ * loading. Max cashback leads because it is the number merchants care about
+ * and the one the offer is named after.
+ *
+ * The setup card and the preview are stacked in the same fixed box and
+ * cross-faded, so the handoff costs no height and the card beneath never jumps.
  */
 
+const HEADLINE_RATE = 12;
+
+/** Filled in order. The headline rate leads; the guardrails follow. */
 const INPUTS = [
-  { label: "Max cashback", to: 12, format: (v: number) => `${v}%` },
+  { label: "Max cashback", to: HEADLINE_RATE, format: (v: number) => `${v}%` },
   { label: "Min spend", to: 25, format: (v: number) => wholeDollars.format(v) },
-  { label: "Max amount", to: 50, format: (v: number) => wholeDollars.format(v) },
-  { label: "Customer cap", to: 200, format: (v: number) => `${v}/mo` },
+  { label: "Max spend", to: 200, format: (v: number) => wholeDollars.format(v) },
+  { label: "Customer cap", to: 150, format: (v: number) => `${v}/mo` },
 ];
 
-const FILL_MS = 800;
-const STAGGER_MS = 600;
-const READY_AT = STAGGER_MS * (INPUTS.length - 1) + FILL_MS + 300;
-const CYCLE_MS = READY_AT + 2800;
+const FILL_MS = 720;
+const STAGGER_MS = 560;
+const READY_AT = STAGGER_MS * (INPUTS.length - 1) + FILL_MS + 260;
+const PREVIEW_AT = READY_AT + 520;
+const CYCLE_MS = PREVIEW_AT + 3000;
 
 function CheckIcon() {
   return (
@@ -49,6 +57,7 @@ export function OfferTermsAnimation() {
   const valueRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const trackRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [isReady, setIsReady] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const rootRef = useStepAnimation({
     cycleMs: CYCLE_MS,
@@ -61,7 +70,9 @@ export function OfferTermsAnimation() {
         if (track) track.style.transform = `scaleX(${progress})`;
       });
       const ready = elapsed >= READY_AT;
+      const preview = elapsed >= PREVIEW_AT;
       setIsReady((current) => (current === ready ? current : ready));
+      setShowPreview((current) => (current === preview ? current : preview));
     },
     onReducedMotion: () => {
       INPUTS.forEach((input, index) => {
@@ -71,6 +82,7 @@ export function OfferTermsAnimation() {
         if (track) track.style.transform = "scaleX(1)";
       });
       setIsReady(true);
+      setShowPreview(true);
     },
   });
 
@@ -78,10 +90,16 @@ export function OfferTermsAnimation() {
     <div
       ref={rootRef}
       role="img"
-      aria-label="A merchant setting max cashback, minimum spend, max amount, and a monthly customer cap, then the offer showing as ready."
-      className="w-full"
+      aria-label="A merchant setting max cashback, minimum spend, maximum spend, and a monthly customer cap, then the finished offer previewing as a customer would see it."
+      className="relative w-full max-w-84 mx-auto"
     >
-      <div className={STEP_CARD_CLASS}>
+      <div
+        className={[
+          STEP_CARD_CLASS,
+          "transition-opacity duration-500 ease-out",
+          showPreview ? "opacity-0" : "opacity-100",
+        ].join(" ")}
+      >
         <div className="flex items-center justify-between">
           <p className="text-[13px] font-medium">Your offer</p>
           <span
@@ -131,14 +149,29 @@ export function OfferTermsAnimation() {
         </div>
       </div>
 
-      <p
+      {/* The offer as a customer meets it — the thing the parameters add up to. */}
+      <div
         className={[
-          "mt-3 text-center text-[12px] font-medium transition-opacity duration-500 ease-out",
-          isReady ? "opacity-100" : "opacity-0",
+          "absolute inset-x-0 top-1/2 -translate-y-1/2 transition-all duration-500 ease-out",
+          showPreview ? "opacity-100 scale-100" : "pointer-events-none opacity-0 scale-95",
         ].join(" ")}
+        aria-hidden={!showPreview}
       >
-        Your offer is ready.
-      </p>
+        <div className={[STEP_CARD_CLASS, "text-center"].join(" ")}>
+          <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-pink-dark">
+            Your offer is ready
+          </p>
+          <p className="mt-3 font-poly-sans-wide text-[40px] leading-none tracking-[-0.02em]">
+            {HEADLINE_RATE}% back
+          </p>
+          <p className="mt-3 text-[12px] text-gray-600">
+            {wholeDollars.format(25)} minimum · up to {wholeDollars.format(200)}
+          </p>
+          <div className="mt-4 rounded-full bg-gray-100 py-2 text-[12px] font-medium">
+            Live to 150 customers a month
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

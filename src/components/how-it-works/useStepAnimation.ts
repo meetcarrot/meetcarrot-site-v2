@@ -103,3 +103,14 @@ export const wholeDollars = new Intl.NumberFormat("en-US", {
 /** Shared card chrome, so the four steps read as one set. */
 export const STEP_CARD_CLASS =
   "w-full max-w-84 mx-auto rounded-3xl bg-white border border-black/10 shadow-[0_8px_24px_0_rgba(0,0,0,0.06)] px-5 py-5";
+
+/**
+ * Every illustration occupies this same box, whatever its natural height.
+ *
+ * Without it the four cards are different heights, so the title and body copy
+ * beneath them sit at different baselines — obvious on the homepage where three
+ * of them stand side by side. Each animation centres itself inside the box
+ * rather than stretching, so the shorter ones simply carry more air.
+ */
+export const STEP_ILLUSTRATION_BOX =
+  "flex h-84 w-full items-center justify-center";

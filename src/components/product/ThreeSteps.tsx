@@ -21,7 +21,7 @@ export function ThreeSteps({ steps }: ThreeStepsProps) {
     <section className="py-14 lg:py-24">
       <div className="mx-auto px-6 container lg:max-w-324">
         <div className="flex flex-col gap-6 md:gap-6">
-          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center max-w-200 mx-auto">
             Three steps.
             <br />
             About three

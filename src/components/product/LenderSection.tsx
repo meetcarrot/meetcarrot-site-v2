@@ -57,7 +57,7 @@ export function LenderSection({
     >
       <div className="mx-auto px-6 container lg:max-w-324">
         <div className="flex flex-col gap-6 md:gap-6">
-          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center text-white">
+          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center max-w-200 mx-auto text-white">
             {heading}
           </h2>
           <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px] text-[#D0CFCE]">

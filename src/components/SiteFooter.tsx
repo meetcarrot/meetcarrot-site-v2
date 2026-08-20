@@ -73,7 +73,7 @@ const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [
 export function SiteFooter() {
   return (
     <footer
-      className="bg-gray-100 border-t border-black/10 py-14 lg:py-20"
+      className="bg-gray-100 py-14 lg:py-20"
       data-header-theme="light"
     >
       <div className="mx-auto px-6 container lg:max-w-324">

@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { useEffect, useRef, type KeyboardEvent, type RefObject } from "react";
+import { createPortal } from "react-dom";
 import { ChevronRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 
@@ -53,6 +54,22 @@ export function DocModal({
 }: DocModalProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const item = items[index];
+
+  /*
+    Rendered into <body> rather than in place.
+
+    `position: fixed` is only relative to the viewport while no ancestor has a
+    transform, filter or perspective — any of those become the containing block
+    instead. The page-entrance animation puts a transform on the section this
+    modal lives inside, so the overlay was sizing itself to that section: it
+    covered the page content but stopped short of the footer and sat underneath
+    the header. A portal takes the dialog out of that subtree entirely, which is
+    also what lets it cover the fixed header without a z-index race.
+
+    No mounted guard is needed: this only ever renders from a user click, so it
+    never runs during SSR and `document` is always there.
+  */
+
 
   // Move focus into the panel on open, and hand it back to the trigger on close.
   useEffect(() => {
@@ -114,8 +131,8 @@ export function DocModal({
 
   if (!item) return null;
 
-  return (
-    <div className="fixed inset-0 z-40 flex items-center justify-center px-4 py-8 md:px-6">
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 md:px-6">
       <motion.div
         aria-hidden="true"
         onClick={onClose}
@@ -191,6 +208,7 @@ export function DocModal({
           </Button>
         </div>
       </motion.div>
-    </div>
+    </div>,
+    document.body,
   );
 }

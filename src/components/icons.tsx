@@ -49,12 +49,6 @@ export function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg aria-hidden="true" focusable="false" {...props} fill="none" height="14" viewBox="0 0 18 14" width="18"><rect fill="var(--color-orange)" height="2" rx="1" width="18" /><rect fill="var(--color-orange)" height="2" rx="1" width="18" y="6" /><rect fill="var(--color-orange)" height="2" rx="1" width="18" y="12" /></svg>
-  );
-}
-
 export function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg aria-hidden="true" focusable="false" {...props} fill="none" height="12" viewBox="0 0 7 12" width="12"><path d="M1 11L6 6L1 1" stroke="var(--color-white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" /></svg>
@@ -62,8 +56,26 @@ export function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 // The mobile menu's close control — a true ✕, not the hamburger rotated.
-export function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
+/**
+ * The header's menu control: three bars that fold into an X.
+ *
+ * Replaces the separate MenuIcon/CloseIcon pair, which had two problems — the
+ * bars were hard-coded orange and the X was hard-coded black, so on the black
+ * pill the close state rendered as an invisible icon on a black circle. These
+ * bars inherit `currentColor`, so the button decides the colour once.
+ */
+export function MenuToggleIcon({ open }: { open: boolean }) {
+  const bar =
+    "absolute left-0 h-[2px] w-[18px] rounded-full bg-current transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]";
+
   return (
-    <svg aria-hidden="true" focusable="false" {...props} fill="none" height="14" viewBox="0 0 14 14" width="14"><path d="M13 1L1.0001 12.989M1 1.01104L12.9999 13" stroke="black" strokeLinecap="round" strokeWidth="2" /></svg>
+    <span
+      aria-hidden="true"
+      className="relative flex h-[14px] w-[18px] items-center justify-center"
+    >
+      <span className={`${bar} ${open ? "rotate-45" : "-translate-y-[6px]"}`} />
+      <span className={`${bar} ${open ? "opacity-0" : "opacity-100"}`} />
+      <span className={`${bar} ${open ? "-rotate-45" : "translate-y-[6px]"}`} />
+    </span>
   );
 }

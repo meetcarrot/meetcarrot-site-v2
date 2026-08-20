@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
@@ -88,9 +91,47 @@ interface PaymentCardProps {
   className: string;
 }
 
-function PaymentCard({ icon, label, amount, caption, className }: PaymentCardProps) {
+/**
+ * Hero entrance.
+ *
+ * Runs on load rather than on scroll — the hero is above the fold, so waiting
+ * for an intersection would mean animating something the reader is already
+ * looking at.
+ *
+ * Direction is assigned by what each piece is: the text column builds up as a
+ * staggered read down the left, the photograph rises from beneath as one plane,
+ * and the two floating cards enter from the side they sit on, so they read as
+ * settling onto the image rather than fading up through it.
+ */
+const ENTER_EASE = [0.22, 1, 0.36, 1] as const;
+
+const FROM = {
+  left: { x: -28, y: 0 },
+  right: { x: 28, y: 0 },
+  bottom: { x: 0, y: 40 },
+  up: { x: 0, y: 14 },
+} as const;
+
+function enter(from: keyof typeof FROM, delay: number) {
+  return {
+    "data-motion-hidden": true,
+    initial: { opacity: 0, ...FROM[from] },
+    animate: { opacity: 1, x: 0, y: 0 },
+    transition: { duration: 0.6, delay, ease: ENTER_EASE },
+  } as const;
+}
+
+function PaymentCard({
+  icon,
+  label,
+  amount,
+  caption,
+  className,
+  from,
+  delay,
+}: PaymentCardProps & { from: "left" | "right"; delay: number }) {
   return (
-    <div className={cn(FLOATING_CARD_CLASS, className)}>
+    <motion.div className={cn(FLOATING_CARD_CLASS, className)} {...enter(from, delay)}>
       <div className="flex items-center justify-center bg-black rounded-full w-10 h-10 shrink-0">
         {icon}
       </div>
@@ -107,7 +148,7 @@ function PaymentCard({ icon, label, amount, caption, className }: PaymentCardPro
           {caption}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -169,51 +210,66 @@ export function ProductHero({
 }: ProductHeroProps) {
   return (
     <section
-      className="bg-pink-50 pt-18 mb-18 md:pt-28 md:mb-8"
+      className="bg-tint-fade pt-18 mb-18 md:pt-28 md:mb-8"
       data-header-theme="tint"
+      data-self-enter
     >
       <div className="mx-auto px-6 container lg:max-w-324 pt-12">
         <div className="block justify-between gap-6 lg:flex">
-          <div className="w-full lg:w-120 shrink-0 lg:pt-6 mx-auto">
-            <div className="illustration-component flex items-center justify-center lg:w-50 h-26 lg:h-30">
+          <div className="w-full lg:w-150 shrink-0 lg:pt-6 mx-auto">
+            <motion.div
+              className="illustration-component flex items-center justify-center lg:w-50 h-26 lg:h-30"
+              {...enter("up", 0.05)}
+            >
               {illustration}
-            </div>
-            <h1 className="leading-[115%]! font-poly-sans-wide text-center spacing lg:text-left text-[40px] md:text-[56px] lg:text-[64px] mt-6 md:mt-8 lg:mt-10">
+            </motion.div>
+            <motion.h1
+              className="leading-[115%]! font-poly-sans-wide text-center spacing lg:text-left text-[40px] md:text-[56px] lg:text-[64px] mt-6 md:mt-8 lg:mt-10"
+              {...enter("left", 0.12)}
+            >
               {title}
-            </h1>
-            <p className="font-normal mt-1 md:mt-1.25 mb-6 text-center lg:text-left text-[16px] lg:text-[18px] leading-[1.6] text-gray-400">
+            </motion.h1>
+            <motion.p
+              className="font-normal mt-1 md:mt-1.25 mb-6 text-center lg:text-left text-[16px] lg:text-[18px] leading-[1.6] text-gray-400"
+              {...enter("left", 0.2)}
+            >
               {subtitle}
-            </p>
+            </motion.p>
             {/* The target puts a `shadow-[0_12px_24px_0_rgba(0, 0, 0, 0.10)]` here, but
                 the literal spaces split it into four junk classes, so it renders no
                 shadow. Omitted rather than "fixed" — the button carries its own. */}
-            <div className="w-70 max-w-full mx-auto lg:mx-0">
+            <motion.div
+              className="w-70 max-w-full mx-auto lg:mx-0"
+              {...enter("left", 0.28)}
+            >
               <GetStartedButton variant="primary" size="default">
                 {ctaLabel}
               </GetStartedButton>
-            </div>
-            <ul
+            </motion.div>
+            <motion.ul
               className={cn(
-                "flex flex-wrap gap-2 md:gap-6 justify-center my-8 md:my-10 lg:justify-start lg:mt-26 lg:mb-14",
+                "flex flex-wrap md:flex-nowrap lg:flex-wrap gap-2 md:gap-6 lg:gap-3 justify-center my-8 md:my-10 lg:justify-start lg:mt-26 lg:mb-14",
                 badgeListClassName,
               )}
+              {...enter("left", 0.36)}
             >
               {badges.map((badge) => (
                 <li key={badge} className="flex shrink-0 items-center gap-1 md:gap-2">
                   <BadgeCheckIcon className="w-2.5 h-2.5 md:w-4 md:h-4" />
-                  <p className="font-normal text-[12px] md:text-[14px] leading-[130%]">
+                  <p className="font-normal text-[12px] md:text-[14px] leading-[130%] md:whitespace-nowrap">
                     {badge}
                   </p>
                 </li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
 
-          <div
+          <motion.div
             className={cn(
-              "w-full md:w-[97%] mx-auto h-90 md:h-100 lg:w-156 lg:h-168 lg:mr-4 xl:mr-auto relative",
+              "w-full md:w-[97%] mx-auto h-90 md:h-100 lg:w-132 lg:h-168 lg:mr-4 xl:mr-auto relative",
               imageColumnClassName,
             )}
+            {...enter("bottom", 0.18)}
           >
             <PaymentCard
               icon={<FirstPaymentIcon />}
@@ -221,6 +277,8 @@ export function ProductHero({
               amount={firstPayment.amount}
               caption={firstPayment.caption}
               className={firstPayment.className}
+              from="left"
+              delay={0.7}
             />
             <PaymentCard
               icon={<SecondPaymentIcon />}
@@ -228,6 +286,8 @@ export function ProductHero({
               amount={secondPayment.amount}
               caption={secondPayment.caption}
               className={secondPayment.className}
+              from="right"
+              delay={0.82}
             />
             <div
               className={cn(
@@ -244,7 +304,7 @@ export function ProductHero({
                 sizes={imageSizes}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

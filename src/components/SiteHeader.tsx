@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { CarrotLogo } from "@/components/carrot-logo";
-import { MenuIcon } from "@/components/icons";
+import { MenuToggleIcon } from "@/components/icons";
 import { AnimatePresence } from "motion/react";
 
 import { MobileMenu } from "@/components/MobileMenu";
@@ -71,15 +71,16 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
 
-  // `tint` and `black` share a treatment: pink labels, no backdrop blur.
+  // `tint` and `black` share one treatment: no backdrop blur. The pills stay
+  // white-on-black on every backdrop — they used to pick up the pink over
+  // tinted bands, which read as a state change rather than a style.
   const onDarkBackdrop = theme === "tint" || theme === "black";
-  const pillVariant = onDarkBackdrop ? "darkOnTint" : "dark";
 
   return (
     <>
       <header
         aria-hidden="false"
-        className="fixed inset-x-0 top-0 z-20 transition-[opacity,visibility] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100"
+        className="fixed inset-x-0 top-0 z-40 transition-[opacity,visibility] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100"
       >
         <div
           aria-hidden="true"
@@ -94,7 +95,7 @@ export function SiteHeader() {
         />
         <div className="relative">
           <div className="w-full">
-            <div className="mx-auto px-6 flex justify-between items-center h-16.5 md:h-28">
+            <div className="mx-auto px-6 container lg:max-w-324 flex justify-between items-center h-16.5 md:h-28">
               {/*
                 Narrower than the lockup it replaced: Carrot's mark is ~2.23:1,
                 so 152px wide would stand 68px tall and overflow the 66px mobile
@@ -109,13 +110,13 @@ export function SiteHeader() {
               </Link>
               <div className="flex items-center justify-end gap-4 flex-1">
                 <GetStartedButton
-                  variant={pillVariant}
+                  variant="dark"
                   size="default"
                   className="max-w-45 hidden lg:inline-flex"
                 />
                 <ButtonLink
                   href={MERCHANT_LOGIN_URL}
-                  variant={pillVariant}
+                  variant="dark"
                   size="compact"
                   className="max-w-20 md:max-w-30 whitespace-nowrap"
                 >
@@ -124,20 +125,13 @@ export function SiteHeader() {
                 <Button
                   variant="dark"
                   size="icon"
-                  className="text-gray-100"
-                  aria-label="Open menu"
+                  className="text-white"
+                  aria-label={open ? "Close menu" : "Open menu"}
                   aria-controls="public-header-menu"
                   aria-expanded={open}
-                  onClick={() => setOpen(true)}
+                  onClick={() => setOpen((current) => !current)}
                 >
-                  <span
-                    className={cn(
-                      "flex items-center justify-center transition-transform duration-200 ease-out",
-                      open ? "rotate-90" : "rotate-0",
-                    )}
-                  >
-                    <MenuIcon />
-                  </span>
+                  <MenuToggleIcon open={open} />
                 </Button>
               </div>
             </div>

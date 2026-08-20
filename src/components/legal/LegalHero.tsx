@@ -8,9 +8,9 @@
  */
 export function LegalHero({ title }: { title: string }) {
   return (
-    <section className="bg-pink-50 pt-18 md:pt-28" data-header-theme="tint">
+    <section className="bg-tint-fade pt-18 md:pt-28" data-header-theme="tint">
       <div className="mx-auto px-6 container lg:max-w-324 pt-6 md:pt-10 lg:pt-14">
-        <div className="relative z-10 -mb-10 lg:-mb-16 bg-pink-50 border border-[rgba(0,0,0,0.14)] rounded-[20px] md:rounded-3xl lg:rounded-[32px] shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] px-6 py-10 md:px-10 md:py-14 lg:py-20 flex flex-col items-center justify-center gap-6 md:gap-10">
+        <div className="relative z-10 -mb-10 lg:-mb-16 border border-[rgba(0,0,0,0.14)] rounded-[20px] md:rounded-3xl lg:rounded-[32px] shadow-[0_12px_24px_0_rgba(0,0,0,0.05)] px-6 py-10 md:px-10 md:py-14 lg:py-20 flex flex-col items-center justify-center gap-6 md:gap-10">
           <div className="flex items-center justify-center h-30 min-[450px]:h-42 lg:h-53">
             {/* Plain <img>: next/image refuses to optimise SVG without
                 `dangerouslyAllowSVG`, and the box is sized by the wrapper. */}

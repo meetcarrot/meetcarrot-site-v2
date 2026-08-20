@@ -3,12 +3,8 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect } from "react";
-import { CarrotLogo } from "@/components/carrot-logo";
-import { ChevronRightIcon, CloseIcon } from "@/components/icons";
+import { ChevronRightIcon } from "@/components/icons";
 import Image from "next/image";
-import { GetStartedButton } from "@/components/GetStartedButton";
-import { Button, ButtonLink } from "@/components/ui/button";
-import { MERCHANT_LOGIN_URL } from "@/lib/links";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -97,56 +93,25 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
   }, [onClose]);
 
   return (
-    // Animating the fixed panel itself is safe — the containing-block problem
-    // only applies to transforms on an *ancestor* of a fixed element.
+    /*
+      Fades only, and carries no header of its own.
+      
+      It used to render a second logo, Get started, Sign In and toggle over the
+      top of the real ones. Opening the menu swapped one set of elements for a
+      near-identical set, and the panel's entry transform slid that copy 8px —
+      which is the jump. The site header now sits above this panel instead, so
+      those controls never move or re-mount.
+      
+      `pt-16.5 md:pt-28` matches the header band it sits beneath.
+    */
     <motion.div
       id="public-header-menu"
-      className="fixed inset-0 z-30 bg-white flex flex-col"
-      initial={{ opacity: 0, y: -8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed inset-0 z-30 bg-white flex flex-col pt-16.5 md:pt-28"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
     >
-      <div className="w-full">
-        <div className="mx-auto px-6 flex justify-between items-center h-16.5 md:h-28">
-          <Link
-            aria-label="Carrot home"
-            href="/"
-            onClick={onClose}
-            className="block rounded mr-2 w-16 md:w-20 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
-          >
-            <CarrotLogo className="w-full h-auto" />
-          </Link>
-          <div className="flex items-center justify-end gap-4 flex-1">
-            <GetStartedButton
-              variant="dark"
-              size="default"
-              className="max-w-45 hidden lg:inline-flex"
-            />
-            <ButtonLink
-              href={MERCHANT_LOGIN_URL}
-              variant="dark"
-              size="compact"
-              className="max-w-20 md:max-w-30 whitespace-nowrap"
-            >
-              Sign In
-            </ButtonLink>
-            <Button
-              variant="dark"
-              size="icon"
-              aria-label="Close menu"
-              aria-controls="public-header-menu"
-              aria-expanded
-              onClick={onClose}
-            >
-              <span className="flex items-center justify-center transition-transform duration-200 ease-out rotate-90">
-                <CloseIcon />
-              </span>
-            </Button>
-          </div>
-        </div>
-      </div>
-
       <nav
         aria-label="Menu"
         className="mx-auto px-6 container lg:max-w-324 min-h-0 flex-1 overflow-y-auto"

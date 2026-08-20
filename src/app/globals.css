@@ -69,6 +69,16 @@
 @layer base {
   html {
     color-scheme: light only;
+    /*
+     * Reserve the scrollbar gutter permanently.
+     *
+     * Opening the menu or a modal sets `overflow: hidden` on the body, which
+     * removes the scrollbar and widens the viewport by its width — every
+     * centred element then shifts sideways, which is the jolt you see at the
+     * moment the menu appears. Holding the gutter open means locking the scroll
+     * changes nothing about the layout.
+     */
+    scrollbar-gutter: stable;
   }
 
   /* Matches the target's `body` rule byte for byte. */
@@ -116,6 +126,25 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  /*
+   * Tinted band that dissolves into the page rather than ending on a hard edge.
+   *
+   * The two stops are only a few points apart in luminance, so a plain linear
+   * ramp is smooth enough here — the eased multi-stop treatment that stops
+   * banding on strong gradients would be doing nothing but adding rules.
+   *
+   * The bottom stop is the page background itself, so anything carrying this
+   * meets the page seamlessly no matter how tall it is. That matters for the
+   * hero cards, which overhang their band onto the page below.
+   */
+  .bg-tint-fade {
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-pink-50) 0%,
+      var(--color-gray-100) 100%
+    );
+  }
 }
 
 /*
@@ -142,5 +171,73 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-icon-float {
     animation: none;
+  }
+}
+
+/*
+ * Page entrance and exit.
+ *
+ * Applied through CSS rather than by wrapping each section in a motion
+ * component, so it reaches whatever a route happens to render without every
+ * page opting in. `template.tsx` remounts on navigation, which is what makes
+ * these re-run each time.
+ *
+ * The two halves are split across different properties on purpose. <main>
+ * owns the opacity — it fades out on the way off a route and fades in on the
+ * way onto the next, so there is never a frame where a page is at full opacity
+ * before its own entrance has started. That frame was visible as a flash of the
+ * outgoing page.
+ *
+ * The blocks inside only move. If they faded too, the first two would be fading
+ * inside an already-fading parent and arrive noticeably later than the rest of
+ * the page.
+ *
+ * Only the first two blocks lead in. Animating everything would spend a
+ * section's entrance while it is still below the fold, so it would appear
+ * already-animated when the reader reached it.
+ */
+@keyframes page-enter-main {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-enter-block {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+[data-page-enter] main {
+  animation: page-enter-main 0.28s ease-out both;
+  transition: opacity 180ms ease-out;
+}
+
+[data-page-enter] main > *:nth-child(-n + 2):not([data-self-enter]) {
+  animation: page-enter-block 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-page-enter] main > *:nth-child(2):not([data-self-enter]) {
+  animation-delay: 0.09s;
+}
+
+/* Exit. The header is persistent chrome and deliberately does not fade. */
+[data-page-exiting] main {
+  opacity: 0;
+  /* Beats the entrance animation, which would otherwise hold opacity at 1. */
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-page-enter] main,
+  [data-page-enter] main > * {
+    animation: none;
+    transition: none;
   }
 }

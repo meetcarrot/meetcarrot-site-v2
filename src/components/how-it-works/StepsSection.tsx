@@ -12,7 +12,7 @@ import { HOW_IT_WORKS_STEPS } from "@/data/how-it-works";
 export function StepsSection() {
   return (
     <section
-      className="bg-pink-50 pb-14 lg:pb-24 pt-30 lg:pt-50"
+      className="bg-tint-fade pb-14 lg:pb-24 pt-30 lg:pt-50"
       data-header-theme="tint"
     >
       <div className="mx-auto px-6 container lg:max-w-324">

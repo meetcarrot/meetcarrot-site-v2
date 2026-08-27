@@ -68,7 +68,9 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Below lg the flanking columns are hidden and the same photos render here. */}
+            {/* Same pair as the flanking columns, shown below lg. The grid is
+                shorter than the cells so the photos bleed 48px (mobile) / 64px
+                (md) into the next section — matching Split Pay. */}
             <div className="grid grid-cols-2 gap-6 h-60 md:h-134 lg:hidden">
               <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
                 <Image

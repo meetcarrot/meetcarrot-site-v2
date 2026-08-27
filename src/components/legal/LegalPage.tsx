@@ -44,7 +44,7 @@ export function LegalPage({ doc }: LegalPageProps) {
   }
 
   return (
-    <section className="bg-gray-100 pb-14 lg:pb-24 pt-24 lg:pt-40">
+    <section className="pb-14 lg:pb-24 pt-10 md:pt-14 lg:pt-16">
       <div className="mx-auto px-6 container lg:max-w-324 flex flex-col gap-10 md:gap-14">
         <div className="flex flex-col gap-4">
           <p className="text-[16px] leading-[1.5] font-medium">
@@ -67,7 +67,7 @@ export function LegalPage({ doc }: LegalPageProps) {
               onClick={(event) => handleOpen(index, event.currentTarget)}
               className={SECTION_BUTTON_CLASS}
             >
-              <span className="text-[16px] leading-[1.33] font-medium text-left">
+              <span className="text-[18px] leading-[1.33] font-medium text-left">
                 {section.title}
               </span>
               {/*

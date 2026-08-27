@@ -48,7 +48,7 @@ export function YourPart() {
           </p>
         </div>
         {/* `lg:gap86` is a typo in the target's markup — no-op class, kept verbatim. */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap86 mt-14 lg:mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap86 mt-14 lg:mt-20">
           {HABITS.map((habit) => (
             <div
               key={habit.title}

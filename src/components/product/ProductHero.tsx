@@ -32,53 +32,6 @@ function BadgeCheckIcon({ className }: { className?: string }) {
   );
 }
 
-/** Half-filled clock face — the 1st payment marker. */
-function FirstPaymentIcon() {
-  return (
-    <svg
-      fill="none"
-      height="16"
-      viewBox="0 0 24 24"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M20.4853 3.51481C18.2349 1.26432 15.1826 9.43497e-07 12 0C8.81743 -9.43496e-07 5.76517 1.26431 3.51473 3.51481C1.26429 5.7653 6.1018e-07 8.81763 0 12.0003C-6.10179e-07 15.183 1.26428 18.2353 3.51473 20.4858L20.4853 3.51481Z"
-        fill="var(--color-white)"
-      />
-      <path
-        d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25Z"
-        stroke="var(--color-white)"
-        strokeWidth="2.5"
-      />
-    </svg>
-  );
-}
-
-/** Mirrored half-filled clock face — the 2nd payment marker. */
-function SecondPaymentIcon() {
-  return (
-    <svg
-      fill="none"
-      height="16"
-      viewBox="0 0 24 24"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M3.51466 20.4866C5.76511 22.7371 8.81736 24.0014 12 24.0014C15.1826 24.0014 18.2348 22.7371 20.4853 20.4866C22.7357 18.2361 24 15.1838 24 12.0011C24 8.81845 22.7357 5.76612 20.4853 3.51563L3.51466 20.4866Z"
-        fill="var(--color-white)"
-      />
-      <path
-        d="M21.5 12.0014C21.5 6.75473 17.2467 2.50143 12 2.50143C6.75329 2.50143 2.5 6.75473 2.5 12.0014C2.5 17.2481 6.75329 21.5014 12 21.5014L12 24.0014C5.37255 24.0014 5.79387e-07 18.6289 0 12.0014C-6.39811e-08 5.37402 5.37258 0.00143491 12 0.00143433L12.3096 0.00534058C18.7939 0.16954 24 5.47721 24 12.0011L23.9961 12.311C23.8319 18.7953 18.5239 24.0014 12 24.0014L12 21.5014C17.2467 21.5014 21.5 17.2481 21.5 12.0014Z"
-        fill="var(--color-white)"
-      />
-    </svg>
-  );
-}
-
 const FLOATING_CARD_CLASS =
   "flex shrink-0 items-center gap-2 bg-white/85 w-66 h-17 md:w-74 md:h-19.5 px-4.5 md:px-5 rounded-[14px] md:rounded-2xl shadow-[0_10.378px_20.757px_0_rgba(0,0,0,0.10)] md:shadow-[0_12px_24px_0_rgba(0,0,0,0.10)] absolute z-10";
 
@@ -136,8 +89,8 @@ function PaymentCard({
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <div className="flex items-baseline justify-between gap-2">
-          <p className="font-semibold text-no-wrap shrink-0 text-[14px] md:text-[16px] leading-[140%]">
+        <div className="flex items-baseline gap-1.5 md:gap-2">
+          <p className="font-semibold shrink-0 text-[14px] md:text-[16px] leading-[140%]">
             {label}
           </p>
           <p className="font-semibold text-[14px] md:text-[16px] leading-[140%]">
@@ -154,6 +107,7 @@ function PaymentCard({
 
 /** The two floating stat chips over the hero photo. */
 export interface ProductHeroPayment {
+  icon: ReactNode;
   label: string;
   amount: string;
   caption: string;
@@ -198,7 +152,7 @@ export function ProductHero({
   illustration,
   title,
   subtitle,
-  ctaLabel = "Get started",
+  ctaLabel = "Get Started",
   badges,
   badgeListClassName,
   imageSrc,
@@ -273,7 +227,7 @@ export function ProductHero({
             {...enter("bottom", 0.18)}
           >
             <PaymentCard
-              icon={<FirstPaymentIcon />}
+              icon={firstPayment.icon}
               label={firstPayment.label}
               amount={firstPayment.amount}
               caption={firstPayment.caption}
@@ -282,7 +236,7 @@ export function ProductHero({
               delay={0.7}
             />
             <PaymentCard
-              icon={<SecondPaymentIcon />}
+              icon={secondPayment.icon}
               label={secondPayment.label}
               amount={secondPayment.amount}
               caption={secondPayment.caption}
@@ -301,6 +255,7 @@ export function ProductHero({
                 alt={imageAlt}
                 fill
                 priority
+                fetchPriority="high"
                 className="object-cover"
                 sizes={imageSizes}
               />

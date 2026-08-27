@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { HowWeKeepSafe } from "@/components/safety/HowWeKeepSafe";
 import { OurPartners } from "@/components/safety/OurPartners";
 import { OurPromise } from "@/components/safety/OurPromise";
@@ -10,29 +8,14 @@ import { SecurityAudits } from "@/components/safety/SecurityAudits";
 import { YourPart } from "@/components/safety/YourPart";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { SITE_URL } from "@/lib/site";
+import { MAIN_ID, pageMetadata } from "@/lib/seo";
 
-const TITLE = "Safety & Security - Carrot";
-const DESCRIPTION =
-  "Your money, your account, and your data — protected by layers you never have to think about.";
-
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  openGraph: {
-    type: "website",
-    url: `${SITE_URL}/safety-and-security`,
-    siteName: "Carrot",
-    title: TITLE,
-    description: DESCRIPTION,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: TITLE,
-    description: DESCRIPTION,
-  },
-  alternates: { canonical: "/safety-and-security" },
-};
+export const metadata = pageMetadata({
+  title: "Safety & Security - Carrot",
+  description:
+    "Your money, your account, and your data — protected by layers you never have to think about.",
+  path: "/safety-and-security",
+});
 
 /**
  * As on the homepage, `<main>` carries no padding of its own — the hero's
@@ -42,7 +25,7 @@ export default function SafetyAndSecurityPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id={MAIN_ID} tabIndex={-1}>
         <SafetyHero />
         <HowWeKeepSafe />
         <OurPromise />
@@ -50,7 +33,11 @@ export default function SafetyAndSecurityPage() {
         <OurPartners />
         <SecurityAudits />
         <ReportAnIssue />
-        <AutopilotCta backgroundSrc="/images/safety-and-security/cta-bg.jpg" />
+        <AutopilotCta
+          title="Steady revenue, on autopilot"
+          description="Turn your offer on and get back to running your business. Carrot finds the customers, verifies the purchases, and settles up every Friday."
+          backgroundSrc="/images/safety-and-security/cta-bg.jpg"
+        />
       </main>
       <SiteFooter />
     </>

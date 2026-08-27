@@ -9,6 +9,10 @@ const STEP_IDS: readonly [ConsumerStepId, ConsumerStepId, ConsumerStepId] = [
   "spend",
 ];
 
+/** Same chrome as the homepage category tiles and How It Works row. */
+const STEP_TILE_CLASS =
+  "h-full flex flex-col shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] p-6 pt-8 lg:p-12 rounded-[20px] bg-white";
+
 export interface ThreeStepsProps {
   steps: readonly [VerticalCopyBlock, VerticalCopyBlock, VerticalCopyBlock];
 }
@@ -26,18 +30,20 @@ export function ThreeSteps({ steps }: ThreeStepsProps) {
             How customers use it
           </h2>
         </Reveal>
-        <div className="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-8">
+        <div className="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
           {STEP_IDS.map((id, index) => (
-            <Reveal key={id} delay={index * 0.1} className="flex flex-col">
-              <div className="flex justify-center mb-8">
-                <ConsumerStepIllustration id={id} />
+            <Reveal key={id} delay={index * 0.1} className="h-full">
+              <div className={STEP_TILE_CLASS}>
+                <div className="flex justify-center mb-6 lg:mb-12">
+                  <ConsumerStepIllustration id={id} />
+                </div>
+                <p className="font-medium text-[18px] md:text-[24px] leading-[1.2] text-center mb-2 min-h-[1.2em]">
+                  {steps[index].title}
+                </p>
+                <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
+                  {steps[index].copy}
+                </p>
               </div>
-              <p className="font-medium text-[18px] md:text-[24px] leading-[1.2] text-center mb-2 min-h-[1.2em]">
-                {steps[index].title}
-              </p>
-              <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
-                {steps[index].copy}
-              </p>
             </Reveal>
           ))}
         </div>

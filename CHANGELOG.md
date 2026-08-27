@@ -7,8 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Intercom “Get Started” composer prefill, download-app modal (header only), skip-to-content, JSON-LD, web manifest, and a custom 404
+- Clay hero icons on Help, Terms, Privacy, and Safety; Stripe partner lockup matching Plaid/Drata
+- Lifestyle closing-band photographs (paddleboard, hammock, catch, walk)
+
 ### Changed
 - Raised the project Node.js baseline to 24 across local development, CI, Docker, and contributor-facing documentation
+- Primary CTAs say Get Started and open Intercom; header Download Carrot still opens the store modal
+- Closing band copy: “More time for the things you love” / business on autopilot (category-specific nouns)
+- Homepage right hero uses the restaurant payment photo; footer labels and hovers use primary pink
+- Cashback calculator slider is monthly spend (`$0–$2,500`, default `$250`)
+- SEO, image formats, Intercom/GA load, and legal/safety tablet stacking
+
+### Removed
+- Hanging phone overlay on closing CTAs
+- `/digital` route (nav still shows it as coming soon)
 
 ## [0.3.1] - 2026-03-29
 

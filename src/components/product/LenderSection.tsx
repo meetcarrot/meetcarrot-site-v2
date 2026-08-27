@@ -1,10 +1,27 @@
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
 
+/**
+ * Split Pay's heading is two centered lines ("Easy for you." / "Easy for your
+ * landlord."). Drop a break after the first sentence so our copy follows the
+ * same stack without rewriting it.
+ */
+function splitHeading(heading: ReactNode): ReactNode {
+  if (typeof heading !== "string") return heading;
+  const dot = heading.indexOf(". ");
+  if (dot < 0) return heading;
+  return (
+    <>
+      {heading.slice(0, dot + 1)}
+      <br className="hidden min-[480px]:block" />{" "}
+      {heading.slice(dot + 2)}
+    </>
+  );
+}
+
 export interface LenderStep {
   /** SVG rendered at 32×32 inside the translucent circle. See `product-icons.tsx`. */
   icon: ReactNode;
-  /** Set `whitespace-nowrap` upstream, so keep this short. */
   title: string;
   copy: ReactNode;
 }
@@ -30,7 +47,7 @@ export interface LenderLogo {
 export interface LenderSectionProps {
   heading: ReactNode;
   intro: ReactNode;
-  /** Three steps, separated by hairline rules that turn horizontal at `md`. */
+  /** Three steps in a single centered column, joined by a vertical hairline. */
   steps: LenderStep[];
   image: LenderSectionImage;
   /** Three cards on every product page; the grid is `lg:grid-cols-3`. */
@@ -58,26 +75,26 @@ export function LenderSection({
       <div className="mx-auto px-6 container lg:max-w-324">
         <div className="flex flex-col gap-6 md:gap-6">
           <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center max-w-200 mx-auto text-white">
-            {heading}
+            {splitHeading(heading)}
           </h2>
           <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px] text-[#D0CFCE]">
             {intro}
           </p>
           <div className="mt-6 lg:mt-12">
-            <div className="flex flex-col items-stretch md:flex-row md:items-start md:max-w-260 mx-auto">
+            <div className="flex flex-col items-center mx-auto max-w-md">
               {steps.map((step, index) => (
                 <Fragment key={step.title}>
                   {index > 0 ? (
-                    <div className="self-center w-px h-10 my-2 bg-white/15 md:self-start md:flex-1 md:h-px md:w-auto md:my-0 md:mt-8 md:mx-4 lg:mt-10" />
+                    <div className="w-px h-10 my-2 md:h-14 md:my-4 bg-white/15" />
                   ) : null}
-                  <div className="flex flex-col items-center text-center md:flex-1">
+                  <div className="flex flex-col items-center text-center">
                     <div className="flex items-center justify-center size-16 md:size-20 rounded-full bg-white/6 ring-1 ring-inset ring-white/10 mb-4 md:mb-6">
                       {step.icon}
                     </div>
-                    <p className="text-white whitespace-nowrap font-medium text-[18px] mb-2">
+                    <p className="text-white font-medium text-center text-[18px] md:text-[24px] mb-2 leading-[130%]">
                       {step.title}
                     </p>
-                    <p className="font-normal text-gray-300 text-[16px] leading-[1.3]">
+                    <p className="font-normal text-center text-gray-300 text-[16px] md:text-[18px] leading-[130%]">
                       {step.copy}
                     </p>
                   </div>
@@ -134,7 +151,7 @@ export function LenderSection({
                     {/* Plain <img>, not next/image: these are SVGs sized by
                         their own intrinsic box inside the h-14 flex cell. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img alt="logo" src={logo.src} />
+                    <img alt="" src={logo.src} />
                   </div>
                 ))}
               </div>
@@ -149,7 +166,7 @@ export function LenderSection({
                         role="img"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img alt="logo" src={logo.src} />
+                        <img alt="" src={logo.src} />
                       </div>
                     ))}
                   </div>

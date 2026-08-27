@@ -13,7 +13,6 @@ const PARTNERS = [
     body: "Securely connects your bank account without storing your credentials.",
   },
   {
-    // TODO: placeholder type-set lockup — swap for Stripe's official SVG.
     alt: "Stripe",
     src: "/images/brands/stripe.svg",
     body: "Securely processes payments and reimbursements with bank-level protection.",
@@ -45,7 +44,7 @@ export function OurPartners() {
             industries in the country.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-14 lg:mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mt-14 lg:mt-20">
           {PARTNERS.map((partner) => (
             <div
               key={partner.alt}

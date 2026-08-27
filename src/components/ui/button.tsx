@@ -1,4 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import type { Ref } from "react";
+
 import { cn } from "@/lib/utils";
 
 /**
@@ -49,11 +51,14 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonVariants> {
+  ref?: Ref<HTMLButtonElement>;
+}
 
-export function Button({ className, variant, size, children, ...props }: ButtonProps) {
+export function Button({ className, variant, size, children, ref, ...props }: ButtonProps) {
   return (
     <button
+      ref={ref}
       type="button"
       className={cn(buttonVariants({ variant, size }), className)}
       {...props}
@@ -81,10 +86,15 @@ export function ButtonLink({
   variant,
   size,
   children,
+  href,
+  rel,
   ...props
 }: ButtonLinkProps) {
+  const isExternal = href.startsWith("http://") || href.startsWith("https://");
   return (
     <a
+      href={href}
+      rel={rel ?? (isExternal ? "noopener noreferrer" : undefined)}
       className={cn(
         buttonVariants({ variant, size }),
         "inline-flex items-center justify-center",

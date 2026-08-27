@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/Analytics";
 import { Intercom } from "@/components/Intercom";
-import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SkipToContent } from "@/components/SkipToContent";
+import { APP_STORE_ID } from "@/lib/links";
+import { SITE_DESCRIPTION, SITE_TITLE, siteGraphJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -28,6 +31,7 @@ const gtAmerica = localFont({
 const gtAmericaMono = localFont({
   variable: "--font-gt-america-mono",
   display: "swap",
+  preload: false,
   fallback: ["Arial"],
   src: [
     {
@@ -54,6 +58,12 @@ const polySansWide = localFont({
 const TITLE = SITE_TITLE;
 const DESCRIPTION = SITE_DESCRIPTION;
 
+export const viewport: Viewport = {
+  themeColor: "#f8f8f5",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   // Self-canonical. Per-page metadata overrides this with its own path; without
@@ -72,12 +82,16 @@ export const metadata: Metadata = {
     siteName: "Carrot",
     title: TITLE,
     description: DESCRIPTION,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
   },
+  robots: { index: true, follow: true },
+  itunes: { appId: APP_STORE_ID },
+  formatDetection: { telephone: false, email: false, address: false },
   // Generated from the delivered Icon.svg. The mark is much taller than it is
   // wide, so favicon.svg re-squares the artboard with padding rather than
   // letting it render edge-to-edge at 16px.
@@ -112,7 +126,9 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="transition-colors duration-200 ease-in-out">
+        <SkipToContent />
         {children}
+        <JsonLd data={siteGraphJsonLd()} />
         <Intercom />
         <Analytics />
       </body>

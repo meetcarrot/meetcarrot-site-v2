@@ -38,11 +38,13 @@ export interface VerticalConfig {
   easyHeading: string;
   easyIntro: string;
   easySteps: [VerticalCopyBlock, VerticalCopyBlock, VerticalCopyBlock];
+  /** Three cards under the Easy photo — the old Win-Win-Win copy. */
   easyCards: [VerticalCopyBlock, VerticalCopyBlock, VerticalCopyBlock];
 
-  winWinWin: [VerticalCopyBlock, VerticalCopyBlock, VerticalCopyBlock];
-
   ctaTitle: string;
+  ctaDescription: string;
+  /** Closing-band photograph. Named for the shot so a cache cannot serve a previous CTA. */
+  ctaBackground: string;
 }
 
 /**
@@ -105,7 +107,7 @@ const SHARED_WIN_WIN_WIN: [
 ] = [
   {
     title: "Customers win",
-    copy: "Real cash back on purchases they were already going to make, at places near them.",
+    copy: "Offers help them get more of what they love.",
   },
   {
     title: "You win",
@@ -114,6 +116,25 @@ const SHARED_WIN_WIN_WIN: [
   {
     title: "Carrot wins",
     copy: "We earn a share of the revenue we drive, so our incentives match yours from day one.",
+  },
+];
+
+const SHARED_BENEFITS: [
+  VerticalCopyBlock,
+  VerticalCopyBlock,
+  VerticalCopyBlock,
+] = [
+  {
+    title: "Zero Hassle",
+    copy: "Get up and running in minutes. No complicated setup or long onboarding required.",
+  },
+  {
+    title: "Fully Automated",
+    copy: "Once your offer is live, we handle everything — you don’t have to manage anything.",
+  },
+  {
+    title: "Risk-Free",
+    copy: "You only pay when revenue comes in. No upfront fees, no monthly charges.",
   },
 ];
 
@@ -133,41 +154,17 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     calculatorHeading: "See what steady revenue costs you.",
     calculatorFootnote: "Based on the average restaurant.",
     benefitsHeading: "More cash, less pressure, every month.",
-    benefits: [
-      {
-        title: "Fill your slow shifts",
-        copy: "PENDING — awaiting final value-prop copy. Offers go out when you need covers, not when a campaign calendar says so.",
-      },
-      {
-        title: "Reach diners nearby",
-        copy: "PENDING — awaiting final value-prop copy. Carrot puts you in front of people already deciding where to eat tonight.",
-      },
-      {
-        title: "Only pay for revenue",
-        copy: "PENDING — awaiting final value-prop copy. No upfront cost, no monthly fee. You pay a share of the sales we bring you.",
-      },
-    ],
+    benefits: SHARED_BENEFITS,
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your customers.",
     easyIntro:
       "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
-    easyCards: [
-      {
-        title: "How Carrot works",
-        copy: "PENDING — awaiting final copy. You set a cashback rate and a monthly cap. We promote the offer to the right diners and you keep full control.",
-      },
-      {
-        title: "Works with your POS",
-        copy: "PENDING — awaiting final copy. No new hardware, no new terminal, no menu changes. Customers pay you the way they already do.",
-      },
-      {
-        title: "What do diners see?",
-        copy: "PENDING — awaiting final copy. They see your offer in the Carrot app, visit, pay normally, and get cash back automatically.",
-      },
-    ],
-    winWinWin: SHARED_WIN_WIN_WIN,
-    ctaTitle: "Fill more seats",
+    easyCards: SHARED_WIN_WIN_WIN,
+    ctaTitle: "More time for the things you love",
+    ctaDescription:
+      "Relax — your restaurant is on autopilot. Carrot brings diners in, verifies the visits, and settles up every Friday.",
+    ctaBackground: "/images/hospitality/cta-hammock.jpg",
   },
 
   retail: {
@@ -185,41 +182,17 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     calculatorHeading: "See what steady revenue costs you.",
     calculatorFootnote: "Based on the average retail store.",
     benefitsHeading: "More cash, less pressure, every month.",
-    benefits: [
-      {
-        title: "Get real foot traffic",
-        copy: "PENDING — awaiting final value-prop copy. Shoppers who came to buy, not to browse an ad they scrolled past.",
-      },
-      {
-        title: "Smooth out slow weeks",
-        copy: "PENDING — awaiting final value-prop copy. Offers keep working in the background so the quiet stretches stay steady.",
-      },
-      {
-        title: "Only pay for revenue",
-        copy: "PENDING — awaiting final value-prop copy. No upfront cost, no monthly fee. You pay a share of the sales we bring you.",
-      },
-    ],
+    benefits: SHARED_BENEFITS,
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your customers.",
     easyIntro:
       "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
-    easyCards: [
-      {
-        title: "How Carrot works",
-        copy: "PENDING — awaiting final copy. You set a cashback rate and a monthly cap. We promote the offer to nearby shoppers and you keep full control.",
-      },
-      {
-        title: "Works with your POS",
-        copy: "PENDING — awaiting final copy. No new hardware and no changes at checkout. Customers pay you the way they already do.",
-      },
-      {
-        title: "What do shoppers see?",
-        copy: "PENDING — awaiting final copy. They see your offer in the Carrot app, come in, pay normally, and get cash back automatically.",
-      },
-    ],
-    winWinWin: SHARED_WIN_WIN_WIN,
-    ctaTitle: "Bring more shoppers in",
+    easyCards: SHARED_WIN_WIN_WIN,
+    ctaTitle: "More time for the things you love",
+    ctaDescription:
+      "Relax — your shop is on autopilot. Carrot brings shoppers in, verifies the purchases, and settles up every Friday.",
+    ctaBackground: "/images/retail/cta-catch.jpg",
   },
 
   services: {
@@ -232,46 +205,22 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     subheading:
       "Grow your client base and keep revenue consistent while staying in full control of your offer.",
     badges: SHARED_BADGES,
-    averageOrderValue: 150,
+    averageOrderValue: 250,
     cashbackRate: 0.15,
     calculatorHeading: "See what steady revenue costs you.",
     calculatorFootnote: "Based on the average service-based business.",
     benefitsHeading: "More cash, less pressure, every month.",
-    benefits: [
-      {
-        title: "Fill your calendar",
-        copy: "PENDING — awaiting final value-prop copy. New clients booking the appointments you actually have room for.",
-      },
-      {
-        title: "Keep clients coming back",
-        copy: "PENDING — awaiting final value-prop copy. Cash back gives regulars a reason to rebook with you instead of shopping around.",
-      },
-      {
-        title: "Only pay for revenue",
-        copy: "PENDING — awaiting final value-prop copy. No upfront cost, no monthly fee. You pay a share of the bookings we bring you.",
-      },
-    ],
+    benefits: SHARED_BENEFITS,
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your clients.",
     easyIntro:
       "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
-    easyCards: [
-      {
-        title: "How Carrot works",
-        copy: "PENDING — awaiting final copy. You set a cashback rate and a monthly cap. We promote the offer to nearby clients and you keep full control.",
-      },
-      {
-        title: "Works with your booking flow",
-        copy: "PENDING — awaiting final copy. No new software and no changes to how you schedule. Clients pay you the way they already do.",
-      },
-      {
-        title: "What do clients see?",
-        copy: "PENDING — awaiting final copy. They see your offer in the Carrot app, book, pay normally, and get cash back automatically.",
-      },
-    ],
-    winWinWin: SHARED_WIN_WIN_WIN,
-    ctaTitle: "Book more clients",
+    easyCards: SHARED_WIN_WIN_WIN,
+    ctaTitle: "More time for the things you love",
+    ctaDescription:
+      "Relax — your calendar is on autopilot. Carrot brings clients in, verifies the visits, and settles up every Friday.",
+    ctaBackground: "/images/services/cta-walk.jpg",
   },
 
   /*
@@ -297,40 +246,16 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     calculatorHeading: "See what steady revenue costs you.",
     calculatorFootnote: "Based on the average online business.",
     benefitsHeading: "More cash, less pressure, every month.",
-    benefits: [
-      {
-        title: "Reach buyers who convert",
-        copy: "PENDING — awaiting final value-prop copy. Cash back turns interest into a completed order.",
-      },
-      {
-        title: "Predictable monthly revenue",
-        copy: "PENDING — awaiting final value-prop copy. Offers run continuously so sales don't depend on one campaign landing.",
-      },
-      {
-        title: "Only pay for revenue",
-        copy: "PENDING — awaiting final value-prop copy. No upfront cost, no monthly fee. You pay a share of the sales we bring you.",
-      },
-    ],
+    benefits: SHARED_BENEFITS,
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your customers.",
     easyIntro:
       "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing checkout. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
-    easyCards: [
-      {
-        title: "How Carrot works",
-        copy: "PENDING — awaiting final copy. You set a cashback rate and a monthly cap. We promote the offer to the right buyers and you keep full control.",
-      },
-      {
-        title: "Works with your store",
-        copy: "PENDING — awaiting final copy. No replatforming and no checkout changes. Customers pay you the way they already do.",
-      },
-      {
-        title: "What do customers see?",
-        copy: "PENDING — awaiting final copy. They see your offer in the Carrot app, order, pay normally, and get cash back automatically.",
-      },
-    ],
-    winWinWin: SHARED_WIN_WIN_WIN,
-    ctaTitle: "Grow your online sales",
+    easyCards: SHARED_WIN_WIN_WIN,
+    ctaTitle: "More time for the things you love",
+    ctaDescription:
+      "Relax — your store is on autopilot. Carrot finds the buyers, verifies the purchases, and settles up every Friday.",
+    ctaBackground: "/images/digital/cta-bg.jpg",
   },
 };

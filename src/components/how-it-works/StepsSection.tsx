@@ -12,8 +12,8 @@ import { HOW_IT_WORKS_STEPS } from "@/data/how-it-works";
 export function StepsSection() {
   return (
     <section
-      className="bg-tint-fade pb-14 lg:pb-24 pt-30 lg:pt-50"
-      data-header-theme="tint"
+      className="pb-14 lg:pb-24 pt-30 lg:pt-50"
+      data-header-theme="light"
     >
       <div className="mx-auto px-6 container lg:max-w-324">
         <h1 className="text-[40px] leading-[115%]! font-poly-sans-wide text-center md:text-[56px] lg:text-[64px]">
@@ -23,7 +23,7 @@ export function StepsSection() {
           {HOW_IT_WORKS_STEPS.map((step, index) => (
             <div
               key={step.id}
-              className="shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] px-6 md:px-10 py-10 border border-black/15 rounded-3xl flex flex-col gap-6"
+              className="bg-white shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] px-6 md:px-10 py-10 border border-black/15 rounded-3xl flex flex-col gap-6"
             >
               <div className="w-full flex justify-center">
                 <p className="px-4 border border-black/15 h-9 flex items-center rounded-full font-medium text-[14px] md:text-[16px]">

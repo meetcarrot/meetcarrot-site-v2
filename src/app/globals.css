@@ -90,11 +90,21 @@
     font-style: normal;
     line-height: 1.33;
   }
+
+  /* Skip-to-content focuses <main>; do not draw a page-sized ring. */
+  #main:focus {
+    outline: none;
+  }
 }
 
 @layer components {
-  /* Verbatim from the target: constrains illustration art (inline SVG or <img>)
-     to its slot so it never overflows the card frame. */
+  /* Height-locked slot. Overflow stays visible so clay-icon scale/float
+     animations are not clipped; the icon itself is sized to the slot. */
+  .illustration-component {
+    min-height: 0;
+    overflow: visible;
+  }
+
   .illustration-component img,
   .illustration-component svg {
     max-width: 100%;
@@ -125,25 +135,6 @@
 
   .scrollbar-none::-webkit-scrollbar {
     display: none;
-  }
-
-  /*
-   * Tinted band that dissolves into the page rather than ending on a hard edge.
-   *
-   * The two stops are only a few points apart in luminance, so a plain linear
-   * ramp is smooth enough here — the eased multi-stop treatment that stops
-   * banding on strong gradients would be doing nothing but adding rules.
-   *
-   * The bottom stop is the page background itself, so anything carrying this
-   * meets the page seamlessly no matter how tall it is. That matters for the
-   * hero cards, which overhang their band onto the page below.
-   */
-  .bg-tint-fade {
-    background-image: linear-gradient(
-      to bottom,
-      var(--color-pink-50) 0%,
-      var(--color-gray-100) 100%
-    );
   }
 }
 

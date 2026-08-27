@@ -78,6 +78,9 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
     */
     <motion.div
       id="public-header-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
       className="fixed inset-0 z-30 bg-white flex flex-col pt-16.5 md:pt-28"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

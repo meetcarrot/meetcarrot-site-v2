@@ -6,16 +6,16 @@ import {
   CalendarDollarIcon,
   CashIcon,
   CheckCircleIcon,
+  HandCashIcon,
   PeaceIcon,
   QuestionCircleIcon,
-  SplitCirclesIcon,
-  SplitGradientIcon,
+  ShieldDollarIcon,
 } from "@/components/product/product-icons";
 import { ProductBenefits } from "@/components/product/ProductBenefits";
 import { AutopilotCta } from "@/components/AutopilotCta";
+import { JsonLd } from "@/components/JsonLd";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ThreeSteps } from "@/components/product/ThreeSteps";
-import { WinWinWin } from "@/components/product/WinWinWin";
 import { FaqSection } from "@/components/FaqSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -23,6 +23,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { FAQS } from "@/data/faqs";
 import { PRODUCT_TESTIMONIALS } from "@/data/product-testimonials";
 import type { VerticalConfig } from "@/data/verticals";
+import { faqPageJsonLd, MAIN_ID } from "@/lib/seo";
 
 const wholeDollars = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -31,11 +32,11 @@ const wholeDollars = new Intl.NumberFormat("en-US", {
 });
 
 /**
- * The revenue figure the two hero chips illustrate. Held constant across
- * verticals so the chips compare like for like; only the derived cashback spend
- * and customer count move with each vertical's AOV and rate.
+ * Hero chips use the same $250/month cashback spend as the calculator default,
+ * so the overlay and the slider cannot disagree. Customers = spend ÷ (AOV ×
+ * rate), rounded; revenue = customers × AOV.
  */
-const SAMPLE_REVENUE = 2000;
+const SAMPLE_CASHBACK_SPEND = 250;
 
 /**
  * All four vertical routes render this. Everything that differs between them
@@ -45,7 +46,9 @@ const SAMPLE_REVENUE = 2000;
 export function VerticalPage({ config }: { config: VerticalConfig }) {
   const dir = `/images/${config.slug}`;
   const photos = Array.from({ length: 9 }, (_, i) => `${dir}/img-${i + 1}.jpg`);
-  const sampleCustomers = Math.floor(SAMPLE_REVENUE / config.averageOrderValue);
+  const cac = config.averageOrderValue * config.cashbackRate;
+  const sampleCustomers = Math.round(SAMPLE_CASHBACK_SPEND / cac);
+  const sampleRevenue = sampleCustomers * config.averageOrderValue;
 
   const [benefitOne, benefitTwo, benefitThree] = config.benefits;
   const [stepOne, stepTwo, stepThree] = config.easySteps;
@@ -54,7 +57,7 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id={MAIN_ID} tabIndex={-1}>
         <ProductHero
           illustration={
             // Same icon the homepage category card and menu use, so a visitor
@@ -65,35 +68,43 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
           subtitle={config.subheading}
           badges={config.badges}
           imageSrc={`${dir}/hero.jpg`}
-          imageAlt={config.name}
+          imageAlt={`${config.name} business`}
           imageSizes="(min-width: 1024px) 624px, 100vw"
           imageBleedClassName="lg:-bottom-16"
           firstPayment={{
+            icon: <CashIcon width={18} height={18} />,
             label: "Revenue driven",
-            amount: wholeDollars.format(SAMPLE_REVENUE),
+            amount: wholeDollars.format(sampleRevenue),
             caption: "Per month",
             className: "top-23 md:top-17 lg:top-55 -left-4 md:-left-6",
           }}
           secondPayment={{
+            icon: <HandCashIcon width={18} height={18} />,
             label: "Your cashback spend",
-            amount: wholeDollars.format(SAMPLE_REVENUE * config.cashbackRate),
+            amount: wholeDollars.format(SAMPLE_CASHBACK_SPEND),
             caption: `${sampleCustomers} customers`,
             className: "-bottom-4 md:bottom-2 md:-right-6 -right-4",
           }}
         />
 
+        <ThreeSteps steps={config.consumerSteps} />
+
         <ProductBenefits
           heading={config.benefitsHeading}
-          image={{ src: `${dir}/bg-benefits.jpg`, alt: config.name }}
+          image={{ src: `${dir}/bg-benefits.jpg`, alt: `${config.name} business` }}
           benefits={[
-            { icon: <CashIcon />, title: benefitOne.title, copy: benefitOne.copy },
             {
-              icon: <CalendarDollarIcon />,
+              icon: <CheckCircleIcon />,
+              title: benefitOne.title,
+              copy: benefitOne.copy,
+            },
+            {
+              icon: <PeaceIcon />,
               title: benefitTwo.title,
               copy: benefitTwo.copy,
             },
             {
-              icon: <PeaceIcon />,
+              icon: <ShieldDollarIcon />,
               title: benefitThree.title,
               copy: benefitThree.copy,
             },
@@ -122,14 +133,14 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
               copy: stepTwo.copy,
             },
             {
-              icon: <SplitCirclesIcon width={32} height={32} />,
+              icon: <CashIcon width={32} height={32} />,
               title: stepThree.title,
               copy: stepThree.copy,
             },
           ]}
-          image={{ src: `${dir}/bg-lender.jpg`, alt: config.name }}
+          image={{ src: `${dir}/bg-lender.jpg`, alt: `${config.name} business` }}
           cards={[
-            { icon: <SplitGradientIcon />, title: cardOne.title, copy: cardOne.copy },
+            { icon: <HandCashIcon />, title: cardOne.title, copy: cardOne.copy },
             { icon: <BuildingIcon />, title: cardTwo.title, copy: cardTwo.copy },
             {
               icon: <QuestionCircleIcon />,
@@ -138,11 +149,6 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
             },
           ]}
         />
-
-        {/* The consumer-side flow sits under "Easy for you", per the changes doc. */}
-        <ThreeSteps steps={config.consumerSteps} />
-
-        <WinWinWin entries={config.winWinWin} />
 
         <Testimonials
           testimonials={PRODUCT_TESTIMONIALS[config.slug]}
@@ -154,10 +160,12 @@ export function VerticalPage({ config }: { config: VerticalConfig }) {
 
         <AutopilotCta
           title={config.ctaTitle}
-          backgroundSrc={`${dir}/cta-bg.jpg`}
+          description={config.ctaDescription}
+          backgroundSrc={config.ctaBackground}
         />
       </main>
       <SiteFooter />
+      <JsonLd data={faqPageJsonLd(FAQS)} />
     </>
   );
 }

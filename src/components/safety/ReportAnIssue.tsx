@@ -30,7 +30,7 @@ export function ReportAnIssue() {
             missed.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-14 lg:mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mt-14 lg:mt-20">
           <div className="flex flex-col items-center text-center rounded-4xl p-10 bg-white text-gray-400">
             <div className="flex items-center justify-center rounded-full w-16 h-16 mb-6 bg-gray-400">
               <UserCircleIcon height={24} width={24} />

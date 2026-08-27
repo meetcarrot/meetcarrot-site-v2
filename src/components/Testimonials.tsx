@@ -113,6 +113,7 @@ function TestimonialColumn({
         alt=""
         draggable={false}
         loading="lazy"
+        decoding="async"
         width={552}
         height={584}
         className="w-full h-full object-cover"
@@ -266,16 +267,19 @@ export function Testimonials({
   }, []);
 
   return (
-    <section className="py-14 lg:py-24">
+    <section className="py-14 lg:py-24" aria-labelledby="testimonials-heading">
       <div className="flex flex-col gap-6 md:gap-6 px-4">
         <Image
           src="/images/average-rating.svg"
-          alt="rating"
+          alt="Five-star average customer rating"
           width={239}
           height={104}
           className="w-40 mx-auto h-auto md:w-57.5"
         />
-        <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+        <h2
+          id="testimonials-heading"
+          className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center"
+        >
           What People Are Saying
         </h2>
       </div>
@@ -283,6 +287,8 @@ export function Testimonials({
         <div className="w-full max-w-480 mx-auto">
           <div
             ref={railRef}
+            role="region"
+            aria-label="Customer testimonials"
             className={
               isDragging
                 ? `${RAIL_BASE} cursor-grabbing select-none`

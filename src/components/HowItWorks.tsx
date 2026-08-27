@@ -2,6 +2,10 @@ import { Reveal } from "@/components/Reveal";
 import { StepIllustration } from "@/components/how-it-works/StepIllustration";
 import { HOMEPAGE_STEP_COUNT, HOW_IT_WORKS_STEPS } from "@/data/how-it-works";
 
+/** Same chrome as the category tiles above this section. */
+const STEP_TILE_CLASS =
+  "h-full flex flex-col shadow-[0_2px_6px_0_rgba(0,0,0,0.06)] p-6 pt-8 lg:p-12 rounded-[20px] bg-white";
+
 /**
  * Homepage summary of the same flow the /how-it-works page carries in full —
  * same copy, same animated cards, three across instead of stacked. It reads
@@ -19,22 +23,22 @@ export function HowItWorks() {
             How It Works
           </h2>
         </Reveal>
-        <div className="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-8">
+        <div className="mt-14 lg:mt-20 grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
           {steps.map((step, index) => (
             // Staggered by a tenth of a second so the three read left to right
             // rather than snapping in as one row.
-            <Reveal key={step.id} delay={index * 0.1} className="flex flex-col">
-              {/* Equal-height frames, so titles and copy start on the same row
-                  when the three sit side by side. */}
-              <div className="flex justify-center mb-8">
-                <StepIllustration id={step.id} />
+            <Reveal key={step.id} delay={index * 0.1} className="h-full">
+              <div className={STEP_TILE_CLASS}>
+                <div className="flex justify-center mb-6 lg:mb-12">
+                  <StepIllustration id={step.id} />
+                </div>
+                <p className="font-medium text-[18px] md:text-[24px] leading-[1.2] text-center mb-2 min-h-[1.2em]">
+                  {step.title}
+                </p>
+                <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
+                  {step.copy}
+                </p>
               </div>
-              <p className="font-medium text-[18px] md:text-[24px] leading-[1.2] text-center mb-2 min-h-[1.2em]">
-                {step.title}
-              </p>
-              <p className="text-[16px] font-normal leading-[1.33] text-center lg:text-[18px]">
-                {step.copy}
-              </p>
             </Reveal>
           ))}
         </div>

@@ -21,9 +21,10 @@ export function HeroSection() {
             <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
               <Image
                 src="/images/deco-left.jpg"
-                alt="dad with son"
+                alt="Father and young son dining together"
                 fill
                 priority
+                fetchPriority="high"
                 className="object-cover"
                 sizes="(min-width: 1024px) 33vw, 0vw"
               />
@@ -72,19 +73,20 @@ export function HeroSection() {
               <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
                 <Image
                   src="/images/deco-left.jpg"
-                  alt="dad with son"
+                  alt="Father and young son dining together"
                   fill
                   priority
+                  fetchPriority="high"
                   className="object-cover"
                   sizes="(max-width: 1023px) 50vw, 0vw"
                 />
               </div>
               <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
                 <Image
-                  src="/images/deco-right-cafe.jpg"
-                  alt="girl with dog"
+                  src="/images/deco-right.jpg"
+                  alt="Woman tapping a card to pay at a restaurant"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center brightness-105"
                   sizes="(max-width: 1023px) 50vw, 0vw"
                 />
               </div>
@@ -94,10 +96,10 @@ export function HeroSection() {
           <div className="h-fill flex-1 relative hidden lg:block">
             <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
               <Image
-                src="/images/deco-right-cafe.jpg"
-                alt="girl with dog"
+                src="/images/deco-right.jpg"
+                alt="Woman tapping a card to pay at a restaurant"
                 fill
-                className="object-cover"
+                className="object-cover object-center brightness-105"
                 sizes="(min-width: 1024px) 33vw, 0vw"
               />
             </div>

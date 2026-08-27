@@ -7,7 +7,7 @@ import { MenuToggleIcon } from "@/components/icons";
 import { AnimatePresence } from "motion/react";
 
 import { MobileMenu } from "@/components/MobileMenu";
-import { GetStartedButton } from "@/components/GetStartedButton";
+import { DownloadCarrotButton } from "@/components/DownloadCarrotButton";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { MERCHANT_LOGIN_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
@@ -78,10 +78,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header
-        aria-hidden="false"
-        className="fixed inset-x-0 top-0 z-40 transition-[opacity,visibility] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100"
-      >
+      <header className="fixed inset-x-0 top-0 z-40 transition-[opacity,visibility] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100">
         <div
           aria-hidden="true"
           className={cn(
@@ -95,7 +92,7 @@ export function SiteHeader() {
         />
         <div className="relative">
           <div className="w-full">
-            <div className="mx-auto px-6 container lg:max-w-324 flex justify-between items-center h-16.5 md:h-28">
+            <div className="mx-auto flex h-16.5 items-center justify-between overflow-visible px-6 container md:h-28 lg:max-w-324">
               {/*
                 Narrower than the lockup it replaced: Carrot's mark is ~2.23:1,
                 so 152px wide would stand 68px tall and overflow the 66px mobile
@@ -104,21 +101,22 @@ export function SiteHeader() {
               <Link
                 aria-label="Carrot home"
                 href="/"
-                className="block rounded mr-2 w-16 md:w-20 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
+                className="mr-2 block w-16 shrink-0 overflow-visible leading-none rounded md:w-20 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-white transition duration-200 ease-in-out focus-visible:ring-offset-2"
               >
-                <CarrotLogo idPrefix="header-logo" className="w-full h-auto" />
+                <CarrotLogo idPrefix="header-logo" className="block h-auto w-full" />
               </Link>
               <div className="flex items-center justify-end gap-4 flex-1">
-                <GetStartedButton
+                <DownloadCarrotButton
                   variant="dark"
                   size="default"
-                  className="max-w-45 hidden lg:inline-flex"
+                  className="max-w-52 hidden lg:inline-flex"
                 />
                 <ButtonLink
                   href={MERCHANT_LOGIN_URL}
                   variant="dark"
                   size="compact"
                   className="max-w-20 md:max-w-30 whitespace-nowrap"
+                  rel="noopener noreferrer"
                 >
                   Sign In
                 </ButtonLink>

@@ -1,3 +1,6 @@
+"use client";
+
+import { SUPPORT_EMAIL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 const CARD_CLASS =
@@ -46,10 +49,9 @@ function IconBadge({ tone, children }: { tone: "pink" | "gray"; children: React.
 }
 
 /**
- * The support entry points below the FAQs. Chat is a `<button>` rather than a
- * link because it is mounted by a third-party widget (Intercom, pending); email
- * is a real `mailto:`. Text and phone cards are omitted — Carrot has no support
- * line to point them at.
+ * The support entry points below the FAQs. Chat opens Intercom Messenger;
+ * email is a real `mailto:`. Text and phone cards are omitted — Carrot has no
+ * support line to point them at.
  */
 export function StillNeedHelp() {
   return (
@@ -60,11 +62,12 @@ export function StillNeedHelp() {
             Still need help?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-            {/*
-              TODO: this button opens live chat once Intercom is installed —
-              it is inert until then, matching the target's own behaviour.
-            */}
-            <button type="button" className={cn(CARD_CLASS, "cursor-pointer text-left")}>
+            <button
+              type="button"
+              className={cn(CARD_CLASS, "cursor-pointer text-left")}
+              aria-haspopup="dialog"
+              onClick={() => window.Intercom?.("show")}
+            >
               <IconBadge tone="pink">
                 <ChatIcon />
               </IconBadge>
@@ -77,13 +80,13 @@ export function StillNeedHelp() {
               <span className={cn(BADGE_CLASS, "bg-pink-50")}>Available 24/7</span>
             </button>
 
-            <a className={CARD_CLASS} href="mailto:support@meetcarrot.xyz">
+            <a className={CARD_CLASS} href={`mailto:${SUPPORT_EMAIL}`}>
               <IconBadge tone="gray">
                 <EmailIcon />
               </IconBadge>
               <div className="flex flex-col gap-3">
                 <h3 className={TITLE_CLASS}>Email us</h3>
-                <p className={DETAIL_CLASS}>support@meetcarrot.xyz</p>
+                <p className={DETAIL_CLASS}>{SUPPORT_EMAIL}</p>
               </div>
               <span className={cn(BADGE_CLASS, "bg-gray-200")}>Replies in ~1 business day</span>
             </a>

@@ -5,8 +5,8 @@ import { Reveal } from "@/components/Reveal";
 const BACKGROUND_SIZES = "(max-width: 767px) 92vw, (max-width: 1023px) 92vw, 1200px";
 
 /**
- * The closing section on every page: the business is set up and running itself,
- * so the photograph is the owner enjoying their time.
+ * The closing section on the homepage and category pages: Carrot is running,
+ * so the photograph is the owner doing something else.
  *
  * One component rather than a copy per page — the homepage, the safety page and
  * the four vertical pages previously carried three near-identical
@@ -20,8 +20,8 @@ export interface AutopilotCtaProps {
 }
 
 export function AutopilotCta({
-  title = "Steady revenue, on autopilot",
-  description = "Turn your offer on and get back to running your business. Carrot finds the customers, verifies the purchases, and settles up every Friday.",
+  title = "More time for the things you love",
+  description = "Relax — your business is on autopilot. Carrot finds the customers, verifies the purchases, and settles up every Friday.",
   ctaLabel = "Get Started",
   backgroundSrc,
 }: AutopilotCtaProps) {

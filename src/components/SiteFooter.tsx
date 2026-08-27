@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { CarrotLogo } from "@/components/carrot-logo";
-
 import {
   AppStoreBadge,
   CarIcon,
@@ -10,11 +9,7 @@ import {
   OtherBillsIcon,
   RentIcon,
 } from "@/components/icons";
-
-const APP_STORE_URL =
-  "https://apps.apple.com/us/app/carrot-cashback/id1663585181";
-const GOOGLE_PLAY_URL =
-  "https://play.google.com/store/apps/details?id=xyz.meetcarrot.mobile&hl=en_US";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/links";
 
 /**
  * The store badges are dark lockups — white type over a half-opacity black
@@ -30,14 +25,14 @@ const BADGE_LINK_CLASS =
  * icons are used on dark surfaces elsewhere.
  */
 const NAV_LINK_CLASS =
-  "group inline-flex items-center gap-3 [&_svg_path]:fill-gray-400 [&_svg_path]:transition-colors hover:[&_svg_path]:fill-pink-dark focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2 rounded";
+  "group inline-flex items-center gap-3 [&_svg_path]:fill-gray-400 [&_svg_path]:transition-colors hover:[&_svg_path]:fill-pink focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2 rounded";
 const TEXT_LINK_CLASS =
   "group inline-flex items-center gap-3 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2 rounded";
 
 const COLUMN_LABEL_CLASS =
-  "font-medium tracking-[0.06em] text-pink-dark text-[12px] uppercase mb-5";
+  "font-medium tracking-[0.06em] text-pink text-[12px] uppercase mb-5";
 const LINK_TEXT_CLASS =
-  "text-[16px] font-normal leading-[1.33] transition-colors duration-200 group-hover:text-pink-dark";
+  "text-[16px] font-normal leading-[1.33] transition-colors duration-200 group-hover:text-pink";
 
 type IconComponent = (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
 
@@ -80,7 +75,13 @@ export function SiteFooter() {
       <div className="mx-auto px-6 container lg:max-w-324">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
           <div>
-            <CarrotLogo idPrefix="footer-logo" width={96} height={43} />
+            <Link
+              href="/"
+              aria-label="Carrot home"
+              className="inline-block rounded focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2"
+            >
+              <CarrotLogo idPrefix="footer-logo" className="h-auto w-24" />
+            </Link>
             <p className="text-[16px] font-normal leading-[1.33] mt-5 max-w-70">
               Pay for Revenue, Not Clicks
             </p>

@@ -16,7 +16,7 @@ const SUPPORT_EMAIL_LINK =
   '<a class="external-link" href="mailto:support@meetcarrot.xyz" rel="nofollow">support@meetcarrot.xyz</a>';
 
 export const TERMS: LegalDoc = {
-  title: "Website Terms of Service",
+  title: "Terms of use",
   lastUpdated: "August 13, 2026",
   intro:
     "<p>These Website Terms of Service (“Terms”) govern your access to and use of the website operated by Carrot Company Limited, USA, a Delaware corporation (“Carrot,” “we,” “us,” or “our”).</p>",
@@ -96,7 +96,7 @@ export const TERMS: LegalDoc = {
 };
 
 export const PRIVACY: LegalDoc = {
-  title: "Privacy Policy",
+  title: "Privacy policy",
   lastUpdated: "August 13, 2026",
   intro:
     "<p>This Privacy Policy describes how Carrot Company Limited, USA, a Delaware corporation (“Carrot,” “we,” “us,” or “our”) collects, uses, and shares information when you use our website.</p><p>This Privacy Policy applies only to our website. The Carrot mobile app is governed by a separate Privacy Policy.</p><p>By using our website, you agree to the practices described in this Privacy Policy.</p>",

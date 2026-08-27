@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-
 import { VerticalPage } from "@/components/product/VerticalPage";
 import { VERTICALS } from "@/data/verticals";
+import { pageMetadata } from "@/lib/seo";
 
 const config = VERTICALS.services;
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: config.metaTitle,
   description: config.metaDescription,
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return <VerticalPage config={config} />;

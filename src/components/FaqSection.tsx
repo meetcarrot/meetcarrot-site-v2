@@ -36,10 +36,13 @@ export function FaqSection({ faqs = FAQS }: FaqSectionProps = {}) {
   }
 
   return (
-    <section className="py-14 lg:py-24">
+    <section className="py-14 lg:py-24" aria-labelledby="faqs-heading">
       <div className="mx-auto px-6 container lg:max-w-324">
         <Reveal className="flex flex-col gap-6 md:gap-6">
-          <h2 className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center">
+          <h2
+            id="faqs-heading"
+            className="leading-[115%]! font-poly-sans-wide text-[32px] md:text-[48px] lg:text-[56px] text-center"
+          >
             FAQs
           </h2>
         </Reveal>
@@ -53,7 +56,7 @@ export function FaqSection({ faqs = FAQS }: FaqSectionProps = {}) {
                 onClick={(event) => handleOpen(index, event.currentTarget)}
                 className={QUESTION_BUTTON_CLASS}
               >
-                <span className="text-[16px] leading-[1.33] font-medium text-left">
+                <span className="text-[18px] leading-[1.33] font-medium text-left">
                   <b>{faq.question}</b>
                 </span>
                 {/*

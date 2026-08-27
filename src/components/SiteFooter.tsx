@@ -3,11 +3,11 @@ import Link from "next/link";
 import { CarrotLogo } from "@/components/carrot-logo";
 import {
   AppStoreBadge,
-  CarIcon,
+  BagIcon,
+  CupIcon,
   GooglePlayBadge,
-  MortgageIcon,
-  OtherBillsIcon,
-  RentIcon,
+  LaptopIcon,
+  WrenchIcon,
 } from "@/components/icons";
 import { APP_STORE_URL, GOOGLE_PLAY_URL } from "@/lib/links";
 
@@ -20,9 +20,7 @@ const BADGE_LINK_CLASS =
   "block rounded-3xl overflow-hidden bg-black shadow-[0_2px_8px_0_rgba(0,0,0,0.12)] transition duration-200 ease-out hover:brightness-90 active:scale-[0.99] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2";
 
 /**
- * The category icons ship with a hard-coded white fill for the old dark footer,
- * so they are recoloured here rather than in the shared icon set — the same
- * icons are used on dark surfaces elsewhere.
+ * Category marks inherit gray, then pink on hover — same fill as the link text.
  */
 const NAV_LINK_CLASS =
   "group inline-flex items-center gap-3 [&_svg_path]:fill-gray-400 [&_svg_path]:transition-colors hover:[&_svg_path]:fill-pink focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2 rounded";
@@ -36,18 +34,16 @@ const LINK_TEXT_CLASS =
 
 type IconComponent = (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
 
-// TODO: placeholder icons — the four category marks are still the leftover
-// rent/mortgage/car set. The illustrated versions are too detailed at 16px.
 const CATEGORY_LINKS: ReadonlyArray<{
   href?: string;
   label: string;
   Icon: IconComponent;
   comingSoon?: boolean;
 }> = [
-  { href: "/hospitality", label: "Hospitality", Icon: RentIcon },
-  { href: "/retail", label: "Retail", Icon: MortgageIcon },
-  { href: "/services", label: "Services", Icon: CarIcon },
-  { label: "Digital", Icon: OtherBillsIcon, comingSoon: true },
+  { href: "/hospitality", label: "Hospitality", Icon: CupIcon },
+  { href: "/retail", label: "Retail", Icon: BagIcon },
+  { href: "/services", label: "Services", Icon: WrenchIcon },
+  { label: "Digital", Icon: LaptopIcon, comingSoon: true },
 ];
 
 const LEARN_MORE_LINKS: ReadonlyArray<{ href: string; label: string }> = [

@@ -69,40 +69,7 @@ export function SiteFooter() {
       data-header-theme="light"
     >
       <div className="mx-auto px-6 container lg:max-w-324">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
-          <div>
-            <Link
-              href="/"
-              aria-label="Carrot home"
-              className="inline-block rounded focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2"
-            >
-              <CarrotLogo idPrefix="footer-logo" className="h-auto w-24" />
-            </Link>
-            <p className="text-[16px] font-normal leading-[1.33] mt-5 max-w-70">
-              Pay for Revenue, Not Clicks
-            </p>
-            <div className="mt-8 flex flex-col items-start gap-4 min-[401px]:flex-row min-[401px]:items-center">
-              <a
-                aria-label="Download on the App Store"
-                className={BADGE_LINK_CLASS}
-                href={APP_STORE_URL}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <AppStoreBadge />
-              </a>
-              <a
-                aria-label="Get it on Google Play"
-                className={BADGE_LINK_CLASS}
-                href={GOOGLE_PLAY_URL}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <GooglePlayBadge />
-              </a>
-            </div>
-          </div>
-
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
           <nav aria-label="Categories">
             <p className={COLUMN_LABEL_CLASS}>Categories</p>
             <ul className="grid grid-cols-1 gap-4">
@@ -138,6 +105,39 @@ export function SiteFooter() {
               ))}
             </ul>
           </nav>
+
+          <div>
+            <Link
+              href="/"
+              aria-label="Carrot home"
+              className="inline-block rounded focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot/80 focus-visible:ring-offset-gray-100 focus-visible:ring-offset-2"
+            >
+              <CarrotLogo idPrefix="footer-logo" className="h-auto w-24" />
+            </Link>
+            <p className="text-[16px] font-normal leading-[1.33] mt-5 max-w-70">
+              Pay for Revenue, Not Clicks
+            </p>
+            <div className="mt-8 flex flex-col items-start gap-4 min-[401px]:flex-row min-[401px]:items-center">
+              <a
+                aria-label="Download on the App Store"
+                className={BADGE_LINK_CLASS}
+                href={APP_STORE_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <AppStoreBadge />
+              </a>
+              <a
+                aria-label="Get it on Google Play"
+                className={BADGE_LINK_CLASS}
+                href={GOOGLE_PLAY_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <GooglePlayBadge />
+              </a>
+            </div>
+          </div>
         </div>
 
         {/*
@@ -147,9 +147,9 @@ export function SiteFooter() {
           at 70% clears it.
         */}
         <div className="mt-12 pt-8 border-t border-black/10">
-          <p className="font-normal text-[12px] leading-[1.5] text-gray-400/70 max-w-180">
+          <p className="font-normal text-[12px] leading-[1.5] text-gray-400/70">
             © 2026 Carrot Company Limited, USA. Carrot is a technology company
-            that provides cashback services. All payments and remittances are
+            that provides cashback services to businesses. All payments and remittances are
             handled by Stripe.
           </p>
         </div>

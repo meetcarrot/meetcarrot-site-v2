@@ -1,6 +1,6 @@
 "use client";
 
-import { SUPPORT_EMAIL } from "@/lib/links";
+import { CHAT_WITH_US_MESSAGE, SUPPORT_EMAIL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 const CARD_CLASS =
@@ -49,10 +49,19 @@ function IconBadge({ tone, children }: { tone: "pink" | "gray"; children: React.
 }
 
 /**
- * The support entry points below the FAQs. Chat opens Intercom Messenger;
- * email is a real `mailto:`. Text and phone cards are omitted — Carrot has no
- * support line to point them at.
+ * The support entry points below the FAQs. Chat opens Intercom with a help
+ * prefill (not the Get Started copy); email is a real `mailto:`. Text and
+ * phone cards are omitted — Carrot has no support line to point them at.
  */
+function openChatWithUs() {
+  if (typeof window.Intercom === "function") {
+    window.Intercom("showNewMessage", CHAT_WITH_US_MESSAGE);
+    return;
+  }
+  const subject = encodeURIComponent("I have a question about Carrot");
+  const body = encodeURIComponent(CHAT_WITH_US_MESSAGE);
+  window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+}
 export function StillNeedHelp() {
   return (
     <section className="bg-gray-100">
@@ -66,7 +75,7 @@ export function StillNeedHelp() {
               type="button"
               className={cn(CARD_CLASS, "cursor-pointer text-left")}
               aria-haspopup="dialog"
-              onClick={() => window.Intercom?.("show")}
+              onClick={openChatWithUs}
             >
               <IconBadge tone="pink">
                 <ChatIcon />
@@ -77,7 +86,9 @@ export function StillNeedHelp() {
                   Start a conversation with our team
                 </p>
               </div>
-              <span className={cn(BADGE_CLASS, "bg-pink-50")}>Available 24/7</span>
+              <span className={cn(BADGE_CLASS, "bg-pink-50")}>
+                Weekdays from 9am - 5pm pst
+              </span>
             </button>
 
             <a className={CARD_CLASS} href={`mailto:${SUPPORT_EMAIL}`}>

@@ -173,10 +173,9 @@ export function DocModal({
         </h3>
 
         {/*
-          Fixed height so Prev / Next do not jump while paging. 35rem is the
-          measured tallest entry (Terms §4 Pass Purchases) at the 720px panel
-          width, with a little room; 60vh keeps that from swallowing short
-          viewports, and this region is the only one that scrolls.
+          Fixed height so Prev / Next stay put while paging. Long sections
+          (Merchant Terms definitions, billing) scroll in this region only —
+          do not grow the panel. 60vh keeps it from swallowing short viewports.
         */}
         <div
           ref={contentRef}

@@ -11,13 +11,13 @@ import {
 const HABITS: { icon: ReactNode; title: string; body: string }[] = [
   {
     icon: <ShieldIcon height={24} width={24} fill="var(--color-white)" />,
-    title: "Turn on two-factor",
-    body: "It`s already required. Make sure your recovery method is current.",
+    title: "Two-factor, built in",
+    body: "Every login sends a one-time PIN. There's nothing to turn on — that's just how sign-in works.",
   },
   {
     icon: <GridDotsIcon height={24} width={24} fill="var(--color-white)" />,
-    title: "Use an unique password",
-    body: "A password manager makes this effortless. Reused passwords are how most accounts get taken over.",
+    title: "No password on file",
+    body: "Carrot doesn't use passwords. Sign-in is PIN-based, so there's nothing stored for anyone to steal or reuse.",
   },
   {
     icon: <BellIcon height={24} width={24} fill="var(--color-white)" />,

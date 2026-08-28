@@ -10,58 +10,44 @@ import {
 } from "react";
 import { useReducedMotion } from "motion/react";
 
-import { HERO_PAIRS } from "@/data/hero-pairs";
+import { HERO_PAIR_CYCLE, HERO_PAIRS } from "@/data/hero-pairs";
 import { cn } from "@/lib/utils";
 
-const CYCLE_MS = 20_000;
+const CYCLE_MS = 5_000;
+const INITIAL_INDEX = HERO_PAIRS.findIndex((pair) => pair.id === 5);
 
-const HeroPairContext = createContext(0);
+const HeroPairContext = createContext(INITIAL_INDEX);
 
-function randomIndex(exclude?: number) {
-  const count = HERO_PAIRS.length;
-  if (count <= 1) return 0;
-  let next = Math.floor(Math.random() * count);
-  if (exclude === undefined) return next;
-  while (next === exclude) {
-    next = Math.floor(Math.random() * count);
-  }
-  return next;
+function nextIndex(current: number) {
+  const currentId = HERO_PAIRS[current]?.id ?? HERO_PAIRS[INITIAL_INDEX].id;
+  const at = HERO_PAIR_CYCLE.indexOf(currentId);
+  const nextId = HERO_PAIR_CYCLE[(at + 1) % HERO_PAIR_CYCLE.length];
+  return HERO_PAIRS.findIndex((pair) => pair.id === nextId);
 }
 
 /**
- * Picks a random left/right pair on mount, then crossfades to another pair
- * every few seconds. Both columns always show the same pair index.
- *
- * Pair 1 is the SSR default so LCP stays a real photo (not an empty frame)
- * and the markup matches on hydrate. The first client tick may swap it.
- * Holds ~20s, then a slow dissolve to the next pair.
+ * Pair 5 is the SSR default so LCP is a real photo and hydrate matches.
+ * Holds 5s, then dissolves along 5 → 1 → 4 → 2 → 3 → 5…
  */
 export function HeroPairRotator({ children }: { children: ReactNode }) {
   const reduced = useReducedMotion();
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(INITIAL_INDEX);
 
   useEffect(() => {
-    let timeoutId = 0;
-
-    // Randomize off the effect body so the SSR pair renders first and hydrate
-    // still matches; the swap lands on the next frame.
-    const initialId = window.setTimeout(() => setIndex(randomIndex()), 0);
-    if (reduced) return () => window.clearTimeout(initialId);
+    if (reduced) return;
+    let cycleId = 0;
 
     const tick = () => {
-      timeoutId = window.setTimeout(() => {
+      cycleId = window.setTimeout(() => {
         if (document.visibilityState === "visible") {
-          setIndex((current) => randomIndex(current));
+          setIndex((current) => nextIndex(current));
         }
         tick();
       }, CYCLE_MS);
     };
-
     tick();
-    return () => {
-      window.clearTimeout(initialId);
-      window.clearTimeout(timeoutId);
-    };
+
+    return () => window.clearTimeout(cycleId);
   }, [reduced]);
 
   return (
@@ -99,8 +85,8 @@ export function HeroFrame({
             src={shot.src}
             alt={active ? shot.alt : ""}
             fill
-            priority={pairIndex === 0}
-            loading={pairIndex === 0 ? undefined : "eager"}
+            priority={pairIndex === INITIAL_INDEX}
+            loading={pairIndex === INITIAL_INDEX ? undefined : "eager"}
             unoptimized
             sizes={sizes}
             aria-hidden={!active}

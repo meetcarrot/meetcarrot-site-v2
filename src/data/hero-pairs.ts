@@ -16,6 +16,11 @@ export interface HeroPair {
   right: HeroShot;
 }
 
+/**
+ * Display order (by `id`). Always starts on 5, then 1 → 4 → 2 → 3 → 5…
+ */
+export const HERO_PAIR_CYCLE = [5, 1, 4, 2, 3] as const satisfies readonly HeroPair["id"][];
+
 export const HERO_PAIRS: readonly HeroPair[] = [
   {
     id: 1,

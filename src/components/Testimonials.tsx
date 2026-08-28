@@ -46,6 +46,14 @@ export interface TestimonialsProps {
 }
 
 /**
+ * Split Pay capped the rail at 1920px (`max-w-480 mx-auto`) and added 16px of
+ * end padding from that width (`min-[1920px]:px-4`). That left gray gutters on
+ * large desktops. Flip this to restore the cap — homepage and category pages
+ * share this component, so one switch reverts all of them.
+ */
+const RAIL_FLUSH_TO_VIEWPORT = true;
+
+/**
  * Rail owns its own scroll position, so it must not opt into any behaviour that
  * lets the browser move the rail behind our back:
  *  - no `scroll-smooth`: every programmatic write would animate, and the
@@ -56,8 +64,12 @@ export interface TestimonialsProps {
  *    native horizontal panning would double every touch gesture. Vertical pans
  *    still fall through to the page.
  */
-const RAIL_BASE =
-  "flex py-8 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden touch-pan-y gap-6 lg:gap-8 min-[1920px]:px-4";
+const RAIL_BASE = [
+  "flex py-8 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden touch-pan-y gap-6 lg:gap-8",
+  RAIL_FLUSH_TO_VIEWPORT ? "" : "min-[1920px]:px-4",
+]
+  .filter(Boolean)
+  .join(" ");
 
 /** Pixels per second of idle drift. Slow enough to read a card while it moves. */
 const AUTO_SCROLL_SPEED = 24;
@@ -271,7 +283,7 @@ export function Testimonials({
       <div className="flex flex-col gap-6 md:gap-6 px-4">
         <Image
           src="/images/average-rating.svg"
-          alt="Five-star average customer rating"
+          alt="Excellent average rating"
           width={239}
           height={104}
           className="w-40 mx-auto h-auto md:w-57.5"
@@ -284,7 +296,11 @@ export function Testimonials({
         </h2>
       </div>
       <div className="mt-8 lg:mt-14">
-        <div className="w-full max-w-480 mx-auto">
+        <div
+          className={
+            RAIL_FLUSH_TO_VIEWPORT ? "w-full" : "w-full max-w-480 mx-auto"
+          }
+        >
           <div
             ref={railRef}
             role="region"

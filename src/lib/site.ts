@@ -19,3 +19,8 @@ export const ROUTES = [
   { path: "/terms", priority: 0.3 },
   { path: "/privacy", priority: 0.3 },
 ] as const;
+
+/** Paths crawlers must not fetch. Kept out of `ROUTES` / the sitemap on purpose. */
+export const ROBOTS_DISALLOW = [
+  "/terms/merchant-terms-and-conditions",
+] as const;

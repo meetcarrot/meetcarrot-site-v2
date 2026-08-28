@@ -1,18 +1,19 @@
-import Link from "next/link";
+"use client";
 
 import { SectionBadge } from "@/components/safety/SectionBadge";
 import { UserCircleIcon, ShieldUserIcon } from "@/components/safety/icons";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  CONTACT_SUPPORT_MESSAGE,
+  REPORT_VULNERABILITY_MESSAGE,
+  openIntercomMessage,
+} from "@/lib/links";
 
 /**
- * The target renders these two CTAs as anchors carrying the primary button's
- * class string, minus its `w-full`; `w-auto` is what twMerge drops it for.
+ * The two CTAs size to their label (`inline-flex w-auto`) rather than the
+ * full card width the primary button defaults to.
  */
-const CTA_CLASS = cn(
-  buttonVariants({ variant: "primary", size: "default" }),
-  "inline-flex w-auto items-center justify-center",
-);
+const CTA_CLASS = "inline-flex w-auto";
 
 export function ReportAnIssue() {
   return (
@@ -47,9 +48,17 @@ export function ReportAnIssue() {
               Contact us through our app, or email us. We treat every report as
               urgent and respond within one business day.
             </p>
-            <Link className={CTA_CLASS} href="/help">
-              <div className="relative z-20">Contact support</div>
-            </Link>
+            <Button
+              className={CTA_CLASS}
+              onClick={() =>
+                openIntercomMessage(
+                  CONTACT_SUPPORT_MESSAGE,
+                  "I need to contact Carrot support",
+                )
+              }
+            >
+              Contact support
+            </Button>
           </div>
           <div className="flex flex-col items-center text-center rounded-4xl p-10 bg-gray-400 text-white">
             <div className="flex items-center justify-center rounded-full w-16 h-16 mb-6 bg-white">
@@ -67,9 +76,17 @@ export function ReportAnIssue() {
               We welcome responsible disclosure. We&#39;ll respond, fix, and
               credit your work.
             </p>
-            <Link className={CTA_CLASS} href="/help">
-              <div className="relative z-20">Report a vulnerability</div>
-            </Link>
+            <Button
+              className={CTA_CLASS}
+              onClick={() =>
+                openIntercomMessage(
+                  REPORT_VULNERABILITY_MESSAGE,
+                  "I'd like to report a security vulnerability",
+                )
+              }
+            >
+              Report a vulnerability
+            </Button>
           </div>
         </div>
       </div>

@@ -30,3 +30,49 @@ Please tell us a bit about you so we can follow up:
 Who you are:
 Best way to reach you:
 The name of your business:`;
+
+/**
+ * Prefilled into the Intercom composer from Help → Chat with us. Same blanks as
+ * Get Started so the team can follow up; different intro so it isn't a signup.
+ */
+export const CHAT_WITH_US_MESSAGE = `I have a question for the Carrot team.
+
+Please tell us a bit about you so we can follow up:
+
+Who you are:
+Best way to reach you:
+The name of your business:`;
+
+/**
+ * Safety page → Contact support. Account / member issues, not a signup.
+ */
+export const CONTACT_SUPPORT_MESSAGE = `I need to contact Carrot support about my account.
+
+Please tell us a bit about you so we can follow up:
+
+Who you are:
+Best way to reach you:
+The name of your business:`;
+
+/**
+ * Safety page → Report a vulnerability. Responsible disclosure intake.
+ */
+export const REPORT_VULNERABILITY_MESSAGE = `I'd like to report a security vulnerability.
+
+Please tell us a bit about you so we can follow up:
+
+Who you are:
+Best way to reach you:
+The name of your business:
+What you found:`;
+
+/** Opens Intercom with a prefill, or a matching mailto if Messenger never loaded. */
+export function openIntercomMessage(message: string, mailtoSubject: string) {
+  if (typeof window.Intercom === "function") {
+    window.Intercom("showNewMessage", message);
+    return;
+  }
+  const subject = encodeURIComponent(mailtoSubject);
+  const body = encodeURIComponent(message);
+  window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+}

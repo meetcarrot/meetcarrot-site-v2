@@ -115,7 +115,7 @@ function SceneLayer({
           alt=""
           width={640}
           height={640}
-          sizes="220px"
+          sizes="(min-width: 1024px) 280px, 200px"
           className="h-auto w-full max-h-none max-w-none select-none bg-transparent"
         />
       ) : null}

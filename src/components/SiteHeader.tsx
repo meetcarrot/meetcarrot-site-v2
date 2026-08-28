@@ -78,7 +78,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40 transition-[opacity,visibility] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100">
+      <header className="fixed inset-x-0 top-[var(--dev-font-panel-h,0px)] z-40 transition-[opacity,visibility,top] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] visible opacity-100">
         <div
           aria-hidden="true"
           className={cn(

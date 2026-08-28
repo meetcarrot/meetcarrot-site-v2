@@ -1,8 +1,10 @@
 # Carrot site — current decisions
 
-Working notes for this marketing site, as of 26 Aug 2026. The files under
+Working notes for this marketing site, as of 27 Aug 2026. The files under
 `docs/research/` still describe the Split Pay clone target. This page describes
 what Carrot actually ships.
+
+Open work: **`docs/OPEN_ITEMS.md`**.
 
 ## CTAs
 
@@ -30,12 +32,35 @@ Photographs:
 
 No hanging phone overlay.
 
+## Type
+
+Body is **Satoshi** (400/500). Headlines are **Bricolage Grotesque** (600).
+GT America + PolySans Wide remains available in the local font preview panel
+(`npm run dev` only) until a final pair is locked.
+
 ## Hero
 
 - White band, `data-header-theme="light"`.
-- Left: `/images/deco-left.jpg` (father and son dining).
-- Right: `/images/deco-right.jpg` (full-frame restaurant payment photo). Keep
-  `object-cover object-center` so the background people stay in frame.
+- Five left/right pairs. Pair 1 is `deco-left.jpg` / `deco-right.jpg`; pairs
+  2–5 live under `/images/hero/`. A random pair shows on load, then the
+  columns dissolve together every 20s. Left crops hold the person + phone;
+  right crops hold the payment (or the closest action in that pair).
+- Drop originals into `public/images/hero/` in Finder. Chat attachments have
+  arrived as smaller JPEGs misnamed `.png`.
+
+## Category pages
+
+- Hero clay icons (`CategoryIcon`) sit in a larger slot: `h-32` / `md:h-40` /
+  `lg:h-48`. Overflow stays visible so the enter animation is not clipped.
+- Easy For You intro is the shared two sentences on Hospitality, Retail, and
+  Services. Digital still carries a PENDING placeholder and stays unlinked.
+
+## FAQ / legal detail modal
+
+Shared `DocModal` (FAQs, Terms, Privacy). Fixed height `min(60vh, 35rem)` so
+Prev / Next do not jump while paging. 35rem is Terms §4 Pass Purchases (the
+tallest entry) at the 720px panel, with a little room; 60vh keeps short
+viewports from filling the screen. Longer sections scroll inside.
 
 ## Footer
 

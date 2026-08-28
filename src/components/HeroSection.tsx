@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import { HeroFrame, HeroPairRotator } from "@/components/HeroPairRotator";
 import { CheckIcon } from "@/components/icons";
 import { GetStartedButton } from "@/components/GetStartedButton";
 
@@ -15,20 +14,16 @@ export function HeroSection() {
   return (
     <section className="bg-white pt-18 md:pt-28" data-header-theme="light">
       <div className="mx-auto px-6 container lg:max-w-324 pt-12">
-        <div className="flex justify-between gap-6">
+        <HeroPairRotator>
+          <div className="flex justify-between gap-6">
           <div className="h-fill flex-1 relative hidden lg:block">
             {/* -bottom-12 lets the photo bleed 48px past the hero band; nothing above may clip it. */}
-            <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
-              <Image
-                src="/images/deco-left.jpg"
-                alt="Father and young son dining together"
-                fill
-                priority
-                fetchPriority="high"
-                className="object-cover"
-                sizes="(min-width: 1024px) 33vw, 0vw"
-              />
-            </div>
+            <HeroFrame
+              side="left"
+              bleed
+              sizes="(min-width: 1024px) 33vw, 0vw"
+              className="rounded-3xl shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]"
+            />
           </div>
 
           <div className="w-120 md:w-full lg:w-98.5 max-w-full mx-auto">
@@ -72,41 +67,29 @@ export function HeroSection() {
                 shorter than the cells so the photos bleed 48px (mobile) / 64px
                 (md) into the next section — matching Split Pay. */}
             <div className="grid grid-cols-2 gap-6 h-60 md:h-134 lg:hidden">
-              <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
-                <Image
-                  src="/images/deco-left.jpg"
-                  alt="Father and young son dining together"
-                  fill
-                  priority
-                  fetchPriority="high"
-                  className="object-cover"
-                  sizes="(max-width: 1023px) 50vw, 0vw"
-                />
-              </div>
-              <div className="w-full h-72 md:h-150 relative rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
-                <Image
-                  src="/images/deco-right.jpg"
-                  alt="Woman tapping a card to pay at a restaurant"
-                  fill
-                  className="object-cover object-center brightness-105"
-                  sizes="(max-width: 1023px) 50vw, 0vw"
-                />
-              </div>
+              <HeroFrame
+                side="left"
+                sizes="(max-width: 1023px) 50vw, 0vw"
+                className="w-full h-72 md:h-150 rounded-3xl shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]"
+              />
+              <HeroFrame
+                side="right"
+                sizes="(max-width: 1023px) 50vw, 0vw"
+                className="w-full h-72 md:h-150 rounded-3xl shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]"
+              />
             </div>
           </div>
 
           <div className="h-fill flex-1 relative hidden lg:block">
-            <div className="absolute inset-0 -bottom-12 rounded-3xl overflow-hidden shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]">
-              <Image
-                src="/images/deco-right.jpg"
-                alt="Woman tapping a card to pay at a restaurant"
-                fill
-                className="object-cover object-center brightness-105"
-                sizes="(min-width: 1024px) 33vw, 0vw"
-              />
-            </div>
+            <HeroFrame
+              side="right"
+              bleed
+              sizes="(min-width: 1024px) 33vw, 0vw"
+              className="rounded-3xl shadow-[0_8px_16px_0_rgba(0,0,0,0.10)]"
+            />
           </div>
         </div>
+        </HeroPairRotator>
       </div>
     </section>
   );

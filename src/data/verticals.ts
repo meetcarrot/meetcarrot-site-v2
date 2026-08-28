@@ -158,7 +158,7 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your customers.",
     easyIntro:
-      "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
+      "Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
     easyCards: SHARED_WIN_WIN_WIN,
     ctaTitle: "More time for the things you love",
@@ -186,7 +186,7 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your customers.",
     easyIntro:
-      "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
+      "Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
     easyCards: SHARED_WIN_WIN_WIN,
     ctaTitle: "More time for the things you love",
@@ -214,7 +214,7 @@ export const VERTICALS: Record<Vertical, VerticalConfig> = {
     consumerSteps: SHARED_CONSUMER_STEPS,
     easyHeading: "Easy for you. Easy for your clients.",
     easyIntro:
-      "PENDING — awaiting final Easy For You copy. Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
+      "Carrot runs alongside your existing setup. Nothing changes about how you take payment.",
     easySteps: SHARED_EASY_STEPS,
     easyCards: SHARED_WIN_WIN_WIN,
     ctaTitle: "More time for the things you love",

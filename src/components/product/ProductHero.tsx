@@ -173,7 +173,7 @@ export function ProductHero({
         <div className="block justify-between gap-6 lg:flex">
           <div className="w-full lg:w-150 shrink-0 lg:pt-6 mx-auto">
             <motion.div
-              className="illustration-component flex items-center justify-center lg:w-50 h-26 lg:h-30"
+              className="illustration-component flex items-center justify-center overflow-visible h-32 md:h-40 lg:h-48 lg:w-60"
               {...enter("up", 0.05)}
             >
               {illustration}

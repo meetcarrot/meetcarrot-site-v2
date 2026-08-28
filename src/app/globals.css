@@ -62,13 +62,17 @@
   --color-gray-600: #90919b;
   --color-red: #e61700;
 
-  --font-sans: var(--font-gt-america), Arial, sans-serif;
+  --font-sans: var(--font-body), Arial, sans-serif;
   --font-mono: var(--font-gt-america-mono), Arial, sans-serif;
 }
 
 @layer base {
   html {
     color-scheme: light only;
+    --font-body: var(--font-satoshi), Arial, sans-serif;
+    --font-headline: var(--font-bricolage), Arial, sans-serif;
+    --font-bricolage: "Bricolage Grotesque", Arial, sans-serif;
+    --dev-font-panel-h: 0px;
     /*
      * Reserve the scrollbar gutter permanently.
      *
@@ -85,10 +89,11 @@
   body {
     color: var(--color-gray-400);
     background-color: var(--color-gray-100);
-    font-family: var(--font-gt-america), Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
     font-style: normal;
     line-height: 1.33;
+    padding-top: var(--dev-font-panel-h);
   }
 
   /* Skip-to-content focuses <main>; do not draw a page-sized ring. */
@@ -115,7 +120,7 @@
 @layer utilities {
   /* The target ships these as bespoke utilities rather than theme font families. */
   .font-default {
-    font-family: var(--font-gt-america);
+    font-family: var(--font-body);
   }
 
   .font-mono {
@@ -124,7 +129,7 @@
   }
 
   .font-poly-sans-wide {
-    font-family: var(--font-poly-sans-wide);
+    font-family: var(--font-headline);
     font-weight: 600;
   }
 

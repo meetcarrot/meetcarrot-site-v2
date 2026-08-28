@@ -154,7 +154,7 @@ export function DocModal({
         aria-labelledby={TITLE_ID}
         tabIndex={-1}
         onKeyDown={handleKeyDown}
-        className="relative flex h-full w-full max-w-[720px] flex-col overflow-hidden bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] focus-visible:outline-none"
+        className="relative flex h-[min(60vh,35rem)] w-full max-w-[720px] flex-col overflow-hidden bg-white rounded-[20px] md:rounded-3xl lg:rounded-4xl shadow-[0_8px_32px_0_rgba(0,0,0,0.15)] focus-visible:outline-none"
       >
         <button
           type="button"
@@ -173,8 +173,10 @@ export function DocModal({
         </h3>
 
         {/*
-          The panel height is fixed; only this region grows, shrinks, and
-          scrolls as the paged entry gets longer or shorter.
+          Fixed height so Prev / Next do not jump while paging. 35rem is the
+          measured tallest entry (Terms §4 Pass Purchases) at the 720px panel
+          width, with a little room; 60vh keeps that from swallowing short
+          viewports, and this region is the only one that scrolls.
         */}
         <div
           ref={contentRef}

@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/Analytics";
+import { FontPreviewPanel } from "@/components/FontPreviewPanel";
 import { Intercom } from "@/components/Intercom";
 import { JsonLd } from "@/components/JsonLd";
 import { SkipToContent } from "@/components/SkipToContent";
 import { APP_STORE_ID } from "@/lib/links";
+import { fontPreviewBootScript } from "@/lib/font-preview";
 import { SITE_DESCRIPTION, SITE_TITLE, siteGraphJsonLd } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -13,6 +15,7 @@ import "./globals.css";
 const gtAmerica = localFont({
   variable: "--font-gt-america",
   display: "swap",
+  preload: false,
   fallback: ["Arial"],
   src: [
     {
@@ -45,11 +48,30 @@ const gtAmericaMono = localFont({
 const polySansWide = localFont({
   variable: "--font-poly-sans-wide",
   display: "swap",
+  preload: false,
   fallback: ["Arial"],
   src: [
     {
       path: "../../public/fonts/PolySans_MedianWide.otf",
       weight: "600",
+      style: "normal",
+    },
+  ],
+});
+
+const satoshi = localFont({
+  variable: "--font-satoshi",
+  display: "swap",
+  fallback: ["Arial"],
+  src: [
+    {
+      path: "../../public/fonts/Satoshi-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Satoshi-Medium.woff2",
+      weight: "500",
       style: "normal",
     },
   ],
@@ -115,7 +137,7 @@ export default function RootLayout({
       id="carrot-app"
       lang="en"
       translate="no"
-      className={`${gtAmerica.variable} ${gtAmericaMono.variable} ${polySansWide.variable}`}
+      className={`${satoshi.variable} ${gtAmerica.variable} ${gtAmericaMono.variable} ${polySansWide.variable}`}
     >
       <head>
         {/* Motion wrappers server-render at opacity:0 and are revealed on
@@ -124,8 +146,24 @@ export default function RootLayout({
         <noscript>
           <style>{`[data-motion-hidden]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&display=swap"
+        />
+        {process.env.NODE_ENV === "development" ? (
+          <script
+            dangerouslySetInnerHTML={{ __html: fontPreviewBootScript() }}
+          />
+        ) : null}
       </head>
       <body className="transition-colors duration-200 ease-in-out">
+        {process.env.NODE_ENV === "development" ? <FontPreviewPanel /> : null}
         <SkipToContent />
         {children}
         <JsonLd data={siteGraphJsonLd()} />

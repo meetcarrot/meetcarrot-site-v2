@@ -5,6 +5,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -14,9 +15,19 @@ import { HERO_PAIR_CYCLE, HERO_PAIRS } from "@/data/hero-pairs";
 import { cn } from "@/lib/utils";
 
 const CYCLE_MS = 5_000;
+/** How long the right frame trails the left, so one side moves at a time. */
+const SIDE_STAGGER_MS = 1_400;
 const INITIAL_INDEX = HERO_PAIRS.findIndex((pair) => pair.id === 5);
 
-const HeroPairContext = createContext(INITIAL_INDEX);
+interface HeroPairIndexes {
+  left: number;
+  right: number;
+}
+
+const HeroPairContext = createContext<HeroPairIndexes>({
+  left: INITIAL_INDEX,
+  right: INITIAL_INDEX,
+});
 
 function nextIndex(current: number) {
   const currentId = HERO_PAIRS[current]?.id ?? HERO_PAIRS[INITIAL_INDEX].id;
@@ -26,32 +37,49 @@ function nextIndex(current: number) {
 }
 
 /**
- * Pair 5 is the SSR default so LCP is a real photo and hydrate matches.
- * Holds 5s, then dissolves along 5 → 1 → 4 → 2 → 3 → 5…
+ * Both sides always open on pair 5 — it is the SSR default, so LCP is a real
+ * photo and hydrate matches. Every 5s the pair advances along
+ * 5 → 1 → 4 → 2 → 3 → 5…, with the left frame dissolving first and the right
+ * one following {@link SIDE_STAGGER_MS} later, so the two never turn together.
  */
 export function HeroPairRotator({ children }: { children: ReactNode }) {
   const reduced = useReducedMotion();
-  const [index, setIndex] = useState(INITIAL_INDEX);
+  const [indexes, setIndexes] = useState<HeroPairIndexes>({
+    left: INITIAL_INDEX,
+    right: INITIAL_INDEX,
+  });
+  const leftIndexRef = useRef(INITIAL_INDEX);
 
   useEffect(() => {
     if (reduced) return;
     let cycleId = 0;
+    let staggerId = 0;
 
     const tick = () => {
       cycleId = window.setTimeout(() => {
         if (document.visibilityState === "visible") {
-          setIndex((current) => nextIndex(current));
+          const next = nextIndex(leftIndexRef.current);
+          leftIndexRef.current = next;
+          setIndexes((current) => ({ ...current, left: next }));
+          staggerId = window.setTimeout(() => {
+            setIndexes((current) => ({ ...current, right: next }));
+          }, SIDE_STAGGER_MS);
         }
         tick();
       }, CYCLE_MS);
     };
     tick();
 
-    return () => window.clearTimeout(cycleId);
+    return () => {
+      window.clearTimeout(cycleId);
+      window.clearTimeout(staggerId);
+    };
   }, [reduced]);
 
   return (
-    <HeroPairContext.Provider value={index}>{children}</HeroPairContext.Provider>
+    <HeroPairContext.Provider value={indexes}>
+      {children}
+    </HeroPairContext.Provider>
   );
 }
 
@@ -66,7 +94,7 @@ export function HeroFrame({
   bleed?: boolean;
   className?: string;
 }) {
-  const index = useContext(HeroPairContext);
+  const index = useContext(HeroPairContext)[side];
 
   return (
     <div

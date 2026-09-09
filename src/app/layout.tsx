@@ -2,12 +2,10 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 import { Analytics } from "@/components/Analytics";
-import { FontPreviewPanel } from "@/components/FontPreviewPanel";
 import { Intercom } from "@/components/Intercom";
 import { JsonLd } from "@/components/JsonLd";
 import { SkipToContent } from "@/components/SkipToContent";
 import { APP_STORE_ID } from "@/lib/links";
-import { fontPreviewBootScript } from "@/lib/font-preview";
 import { OG_IMAGE, SITE_DESCRIPTION, SITE_TITLE, siteGraphJsonLd } from "@/lib/seo";
 import { getMetadataBase, SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -158,14 +156,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&display=swap"
         />
-        {process.env.NODE_ENV === "development" ? (
-          <script
-            dangerouslySetInnerHTML={{ __html: fontPreviewBootScript() }}
-          />
-        ) : null}
       </head>
       <body className="transition-colors duration-200 ease-in-out">
-        {process.env.NODE_ENV === "development" ? <FontPreviewPanel /> : null}
         <SkipToContent />
         {children}
         <JsonLd data={siteGraphJsonLd()} />

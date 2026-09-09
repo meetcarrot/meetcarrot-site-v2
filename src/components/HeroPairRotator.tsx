@@ -11,12 +11,17 @@ import {
 } from "react";
 import { useReducedMotion } from "motion/react";
 
+import {
+  HeroStoryChip,
+  SHOW_HERO_STORY_CHIPS,
+} from "@/components/HeroStoryChip";
 import { HERO_PAIR_CYCLE, HERO_PAIRS } from "@/data/hero-pairs";
 import { cn } from "@/lib/utils";
 
-const CYCLE_MS = 5_000;
-/** How long the right frame trails the left, so one side moves at a time. */
-const SIDE_STAGGER_MS = 1_400;
+/** Time from one left-swap to the next. Long enough for left → right → a hold. */
+const CYCLE_MS = 9_000;
+/** Right waits until the left photo and its chip have landed. */
+const SIDE_STAGGER_MS = 3_000;
 const INITIAL_INDEX = HERO_PAIRS.findIndex((pair) => pair.id === 5);
 
 interface HeroPairIndexes {
@@ -38,9 +43,10 @@ function nextIndex(current: number) {
 
 /**
  * Both sides always open on pair 5 — it is the SSR default, so LCP is a real
- * photo and hydrate matches. Every 5s the pair advances along
+ * photo and hydrate matches. Every 9s the pair advances along
  * 5 → 1 → 4 → 2 → 3 → 5…, with the left frame dissolving first and the right
- * one following {@link SIDE_STAGGER_MS} later, so the two never turn together.
+ * one following {@link SIDE_STAGGER_MS} later, so you see the offer land,
+ * then the purchase, then a pause before the next pair.
  */
 export function HeroPairRotator({ children }: { children: ReactNode }) {
   const reduced = useReducedMotion();
@@ -127,6 +133,9 @@ export function HeroFrame({
           />
         );
       })}
+      {SHOW_HERO_STORY_CHIPS ? (
+        <HeroStoryChip side={side} pairToken={index} />
+      ) : null}
     </div>
   );
 }

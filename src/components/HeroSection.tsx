@@ -30,7 +30,9 @@ export function HeroSection() {
             <h1 className="leading-[115%]! font-poly-sans-wide text-center text-[40px] md:text-[56px] lg:text-[64px] lg:pt-12 leading-[1.15]">
               The Way
               <br />
-              Marketing Should Be
+              Marketing
+              <br />
+              Should Be
             </h1>
             <p className="text-[16px] font-normal mb-6 mt-1 md:mt-1.25 text-center leading-[1.6]">
               Turn on steady, automated revenue

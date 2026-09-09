@@ -16,13 +16,19 @@ export const SITE_DESCRIPTION =
 
 export const OG_IMAGE_ALT = "Carrot — The Way Marketing Should Be";
 
-/** Canonical share-card file. App Router also serves this as
- *  `src/app/opengraph-image.png`; JSON-LD points at the stable public path. */
+/**
+ * Canonical share-card file — the photo only. iMessage / Slack already
+ * render the page title under it, so this is not a designed card.
+ * JPEG with no alpha (iMessage drops transparent PNGs). Pair 5's left
+ * hero is the homepage default; crawlers cache one URL, so this stays
+ * a single stable frame.
+ */
 export const OG_IMAGE = {
-  url: "/seo/og-image.png",
+  url: "/seo/og-image.jpg",
   width: 1200,
   height: 630,
   alt: OG_IMAGE_ALT,
+  type: "image/jpeg",
 } as const;
 
 /** Skip-link target. Every page's `<main>` must use this id. */
@@ -34,8 +40,9 @@ function absoluteUrl(path: string): string {
 
 /**
  * Canonical + Open Graph + Twitter for a single route. Pages pass the same
- * title and description they already used; share-card images come from
- * `src/app/opengraph-image.png` / `twitter-image.png`.
+ * title and description they already used. Canonical stays on `SITE_URL`;
+ * `og:image` is the stable `/seo/og-image.jpg` path (resolved against
+ * `metadataBase`, which is the host that actually serves this build).
  */
 export function pageMetadata({
   title,
@@ -50,7 +57,7 @@ export function pageMetadata({
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: url },
     openGraph: {
       type: "website",
       url,
@@ -58,11 +65,13 @@ export function pageMetadata({
       title,
       description,
       locale: "en_US",
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [OG_IMAGE],
     },
     robots: { index: true, follow: true },
   };

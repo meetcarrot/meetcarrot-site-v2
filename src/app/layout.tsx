@@ -8,8 +8,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { SkipToContent } from "@/components/SkipToContent";
 import { APP_STORE_ID } from "@/lib/links";
 import { fontPreviewBootScript } from "@/lib/font-preview";
-import { SITE_DESCRIPTION, SITE_TITLE, siteGraphJsonLd } from "@/lib/seo";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_DESCRIPTION, SITE_TITLE, siteGraphJsonLd } from "@/lib/seo";
+import { getMetadataBase, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const gtAmerica = localFont({
@@ -87,10 +87,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  // Self-canonical. Per-page metadata overrides this with its own path; without
-  // it, query-string and trailing-slash variants can be indexed separately.
-  alternates: { canonical: "/" },
+  metadataBase: getMetadataBase(),
+  // Self-canonical on the brand origin, even when `metadataBase` is a preview
+  // host so `og:image` can be fetched from a URL that actually serves it.
+  alternates: { canonical: SITE_URL },
   // Filled from the environment so the token is not committed. Unset renders
   // no tag, which is the correct default before the property is verified.
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -105,11 +105,13 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
   itunes: { appId: APP_STORE_ID },

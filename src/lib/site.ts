@@ -2,6 +2,23 @@
 export const SITE_URL = "https://meetcarrot.xyz";
 
 /**
+ * Origin used to resolve relative metadata URLs (`og:image`, icons).
+ * Canonical links still use `SITE_URL`. Share-card images must be fetched
+ * from a host that actually serves this build — `meetcarrot.xyz` currently
+ * still points at the previous site, so using it as `metadataBase` makes
+ * iMessage request a 404 and show a gray box.
+ */
+export function getMetadataBase(): URL {
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  }
+  if (process.env.NODE_ENV !== "production") {
+    return new URL("http://localhost:3000");
+  }
+  return new URL(SITE_URL);
+}
+
+/**
  * Every indexable route, in one place so the sitemap and any redirect map stay
  * in step with the app directory.
  *
@@ -20,7 +37,11 @@ export const ROUTES = [
   { path: "/privacy", priority: 0.3 },
 ] as const;
 
+/** Current merchant-terms URL. Old agreements still cite `/legals/terms`. */
+export const MERCHANT_TERMS_PATH = "/terms/merchant-terms-and-conditions";
+
 /** Paths crawlers must not fetch. Kept out of `ROUTES` / the sitemap on purpose. */
 export const ROBOTS_DISALLOW = [
-  "/terms/merchant-terms-and-conditions",
+  MERCHANT_TERMS_PATH,
+  "/legals/",
 ] as const;

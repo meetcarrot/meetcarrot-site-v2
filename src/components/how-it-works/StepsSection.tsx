@@ -33,9 +33,14 @@ export function StepsSection() {
               <div className="flex items-center justify-center w-full">
                 <StepIllustration id={step.id} />
               </div>
-              <p className="font-normal text-center text-[18px] md:text-[24px] w-full">
-                <b className="font-medium">{step.title}.</b> {step.copy}
-              </p>
+              <div className="w-full flex flex-col items-center gap-3">
+                <h2 className="font-medium text-center text-[18px] md:text-[24px] leading-[1.2]">
+                  {step.title}
+                </h2>
+                <p className="font-normal text-center text-[18px] md:text-[24px] w-full">
+                  {step.copy}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -10,7 +10,7 @@ export const metadata = {
   ...pageMetadata({
     title: "Merchant terms and conditions - Carrot",
     description:
-      "These Carrot Merchant Terms and Conditions are entered into by and between Carrot Company Limited, USA and the Merchant identified in the Enrollment Agreement.",
+      "These Carrot Merchant Terms and Conditions are entered into by and between Carrot Company Limited, USA and the Merchant.",
     path: MERCHANT_TERMS_PATH,
   }),
   robots: { index: false, follow: false },

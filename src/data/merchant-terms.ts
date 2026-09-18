@@ -32,7 +32,7 @@ const DEFINITIONS: ReadonlyArray<{ term: string; meaning: string }> = [
   {
     term: "Authorized Representative",
     meaning:
-      "“Authorized Representative” means any individual who accepts or signs the Enrollment Agreement on behalf of the Merchant. The Merchant represents and warrants that the person accepting the Enrollment Agreement has full actual and apparent authority to bind the Merchant, and the Merchant waives any right to challenge the validity of the Agreement based on lack of authority of the signatory.",
+      "“Authorized Representative” means any individual who accepts or signs the Enrollment Agreement, or otherwise enrolls or participates on behalf of the Merchant. The Merchant represents and warrants that the person accepting the Enrollment Agreement, or otherwise enrolling or participating on behalf of the Merchant, has full actual and apparent authority to bind the Merchant, and the Merchant waives any right to challenge the validity of the Agreement based on lack of authority of the signatory.",
   },
   {
     term: "Bad Faith Breach",
@@ -42,7 +42,7 @@ const DEFINITIONS: ReadonlyArray<{ term: string; meaning: string }> = [
   {
     term: "Campaign",
     meaning:
-      "“Campaign” means the Merchant’s participation in Carrot’s cashback program as described in the Enrollment Agreement and governed by these Terms.",
+      "“Campaign” means the Merchant’s participation in Carrot’s cashback program as governed by these Terms and, if one exists, the Enrollment Agreement.",
   },
   {
     term: "Carrot Determination",
@@ -77,12 +77,12 @@ const DEFINITIONS: ReadonlyArray<{ term: string; meaning: string }> = [
   {
     term: "Effective Date",
     meaning:
-      "“Effective Date” means the date the Merchant executes or electronically accepts the Enrollment Agreement, or the date the Merchant’s first cashback offer goes live on the Carrot Network, whichever is later.",
+      "“Effective Date” means the earliest of: (i) the date the Merchant executes or electronically accepts an Enrollment Agreement; (ii) the date the Merchant is enrolled through Carrot, an Affiliate, a partner, or in connection with any other Carrot product or service; (iii) the date the Merchant’s first cashback offer goes live on the Carrot Network; or (iv) the date the Merchant first provides a Payment Method, receives a Weekly Statement, or makes payment for Offer Reimbursements.",
   },
   {
     term: "Enrollment Agreement",
     meaning:
-      "“Enrollment Agreement” means the individualized Carrot Merchant Enrollment Agreement executed (or electronically accepted) by the Merchant, which identifies the specific products and services being purchased (including Snapshot and/or the cashback program), the applicable Offer Parameters, pricing, and other commercial terms, and incorporates these Terms by reference.",
+      "“Enrollment Agreement” means any individualized Carrot merchant enrollment form, insertion order, partner enrollment, bundled product enrollment, or similar commercial document executed, electronically accepted, or otherwise agreed to by or on behalf of the Merchant, including enrollment effected through Carrot, an Affiliate, or a partner, which identifies the products or services being purchased, the applicable Offer Parameters (if any), pricing, and other commercial terms, and incorporates these Terms by reference. If no such document exists, these Terms, together with the Merchant’s participation in the program, constitute the Agreement.",
   },
   {
     term: "Force Majeure",
@@ -97,12 +97,12 @@ const DEFINITIONS: ReadonlyArray<{ term: string; meaning: string }> = [
   {
     term: "Location",
     meaning:
-      "“Location” means the specific physical business location identified in the Enrollment Agreement, regardless of the legal entity that owns or operates it.",
+      "“Location” means (i) the specific physical business location identified in an Enrollment Agreement or otherwise enrolled in the Carrot program, and (ii) unless the Merchant has notified Carrot in writing that a location is excluded, any other location of the same brand or trade name that is commonly owned or commonly operated by the Merchant. Matching errors and any request for a refund or credit are governed by Sections 3.2 and 5.2.",
   },
   {
     term: "Merchant",
     meaning:
-      "“Merchant” means the business entity or individual identified in the Enrollment Agreement, including any DBA, trade name, or Google listing name associated with the location, and any successor, assignee, or subsequent owner of the business operating at that location.",
+      "“Merchant” means the business entity or individual participating in the Carrot program, including any business identified in an Enrollment Agreement, and any DBA, trade name, or Google listing name associated with the Location, and any successor, assignee, or subsequent owner of the business operating at that Location.",
   },
   {
     term: "Merchant Dashboard",
@@ -132,7 +132,7 @@ const DEFINITIONS: ReadonlyArray<{ term: string; meaning: string }> = [
   {
     term: "Offer Parameters",
     meaning:
-      "“Offer Parameters” means the limits and restrictions specified by the Merchant in the Enrollment Agreement, including without limitation a maximum cashback rate, maximum savings amount per transaction, minimum spend amount, customer acquisition limit, and use-again period. Carrot shall have the right, in its sole discretion, to create, modify, and deliver dynamic offers to consumers within the bounds of the Offer Parameters. All offers shall be considered dynamic unless the Enrollment Agreement expressly states that a static offer will apply.",
+      "“Offer Parameters” means the limits and restrictions specified by the Merchant in an Enrollment Agreement or otherwise agreed in writing or recorded in the Merchant’s account, including without limitation a maximum cashback rate, maximum savings amount per transaction, minimum spend amount, customer acquisition limit, and use-again period. If no Offer Parameters are specified, Carrot shall have full discretion to determine all aspects of the offer. Carrot shall have the right, in its sole discretion, to create, modify, and deliver dynamic offers to consumers within the bounds of any specified Offer Parameters. All offers shall be considered dynamic unless expressly agreed otherwise in writing.",
   },
   {
     term: "Offer Reimbursement",
@@ -208,9 +208,12 @@ const DEFINITIONS: ReadonlyArray<{ term: string; meaning: string }> = [
 
 export const MERCHANT_TERMS: LegalDoc = {
   title: "Merchant terms and conditions",
-  lastUpdated: "August 28, 2026",
+  lastUpdated: "January 20, 2025",
   intro: p(
-    "These Carrot Merchant Terms and Conditions (“Terms”) are entered into by and between Carrot Company Limited, USA, a Delaware Corporation (also referred to as “Carrot”) and the Merchant identified in the Enrollment Agreement. By executing or electronically accepting the Enrollment Agreement, the Merchant agrees to be bound by these Terms.",
+    "These Carrot Merchant Terms and Conditions (“Terms”) are entered into by and between Carrot Company Limited, USA, a Delaware Corporation (also referred to as “Carrot”) and the Merchant (also referred to as the “Business”).",
+    "Carrot provides a proprietary advertising platform and service through which it develops and implements digital cashback advertising campaigns to incentivize current or prospective consumers through electronic rebates.",
+    "These Terms, together with any Enrollment Agreement and the Merchant’s participation in the program, constitute the “Agreement.” The Merchant agrees to be bound by these Terms by any of the following: (i) executing or electronically accepting an Enrollment Agreement; (ii) enrolling or being enrolled through Carrot, an Affiliate, a partner, or in connection with any other Carrot product or service; or (iii) participating in the cashback program, including by providing a Payment Method, receiving Weekly Statements or invoices, or making payment for Offer Reimbursements.",
+    "In exchange for the covenants and promises herein, which the parties agree are sufficient consideration, the parties agree as follows:",
   ),
   sections: [
     {
@@ -226,7 +229,7 @@ export const MERCHANT_TERMS: LegalDoc = {
       id: "the-program",
       title: "2. The Program",
       html: p(
-        "Carrot operates a performance-based customer acquisition program that enables Merchants to offer cashback incentives to consumers through the Carrot Network. Carrot shall have the right, in its sole discretion, to determine how and where offers are distributed and activated within the Carrot Network. Carrot may distribute and activate offers through any portion of the Carrot Network without additional notice to or approval from the Merchant. Subject to the Offer Parameters agreed to in the Enrollment Agreement, Carrot shall have sole discretion to determine the timing, value, and activation methods of all offers presented to consumers within the Carrot Network.",
+        "Carrot operates a performance-based customer acquisition program that enables Merchants to offer cashback incentives to consumers through the Carrot Network. Carrot shall have the right, in its sole discretion, to determine how and where offers are distributed and activated within the Carrot Network. Carrot may distribute and activate offers through any portion of the Carrot Network without additional notice to or approval from the Merchant. Subject to the applicable Offer Parameters, if any, Carrot shall have sole discretion to determine the timing, value, and activation methods of all offers presented to consumers within the Carrot Network.",
       ),
     },
     {
@@ -242,6 +245,7 @@ export const MERCHANT_TERMS: LegalDoc = {
           "Carrot determines Qualifying Transactions using a combination of statement descriptors, transaction location, address, zip code, Merchant ID (MID), and other available data points. The Merchant agrees to provide accurate and current information necessary for proper transaction matching, including its statement descriptor and MID. The Merchant shall promptly notify Carrot in writing of any changes to its statement descriptor, MID, or other relevant information.",
           "Carrot and its authorized representatives may conduct one or more test transactions at the Merchant’s Location for the purpose of capturing statement descriptor, MID, and related matching data. The Merchant agrees to honor such transactions in the ordinary course of business. Upon reasonable request by Carrot, the Merchant shall refund the amount of any such test transaction.",
           "If Carrot is unable to reliably match transactions due to inaccurate or outdated information, or if the Merchant fails to provide reasonable cooperation with test transactions, Carrot may request additional cooperation, delay activation of the Merchant’s offers, or suspend the Campaign until matching data can be reliably obtained. The Merchant agrees to provide such cooperation in a timely manner.",
+          "The Merchant acknowledges that transaction matching is inherently imperfect and that consumers may redeem or complete a purchase at a different location of the same brand, trade name, or commonly owned or commonly operated business. The Merchant is responsible for identifying all locations that should be included in or excluded from the program and for promptly notifying Carrot in writing of any location that should not be billed. Unless the Merchant has provided such notice, the Merchant shall remain responsible for Qualifying Transactions attributed to the Merchant’s brand, trade name, or commonly owned or commonly operated locations. If the Merchant has notified Carrot that a location is excluded and a transaction from that location is later matched to an approved Location, the Merchant remains responsible for promptly identifying the error on the applicable Weekly Statement. Failure to provide timely notice under Section 5.2 waives any claim for a refund or credit arising from that matching error. Carrot shall have no obligation to claw back, refund, or re-bill amounts for transactions that were not timely disputed under Section 5.2.",
         ) +
         h2(
           "3.3 Transaction Reporting and Timing.",
@@ -256,8 +260,8 @@ export const MERCHANT_TERMS: LegalDoc = {
       id: "offer-parameters",
       title: "4. Offer Parameters and Merchant Limits",
       html: p(
-        "The Merchant shall specify its desired Offer Parameters in the Enrollment Agreement, including maximum cashback rate, maximum savings amount, minimum spend, customer limits, and use-again period. Carrot may vary offers dynamically within these parameters. If the Merchant fails to specify any Offer Parameters, or sets any parameter to zero, “none,” or leaves it blank, Carrot shall have full discretion to determine all aspects of the Offer with no restrictions.",
-        "All offers shall be considered dynamic unless the Enrollment Agreement expressly states that a static offer will apply.",
+        "The Merchant may specify Offer Parameters in an Enrollment Agreement or as otherwise agreed in writing or recorded in the Merchant’s account, including maximum cashback rate, maximum savings amount, minimum spend, customer limits, and use-again period. Carrot may vary offers dynamically within these parameters. If the Merchant fails to specify any Offer Parameters, or sets any parameter to zero, “none,” or leaves it blank, Carrot shall have full discretion to determine all aspects of the offer with no restrictions.",
+        "All offers shall be considered dynamic unless expressly agreed otherwise in writing.",
       ),
     },
     {
@@ -273,7 +277,12 @@ export const MERCHANT_TERMS: LegalDoc = {
         ) +
         h2(
           "5.2 Reconciliation.",
-          "Carrot shall provide the Merchant with access to transaction details and Weekly Statements through the Merchant Dashboard. The Merchant is responsible for reviewing such information and reconciling Qualifying Transactions against its own records in a timely manner. The Merchant’s failure to review, reconcile, or object to any Weekly Statement or Qualifying Transaction within a reasonable time shall not relieve the Merchant of its obligation to pay the applicable Offer Amount. All payments shall remain due and payable in accordance with this Agreement regardless of whether the Merchant has completed its reconciliation process.",
+          "Carrot shall provide the Merchant with access to transaction details and Weekly Statements through the Merchant Dashboard. The Merchant is responsible for reviewing such information and reconciling Qualifying Transactions against its own records within seven (7) days after issuance of the applicable Weekly Statement.",
+          "If the Merchant believes a transaction was incorrectly attributed to the Merchant or to the Location, the Merchant must notify Carrot in writing within that seven (7) day period and provide reasonably sufficient information for Carrot to review the claim. If the Merchant does not provide timely written notice, the Weekly Statement and all Qualifying Transactions listed on it shall be final, and the Merchant waives any right to a refund, statement credit, or other adjustment.",
+          "The Merchant’s prior notice that a location is excluded shall not excuse the Merchant from reviewing Weekly Statements. If a transaction from an excluded location is billed because it was matched to an approved Location and the Merchant does not object in writing within the seven (7) day period, the charge shall be final and Carrot shall have no obligation to refund or credit that amount.",
+          "If the Merchant provides timely notice, Carrot may, in its sole discretion, issue a statement credit, decline the request, suspend or turn off the Campaign going forward, and/or permit the Merchant to terminate without an Early Termination Fee. Carrot shall have no obligation to refund or credit amounts already billed. Nothing in this Section gives the Merchant an automatic right to terminate, receive a credit, or avoid payment based on an alleged matching or location issue.",
+          "The Merchant’s failure to review, reconcile, or object to any Weekly Statement or Qualifying Transaction shall not relieve the Merchant of its obligation to pay the applicable Offer Amount. All payments shall remain due and payable in accordance with this Agreement regardless of whether the Merchant has completed its reconciliation process.",
+          "Any attempt to dispute, charge back, or reverse amounts shown on a Weekly Statement other than through the notice process in this Section 5.2 may constitute a Bad Faith Breach under Section 10.",
         ) +
         h2(
           "5.3 Payment Methods, Authorization, and Processing Fees.",
@@ -337,7 +346,8 @@ export const MERCHANT_TERMS: LegalDoc = {
       id: "ramp-down-period",
       title: "9. Ramp-Down Period",
       html: p(
-        "Upon Termination or Suspension of the Campaign, the Merchant acknowledges and agrees that although Carrot has ceased the campaign, Redemptions can still occur due to certain Cardholders who may have previously activated the reward before the campaign was ended, and by law, the Merchant is financially responsible for all redemptions that occur during this “Ramp-Down Period”. Once all activated offers are either redeemed or “timed-out”, the Merchant will cease to be responsible for any further redemptions. The standard “Ramp-Down Period” is 30 days from the Termination or Suspension Date (for previously activated offers only; no new offers will be activated and redeemed).",
+        "Upon termination or suspension of the Campaign, no new offers will be activated. The Merchant remains responsible for the Offer Amount for any Qualifying Transaction resulting from an offer that was activated before the termination or suspension date, even if the Qualifying Transaction occurs or is reported after that date.",
+        "The standard Ramp-Down Period is thirty (30) days from the termination or suspension date. Once all offers activated before that date have either resulted in a Qualifying Transaction or expired, the Merchant shall have no further responsibility for new activations. This Section does not limit the Merchant’s payment obligations under Section 8 for Qualifying Transactions that are reported after termination.",
       ),
     },
     {
@@ -385,7 +395,8 @@ export const MERCHANT_TERMS: LegalDoc = {
       id: "limitation-of-liability",
       title: "15. Limitation of Liability",
       html: p(
-        "IN NO EVENT SHALL CARROT BE LIABLE TO THE MERCHANT FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS OR LOSS OF BUSINESS, EVEN IF CARROT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. CARROT’S TOTAL LIABILITY TO THE MERCHANT SHALL NOT EXCEED THE TOTAL AMOUNTS PAID BY THE MERCHANT TO CARROT IN THE THREE (3) MONTHS PRECEDING THE CLAIM.",
+        "IN NO EVENT SHALL CARROT BE LIABLE TO THE MERCHANT FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS OR LOSS OF BUSINESS, EVEN IF CARROT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. CARROT’S TOTAL LIABILITY TO THE MERCHANT FOR ANY CLAIM ARISING OUT OF OR RELATING TO THIS AGREEMENT SHALL NOT EXCEED FIVE HUNDRED DOLLARS ($500).",
+        "Any statement credit issued by Carrot under this Agreement is discretionary and shall not increase or expand the limitation of liability set forth in this Section.",
       ),
     },
     {
@@ -467,7 +478,7 @@ export const MERCHANT_TERMS: LegalDoc = {
         ) +
         h2(
           "22.3 Entire Agreement.",
-          "These Terms, together with the Enrollment Agreement, constitute the entire agreement between the parties.",
+          "These Terms, together with any Enrollment Agreement and the Merchant’s participation in the program, constitute the entire agreement between the parties.",
         ) +
         h2(
           "22.4 Conflicting Terms.",
@@ -490,8 +501,9 @@ export const MERCHANT_TERMS: LegalDoc = {
           "No waiver of any breach shall constitute a waiver of any other breach.",
         ) +
         h2(
-          "22.9 Counterparts and Electronic Signatures.",
-          "This Agreement may be executed in counterparts, each of which shall be deemed an original. This Agreement may also be executed by electronic signature, which shall be considered an original signature for all purposes and shall have the same legal effect as a handwritten signature. The Merchant agrees that its electronic acceptance of the Enrollment Agreement shall be legally binding.",
+          "22.9 Counterparts, Electronic Signatures, and Acceptance.",
+          "This Agreement may be executed in counterparts, each of which shall be deemed an original. This Agreement may also be executed by electronic signature, which shall be considered an original signature for all purposes and shall have the same legal effect as a handwritten signature. The Merchant agrees that its electronic acceptance of an Enrollment Agreement shall be legally binding.",
+          "The Merchant’s participation in the cashback program also constitutes acceptance of these Terms. Without limiting the foregoing, providing a Payment Method, authorizing charges, receiving Weekly Statements or invoices, and making payment for Offer Reimbursements shall constitute the Merchant’s agreement to these Terms and to the Merchant’s enrollment in the program, whether or not a separate Enrollment Agreement was executed.",
         ) +
         h2(
           "22.10 Headings.",
@@ -511,7 +523,7 @@ export const MERCHANT_TERMS: LegalDoc = {
         ) +
         h2(
           "22.14 Identification of the Merchant and Location.",
-          "This Agreement is entered into with respect to the business operating at the Location identified in the Enrollment Agreement. The Merchant agrees that this Agreement shall be binding upon the business operating at such Location regardless of any discrepancy between (i) the name used in the Enrollment Agreement, on Google Maps, in any marketing materials, or otherwise used to identify the business, and (ii) the Merchant’s legal entity name, DBA, or trade name. The Merchant waives any defense or claim based on a difference between the name used to identify the business and its legal entity name.",
+          "This Agreement is entered into with respect to the business operating at the Location. The Merchant agrees that this Agreement shall be binding upon the business operating at the Location regardless of any discrepancy between (i) the name used in an Enrollment Agreement, on Google Maps, in any marketing materials, or otherwise used to identify the business, and (ii) the Merchant’s legal entity name, DBA, or trade name. The Merchant waives any defense or claim based on a difference between the name used to identify the business and its legal entity name.",
         ),
     },
     {

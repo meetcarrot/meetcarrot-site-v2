@@ -481,8 +481,8 @@ export const MERCHANT_TERMS: LegalDoc = {
           "These Terms, together with any Enrollment Agreement and the Merchant’s participation in the program, constitute the entire agreement between the parties.",
         ) +
         h2(
-          "22.4 Conflicting Terms.",
-          "In the event of any conflict or inconsistency between the Enrollment Agreement and these Terms, these Terms shall control and prevail.",
+          "22.4 Conflicting Terms and Other Product Enrollment.",
+          "In the event of any conflict or inconsistency between the Enrollment Agreement and these Terms, these Terms shall control and prevail. If the Merchant is enrolled in the cashback program through an Affiliate, partner, or in connection with any other Carrot product or service, these Terms govern the cashback program. In the event of any conflict between these Terms and any terms presented by an Affiliate, partner, or in connection with another Carrot product or service, these Terms shall control with respect to the cashback program. No statement, promise, or side term from an Affiliate or partner shall modify these Terms unless agreed in writing by Carrot. Carrot may set, vary, and update Offer Parameters and program terms in accordance with this Agreement, including Section 22.5.",
         ) +
         h2(
           "22.5 Modification.",

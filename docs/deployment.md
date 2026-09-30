@@ -44,6 +44,27 @@ make buildDeploy
 
 If the build fails, read `build.log`.
 
+## CI deploys (GitHub Actions)
+
+`.github/workflows/ci.yml` runs on every push to `master` (including merged
+PRs), or when started by hand from the Actions tab (**Run workflow** on
+`master`). It lints, type-checks, and builds, then runs `deployment/deploy.sh`
+and posts the result to Slack. Pull requests are not checked or deployed.
+
+Set these under **Settings → Secrets and variables → Actions**:
+
+| Name | Kind | Purpose |
+|---|---|---|
+| `AWS_ACCESS_KEY_ID` | secret | Deploy key |
+| `AWS_SECRET_ACCESS_KEY` | secret | Deploy key |
+| `SLACK_WEBHOOK_URL` | secret | Incoming webhook for deploy notifications |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | variable | Google Analytics ID (optional) |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | variable | Search Console token (optional) |
+
+The deploy key needs `s3:ListBucket` on `arn:aws:s3:::meetcarrot-nextjs-home`
+and `s3:GetObject`, `s3:PutObject`, `s3:DeleteObject` on
+`arn:aws:s3:::meetcarrot-nextjs-home/*`.
+
 ## What `make CreateS3Bucket` does
 
 `deployment/create-s3-bucket.sh` is idempotent. Running it again never creates a
@@ -132,5 +153,6 @@ website configuration is replaced as a whole, so keep every rule in the list.
 
 ## Rollback
 
-There is no versioning on the bucket. To roll back, check out the previous
-commit and run `make buildDeploy`.
+There is no versioning on the bucket. To roll back, revert the commit on
+`master` (CI redeploys it), or check out the previous commit and run
+`make buildDeploy`.

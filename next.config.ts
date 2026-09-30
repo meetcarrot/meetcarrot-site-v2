@@ -1,19 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Static export: `next build` writes plain HTML/CSS/JS to `out/`, which is
+  // uploaded to S3 (see deployment/). Legacy /legals/* URLs are redirected by
+  // the bucket's website routing rules, not by Next.
+  output: "export",
+  // `/help` -> `help/index.html`, so S3 website hosting serves it with no
+  // rewrite layer.
+  trailingSlash: true,
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
-    qualities: [75, 90],
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/legals/terms/index.html",
-        destination: "/legals/terms",
-      },
-    ];
+    // The built-in optimizer needs a server.
+    unoptimized: true,
   },
 };
 

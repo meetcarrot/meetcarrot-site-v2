@@ -40,8 +40,13 @@ export const ROUTES = [
 /** Current merchant-terms URL. Old agreements still cite `/legals/terms`. */
 export const MERCHANT_TERMS_PATH = "/terms/merchant-terms-and-conditions";
 
+/** Post-enrollment thank-you. Formsite sends merchants here; keep it off-search. */
+export const ENROLLED_PATH = "/confirmed/enrolled";
+
 /** Paths crawlers must not fetch. Kept out of `ROUTES` / the sitemap on purpose. */
 export const ROBOTS_DISALLOW = [
   MERCHANT_TERMS_PATH,
+  ENROLLED_PATH,
+  "/confirmed/",
   "/legals/",
 ] as const;

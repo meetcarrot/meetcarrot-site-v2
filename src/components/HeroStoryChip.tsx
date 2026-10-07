@@ -37,7 +37,7 @@ function SuccessCheckIcon({
     <svg
       aria-hidden
       viewBox="0 0 12 12"
-      className="size-3 shrink-0 text-[#03FF00] md:size-3.5"
+      className="size-3 shrink-0 text-black md:size-3.5"
     >
       <circle
         cx="6"

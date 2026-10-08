@@ -78,17 +78,18 @@ export function HeroStoryChip({
   const [typed, setTyped] = useState(0);
   const [circleUp, setCircleUp] = useState(false);
   const [checkDrawn, setCheckDrawn] = useState(false);
+  const [prevPairToken, setPrevPairToken] = useState(pairToken);
+
+  // Hide the pill as soon as the pair changes, during render rather than in
+  // the effect, so React doesn't paint the stale chip first.
+  if (pairToken !== prevPairToken) {
+    setPrevPairToken(pairToken);
+    setPillUp(false);
+  }
 
   useEffect(() => {
-    if (reduced) {
-      setPillUp(true);
-      setTyped(label.length);
-      setCircleUp(true);
-      setCheckDrawn(true);
-      return;
-    }
-
-    setPillUp(false);
+    // Reduced motion shows the finished chip; see the derived values below.
+    if (reduced) return;
 
     const timers: number[] = [];
     timers.push(
@@ -123,6 +124,11 @@ export function HeroStoryChip({
     };
   }, [pairToken, reduced, label]);
 
+  const showPill = reduced || pillUp;
+  const shownChars = reduced ? label.length : typed;
+  const showCircle = reduced || circleUp;
+  const showCheck = reduced || checkDrawn;
+
   return (
     <div
       aria-hidden
@@ -135,16 +141,16 @@ export function HeroStoryChip({
         "whitespace-nowrap backdrop-blur-md",
         "transition-[opacity,transform] duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]",
         "motion-reduce:transition-none",
-        pillUp ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
+        showPill ? "translate-y-0 opacity-100" : "translate-y-1.5 opacity-0",
       )}
     >
       <span className="relative inline-block">
         <span className="invisible whitespace-nowrap">{label}</span>
         <span className="absolute inset-0 whitespace-nowrap">
-          {label.slice(0, typed)}
+          {label.slice(0, shownChars)}
         </span>
       </span>
-      <SuccessCheckIcon circle={circleUp} checked={checkDrawn} />
+      <SuccessCheckIcon circle={showCircle} checked={showCheck} />
     </div>
   );
 }
